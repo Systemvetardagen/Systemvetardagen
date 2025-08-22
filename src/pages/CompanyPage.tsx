@@ -13,7 +13,7 @@ import {
     Users,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import FadeInSection from '../components/FadeInSection/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
 
 const companies: Company[] = companiesData;
 

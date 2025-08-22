@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Timeunit from './Timeunit';
 import '../../App.css';
 import { useTranslation } from 'react-i18next';
 
 interface CountdownProps {
-    targetDate: string;
+    targetDate: Date;
 }
 
 interface TimeLeft {
@@ -15,15 +15,12 @@ interface TimeLeft {
 }
 
 const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
-    const [clickAmount, setClickAmount] = useState<number>(0);
-    const [t, i18n] = useTranslation('landing');
+    const [t] = useTranslation('landing');
 
-    const acceleratedOffsetRef = useRef<number>(0);
 
     function calculateTimeLeft(currentTimeMillis?: number): TimeLeft | null {
         const now = currentTimeMillis ?? new Date().getTime();
-        const targetTime = new Date(targetDate).getTime();
-        const difference = targetTime - now;
+        const difference = targetDate.getTime() - now;
         if (difference > 0) {
             return {
                 days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -40,13 +37,11 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     useEffect(() => {
         const tickInterval = 25;
         const timer = setInterval(() => {
-            const multiplier = clickAmount <= 3 ? 1 : clickAmount > 50 ? (clickAmount - 3) * 50 : (clickAmount - 3) * 10;
-            acceleratedOffsetRef.current += (multiplier - 1) * tickInterval;
-            const effectiveNow = new Date().getTime() + acceleratedOffsetRef.current;
-            setTimeLeft(calculateTimeLeft(effectiveNow));
+            const now = new Date().getTime();
+            setTimeLeft(calculateTimeLeft(now));
         }, tickInterval);
         return () => clearInterval(timer);
-    }, [targetDate, clickAmount]);
+    }, [targetDate]);
 
     if (!timeLeft) {
         return <div>See you there 😉</div>;
@@ -54,8 +49,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
     return (
         <div
-            className="grid gap-4 lg:flex lg:gap-24 grid-cols-2 fadeUp"
-            onClick={() => setClickAmount(prev => prev + 1)}
+            className="grid gap-4 lg:flex lg:gap-20 grid-cols-2 fadeUp"
         >
             <Timeunit value={timeLeft.days} label={t('days')} />
             <Timeunit value={timeLeft.hours} label={t('hours')} />

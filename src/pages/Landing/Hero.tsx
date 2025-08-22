@@ -1,0 +1,69 @@
+import { useRef, useState } from 'react';
+import Fireworks, { type FireworksHandlers } from '@fireworks-js/react';
+import Countdown from '../../components/Countdown/Countdown';
+
+const Hero = () => {
+    const targetDate: Date = new Date('2026-03-26T16:00:00+01:00');
+    const ref = useRef<FireworksHandlers>(null);
+
+    const [fireworksRunning, setFireworksRunning] = useState<boolean>(true);
+
+    const toggleFireworks = () => {
+        if (!ref.current) return;
+        if (ref.current.isRunning) {
+            ref.current.stop();
+            setFireworksRunning(false);
+        } else {
+            ref.current.start();
+            setFireworksRunning(true);
+        }
+    };
+
+    return (
+        <div
+            id="hero"
+            className="min-h-[800px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-evenly font-poppins  px-4 md:px-20"
+        >
+            <Fireworks
+                ref={ref}
+                options={{
+                    opacity: 0.5,
+                    explosion: 10,
+                    intensity: 5,
+                    lineWidth: { explosion: { min: 1, max: 2 } },
+                }}
+                style={{
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '700px',
+                    position: 'absolute',
+                }}
+            />
+            <div className="flex flex-col z-10 text-center md:text-left">
+                <h2 className="text-2xl md:text-4xl font-semibold mb-1">
+                    Celebrating 30 years of
+                </h2>
+                <h1 className="text-3xl md:text-7xl font-bold mb-10">
+                    Systemvetardagen!
+                </h1>
+                <Countdown targetDate={targetDate} />
+                <h3 className="md:text-2xl mt-10">
+                    Kista Nod, Borgarfjordsgatan 12
+                </h3>
+                <h3 className="md:text-2xl">
+                    Wednesday March 26 10:00 - 16:00
+                </h3>
+            </div>
+            <img src="" alt="" className="h-auto w-[30vw] rounded-md" />
+            <button
+                onClick={toggleFireworks}
+                className="absolute md:right-20 bottom-10 px-4 py-2 rounded-md bg-white text-black hover:scale-105 transition-all duration-100 cursor-pointer shadow"
+            >
+                {fireworksRunning ? 'Disable fireworks' : 'Enable fireworks'}
+            </button>
+        </div>
+    );
+};
+
+export default Hero;

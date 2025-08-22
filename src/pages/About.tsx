@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectGroup from './ProjectContributors';
 import { useTranslation } from 'react-i18next';
-import FadeInSection from '../components/FadeInSection/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
 
 const About: React.FC = () => {
     const [t] = useTranslation('about');

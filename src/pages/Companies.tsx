@@ -8,7 +8,7 @@ import {
 } from '../assets/companies';
 import companiesData from '../assets/companies.json';
 import { useTranslation } from 'react-i18next';
-import FadeInSection from '../components/FadeInSection/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
 import { Link } from 'react-router-dom';
 
 const Companies: React.FC = () => {
@@ -158,14 +158,14 @@ const Companies: React.FC = () => {
     return (
         <div className="bg-background min-h-screen">
             <div className="flex flex-col items-center py-32 px-10">
-                <h1 className="text-5xl lg:text-6xl mb-8">
+                <h2 className="text-5xl lg:text-6xl mb-8">
                     {t('global.header')}
-                </h1>
+                </h2>
                 <div className="relative">
                     <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
-                        <h1 className="font-light text-gray-700">
+                        <h2 className="font-light text-gray-700">
                             {t('global.showing')}
-                        </h1>
+                        </h2>
                         <div className="">
                             <button
                                 onMouseDown={(e) => e.stopPropagation()}

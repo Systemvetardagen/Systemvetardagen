@@ -1,3 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+
+@theme {
+  --font-body: "WorkSans"
+
+  --color-background: rgb(247, 244, 255);
+  --color-text: rgb(9, 0, 27);
+  --color-foreground: rgb(9, 0, 27);
+  --color-primary: rgb(50, 95, 255);
+  --color-secondary: rgb(255, 76, 194);
+  --color-accent: rgb(255, 201, 63);
+  --color-link: rgb(122, 142, 255);
+}
+
+/* --color-background: #f7f4ff;
+--color-text: #09001b;
+--color-foreground: #09001b;
+--color-primary: #325fff;
+--color-secondary: #ff4cc2;
+--color-accent: #ffc93f;
+--color-link: #7a8eff; */

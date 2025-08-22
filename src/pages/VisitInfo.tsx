@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SignupLink from '../components/SignupLink/SignupLink';
-import Partners from '../components/Partners/Partners';
+import SignupLink from '../components/SignupLink';
+import Partners from '../components/Partners';
 import lecturesData from '../data/lectures.json';
-import FadeInSection from '../components/FadeInSection/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
 
 const lectures: Lecture[] = lecturesData;
 
@@ -26,6 +26,7 @@ const LectureItem: React.FC<LectureItemProps> = ({ lecture }) => {
         <FadeInSection direction="fadeLeft" className="mb-5 border-b border-white/10 pb-4 last:border-0">
             <div className="flex flex-col text-left">
                 {/* Desktop view */}
+                {/* what the ai ._. */}
                 <div className="hidden md:flex items-start gap-3">
                     <div className="bg-gradient-to-r from-primary/20 to-transparent px-2 py-1 rounded-lg w-[90px] text-center shrink-0">
                         <p className="text-sm text-white font-medium">{lecture.time}</p>
@@ -115,7 +116,7 @@ const VisitInfo: React.FC = () => {
                 {t('sub-header')}
             </p>
 
-            <div className="w-[600px] max-w-[90vw] tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft">
+            <section id='events' className="w-[600px] max-w-[90vw] tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft">
                 <h1 className="text-2xl lg:text-3xl font-light">
                     {t('lectures.header')}
                 </h1>
@@ -127,12 +128,12 @@ const VisitInfo: React.FC = () => {
                         <LectureItem key={index} lecture={lecture} />
                     ))}
                 </div>
-            </div>
+            </section>
 
-            <a href="/svgs/floormap.svg" className="mt-10">
+            <a id='map' href="/svgs/floormap.svg" className="mt-10">
                 <img className="max-w-[80vw] rounded-3xl" src="/svgs/floormap.svg" alt="Floor map" />
             </a>
-            <div className="px-10 max-w-[90vw] lg:max-w-[50vw] text-start my-8">
+            <section id='get-here' className="px-10 max-w-[90vw] lg:max-w-[50vw] text-start my-8">
                 <h1 className="font-light text-3xl mb-2">
                     {t('getting-to.header')}
                 </h1>
@@ -146,7 +147,7 @@ const VisitInfo: React.FC = () => {
                         {t('getting-to.parking.body')}
                     </p>
                 </div>
-            </div>
+            </section>
             <div className="mb-20 w-full  flex justify-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927.2724538117486!2d17.94447928059294!3d59.40656019752912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9eed05efbb67%3A0x18ac39c13897c4a9!2sDSV%2C%20Institutionen%20f%C3%B6r%20data-%20och%20systemvetenskap!5e0!3m2!1ssv!2sse!4v1738844966811!5m2!1ssv!2sse"

@@ -1,18 +1,21 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import TemporaryLanding from './pages/Landing';
-import Landing from './pages/Landing';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import TemporaryLanding from './pages/Landing/TemporaryLanding';
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SignupForm from './pages/SignupForm';
 import StudentDashboard from './pages/StudentDashboard';
 
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer';
+
 import Companies from './pages/Companies';
+import CompanySignup from './pages/CompanySignup';
+import CompanyPage from './pages/CompanyPage';
+
 import VisitInfo from './pages/VisitInfo';
 import VisitInfoTest from './pages/VisitInfoTest';
 import About from './pages/About';
-import CompanyPage from './pages/CompanyPage';
 import ScrollToTop from './utilities/ScrollToTop';
 
 const App: React.FC = () => {
@@ -32,6 +35,11 @@ const App: React.FC = () => {
 
                 <Route path="/companies" element={<Companies />} />
                 <Route path="/companies/:companyId" element={<CompanyPage />} />
+                <Route
+                    path="/companies/signup"
+                    element={<CompanySignup temp={'Hello world'} />}
+                />
+
                 <Route path="/visit-info" element={<VisitInfo />} />
                 <Route path="/visit-info-test" element={<VisitInfoTest />} />
                 <Route path="/about" element={<About />} />

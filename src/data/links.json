@@ -1,0 +1,78 @@
+[
+  {
+    "headLabel": "Home",
+    "headHref": "/",
+    "childLinks": [
+      {
+        "childLabel": "30 Years!",
+        "childHref": "/",
+        "hashLink": "30"
+      },
+      {
+        "childLabel": "Join the team!",
+        "childHref": "/",
+        "hashLink": "fairie"
+      },
+      {
+        "childLabel": "Stay Updated",
+        "childHref": "/signup",
+        "hashLink": "signup"
+      }
+    ]
+  },
+  {
+    "headLabel": "Companies",
+    "headHref": "/companies",
+    "childLinks": [
+      {
+        "childLabel": "All Companies",
+        "childHref": "/companies"
+      },
+      {
+        "childLabel": "Company Signup",
+        "childHref": "/companies/signup"
+      },
+      {
+        "childLabel": "Sponsor Us!",
+        "childHref": "/companies/signup",
+        "hashLink": "sponsor"
+      }
+    ]
+  },
+  {
+    "headLabel": "Visit Info",
+    "headHref": "/visit-info",
+    "childLinks": [
+      {
+        "childLabel": "Events",
+        "childHref": "/visit-info",
+        "hashLink": "events"
+      },
+      {
+        "childLabel": "Map",
+        "childHref": "/visit-info",
+        "hashLink": "map"
+      },
+      {
+        "childLabel": "Get to the fair",
+        "childHref": "/visit-info",
+        "hashLink": "get-here"
+      }
+    ]
+  },
+  {
+    "headLabel": "About",
+    "headHref": "/about",
+    "childLinks": [
+      {
+        "childLabel": "Systemvetardagen",
+        "childHref": "/about"
+      },
+      {
+        "childLabel": "Project Group",
+        "childHref": "/about",
+        "hashLink": "project-group"
+      }
+    ]
+  }
+]

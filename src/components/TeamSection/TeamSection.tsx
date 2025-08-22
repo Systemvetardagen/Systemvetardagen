@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, Linkedin, Github } from 'lucide-react';
 import { Team } from './teamData';
-import FadeInSection from '../FadeInSection/FadeInSection';
+import FadeInSection from '../FadeInSection';
 
 interface SocialLinksProps {
     linkedIn?: string;

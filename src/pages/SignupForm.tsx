@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 import { customFetchInsertPreSignup } from '../utilities/customFetchInsertPreSignup';
 interface PreSignup {
     firstName: string;
@@ -42,7 +42,7 @@ const SignupForm = () => {
                     <div className="mb-4">
                         <a href="/">
                             <h1 className="text-white text-5xl font-bold mb-8">
-                                Systemvetardagen 2025
+                                Systemvetardagen 2026
                             </h1>
                         </a>
                         <h2 className="text-white text-2xl">
@@ -75,7 +75,7 @@ const SignupForm = () => {
                 <div className="mb-4">
                     <a href="/">
                         <h1 className="text-white text-3xl lg:text-5xl font-bold mb-8">
-                            Systemvetardagen 2025
+                            Systemvetardagen 2026
                         </h1>
                     </a>
                     <h2 className="text-white text-2xl">Sign up for updates</h2>

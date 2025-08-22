@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useQuery } from 'react-query';
+import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { customFetchGetPreSignup } from '../utilities/customFetchGetPreSignUp';
 import Login from './Login';
 import { user } from '../structure/genstruct';

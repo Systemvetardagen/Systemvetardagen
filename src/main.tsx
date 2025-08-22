@@ -4,16 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
-import global_en from './translations/en/global.json';
-import global_se from './translations/se/global.json';
-import landing_en from './translations/en/landing.json';
-import landing_se from './translations/se/landing.json';
-import visitInfo_en from './translations/en/visit-info.json';
-import visitInfo_se from './translations/se/visit-info.json';
-import about_en from './translations/en/about.json';
-import about_se from './translations/se/about.json';
-import companies_en from './translations/en/companies.json';
-import companies_se from './translations/se/companies.json';
+import global_en from './locales/en/global.json';
+import global_se from './locales/se/global.json';
+import landing_en from './locales/en/landing.json';
+import landing_se from './locales/se/landing.json';
+import visitInfo_en from './locales/en/visit-info.json';
+import visitInfo_se from './locales/se/visit-info.json';
+import about_en from './locales/en/about.json';
+import about_se from './locales/se/about.json';
+import companies_en from './locales/en/companies.json';
+import companies_se from './locales/se/companies.json';
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 
