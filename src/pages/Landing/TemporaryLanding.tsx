@@ -6,7 +6,7 @@ import Hero from './Hero';
 import Anniversary from './Anniversary';
 import Statistics from './Statistics';
 import FairieSignup from './FairieSignup';
-import MailListSignup from './MailListSignup';
+import MailListSignup from '../../components/MailListSignup';
 
 export default function TemporaryLanding() {
     return (

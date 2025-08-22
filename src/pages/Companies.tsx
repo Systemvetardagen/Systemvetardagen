@@ -158,7 +158,7 @@ const Companies: React.FC = () => {
     return (
         <div className="bg-background min-h-screen">
             <div className="flex flex-col items-center py-32 px-10">
-                <h2 className="text-5xl lg:text-6xl mb-8">
+                <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
                     {t('global.header')}
                 </h2>
                 <div className="relative">

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Button from '../../components/Button';
+import Button from './Button';
 
 const MailListSignup = () => {
     const SignupUrl: string = '/signup';
@@ -15,7 +15,7 @@ const MailListSignup = () => {
                 what’s happening and never miss out!
             </h4>
             <NavLink to={SignupUrl}>
-                <Button size="md">Sign Up</Button>
+                <Button size="md" variant='secondary'>Sign Up</Button>
             </NavLink>
         </div>
     );
