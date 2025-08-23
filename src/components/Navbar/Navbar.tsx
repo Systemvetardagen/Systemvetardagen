@@ -4,6 +4,7 @@ import LanguageSwitch from '../LanguageSwitch';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
 import linkData from '../../data/links.json';
+import { useStrapiPrefetch } from '../../hooks/useStrapi';
 
 export interface Link {
     headLabel: string;
@@ -18,6 +19,7 @@ export interface Link {
 const Navbar: React.FC = () => {
     const links: Link[] = linkData as Link[];
     const [isSticky, setIsSticky] = useState<boolean>(false);
+    const { prefetchCollection } = useStrapiPrefetch();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,6 +29,27 @@ const Navbar: React.FC = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Prefetch data when navbar mounts (on app load)
+    useEffect(() => {
+        const prefetchData = async () => {
+            try {
+                // Prefetch programs data (used in CompanyFilterControls)
+                await prefetchCollection('programs', {
+                    pagination: { pageSize: 100 },
+                });
+
+                // Prefetch positions data (used in CompanyFilterControls)
+                await prefetchCollection('positions', {});
+
+                console.log('Data prefetched successfully');
+            } catch (error) {
+                console.warn('Prefetch failed:', error);
+            }
+        };
+
+        prefetchData();
+    }, [prefetchCollection]);
 
     // offset is used for NavHashLink
     const scrollWithOffset = (el: HTMLElement) => {

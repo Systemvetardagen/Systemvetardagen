@@ -9,8 +9,8 @@ import StudentDashboard from './pages/StudentDashboard';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 
-import Companies from './pages/Companies';
-import CompanySignup from './pages/CompanySignup';
+import Companies from './pages/Company/Companies';
+import CompanySignup from './pages/Company/CompanySignup';
 import CompanyPage from './pages/CompanyPage';
 
 import VisitInfo from './pages/VisitInfo';
