@@ -15,7 +15,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({
     className,
 }) => {
     return (
-        <div className="bg-white rounded-3xl hover:scale-105 transition-transform duration-100 shadow-xl p-4">
+        <div className="bg-white rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl p-4">
             <Link className="" to={`/companies/${slug}`}>
                 {logoUrl ? (
                     <img

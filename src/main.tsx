@@ -17,9 +17,11 @@ import companies_se from './locales/se/companies.json';
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 
-const availableLanguages: string[] = ["en", "sv"];
-const userLocale = Intl.DateTimeFormat().resolvedOptions().locale.split("-")[0];
-const selectedLanguage = availableLanguages.includes(userLocale) ? userLocale : "en";
+const availableLanguages: string[] = ['en', 'sv'];
+const userLocale = Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0];
+const selectedLanguage = availableLanguages.includes(userLocale)
+    ? userLocale
+    : 'en';
 console.log(selectedLanguage);
 i18next.init({
     interpolation: { escapeValue: false },
@@ -48,11 +50,9 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(
-    <StrictMode>
-        <I18nextProvider i18n={i18next}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </I18nextProvider>
-    </StrictMode>
+    <I18nextProvider i18n={i18next}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </I18nextProvider>
 );
