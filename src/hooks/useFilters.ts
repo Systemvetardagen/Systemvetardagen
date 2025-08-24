@@ -3,14 +3,14 @@ import { Position, Program } from '../types/company';
 
 export interface Filters {
     search: string;
-    programs: Program[];
-    positions: Position[];
+    programs: Set<string>;
+    positions: Set<string>;
 }
 
 const initialFilters: Filters = {
     search: '',
-    programs: [],
-    positions: [],
+    programs: new Set(),
+    positions: new Set(),
 };
 
 export default function useFilters() {
@@ -22,23 +22,35 @@ export default function useFilters() {
 
     const toggleProgram = (program: Program) => {
         setFilters((prev) => {
-            const existingIndex = prev.programs.findIndex(p => p.id === program.id);
-            const programs = existingIndex !== -1
-                ? prev.programs.filter((p) => p.id !== program.id)
-                : [...prev.programs, program];
-            return { ...prev, programs };
+            const newPrograms = new Set(prev.programs);
+            if (newPrograms.has(program.id)) {
+                newPrograms.delete(program.id);
+            } else {
+                newPrograms.add(program.id);
+            }
+            return { ...prev, programs: newPrograms };
         });
     };
     
     const togglePosition = (position: Position) => {
         setFilters((prev) => {
-            const existingIndex = prev.positions.findIndex(p => p.id === position.id);
-            const positions = existingIndex !== -1
-                ? prev.positions.filter((p) => p.id !== position.id)
-                : [...prev.positions, position];
-            return { ...prev, positions };
+            const newPositions = new Set(prev.positions);
+            if (newPositions.has(position.id)) {
+                newPositions.delete(position.id);
+            } else {
+                newPositions.add(position.id);
+            }
+            return { ...prev, positions: newPositions };
         });
     };
 
-    return {filters, setSearch, toggleProgram, togglePosition}
+    const clearFilters = () => {
+        setFilters({
+            search: '',
+            programs: new Set(),
+            positions: new Set(),
+        });
+    };
+
+    return { filters, setSearch, toggleProgram, togglePosition, clearFilters };
 }

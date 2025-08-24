@@ -1,7 +1,7 @@
 [build]
-  base = "systemvetardagen2025frontend"            # If your React app is in a subfolder, e.g., "react-app"
-  publish = "/dist"    # Path to the build output directory (Vite's default is 'dist')
-  command = "npm run build"     # Use 'npm run build' for Vite builds
+  base = "./"
+  publish = "/dist"
+  command = "npm run build"
 
 [dev]
-  framework = "vite"            # Optional: Specifies Vite for local Netlify dev
+  framework = "vite"

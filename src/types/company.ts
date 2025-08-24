@@ -32,6 +32,10 @@ export interface Company {
     programs: Program[];
 }
 
+export interface CompanyImage {
+    
+}
+
 export interface StrapiProgram {
     programID: string;
     name: string;

@@ -20,11 +20,9 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
             }
 
             // Program filter - company must have at least one of the selected programs
-            if (filters.programs.length > 0) {
-                const hasMatchingProgram = filters.programs.some(filterProgram =>
-                    company.programs.some(companyProgram => 
-                        companyProgram.id === filterProgram.id
-                    )
+            if (filters.programs.size > 0) {
+                const hasMatchingProgram = company.programs.some(companyProgram => 
+                    filters.programs.has(companyProgram.id)
                 );
                 if (!hasMatchingProgram) {
                     return false;
@@ -32,11 +30,9 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
             }
 
             // Position filter - company must have at least one of the selected positions
-            if (filters.positions.length > 0) {
-                const hasMatchingPosition = filters.positions.some(filterPosition =>
-                    company.positions.some(companyPosition => 
-                        companyPosition.id === filterPosition.id
-                    )
+            if (filters.positions.size > 0) {
+                const hasMatchingPosition = company.positions.some(companyPosition => 
+                    filters.positions.has(companyPosition.id)
                 );
                 if (!hasMatchingPosition) {
                     return false;

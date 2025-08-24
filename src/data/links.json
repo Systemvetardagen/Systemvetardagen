@@ -1,75 +1,75 @@
 [
   {
-    "headLabel": "Home",
+    "headKey": "navbar.home.headLabel",
     "headHref": "/",
     "childLinks": [
       {
-        "childLabel": "30 Years!",
+        "childKey": "navbar.home.childLinks.30-years",
         "childHref": "/",
         "hashLink": "30"
       },
       {
-        "childLabel": "Join the team!",
+        "childKey": "navbar.home.childLinks.join-team",
         "childHref": "/",
         "hashLink": "fairie"
       },
       {
-        "childLabel": "Stay Updated",
+        "childKey": "navbar.home.childLinks.stay-updated",
         "childHref": "/signup",
         "hashLink": "signup"
       }
     ]
   },
   {
-    "headLabel": "Companies",
+    "headKey": "navbar.companies.headLabel",
     "headHref": "/companies",
     "childLinks": [
       {
-        "childLabel": "All Companies",
+        "childKey": "navbar.companies.childLinks.all",
         "childHref": "/companies"
       },
       {
-        "childLabel": "Company Signup",
+        "childKey": "navbar.companies.childLinks.signup",
         "childHref": "/companies/signup"
       },
       {
-        "childLabel": "Sponsor Us!",
+        "childKey": "navbar.companies.childLinks.sponsor",
         "childHref": "/companies/signup",
         "hashLink": "sponsor"
       }
     ]
   },
   {
-    "headLabel": "Visit Info",
+    "headKey": "navbar.visit-info.headLabel",
     "headHref": "/visit-info",
     "childLinks": [
       {
-        "childLabel": "Events",
+        "childKey": "navbar.visit-info.childLinks.events",
         "childHref": "/visit-info",
         "hashLink": "events"
       },
       {
-        "childLabel": "Map",
+        "childKey": "navbar.visit-info.childLinks.map",
         "childHref": "/visit-info",
         "hashLink": "map"
       },
       {
-        "childLabel": "Get to the fair",
+        "childKey": "navbar.visit-info.childLinks.get-here",
         "childHref": "/visit-info",
         "hashLink": "get-here"
       }
     ]
   },
   {
-    "headLabel": "About",
+    "headKey": "navbar.about.headLabel",
     "headHref": "/about",
     "childLinks": [
       {
-        "childLabel": "Systemvetardagen",
+        "childKey": "navbar.about.childLinks.systemvetardagen",
         "childHref": "/about"
       },
       {
-        "childLabel": "Project Group",
+        "childKey": "navbar.about.childLinks.project-group",
         "childHref": "/about",
         "hashLink": "project-group"
       }

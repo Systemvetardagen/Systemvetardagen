@@ -4,7 +4,7 @@ import SignupLink from '../components/SignupLink';
 import Partners from '../components/Partners';
 import companiesJSON from '../data/companies.json';
 import lecturesJSON from '../data/lectures.json';
-import { company } from '../structure/genstruct';
+import { company } from '../types/genstruct';
 
 interface Lecture {
     company: string;

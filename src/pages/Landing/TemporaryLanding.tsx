@@ -1,7 +1,7 @@
 import '../../App.css';
 import { NavLink } from 'react-router-dom';
-import Button from '../../components/Button';
-import CompanyLoop from '../../components/CompanyLoop';
+import Button from '../../components/Common/Button';
+import CompanyLoop from '../../components/Company/CompanyLoop';
 import Hero from './Hero';
 import Anniversary from './Anniversary';
 import Statistics from './Statistics';

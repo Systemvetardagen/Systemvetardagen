@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { PartyPopper, HeartHandshake, Star } from 'lucide-react';
-import Button from '../../components/Button';
+import Button from '../../components/Common/Button';
 
 interface Card {
     icon: JSX.Element;

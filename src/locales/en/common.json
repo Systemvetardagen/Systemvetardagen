@@ -1,0 +1,38 @@
+{
+    "navbar": {
+      "home": {
+        "headLabel": "Home",
+        "childLinks": {
+          "30-years": "30 Years!",
+          "join-team": "Join the team!",
+          "stay-updated": "Stay Updated"
+        }
+      },
+      "companies": {
+        "headLabel": "Companies",
+        "childLinks": {
+          "all": "All Companies",
+          "signup": "Company Signup",
+          "sponsor": "Sponsor Us!"
+        }
+      },
+      "visit-info": {
+        "headLabel": "Visit Info",
+        "childLinks": {
+          "events": "Events",
+          "map": "Map",
+          "get-here": "Get to the fair"
+        }
+      },
+      "about": {
+        "headLabel": "About",
+        "childLinks": {
+          "systemvetardagen": "Systemvetardagen",
+          "project-group": "Project Group"
+        }
+      }
+    },
+    "partners": "Our partners",
+    "disk": "The Student Union DISK"
+  }
+  

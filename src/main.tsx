@@ -1,58 +1,57 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
 
-import global_en from './locales/en/global.json';
-import global_se from './locales/se/global.json';
-import landing_en from './locales/en/landing.json';
-import landing_se from './locales/se/landing.json';
-import visitInfo_en from './locales/en/visit-info.json';
-import visitInfo_se from './locales/se/visit-info.json';
-import about_en from './locales/en/about.json';
-import about_se from './locales/se/about.json';
-import companies_en from './locales/en/companies.json';
-import companies_se from './locales/se/companies.json';
-import i18next from 'i18next';
-import { I18nextProvider } from 'react-i18next';
+import common_en from "./locales/en/common.json";
+import common_se from "./locales/se/common.json";
+import landing_en from "./locales/en/landing.json";
+import landing_se from "./locales/se/landing.json";
+import visitInfo_en from "./locales/en/visit-info.json";
+import visitInfo_se from "./locales/se/visit-info.json";
+import about_en from "./locales/en/about.json";
+import about_se from "./locales/se/about.json";
+import companies_en from "./locales/en/companies.json";
+import companies_se from "./locales/se/companies.json";
+import i18next from "i18next";
+import { I18nextProvider } from "react-i18next";
 
-const availableLanguages: string[] = ['en', 'sv'];
-const userLocale = Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0];
+const availableLanguages: string[] = ["en", "sv"];
+const userLocale = Intl.DateTimeFormat().resolvedOptions().locale.split("-")[0];
 const selectedLanguage = availableLanguages.includes(userLocale)
-    ? userLocale
-    : 'en';
+  ? userLocale
+  : "en";
 console.log(selectedLanguage);
 i18next.init({
-    interpolation: { escapeValue: false },
-    lng: selectedLanguage,
-    resources: {
-        en: {
-            global: global_en,
-            landing: landing_en,
-            visitInfo: visitInfo_en,
-            about: about_en,
-            companies: companies_en,
-        },
-        sv: {
-            global: global_se,
-            landing: landing_se,
-            visitInfo: visitInfo_se,
-            about: about_se,
-            companies: companies_se,
-        },
+  interpolation: { escapeValue: false },
+  lng: selectedLanguage,
+  resources: {
+    en: {
+      common: common_en,
+      landing: landing_en,
+      visitInfo: visitInfo_en,
+      about: about_en,
+      companies: companies_en,
     },
+    sv: {
+      common: common_se,
+      landing: landing_se,
+      visitInfo: visitInfo_se,
+      about: about_se,
+      companies: companies_se,
+    },
+  },
 });
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 if (!rootElement) {
-    throw new Error('Root element not found');
+  throw new Error("Root element not found");
 }
 
 createRoot(rootElement).render(
-    <I18nextProvider i18n={i18next}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </I18nextProvider>
+  <I18nextProvider i18n={i18next}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+  </I18nextProvider>
 );

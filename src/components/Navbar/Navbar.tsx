@@ -6,10 +6,10 @@ import MobileNavbar from './MobileNavbar';
 import linkData from '../../data/links.json';
 
 export interface Link {
-    headLabel: string;
+    headKey: string;
     headHref: string;
     childLinks: {
-        childLabel: string;
+        childKey: string;
         childHref: string;
         hashLink?: string;
     }[];
@@ -18,6 +18,7 @@ export interface Link {
 const Navbar: React.FC = () => {
     const links: Link[] = linkData as Link[];
     const [isSticky, setIsSticky] = useState<boolean>(false);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,14 +29,12 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // offset is used for NavHashLink
     const scrollWithOffset = (el: HTMLElement) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
         const yOffset = -80;
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
     };
 
-    // uses Navlink isActive bool
     const getNavLinkClass = ({ isActive }: { isActive: boolean }): string =>
         `font-semibold text-[20px] text-black relative ${
             isActive

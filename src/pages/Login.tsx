@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { user } from '../structure/genstruct';
+import { user } from '../types/genstruct';
 
 interface loginProps {
     login: (userData: user) => void;

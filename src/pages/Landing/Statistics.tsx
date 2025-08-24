@@ -1,5 +1,5 @@
 import React from 'react';
-import CountUp from '../../components/CountUp/CountUp';
+import CountUp from '../../components/ReactBits/CountUp';
 
 interface StatisticItem {
     value: number | string;
