@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useEffect } from "react";
 import { Company } from "../types/company";
 import { useStrapiCollection } from "../hooks/useStrapi";
 
@@ -28,7 +28,9 @@ export const CompaniesProvider: React.FC<CompaniesProviderProps> = ({
   } = useStrapiCollection("companies", {
     populate: ["logo", "banner", "positions", "programs"],
   });
-
+  useEffect(() => {
+    console.log(companiesData);
+  }, [companiesData]);
   const companies: Company[] = (companiesData?.data as Company[]) || [];
 
   return (

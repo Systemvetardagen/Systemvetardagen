@@ -3,6 +3,7 @@ import {
     useQueryClient,
     UseQueryOptions,
 } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
 import {
     StrapiQueryParams,
     StrapiCollectionResponse,
@@ -100,10 +101,17 @@ export function useStrapiCollection<T>(
         'queryKey' | 'queryFn'
     >
 ) {
+    const { i18n } = useTranslation();
+    
+    const paramsWithLocale = {
+        ...params,
+        locale: i18n.language === 'en' ? 'en' : 'sv'
+    };
+    
     return useQuery({
-        queryKey: ['strapi', endpoint, params],
+        queryKey: ['strapi', endpoint, paramsWithLocale],
         queryFn: () =>
-            fetchStrapi<StrapiCollectionResponse<T>>(endpoint, params),
+            fetchStrapi<StrapiCollectionResponse<T>>(endpoint, paramsWithLocale),
         ...options,
     });
 }
@@ -118,10 +126,18 @@ export function useStrapiSingle<T>(
         'queryKey' | 'queryFn'
     >
 ) {
+    const { i18n } = useTranslation();
+    
+    // Add current locale to params
+    const paramsWithLocale = {
+        ...params,
+        locale: i18n.language === 'en' ? 'en' : 'sv'
+    };
+    
     return useQuery({
-        queryKey: ['strapi', endpoint, id, params],
+        queryKey: ['strapi', endpoint, id, paramsWithLocale],
         queryFn: () =>
-            fetchStrapi<StrapiSingleResponse<T>>(`${endpoint}/${id}`, params),
+            fetchStrapi<StrapiSingleResponse<T>>(`${endpoint}/${id}`, paramsWithLocale),
         enabled: !!id,
         ...options,
     });
@@ -133,9 +149,17 @@ export function useStrapiQuery<T>(
     params?: StrapiQueryParams,
     options?: Omit<UseQueryOptions<T>, 'queryKey' | 'queryFn'>
 ) {
+    const { i18n } = useTranslation();
+    
+    // Add current locale to params
+    const paramsWithLocale = {
+        ...params,
+        locale: i18n.language === 'en' ? 'en' : 'sv'
+    };
+    
     return useQuery({
-        queryKey: ['strapi', endpoint, params],
-        queryFn: () => fetchStrapi<T>(endpoint, params),
+        queryKey: ['strapi', endpoint, paramsWithLocale],
+        queryFn: () => fetchStrapi<T>(endpoint, paramsWithLocale),
         ...options,
     });
 }
