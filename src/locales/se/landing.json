@@ -1,6 +1,6 @@
 {
-    "header": "Systemvetardagen",
-    "sub-header": "Välkommen till",
+    "header": "Systemvetardagen!",
+    "subHeader": "Firar 30 år av",
     "date": {
         "day": "Onsdag",
         "month": "Mars"
@@ -9,37 +9,38 @@
     "hours": "timmar",
     "minutes": "minuter",
     "seconds": "sekunder",
-    "construction": "Sidan renoveras",
     "signup": "Registrera för uppdateringar",
-    "exhibitors": "Se schemat för dagen",
-    "disk": "Systemvetardagen är organiserat av Studentkåren DISK vid Institutionen för data- och systemvetenskap under Stockholms Universitet",
+    "exhibitors": "Se alla utställare",
     "body": {
-        "about": "En av Sveriges största arbetsmarknadsdagar för studenter och arbetsgivare inom IT-branschen",
-        "meet-companies": "Träffa {{numberOfCompanies}} företag från IT-branschen",
-        "almost-there": {
-            "header": "Snart är det dags!",
-            "p1": "För 29e året i rad arrangeras Systemvetardagen på Stockholms universitet Campus Kista.",
-            "p2": "Det är Studentkåren DISKs från Institutionen för data- och systemvetenskap (DSV) egna arbetsmarknadsdag.",
-            "p3": "Alla studenter är välkomna (även om du inte går på Stockholms universitet) och det är helt kostnadsfritt att delta - det är bara att dyka upp!",
-            "nearlyDone": "Snart färdig!",
-            "contactemail": "För att kontakta oss, mejla oss på"
+        "anniversary": {
+            "header": "Systemvetardagen 2026",
+            "subHeader": "Tre decennier av att koppla samman med toppföretag",
+            "body": "I år firar vi den <1>30:e årliga Systemvetardagen</1>, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av <2>Studentkåren DISK</2>, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige. Oavsett om du söker praktikplatser, heltidstjänster eller bara vill utforska de senaste trenderna inom IT, är <3>Systemvetardagen 2026</3> platsen att vara på. Följ med oss för en dag av nätverkande, inspirerande föreläsningar och spännande möjligheter att träffa dina framtida kollegor."
         },
-        "lectures": "Föreläsningar och evenemang",
-        "read-more": "Om oss",
-        "get-here": "Hitta hit",
-        "tips": {
-            "header": "Tips for those participating",
-            "before": {
-                "header": "Inför mässan",
-                "t1": "Uppdatera ditt CV och ha det lättillgängligt så att du enkelt kan ge eller skicka det vid förfrågan.",
-                "t2": "Kolla igenom katalogen och notera vilka företag du är intresserad av att prata med!",
-                "t3": "Kolla in vilka företagsevent som du är intresserad av att gå på."
-            },
-            "during": {
-                "header": "Inför mässan",
-                "t1": "Använd mässkartan för att hitta företagen du är intresserad av.",
-                "t2": "Gå runt på mässgolvet och prata med företagen. De är där för att få kontakt med studenter, så passa på!",
-                "t3": "Under dagen kommer det att hållas företagsevent i Aula NOD. Kolla schemat efter intressanta event!."
+        "stats": {
+            "visitors": "Besökare",
+            "exhibitors": "Utställare",
+            "years": "År!",
+            "unlimited": "Obegränsade",
+            "opportunities": "Möjligheter"
+        },
+        "fairie": {
+            "header": "Bli en <1>Fair'ie</1>",
+            "body": "Gå med i teamet som gör mässan möjlig! Som mässfunktionär hjälper du till med huvudlogistiken samtidigt som du fortfarande har gott om tid att njuta av allt mässan har att erbjuda. Dessutom är du inbjuden till vår speciella Tackfest",
+            "cards": {
+                "help": {
+                    "header": "Hjälp mässan",
+                    "body": "Stöd logistiken och se till att allt går smidigt för besökarna."
+                },
+                "fair": {
+                    "header": "Upplev mässan",
+                    "body": "Du har fortfarande gott om tid att njuta av evenemangen, montrar och aktiviteter."
+                },
+                "party": {
+                    "header": "Tackfest",
+                    "body": "Fira med alla mässfunktionärer på vår exklusiva uppskattningsfest!"
+                },
+                "button": "Registrera dig"
             }
         },
         "qr-codes": {

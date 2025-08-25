@@ -7,7 +7,6 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
         if (!companies) return [];
 
         return companies.filter((company) => {
-            // Search filter - check company name, slogan, and area of business
             const searchTerm = filters.search.toLowerCase().trim();
             if (searchTerm) {
                 const searchableText = [
@@ -19,7 +18,7 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
                 }
             }
 
-            // Program filter - company must have at least one of the selected programs
+            // company must have at least one of the selected programs and more than 0 positions are selected
             if (filters.programs.size > 0) {
                 const hasMatchingProgram = company.programs.some(companyProgram => 
                     filters.programs.has(companyProgram.id)
@@ -29,7 +28,7 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
                 }
             }
 
-            // Position filter - company must have at least one of the selected positions
+            //company must have at least one of the selected positions and more than 0 positions are selected
             if (filters.positions.size > 0) {
                 const hasMatchingPosition = company.positions.some(companyPosition => 
                     filters.positions.has(companyPosition.id)

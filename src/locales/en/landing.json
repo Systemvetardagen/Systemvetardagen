@@ -1,6 +1,6 @@
 {
-    "header": "Systemvetardagen",
-    "sub-header": "Welcome to",
+    "header": "Systemvetardagen!",
+    "subHeader": "Celebrating 30 years of",
     "date": {
         "day": "Wednesday",
         "month": "March"
@@ -9,37 +9,39 @@
     "hours": "hours",
     "minutes": "minutes",
     "seconds": "seconds",
-    "construction": "Site under construction",
     "signup": "Sign up for updates",
-    "exhibitors": "View the schedule",
-    "disk": "Systemvetardagen is organized by the Student Union DISK at the Department of Computer and Systems Sciences at Stockholm University",
+    "exhibitors": "Browse All Exhibitors",
     "body": {
-        "about": "One of the biggest job fairs in Sweden for students and employers in the IT‑business.",
-        "meet-companies": "Meet {{numberOfCompanies}} companies from the IT industry",
-        "almost-there": {
-            "header": "We're almost there!",
-            "p1": "For the 29th year in a row, Systemvetardagen is arranged at Stockholm University Campus Kista.",
-            "p2": "It is the job fair day organized by DISK, the student union of the Department of Computer and Systems Sciences (DSV).",
-            "p3": "All students are welcome (even if you are not a student at Stockholm University) and the entire event is free - just show up!",
-            "nearlyDone": "Nearly Done!",
-            "contactemail": "To contact us, email us at"
+        "anniversary": {
+            "header": "Systemvetardagen 2026",
+            "subHeader": "Three decades of connecting with top companies",
+            "body": "This year marks the <1>30th annual Systemvetardagen</1>, the premier tech job fair for students and professionals in the IT and System Science field! Organized by <2>Studentkåren DISK</2>, Systemvetardagen has been the go-to event for fostering connections between ambitious tech students and leading companies in Sweden. Whether you're looking for internships, full-time positions, or just want to explore the latest trends in IT, <3>Systemvetardagen 2026</3> is the place to be. Join us for a day of networking, inspiring talks and exciting opportunities to meet your future colleagues.",
+            "body2": "Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är Systemvetardagen 2026 platsen att vara på. Följ med oss på en dag fylld av nätverkande, inspirerande föreläsningar och spännande möjligheter att möta dina framtida kollegor."
         },
-        "lectures": "Lectures and events",
-        "read-more": "About us",
-        "get-here": "Get here",
-        "tips": {
-            "header": "Tips for those participating",
-            "before": {
-                "header": "Before the fair",
-                "t1": "Update your CV and have it easily accessible so you can quickly hand it over or send it upon request.",
-                "t2": "Browse through the catalog and note which companies you're interested in talking to!",
-                "t3": "Check out the company events you're interested in attending."
-            },
-            "during": {
-                "header": "During the fair",
-                "t1": "Use the fair map to find the companies you're interested in.",
-                "t2": "Walk around the exhibition floor and talk to the companies. They're there to connect with students, so take the opportunity!",
-                "t3": "Throughout the day, company events will be held in Aula NOD. Check the schedule for interesting events!"
+        "stats": {
+            "visitors": "Visitors",
+            "exhibitors": "Exhibitors",
+            "years": "Years!",
+            "unlimited": "Unlimited",
+            "opportunities": "Opportunities"
+        },
+        "fairie": {
+            "header": "Become a <1>Fair'ie</1>",
+            "body": "Join the team that makes the fair possible! As a Fair'ie you'll help with the main logistics while still having plenty of time to enjoy everything the fair has to offer. Plus, you're invited to our special Thank You Party",
+            "cards": {
+                "help": {
+                    "header": "Help the Fair",
+                    "body": "Support logistics and ensure everything runs smoothly for visitors."
+                },
+                "fair": {
+                    "header": "Experience the Fair",
+                    "body": "You'll still have plenty of time to enjoy the events, booths and activities."
+                },
+                "party": {
+                    "header": "Thank You Party",
+                    "body": "Celebrate with all Fair'ies at our exclusive appreciation party!"
+                },
+                "button": "Sign up"
             }
         },
         "qr-codes": {
