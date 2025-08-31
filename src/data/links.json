@@ -1,76 +1,76 @@
 [
   {
-    "headKey": "navbar.home.headLabel",
-    "headHref": "/",
+    "section": "home",
+    "href": "/",
     "childLinks": [
       {
-        "childKey": "navbar.home.childLinks.30-years",
-        "childHref": "/",
+        "key": "30-years",
+        "href": "/",
         "hashLink": "30"
       },
       {
-        "childKey": "navbar.home.childLinks.join-team",
-        "childHref": "/",
+        "key": "join-team",
+        "href": "/",
         "hashLink": "fairie"
       },
       {
-        "childKey": "navbar.home.childLinks.stay-updated",
-        "childHref": "/signup",
+        "key": "stay-updated",
+        "href": "/signup",
         "hashLink": "signup"
       }
     ]
   },
   {
-    "headKey": "navbar.companies.headLabel",
-    "headHref": "/companies",
+    "section": "companies",
+    "href": "/companies",
     "childLinks": [
       {
-        "childKey": "navbar.companies.childLinks.all",
-        "childHref": "/companies"
+        "key": "all",
+        "href": "/companies"
       },
       {
-        "childKey": "navbar.companies.childLinks.signup",
-        "childHref": "/companies/signup"
+        "key": "signup",
+        "href": "/companies/signup"
       },
       {
-        "childKey": "navbar.companies.childLinks.sponsor",
-        "childHref": "/companies/signup",
+        "key": "sponsor",
+        "href": "/companies/signup",
         "hashLink": "sponsor"
       }
     ]
   },
   {
-    "headKey": "navbar.visit-info.headLabel",
-    "headHref": "/visit-info",
+    "section": "visit-info",
+    "href": "/visit-info",
     "childLinks": [
       {
-        "childKey": "navbar.visit-info.childLinks.events",
-        "childHref": "/visit-info",
+        "key": "events",
+        "href": "/visit-info",
         "hashLink": "events"
       },
       {
-        "childKey": "navbar.visit-info.childLinks.map",
-        "childHref": "/visit-info",
+        "key": "map",
+        "href": "/visit-info",
         "hashLink": "map"
       },
       {
-        "childKey": "navbar.visit-info.childLinks.get-here",
-        "childHref": "/visit-info",
+        "key": "get-here",
+        "href": "/visit-info",
         "hashLink": "get-here"
       }
     ]
   },
   {
-    "headKey": "navbar.about.headLabel",
-    "headHref": "/about",
+    "section": "about",
+    "href": "/about",
     "childLinks": [
       {
-        "childKey": "navbar.about.childLinks.systemvetardagen",
-        "childHref": "/about"
+        "key": "systemvetardagen",
+        "href": "/about"
       },
       {
-        "childKey": "navbar.about.childLinks.project-group",
-        "childHref": "/about",
+        "key": "project-group",
+        "href": "/about",
         "hashLink": "project-group"
       }
     ]

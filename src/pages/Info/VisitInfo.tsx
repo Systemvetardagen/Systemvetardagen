@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SignupLink from '../components/SignupLink';
-import Partners from '../components/Partners';
-import lecturesData from '../data/lectures.json';
-import FadeInSection from '../components/FadeInSection';
+import SignupLink from '../../components/SignupLink';
+import Partners from '../../components/Partners';
+import lecturesData from '../../data/lectures.json';
+import FadeInSection from '../../components/FadeInSection';
 
 const lectures: Lecture[] = lecturesData;
 

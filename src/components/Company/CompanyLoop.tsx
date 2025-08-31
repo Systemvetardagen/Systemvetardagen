@@ -1,8 +1,5 @@
 import React from "react";
 import LogoLoop, { LogoItem } from "../ReactBits/LogoLoop";
-import companiesData from "../../assets/companies.json";
-import type { Company } from "../../assets/companies";
-import { useCompanies } from "../../context/CompaniesContext";
 
 interface CompanyLoopProps {
   className?: string;
@@ -10,13 +7,13 @@ interface CompanyLoopProps {
 }
 
 const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
-  const { companies, isLoading } = useCompanies();
-  const companyLogos: LogoItem[] = companies.map((company) => {
-    return {
-      src: company.logo?.url,
-      href: `/companies/${company.slug}`,
-    };
-  });
+  const companyLogos: LogoItem[] = [
+    { src: "/companies/accenture/logo.webp", href: "/companies/accenture" },
+    { src: "/companies/deloitte/logo.webp", href: "/companies/deloitte" },
+    { src: "/companies/kpmg/logo.webp", href: "/companies/kpmg" },
+    { src: "/companies/scania/logo.webp", href: "/companies/scania" },
+  ];
+
   return (
     <div
       style={{

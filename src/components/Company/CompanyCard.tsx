@@ -1,38 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface CompanyCardProps {
-    name: string;
-    slug: string;
-    logoUrl?: string;
-    className?: string;
+  name: string;
+  id: string;
+  logoUrl?: string;
+  className?: string;
 }
 
 const CompanyCard: React.FC<CompanyCardProps> = ({
-    name,
-    slug,
-    logoUrl,
-    className,
+  name,
+  id,
+  logoUrl,
+  className,
 }) => {
-    return (
-        <div className="bg-white rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl p-4">
-            <Link className="" to={`/companies/${slug}`}>
-                {logoUrl ? (
-                    <img
-                        src={logoUrl}
-                        className={`object-contain ${className}`}
-                        alt={`${slug} logo`}
-                    />
-                ) : (
-                    <div
-                        className={`flex items-center justify-center text-black text-2xl font-semibold${className}`}
-                    >
-                        {name}
-                    </div>
-                )}
-            </Link>
-        </div>
-    );
+  return (
+    <div className="bg-white rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl p-4">
+      <Link className="" to={`/companies/${id}`}>
+        {logoUrl ? (
+          <img
+            src={logoUrl}
+            className={`object-contain ${className}`}
+            alt={`${id} logo`}
+          />
+        ) : (
+          <div
+            className={`flex items-center justify-center text-black text-2xl font-semibold${className}`}
+          >
+            {name}
+          </div>
+        )}
+      </Link>
+    </div>
+  );
 };
 
 export default CompanyCard;

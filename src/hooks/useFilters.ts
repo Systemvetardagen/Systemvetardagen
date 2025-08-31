@@ -1,15 +1,21 @@
 import { useState } from "react";
-import { Position, Program } from "../types/company";
+import {
+  CandidateProgram,
+  MasterProgram,
+  Position,
+} from "../types/company";
 
 export interface Filters {
   search: string;
-  programs: Set<string>;
-  positions: Set<string>;
+  candidatePrograms: Set<CandidateProgram>;
+  mastersPrograms: Set<MasterProgram>;
+  positions: Set<Position>;
 }
 
 const initialFilters: Filters = {
   search: "",
-  programs: new Set(),
+  candidatePrograms: new Set(),
+  mastersPrograms: new Set(),
   positions: new Set(),
 };
 
@@ -20,25 +26,37 @@ export default function useFilters() {
     setFilters((prev) => ({ ...prev, search }));
   };
 
-  const toggleProgram = (program: Program) => {
+  const toggleCandidateProgram = (program: CandidateProgram) => {
     setFilters((prev) => {
-      const newPrograms = new Set(prev.programs);
-      if (newPrograms.has(program.id)) {
-        newPrograms.delete(program.id);
+      const newCandidatePrograms = new Set(prev.candidatePrograms);
+      if (newCandidatePrograms.has(program)) {
+        newCandidatePrograms.delete(program);
       } else {
-        newPrograms.add(program.id);
+        newCandidatePrograms.add(program);
       }
-      return { ...prev, programs: newPrograms };
+      return { ...prev, candidatePrograms: newCandidatePrograms };
+    });
+  };
+
+  const toggleMasterProgram = (program: MasterProgram) => {
+    setFilters((prev) => {
+      const newMasterPrograms = new Set(prev.mastersPrograms);
+      if (newMasterPrograms.has(program)) {
+        newMasterPrograms.delete(program);
+      } else {
+        newMasterPrograms.add(program);
+      }
+      return { ...prev, mastersPrograms: newMasterPrograms };
     });
   };
 
   const togglePosition = (position: Position) => {
     setFilters((prev) => {
       const newPositions = new Set(prev.positions);
-      if (newPositions.has(position.id)) {
-        newPositions.delete(position.id);
+      if (newPositions.has(position)) {
+        newPositions.delete(position);
       } else {
-        newPositions.add(position.id);
+        newPositions.add(position);
       }
       return { ...prev, positions: newPositions };
     });
@@ -47,10 +65,18 @@ export default function useFilters() {
   const clearFilters = () => {
     setFilters({
       search: "",
-      programs: new Set(),
+      candidatePrograms: new Set(),
+      mastersPrograms: new Set(),
       positions: new Set(),
     });
   };
 
-  return { filters, setSearch, toggleProgram, togglePosition, clearFilters };
+  return {
+    filters,
+    setSearch,
+    toggleCandidateProgram,
+    toggleMasterProgram,
+    togglePosition,
+    clearFilters,
+  };
 }

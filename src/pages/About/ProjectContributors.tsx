@@ -1,7 +1,7 @@
 import React from 'react';
-import TeamSection from '../components/TeamSection/TeamSection';
-import { teamData, Team } from '../components/TeamSection/teamData.ts';
-import FadeInSection from '../components/FadeInSection.tsx';
+import TeamSection from '../../components/TeamSection/TeamSection.tsx';
+import { teamData, Team } from '../../components/TeamSection/teamData.ts';
+import FadeInSection from '../../components/FadeInSection.tsx';
 
 const ProjectGroup: React.FC = () => {
     return (

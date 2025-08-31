@@ -19,19 +19,27 @@ export const useCompanyFilter = (companies: Company[] | undefined, filters: Filt
             }
 
             // company must have at least one of the selected programs and more than 0 positions are selected
-            if (filters.programs.size > 0) {
-                const hasMatchingProgram = company.programs.some(companyProgram => 
-                    filters.programs.has(companyProgram.id)
+            if (filters.candidatePrograms.size > 0) {
+                const hasMatchingProgram = company.candidatePrograms.some(candidateProgram => 
+                    filters.candidatePrograms.has(candidateProgram)
                 );
                 if (!hasMatchingProgram) {
                     return false;
                 }
             }
-
+            if (filters.mastersPrograms.size > 0) {
+                const hasMatchingProgram = company.masterPrograms.some(masterProgram => 
+                    filters.mastersPrograms.has(masterProgram)
+                );
+                if (!hasMatchingProgram) {
+                    return false;
+                }
+            }
+            
             //company must have at least one of the selected positions and more than 0 positions are selected
             if (filters.positions.size > 0) {
-                const hasMatchingPosition = company.positions.some(companyPosition => 
-                    filters.positions.has(companyPosition.id)
+                const hasMatchingPosition = company.positions.some(position => 
+                    filters.positions.has(position)
                 );
                 if (!hasMatchingPosition) {
                     return false;

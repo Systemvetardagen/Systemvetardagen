@@ -5,10 +5,10 @@ import {
     masterPrograms,
     positions,
     Company,
-} from '../assets/companies';
-import companiesData from '../assets/companies.json';
+} from '../../assets/companies';
+import companiesData from '../../assets/companies.json';
 import { useTranslation } from 'react-i18next';
-import FadeInSection from '../components/FadeInSection';
+import FadeInSection from '../../components/FadeInSection';
 import { Link } from 'react-router-dom';
 
 const Companies: React.FC = () => {

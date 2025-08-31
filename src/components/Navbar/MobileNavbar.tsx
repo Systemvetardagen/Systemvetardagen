@@ -81,32 +81,32 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
           {links.map((link, index) => (
             <div key={index}>
               <NavLink
-                to={link.headHref}
+                to={link.href}
                 className={getNavLinkClass}
                 onClick={() => setIsOpen(false)}
               >
-                {t(link.headKey)}
+                {t(`navbar.${link.section}.headLabel`)}
               </NavLink>
               {link.childLinks.map((childLink, childIndex) =>
                 childLink.hashLink ? (
                   <NavHashLink
-                    to={childLink.childHref.concat("#" + childLink.hashLink)}
+                    to={childLink.href.concat("#" + childLink.hashLink)}
                     key={childIndex}
                     smooth
                     scroll={scrollWithOffset}
                     className="hover:text-link whitespace-nowrap px-2 py-1 rounded block ml-4"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t(childLink.childKey)}
+                    {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
                   </NavHashLink>
                 ) : (
                   <NavLink
                     key={childIndex}
-                    to={childLink.childHref}
+                    to={childLink.href}
                     className="hover:text-link whitespace-nowrap px-2 py-1 rounded block ml-4"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t(childLink.childKey)}
+                    {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
                   </NavLink>
                 )
               )}

@@ -20,8 +20,8 @@ const DesktopNavbar: FC<DesktopNavbarProps> = ({
     <div className="hidden lg:flex justify-center flex-grow space-x-20 font-bold font-heading tracking-wide">
       {links.map((link, index) => (
         <div key={index} className="relative group">
-          <NavLink to={link.headHref} className={getNavLinkClass}>
-            <span className="hover:text-link">{t(link.headKey)}</span>
+          <NavLink to={link.href} className={getNavLinkClass}>
+            <span className="hover:text-link">{t(`navbar.${link.section}.headLabel`)}</span>
           </NavLink>
           {/* invisible bridge div */}
           <div className="absolute left-1/2 -translate-x-1/2 w-full h-4 bg-transparent"></div>
@@ -29,21 +29,21 @@ const DesktopNavbar: FC<DesktopNavbarProps> = ({
             {link.childLinks.map((childLink, index) =>
               childLink.hashLink ? (
                 <NavHashLink
-                  to={childLink.childHref.concat("#" + childLink.hashLink)}
+                  to={childLink.href.concat("#" + childLink.hashLink)}
                   key={index}
                   smooth
                   scroll={scrollWithOffset}
                   className="hover:text-link whitespace-nowrap px-2 py-1 rounded"
                 >
-                  {t(childLink.childKey)}
+                  {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
                 </NavHashLink>
               ) : (
                 <NavLink
                   key={index}
-                  to={childLink.childHref}
+                  to={childLink.href}
                   className="hover:text-link whitespace-nowrap px-2 py-1 rounded"
                 >
-                  {t(childLink.childKey)}
+                  {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
                 </NavLink>
               )
             )}

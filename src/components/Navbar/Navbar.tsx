@@ -6,11 +6,11 @@ import MobileNavbar from './MobileNavbar';
 import linkData from '../../data/links.json';
 
 export interface Link {
-    headKey: string;
-    headHref: string;
+    section: string;
+    href: string;
     childLinks: {
-        childKey: string;
-        childHref: string;
+        key: string;
+        href: string;
         hashLink?: string;
     }[];
 }
