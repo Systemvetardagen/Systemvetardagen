@@ -1,0 +1,61 @@
+{
+    "header": "Systemvetardagen!",
+    "subHeader": "Celebrating 30 years of",
+    "date": {
+        "day": "Wednesday",
+        "month": "March"
+    },
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "signup": "Sign up for updates",
+    "exhibitors": "Browse All Exhibitors",
+    "body": {
+        "anniversary": {
+            "header": "Systemvetardagen 2026",
+            "subHeader": "Three decades of connecting with top companies",
+            "body": "This year marks the <1>30th annual Systemvetardagen</1>, the premier tech job fair for students and professionals in the IT and System Science field! Organized by <2>Studentkåren DISK</2>, Systemvetardagen has been the go-to event for fostering connections between ambitious tech students and leading companies in Sweden. Whether you're looking for internships, full-time positions, or just want to explore the latest trends in IT, <3>Systemvetardagen 2026</3> is the place to be. Join us for a day of networking, inspiring talks and exciting opportunities to meet your future colleagues.",
+            "body2": "Whether you're looking for internships, full-time positions, or just want to explore the latest trends in IT, Systemvetardagen 2026 is the place to be. Join us for a day filled with networking, inspiring lectures, and exciting opportunities to meet your future colleagues."
+        },
+        "stats": {
+            "visitors": "Visitors",
+            "exhibitors": "Exhibitors",
+            "years": "Years!",
+            "unlimited": "Unlimited",
+            "opportunities": "Opportunities"
+        },
+        "fairie": {
+            "header": "Become a <1>Fair'ie</1>",
+            "body": "Join the team that makes the fair possible! As a Fair'ie you'll help with the main logistics while still having plenty of time to enjoy everything the fair has to offer. Plus, you're invited to our special Thank You Party",
+            "cards": {
+                "help": {
+                    "header": "Help the Fair",
+                    "body": "Support logistics and ensure everything runs smoothly for visitors."
+                },
+                "fair": {
+                    "header": "Experience the Fair",
+                    "body": "You'll still have plenty of time to enjoy the events, booths and activities."
+                },
+                "party": {
+                    "header": "Thank You Party",
+                    "body": "Celebrate with all Fair'ies at our exclusive appreciation party!"
+                },
+                "button": "Sign up"
+            }
+        },
+        "qr-codes": {
+            "header": "Book a speed dating session with a company",
+            "buttonKPMG": "Book with KPMG",
+            "buttonNORTHWAVE": "Book with Northwave",
+            "buttonSOURCECOM": "Book with Sourcecom",
+            "buttoneEBUILDER": "Book with eBuilder",
+            "buttonECICERON": "Book with eCiceron"
+        },
+        "uppdated": {
+            "header": "Keep yourself updated",
+            "body": "Would you like to receive updates about Systemvetardagen with tailored information via email?",
+            "button": "Click here!"
+        }
+    }
+}

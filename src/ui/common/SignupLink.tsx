@@ -1,0 +1,26 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
+import { Button } from ".";
+
+const SignupLink: React.FC = () => {
+  const signupUrl: string = "/signup";
+  const [t] = useTranslation<string>("landing");
+  return (
+    <div className="flex flex-col items-center text-center gap-6 p-6 rounded-md shadow-md">
+      <h3 className="text-xl md:text-2xl lg:text-4xl px-2">
+        {t("body.uppdated.header")}
+      </h3>
+      <p className="text-lg text-gray-600 font-light">
+        {t("body.uppdated.body")}
+      </p>
+      <NavLink to={signupUrl}>
+        <Button size="md" variant="secondary">
+          {t("body.uppdated.button")}
+        </Button>
+      </NavLink>
+    </div>
+  );
+};
+
+export default SignupLink;
