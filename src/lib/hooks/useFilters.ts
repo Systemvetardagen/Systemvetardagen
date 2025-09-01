@@ -1,9 +1,5 @@
-import { useState } from "react";
-import {
-  CandidateProgram,
-  MasterProgram,
-  Position,
-} from "../types/company";
+import { useEffect, useState } from "react";
+import { CandidateProgram, MasterProgram, Position } from "../types/company";
 
 export interface Filters {
   search: string;
@@ -19,8 +15,46 @@ const initialFilters: Filters = {
   positions: new Set(),
 };
 
-export default function useFilters() {
-  const [filters, setFilters] = useState<Filters>(initialFilters);
+function serializeFilters(filters: Filters): string {
+  return JSON.stringify({
+    ...filters,
+    candidatePrograms: Array.from(filters.candidatePrograms),
+    masterPrograms: Array.from(filters.mastersPrograms),
+    positions: Array.from(filters.positions),
+  });
+}
+
+function deserializeFilters(raw: string | null): Filters {
+  if (!raw) return initialFilters;
+  try {
+    const obj = JSON.parse(raw);
+    return {
+      search: obj.search ?? "",
+      candidatePrograms: new Set(
+        (obj.candidatePrograms as CandidateProgram[]) ?? []
+      ),
+      mastersPrograms: new Set((obj.mastersPrograms as MasterProgram[]) ?? []),
+      positions: new Set((obj.positions as Position[]) ?? []),
+    };
+  } catch (e) {
+    console.error("Failed to parse filters from sessionStorage", e);
+    return {
+      search: "",
+      candidatePrograms: new Set(),
+      mastersPrograms: new Set(),
+      positions: new Set(),
+    };
+  }
+}
+
+export default function useFilters(key: string) {
+  const [filters, setFilters] = useState<Filters>(() =>
+    deserializeFilters(sessionStorage.getItem(key))
+  );
+
+  useEffect(() => {
+    sessionStorage.setItem(key, serializeFilters(filters));
+  }, [key, filters]);
 
   const setSearch = (search: string) => {
     setFilters((prev) => ({ ...prev, search }));
