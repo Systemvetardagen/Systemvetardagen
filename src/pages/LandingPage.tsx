@@ -4,6 +4,7 @@ import { Button, SignupLink } from "@/ui/common";
 import { CompanyLoop } from "@/ui/company";
 import { Hero, Anniversary, Statistics, FairieSignup } from "@/ui/landing";
 import { useTranslation } from "react-i18next";
+import Gallery from "@/ui/landing/Gallery";
 
 export default function LandingPage() {
   const [t] = useTranslation("landing");
@@ -20,9 +21,10 @@ export default function LandingPage() {
             <span>{t("exhibitors")}</span>
           </Button>
         </NavLink>
-        <div className="w-full max-w-[90%] md:max-w-4xl lg:max-w-6xl">
+        <div className="w-full max-w-[90%] md:max-w-3xl flex flex-col items-center">
           <Anniversary />
-          <Statistics className="my-20" />
+          <Statistics />
+          <Gallery />
           <FairieSignup />
           <SignupLink />
         </div>

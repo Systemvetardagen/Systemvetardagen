@@ -2,6 +2,7 @@ import { JSX } from "react";
 import { PartyPopper, HeartHandshake, Star } from "lucide-react";
 import { Button } from "../common";
 import { Trans } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 interface Card {
   icon: JSX.Element;
@@ -27,7 +28,7 @@ const FairieSignup = () => {
   return (
     <div
       id="fairie"
-      className="flex flex-col items-center text-center gap-6 p-6 rounded-md"
+      className="flex flex-col items-center text-center gap-6 p-6 mt-10 rounded-md w-full"
     >
       <h3 className="font-semibold text-2xl md:text-4xl">
         <Trans
@@ -38,7 +39,7 @@ const FairieSignup = () => {
           }}
         />
       </h3>
-      <h4 className="">
+      <h4 className="text-lg font-light">
         <Trans i18nKey={"body.fairie.body"} ns="landing" />
       </h4>
       <div className="flex flex-col md:flex-row gap-6 w-full mt-4 md:justify-center md:items-stretch">
@@ -63,9 +64,11 @@ const FairieSignup = () => {
           </div>
         ))}
       </div>
-      <a href={SignupUrl} target="_blank" rel="noopener noreferrer">
-        <Button size="md">Sign Up</Button>
-      </a>
+       <NavLink to={SignupUrl} className={"w-full"} target="_blank">
+        <Button size="md" className="w-full" variant="primary">
+          Sign Up
+        </Button>
+      </NavLink>
     </div>
   );
 };

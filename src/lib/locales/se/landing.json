@@ -1,6 +1,6 @@
 {
     "header": "Systemvetardagen!",
-    "subHeader": "Firar 30 år av",
+    "subHeader": "30 år av",
     "date": {
         "day": "Onsdag",
         "month": "Mars"
@@ -14,9 +14,9 @@
     "body": {
         "anniversary": {
             "header": "Systemvetardagen 2026",
-            "subHeader": "Tre decennier av att koppla samman med toppföretag",
-            "body": "I år firar vi den <1>30:e årliga Systemvetardagen</1>, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av <2>Studentkåren DISK</2>, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige. Oavsett om du söker praktikplatser, heltidstjänster eller bara vill utforska de senaste trenderna inom IT, är <3>Systemvetardagen 2026</3> platsen att vara på. Följ med oss för en dag av nätverkande, inspirerande föreläsningar och spännande möjligheter att träffa dina framtida kollegor.",
-            "body2": "Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är Systemvetardagen 2026 platsen att vara på. Följ med oss på en dag fylld av nätverkande, inspirerande föreläsningar och spännande möjligheter att möta dina framtida kollegor."
+            "subHeader": "Tre decennier av att skapa kontakter med toppföretag",
+            "body": "I år firar vi den <1>30:e årliga Systemvetardagen</1>, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av <2>Studentkåren DISK</2>, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige.",
+            "body2": "Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är <1>Systemvetardagen 2026</1> platsen att vara på. Följ med oss på en dag fylld av nätverkande, inspirerande föreläsningar och spännande möjligheter att möta dina framtida kollegor."
         },
         "stats": {
             "visitors": "Besökare",

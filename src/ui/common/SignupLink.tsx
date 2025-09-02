@@ -7,15 +7,15 @@ const SignupLink: React.FC = () => {
   const signupUrl: string = "/signup";
   const [t] = useTranslation<string>("landing");
   return (
-    <div className="flex flex-col items-center text-center gap-6 p-6 rounded-md shadow-md">
-      <h3 className="text-xl md:text-2xl lg:text-4xl px-2">
+    <div className="flex flex-col items-center text-center gap-6 p-6 my-10 rounded-md shadow-md w-full">
+      <h3 className="text-2xl lg:text-4xl font-semibold px-2">
         {t("body.uppdated.header")}
       </h3>
-      <p className="text-lg text-gray-600 font-light">
+      <p className="text-lg font-light">
         {t("body.uppdated.body")}
       </p>
-      <NavLink to={signupUrl}>
-        <Button size="md" variant="secondary">
+      <NavLink to={signupUrl} className="w-full">
+        <Button size="md" variant="secondary" className="w-full">
           {t("body.uppdated.button")}
         </Button>
       </NavLink>

@@ -6,6 +6,7 @@ import companiesData from "@/assets/companies.json";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "@/ui";
 import { Link } from "react-router-dom";
+import Seperator from "@/ui/common/Seperator";
 
 const Companies: React.FC = () => {
   const companies: Company[] = companiesData;
@@ -315,7 +316,7 @@ const Companies: React.FC = () => {
                 />
               ))}
             </div>
-            <div className="w-full h-1 my-10 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+            <Seperator className="my-10" />
           </div>
         ) : (
           <button

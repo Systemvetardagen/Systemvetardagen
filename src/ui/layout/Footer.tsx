@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
+import Seperator from "../common/Seperator";
 
 const Footer = () => {
   const [t] = useTranslation("common");
   return (
     <footer className="bg-white w-full">
-      <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+      <Seperator />
       <div className="container mx-auto flex justify-evenly px-4 py-6">
         {" "}
         <div className="hidden md:block text-left text-gray-600">

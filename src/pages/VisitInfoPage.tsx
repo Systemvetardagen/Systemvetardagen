@@ -158,8 +158,6 @@ const VisitInfo: React.FC = () => {
             <div className="max-w-[90%]">
                 <SignupLink />
             </div>
-            <br />
-            <br />
             <Partners />
             <div className="mt-[5vh]"></div>
         </div>

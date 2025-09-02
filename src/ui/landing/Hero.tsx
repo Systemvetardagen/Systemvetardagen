@@ -3,12 +3,12 @@ import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { Countdown, SplitText } from "../common";
 import { triggerConfetti } from "@/lib/utilities/confetti";
 import { useTranslation } from "react-i18next";
+import { FadeInSection } from "../layout";
 
 const Hero = () => {
   const targetDate: Date = new Date("2026-03-26T16:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
-  
 
   const toggleFireworks = () => {
     if (!ref.current) return;
@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="min-h-[800px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-evenly font-poppins  px-4 md:px-20"
+      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center font-poppins  px-4 md:px-20"
     >
       <Fireworks
         ref={ref}
@@ -45,12 +45,14 @@ const Hero = () => {
         }}
       />
       <div className="flex flex-col z-10 text-center md:text-left">
-        <h2 className="text-2xl md:text-4xl font-semibold mb-1">
-          {t("subHeader")}
-        </h2>
+        <FadeInSection direction="fadeRight">
+          <h2 className="text-2xl md:text-4xl font-semibold mb-1">
+            {t("subHeader")}
+          </h2>
+        </FadeInSection>
         <SplitText
           text={t("header")}
-          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
+          className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
           delay={70}
           duration={1}
           ease="elastic.out(1, 0.3)"
@@ -62,8 +64,12 @@ const Hero = () => {
           onLetterAnimationComplete={handleAnimationComplete}
         ></SplitText>
         <Countdown targetDate={targetDate} />
-        <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
-        <h3 className="md:text-2xl">{t("date.day")} 26 {t("date.month")} 10:00 - 16:00</h3>
+        <FadeInSection direction="fadeLeft">
+          <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
+          <h3 className="md:text-2xl">
+            {t("date.day")} 26 {t("date.month")} 10:00 - 16:00
+          </h3>
+        </FadeInSection>
       </div>
       <img src="" alt="" className="h-auto w-[30vw] rounded-md" />
       <button

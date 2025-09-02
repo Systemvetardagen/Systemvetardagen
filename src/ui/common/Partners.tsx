@@ -10,7 +10,7 @@ interface Partner {
 const partnersData: Partner[] = partners;
 
 const Partners = () => {
-    const { t } = useTranslation('global');
+    const { t } = useTranslation('common');
 
     return (
         <div className="w-screen flex flex-col items-center max-w-[90vw]">
