@@ -53,7 +53,7 @@ const Hero = () => {
         </h2>
         <SplitText
           text={t("header")}
-          className="text-3xl md:text-7xl font-bold mb-10 overflow-visible"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
           delay={70}
           duration={1}
           ease="elastic.out(1, 0.3)"
@@ -61,9 +61,10 @@ const Hero = () => {
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
-          textAlign="center"
+          textAlign="left"
           onLetterAnimationComplete={handleAnimationComplete}
         ></SplitText>
+        {/* <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible">{t("header")}</h1> */}
         <Countdown targetDate={targetDate} />
         <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
         <h3 className="md:text-2xl">{t("date.day")} 26 {t("date.month")} 10:00 - 16:00</h3>
