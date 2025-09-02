@@ -8,17 +8,17 @@ const Hero = () => {
   const targetDate: Date = new Date("2026-03-26T16:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
-
-  const [fireworksRunning, setFireworksRunning] = useState<boolean>(true);
+  
+  const [buttonText, setButtonText] = useState<string>("Disable fireworks")
 
   const toggleFireworks = () => {
     if (!ref.current) return;
     if (ref.current.isRunning) {
       ref.current.stop();
-      setFireworksRunning(false);
+      setButtonText("Enable fireworks")
     } else {
       ref.current.start();
-      setFireworksRunning(true);
+      setButtonText("Disable fireworks")
     }
   };
 
@@ -64,7 +64,6 @@ const Hero = () => {
           textAlign="left"
           onLetterAnimationComplete={handleAnimationComplete}
         ></SplitText>
-        {/* <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible">{t("header")}</h1> */}
         <Countdown targetDate={targetDate} />
         <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
         <h3 className="md:text-2xl">{t("date.day")} 26 {t("date.month")} 10:00 - 16:00</h3>
@@ -74,7 +73,7 @@ const Hero = () => {
         onClick={toggleFireworks}
         className="absolute md:right-20 bottom-10 px-4 py-2 rounded-md bg-white text-black hover:scale-105 transition-all duration-100 cursor-pointer shadow"
       >
-        {fireworksRunning ? "Disable fireworks" : "Enable fireworks"}
+        {buttonText}
       </button>
     </div>
   );
