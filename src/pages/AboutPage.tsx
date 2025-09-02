@@ -18,13 +18,13 @@ const About: React.FC = () => {
             <div className="space-y-6">
               <FadeInSection direction="fadeLeft">
                 <h2 className="text-2xl font-semibold mb-3">{t("header")}</h2>
-                <p className="text-lg leading-relaxed">{t("body")}</p>
+                <p className="text-lg leading-relaxed font-light">{t("body")}</p>
               </FadeInSection>
               <FadeInSection direction="fadeLeft">
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("where-when.header")}
                 </h2>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed font-light">
                   {t("where-when.body")}
                 </p>
               </FadeInSection>
@@ -32,7 +32,7 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("companies.header")}
                 </h2>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed font-light">
                   {t("companies.body")}{" "}
                   <a href="/companies" className="text-link hover:underline">
                     {t("companies.link")}
@@ -44,7 +44,7 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("company-display.header")}
                 </h2>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed font-light" >
                   {t("company-display.body")}{" "}
                   <a
                     href="mailto:systemvetardagen@disk.su.se"

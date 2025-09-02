@@ -14,7 +14,7 @@ const SignupLink: React.FC = () => {
       <p className="text-lg font-light">
         {t("body.uppdated.body")}
       </p>
-      <NavLink to={signupUrl} className="w-full">
+      <NavLink to={signupUrl} className="">
         <Button size="md" variant="secondary" className="w-full">
           {t("body.uppdated.button")}
         </Button>
