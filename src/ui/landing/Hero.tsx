@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { Countdown, SplitText } from "../common";
 import { triggerConfetti } from "@/lib/utilities/confetti";
@@ -9,16 +9,13 @@ const Hero = () => {
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
   
-  const [buttonText, setButtonText] = useState<string>("Disable fireworks")
 
   const toggleFireworks = () => {
     if (!ref.current) return;
     if (ref.current.isRunning) {
       ref.current.stop();
-      setButtonText("Enable fireworks")
     } else {
       ref.current.start();
-      setButtonText("Disable fireworks")
     }
   };
 
@@ -73,7 +70,7 @@ const Hero = () => {
         onClick={toggleFireworks}
         className="absolute md:right-20 bottom-10 px-4 py-2 rounded-md bg-white text-black hover:scale-105 transition-all duration-100 cursor-pointer shadow"
       >
-        {buttonText}
+        Toggle Fireworks
       </button>
     </div>
   );

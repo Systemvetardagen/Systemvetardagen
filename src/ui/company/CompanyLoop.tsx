@@ -27,7 +27,7 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
     >
       <LogoLoop
         logos={companyLogos}
-        speed={120}
+        speed={50}
         direction="left"
         logoHeight={48}
         gap={40}
