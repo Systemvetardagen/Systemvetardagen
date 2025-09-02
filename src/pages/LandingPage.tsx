@@ -2,9 +2,8 @@ import "@/app/App.css";
 import { NavLink } from "react-router-dom";
 import { Button, SignupLink } from "@/ui/common";
 import { CompanyLoop } from "@/ui/company";
-import { Hero, Anniversary, Statistics, FairieSignup } from "@/ui/landing";
+import { Hero, Anniversary, Statistics, FairieSignup, FAQ } from "@/ui/landing";
 import { useTranslation } from "react-i18next";
-import Gallery from "@/ui/landing/Gallery";
 
 export default function LandingPage() {
   const [t] = useTranslation("landing");
@@ -16,15 +15,15 @@ export default function LandingPage() {
         id="body"
         className="py-10 md:px-20 flex flex-col items-center gap-10"
       >
-        <NavLink to={"/companies"}>
+        {/* <NavLink to={"/companies"}>
           <Button variant="outline" size="lg">
             <span>{t("exhibitors")}</span>
           </Button>
-        </NavLink>
+        </NavLink> */}
         <div className="w-full max-w-[90%] md:max-w-3xl flex flex-col items-center">
           <Anniversary />
           <Statistics />
-          <Gallery />
+          <FAQ />
           <FairieSignup />
           <SignupLink />
         </div>

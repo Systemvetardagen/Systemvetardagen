@@ -1,21 +1,18 @@
 import { FC, useState, useEffect } from "react";
 import { Link } from "./Navbar";
 import { NavLink, useLocation } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
 import { LanguageSwitch } from "../common";
 import { useTranslation } from "react-i18next";
 interface MobileNavbarProps {
   links: Link[];
   isSticky: boolean;
   getNavLinkClass: ({ isActive }: { isActive: boolean }) => string;
-  scrollWithOffset: (el: HTMLElement) => void;
 }
 
 const MobileNavbar: FC<MobileNavbarProps> = ({
   links,
   isSticky,
   getNavLinkClass,
-  scrollWithOffset,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const location = useLocation();
@@ -87,29 +84,6 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
               >
                 {t(`navbar.${link.section}.headLabel`)}
               </NavLink>
-              {link.childLinks.map((childLink, childIndex) =>
-                childLink.hashLink ? (
-                  <NavHashLink
-                    to={childLink.href.concat("#" + childLink.hashLink)}
-                    key={childIndex}
-                    smooth
-                    scroll={scrollWithOffset}
-                    className="hover:text-link whitespace-nowrap px-2 py-1 rounded block ml-4"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
-                  </NavHashLink>
-                ) : (
-                  <NavLink
-                    key={childIndex}
-                    to={childLink.href}
-                    className="hover:text-link whitespace-nowrap px-2 py-1 rounded block ml-4"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {t(`navbar.${link.section}.childLinks.${childLink.key}`)}
-                  </NavLink>
-                )
-              )}
             </div>
           ))}
           <div onClick={() => setIsOpen(false)}>

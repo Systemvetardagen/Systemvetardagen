@@ -1,0 +1,36 @@
+{
+  "header": "Frequently Asked Questions",
+  "subHeader": "Find answers to the most common questions about Systemvetardagen",
+  "questions": [
+    {
+      "id": "what-is-systemvetardagen",
+      "question": "What is Systemvetardagen?",
+      "answer": "Systemvetardagen is Sweden's premier tech job fair for IT and System Science students and professionals. It's an annual event organized by Studentkåren DISK that connects ambitious tech talent with leading companies in Sweden."
+    },
+    {
+      "id": "who-can-attend",
+      "question": "Who can attend Systemvetardagen?",
+      "answer": "The event is primarily designed for students and recent graduates in IT, Computer Science, System Science, and related technical fields. However, anyone interested is welcome!"
+    },
+    {
+      "id": "registration-required",
+      "question": "Do I need to register to attend?",
+      "answer": "No, registration is not required to attend Systemvetardagen. But you can always sign up to receive updates."
+    },
+    {
+      "id": "what-to-expect",
+      "question": "What can I expect at the fair?",
+      "answer": "You can expect company booths, networking opportunities, inspiring lectures, career guidance sessions, and the chance to meet potential employers. Many companies also offer on-site interviews and internship opportunities."
+    },
+    {
+      "id": "fairie-program",
+      "question": "What is a Fair'ie?",
+      "answer": "Fair'ies are volunteers who help make the event run smoothly. As a Fair'ie, you'll assist with logistics while still having time to enjoy the fair, plus you're invited to our exclusive Thank You Party!"
+    },
+    {
+      "id": "contact",
+      "question": "How can I get more information?",
+      "answer": "For more information, follow us on social media, or sign up for our newsletter to receive regular updates about the event."
+    }
+  ]
+}

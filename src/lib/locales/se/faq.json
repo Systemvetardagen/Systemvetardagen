@@ -1,0 +1,36 @@
+{
+  "header": "Vanliga frågor",
+  "subHeader": "Hitta svar på de vanligaste frågorna om Systemvetardagen",
+  "questions": [
+    {
+      "id": "what-is-systemvetardagen",
+      "question": "Vad är Systemvetardagen?",
+      "answer": "Systemvetardagen är Sveriges främsta tekniska jobbmässa för IT- och systemvetenskapsstudenter och yrkesverksamma. Det är ett årligt evenemang som organiseras av Studentkåren DISK och som kopplar samman ambitiösa tekniker med ledande företag i Sverige."
+    },
+    {
+      "id": "who-can-attend",
+      "question": "Vem kan delta på Systemvetardagen?",
+      "answer": "Evenemanget är främst utformat för studenter och nyutexaminerade inom IT, datavetenskap, systemvetenskap och relaterade tekniska områden. Men alla är välkomna att delta."
+    },
+    {
+      "id": "registration-required",
+      "question": "Behöver jag registrera mig för att delta?",
+      "answer": "Nej, registrering krävs inte för att delta på Systemvetardagen. Men du kan alltid registrera dig via vår webbplats för att få uppdateringar."
+    },
+    {
+      "id": "what-to-expect",
+      "question": "Vad kan jag förvänta mig på mässan?",
+      "answer": "Du kan förvänta dig företagsmonter, nätverksmöjligheter, inspirerande föreläsningar, karriärvägledningssessioner och chansen att träffa potentiella arbetsgivare. Många företag erbjuder också intervjuer och praktikplatser på plats."
+    },
+    {
+      "id": "fairie-program",
+      "question": "Vad är en Fair'ie?",
+      "answer": "Fair'ies är volontärer som hjälper till att få evenemanget att fungera smidigt. Som Fair'ie hjälper du till med logistik samtidigt som du fortfarande har tid att njuta av mässan, plus du är inbjuden till vår exklusiva Tackfest!"
+    },
+    {
+      "id": "contact",
+      "question": "Hur kan jag få mer information?",
+      "answer": "För mer information kan du kontakta oss via vår webbplats, följa oss på sociala medier eller registrera dig för vårt nyhetsbrev för att få regelbundna uppdateringar om evenemanget."
+    }
+  ]
+}

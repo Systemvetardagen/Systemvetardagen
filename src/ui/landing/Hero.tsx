@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { Countdown, SplitText } from "../common";
-import { triggerConfetti } from "@/lib/utilities/confetti";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 
@@ -10,23 +9,10 @@ const Hero = () => {
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
 
-  const toggleFireworks = () => {
-    if (!ref.current) return;
-    if (ref.current.isRunning) {
-      ref.current.stop();
-    } else {
-      ref.current.start();
-    }
-  };
-
-  const handleAnimationComplete = () => {
-    triggerConfetti();
-  };
-
   return (
     <div
       id="hero"
-      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center font-poppins  px-4 md:px-20"
+      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center md:justify-start font-poppins  px-4 md:px-20"
     >
       <Fireworks
         ref={ref}
@@ -61,7 +47,6 @@ const Hero = () => {
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
           textAlign="left"
-          onLetterAnimationComplete={handleAnimationComplete}
         ></SplitText>
         <Countdown targetDate={targetDate} />
         <FadeInSection direction="fadeLeft">
@@ -71,13 +56,6 @@ const Hero = () => {
           </h3>
         </FadeInSection>
       </div>
-      <img src="" alt="" className="h-auto w-[30vw] rounded-md" />
-      <button
-        onClick={toggleFireworks}
-        className="absolute md:right-20 bottom-10 px-4 py-2 rounded-md bg-white text-black hover:scale-105 transition-all duration-100 cursor-pointer shadow"
-      >
-        Toggle Fireworks
-      </button>
     </div>
   );
 };
