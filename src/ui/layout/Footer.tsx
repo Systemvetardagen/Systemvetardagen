@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-white w-full">
       <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-      <div className="container mx-auto flex justify-evenly items-center px-4 py-6">
+      <div className="container mx-auto flex justify-evenly px-4 py-6">
         {" "}
         <div className="hidden md:block text-left text-gray-600">
           <h3 className="font-bold text-xl">Systemvetardagen 2026</h3>
