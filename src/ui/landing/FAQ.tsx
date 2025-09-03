@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FadeInSection } from "../layout";
 
 interface FAQItem {
   id: string;
@@ -23,8 +24,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="">
-      <div className="max-w-4xl mx-auto">
+      <FadeInSection direction="fadeLeft" className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t("header")}
@@ -67,7 +67,7 @@ const FAQ = () => {
 
               <div
                 id={`faq-answer-${item.id}`}
-                className={`overflow-hidden transition-all duration-700 ${
+                className={`overflow-hidden transition-all duration-500 ${
                   openItems.has(item.id)
                     ? "max-h-96 opacity-100"
                     : "max-h-0 opacity-0"
@@ -80,8 +80,7 @@ const FAQ = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </FadeInSection>
   );
 };
 

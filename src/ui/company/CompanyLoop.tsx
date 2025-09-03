@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LogoLoop, { LogoItem } from "../common/LogoLoop";
 import companiesData from "@/assets/companies.json";
 import { Company } from "@/assets/companies";
@@ -9,6 +9,19 @@ interface CompanyLoopProps {
 }
 
 const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const companies: Company[] = companiesData as Company[];
   const companyLogos: LogoItem[] = companies.map((company) => {
     return {
@@ -29,8 +42,8 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
         logos={companyLogos}
         speed={50}
         direction="left"
-        logoHeight={48}
-        gap={40}
+        logoHeight={isMobile ? 32 : 48}
+        gap={isMobile ? 24 : 40}
         pauseOnHover
         scaleOnHover
         fadeOut

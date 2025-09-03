@@ -1,12 +1,9 @@
 import "@/app/App.css";
-import { NavLink } from "react-router-dom";
-import { Button, SignupLink } from "@/ui/common";
+import { SignupLink } from "@/ui/common";
 import { CompanyLoop } from "@/ui/company";
 import { Hero, Anniversary, Statistics, FairieSignup, FAQ } from "@/ui/landing";
-import { useTranslation } from "react-i18next";
 
 export default function LandingPage() {
-  const [t] = useTranslation("landing");
   return (
     <div>
       <Hero />

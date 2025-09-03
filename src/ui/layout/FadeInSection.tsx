@@ -3,10 +3,9 @@ import { useInView } from 'react-intersection-observer';
 
 type Direction = 'fadeUp' | 'fadeDown' | 'fadeRight' | 'fadeLeft';
 
-interface FadeInSectionProps {
+interface FadeInSectionProps extends React.HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
     direction: Direction;
-    className?: string;
     triggerOnce?: boolean;
 }
 
@@ -14,7 +13,8 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     children,
     direction,
     className,
-    triggerOnce,
+    triggerOnce = true,
+    ...props
 }) => {
     const { ref, inView } = useInView({
         threshold: 0.2,
@@ -24,9 +24,10 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     return (
         <div
             ref={ref}
-            className={`opacity-0 ${className} ${
+            className={`opacity-0 ${className || ''} ${
                 inView ? `opacity-100 ${direction}` : ''
             }`}
+            {...props}
         >
             {children}
         </div>

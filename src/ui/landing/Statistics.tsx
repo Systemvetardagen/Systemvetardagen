@@ -1,5 +1,6 @@
 import React from "react";
 import { CountUp } from "../common";
+import { FadeInSection } from "../layout";
 import { useTranslation } from "react-i18next";
 
 interface StatisticItem {
@@ -52,39 +53,41 @@ const Statistics: React.FC<StatisticsProps> = ({
 }) => {
   const [t] = useTranslation("landing");
   return (
-    <div className="mb-10 hidden md:block">
-      <div
-        className={`flex w-full justify-center ${className}`}
-      >
-        {statistics.map((stat, index) => (
-          <div
-            key={index}
-            className="p-10 rounded-md flex flex-col items-center"
-          >
-            <div>
-              {stat.valueKey ? (
-                <span className="text-3xl md:text-5xl font-semibold">
-                  {t("body.stats.unlimited")}
-                </span>
-              ) : (
-                <CountUp
-                  from={0}
-                  to={stat.value}
-                  separator={stat.separator || ","}
-                  direction="up"
-                  duration={stat.duration || 1}
-                  className="text-5xl font-semibold"
-                />
-              )}
-              {stat.showPlus && (
-                <span className="text-5xl font-semibold">+</span>
-              )}
+    <FadeInSection direction="fadeUp" triggerOnce>
+      <div className="mb-10 hidden md:block">
+        <div
+          className={`flex w-full justify-center ${className}`}
+        >
+          {statistics.map((stat, index) => (
+            <div
+              key={index}
+              className="p-10 rounded-md flex flex-col items-center"
+            >
+              <div>
+                {stat.valueKey ? (
+                  <span className="text-3xl md:text-5xl font-semibold">
+                    {t("body.stats.unlimited")}
+                  </span>
+                ) : (
+                  <CountUp
+                    from={0}
+                    to={stat.value as number}
+                    separator={stat.separator || ","}
+                    direction="up"
+                    duration={stat.duration || 1}
+                    className="text-5xl font-semibold"
+                  />
+                )}
+                {stat.showPlus && (
+                  <span className="text-5xl font-semibold">+</span>
+                )}
+              </div>
+              <span className="text-3xl">{t(`body.stats.${stat.labelKey}`)}</span>
             </div>
-            <span className="text-3xl">{t(`body.stats.${stat.labelKey}`)}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </FadeInSection>
   );
 };
 

@@ -1,9 +1,14 @@
 import { Trans, useTranslation } from "react-i18next";
+import { FadeInSection } from "../layout";
 
 const Anniversary = () => {
   const [t] = useTranslation("landing");
   return (
-    <div id="30" className="flex flex-col gap-2 md:max-w-[80%] mb-10">
+    <FadeInSection
+      direction="fadeLeft"
+      id="30"
+      className="flex flex-col gap-2 md:max-w-[80%] mb-10"
+    >
       <h2 className="text-2xl md:text-4xl font-semibold">
         {t("body.anniversary.header")}
       </h2>
@@ -29,13 +34,13 @@ const Anniversary = () => {
         />
       </p>
       {/* <div id="right">
-          <img
-            className="rounded-md"
-            src="/images/2024logoWithShirt.webp"
-            alt=""
-          />
-        </div> */}
-    </div>
+            <img
+              className="rounded-md"
+              src="/images/2024logoWithShirt.webp"
+              alt=""
+            />
+          </div> */}
+    </FadeInSection>
   );
 };
 

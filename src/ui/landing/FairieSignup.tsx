@@ -3,6 +3,7 @@ import { PartyPopper, HeartHandshake, Star } from "lucide-react";
 import { Button } from "../common";
 import { Trans } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { FadeInSection } from "../layout";
 
 interface Card {
   icon: JSX.Element;
@@ -26,7 +27,8 @@ const FairieSignup = () => {
     },
   ];
   return (
-    <div
+    <FadeInSection
+      direction="fadeLeft"
       id="fairie"
       className="flex flex-col items-center text-center gap-6 p-6 mt-10 rounded-md w-full"
     >
@@ -69,7 +71,7 @@ const FairieSignup = () => {
           Sign Up
         </Button>
       </NavLink>
-    </div>
+    </FadeInSection>
   );
 };
 
