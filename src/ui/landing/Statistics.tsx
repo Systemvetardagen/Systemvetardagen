@@ -1,7 +1,6 @@
 import React from "react";
 import { CountUp } from "../common";
 import { useTranslation } from "react-i18next";
-import Seperator from "../common/Seperator";
 
 interface StatisticItem {
   value: number | string;
@@ -53,7 +52,7 @@ const Statistics: React.FC<StatisticsProps> = ({
 }) => {
   const [t] = useTranslation("landing");
   return (
-    <div className="my-10 hidden md:block">
+    <div className="mb-10 hidden md:block">
       <div
         className={`flex w-full justify-center ${className}`}
       >

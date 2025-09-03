@@ -3,7 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 const Anniversary = () => {
   const [t] = useTranslation("landing");
   return (
-    <div id="30" className="flex flex-col gap-2 md:max-w-[80%]">
+    <div id="30" className="flex flex-col gap-2 md:max-w-[80%] mb-10">
       <h2 className="text-2xl md:text-4xl font-semibold">
         {t("body.anniversary.header")}
       </h2>
