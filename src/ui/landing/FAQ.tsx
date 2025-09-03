@@ -23,26 +23,23 @@ const FAQ = () => {
   };
 
   return (
-    <section className="mt-10">
+    <section className="">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t("header")}
           </h2>
-          <p className="text-lg font-light max-w-2xl mx-auto">
-            {t("subHeader")}
-          </p>
         </div>
 
         <div className="space-y-4">
           {questions.map((item: FAQItem) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md"
+              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md"
             >
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between"
+                className="w-full px-6 py-4 text-left flex items-center justify-between cursor-pointer"
                 aria-expanded={openItems.has(item.id)}
                 aria-controls={`faq-answer-${item.id}`}
               >
@@ -70,7 +67,7 @@ const FAQ = () => {
 
               <div
                 id={`faq-answer-${item.id}`}
-                className={`overflow-hidden transition-all duration-200 ${
+                className={`overflow-hidden transition-all duration-700 ${
                   openItems.has(item.id)
                     ? "max-h-96 opacity-100"
                     : "max-h-0 opacity-0"
@@ -83,7 +80,6 @@ const FAQ = () => {
             </div>
           ))}
         </div>
-      
       </div>
     </section>
   );
