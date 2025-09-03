@@ -25,19 +25,12 @@
       "section": "Companies",
       "href": "/companies",
       "childLinks": [
-        {
-          "name": "Alla Företag",
-          "href": "/companies"
-        },
+       
         {
           "name": "Företagsanmälan",
           "href": "/companies/signup"
-        },
-        {
-          "name": "Sponsra oss",
-          "href": "/companies/signup",
-          "hashLink": "sponsor"
         }
+      
       ]
     },
     {

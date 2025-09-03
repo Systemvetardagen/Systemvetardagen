@@ -26,17 +26,8 @@
       "href": "/companies",
       "childLinks": [
         {
-          "name": "All Companies",
-          "href": "/companies"
-        },
-        {
           "name": "Company Signup",
           "href": "/companies/signup"
-        },
-        {
-          "name": "Sponsor Us!",
-          "href": "/companies/signup",
-          "hashLink": "sponsor"
         }
       ]
     },
