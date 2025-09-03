@@ -49,8 +49,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
 
 const ProjectGroupSection: React.FC<ProjectGroupType> = ({
   name,
-  head,
-  vice,
+  leaders,
   members,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -59,20 +58,13 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold">{name}</h3>
         <div className="grid md:grid-cols-2 gap-6">
-          {head && (
-            <div className="">
-              <p className="text-xl font-semibold">{head.name}</p>
-              <p className="text-md text-gray-500">{head.role}</p>
-              <SocialLinks {...head} />
+          {leaders.map((leader, index) => (
+            <div className="" key={index}>
+              <p className="text-xl font-semibold">{leader.name}</p>
+              <p className="text-md text-gray-500">{leader.role}</p>
+              <SocialLinks {...leader} />
             </div>
-          )}
-          {vice && (
-            <div className="">
-              <p className="text-xl font-semibold">{vice.name}</p>
-              <p className="text-md text-gray-500">{vice.role}</p>
-              <SocialLinks {...vice} />
-            </div>
-          )}
+          ))}
         </div>
         {members && members.length > 0 && (
           <div className="space-y-4">

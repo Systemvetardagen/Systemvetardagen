@@ -1,7 +1,6 @@
 export interface ProjectGroupType {
   name: string;
-  head?: ProjectGroupMember;
-  vice?: ProjectGroupMember;
+  leaders: ProjectGroupMember[]
   members?: ProjectGroupMember[];
 }
 
