@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { Countdown, SplitText } from "../common";
 import { useTranslation } from "react-i18next";
@@ -9,17 +9,25 @@ const Hero = () => {
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (ref.current) {
+        ref.current.stop()
+      }
+    }, 5000)
+  }, [])
+
   return (
     <div
       id="hero"
-      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center md:justify-start font-poppins  px-4 md:px-20"
+      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center font-poppins  px-4 md:px-20"
     >
       <Fireworks
         ref={ref}
         options={{
           opacity: 0.5,
           explosion: 10,
-          intensity: 5,
+          intensity: 100,
           lineWidth: { explosion: { min: 1, max: 2 } },
         }}
         style={{
@@ -30,7 +38,7 @@ const Hero = () => {
           position: "absolute",
         }}
       />
-      <div className="flex flex-col z-10 text-center md:text-left">
+      <div className="flex flex-col z-10 text-center ">
         <FadeInSection direction="fadeRight">
           <h2 className="text-2xl md:text-4xl font-semibold mb-1">
             {t("subHeader")}
@@ -46,7 +54,7 @@ const Hero = () => {
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
-          textAlign="left"
+          textAlign="center"
         ></SplitText>
         <Countdown targetDate={targetDate} />
         <FadeInSection direction="fadeLeft">
