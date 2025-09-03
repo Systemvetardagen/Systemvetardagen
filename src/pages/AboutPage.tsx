@@ -2,6 +2,7 @@ import React from "react";
 import ProjectGroup from "@/ui/common/ProjectContributors";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "@/ui";
+import Seperator from "@/ui/common/Seperator";
 
 const About: React.FC = () => {
   const [t] = useTranslation("about");
@@ -28,7 +29,7 @@ const About: React.FC = () => {
                   {t("where-when.body")}
                 </p>
               </FadeInSection>
-              <FadeInSection direction="fadeLeft">
+              {/* <FadeInSection direction="fadeLeft">
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("companies.header")}
                 </h2>
@@ -39,7 +40,7 @@ const About: React.FC = () => {
                   </a>
                   .
                 </p>
-              </FadeInSection>
+              </FadeInSection> */}
               <FadeInSection direction="fadeLeft">
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("company-display.header")}
@@ -57,6 +58,7 @@ const About: React.FC = () => {
               </FadeInSection>
             </div>
           </section>
+          <Seperator/>
           <ProjectGroup />
         </div>
       </div>

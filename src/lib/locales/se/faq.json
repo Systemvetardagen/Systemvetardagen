@@ -3,11 +3,6 @@
   "subHeader": "Hitta svar på de vanligaste frågorna om Systemvetardagen",
   "questions": [
     {
-      "id": "what-is-systemvetardagen",
-      "question": "Vad är Systemvetardagen?",
-      "answer": "Systemvetardagen är Sveriges främsta tekniska jobbmässa för IT- och systemvetenskapsstudenter och yrkesverksamma. Det är ett årligt evenemang som organiseras av Studentkåren DISK och som kopplar samman ambitiösa tekniker med ledande företag i Sverige."
-    },
-    {
       "id": "who-can-attend",
       "question": "Vem kan delta på Systemvetardagen?",
       "answer": "Evenemanget är främst utformat för studenter och nyutexaminerade inom IT, datavetenskap, systemvetenskap och relaterade tekniska områden. Men alla är välkomna att delta."

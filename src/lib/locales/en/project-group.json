@@ -1,0 +1,50 @@
+{
+  "groups": [
+    {
+      "name": "Project Management",
+      "head": {
+        "name": "Diana Noran",
+        "role": "Projecet Manager",
+        "linkedIn": "qwe",
+        "github": "qwe",
+        "email": "qwe"
+      },
+      "vice": {
+        "name": "David Signhateh",
+        "role": "Project Cordinator",
+        "linkedIn": "qwe",
+        "github": "qwe",
+        "email": "qwe"
+      }
+    },
+    {
+      "name": "Web development",
+      "head": {
+        "name": "Willhelm Durelius",
+        "role": "Head of Web Development",
+        "linkedIn": "qwe",
+        "github": "qwe",
+        "email": "qwe"
+      },
+      "vice": {
+        "name": "Fredrik Etsare",
+        "role": "Vice Head of Web Development",
+        "linkedIn": "qwe",
+        "github": "qwe",
+        "email": "qwe"
+      },
+      "members": [
+        {
+          "name": "test1",
+          "role": "test1",
+          "linkedIn": ""
+        },
+        {
+          "name": "test2",
+          "role": "test2",
+          "linkedIn": ""
+        }
+      ]
+    }
+  ]
+}

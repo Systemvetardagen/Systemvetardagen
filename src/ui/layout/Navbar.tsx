@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
       {/* sorry man */}
       <NavLink to="/" className="flex-shrink-0">
         <img
-          src="/svgs/specialLogo.svg"
+          src="/images/systemvetardagen-logo-2026-black.png"
           alt="Left Logo"
           className="h-10 p-0 m-0"
         />

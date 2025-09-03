@@ -5,16 +5,16 @@ import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 
 const Hero = () => {
-  const targetDate: Date = new Date("2026-03-26T16:00:00+01:00");
+  const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
 
   useEffect(() => {
     setTimeout(() => {
       if (ref.current) {
-        ref.current.waitStop()
+        ref.current.waitStop();
       }
-    }, 5000);
+    }, 1500);
   }, []);
 
   return (
@@ -60,7 +60,8 @@ const Hero = () => {
         <FadeInSection direction="fadeLeft">
           <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
           <h3 className="md:text-2xl">
-            {t("date.day")} 26 {t("date.month")} 10:00 - 16:00
+            {t("date.day")} {targetDate.getDate()} {t("date.month")} 10:00 -
+            16:00
           </h3>
         </FadeInSection>
       </div>

@@ -7,7 +7,7 @@ export { default as CountUp } from './CountUp'
 export { default as LogoLoop } from './LogoLoop'
 export { default as ShinyText } from './ShinyText'
 export { default as SplitText } from './SplitText'
-export { default as TeamSection } from './TeamSection'
+export { default as TeamSection } from './ProjectGroupSection'
 export { default as SignupLink } from './SignupLink'
 
 export * from './teamData'

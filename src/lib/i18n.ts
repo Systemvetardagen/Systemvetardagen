@@ -14,6 +14,9 @@ import navbar_en from "@/lib/locales/en/navbar.json";
 import navbar_se from "@/lib/locales/se/navbar.json";
 import lectures_en from "@/lib/locales/en/lectures.json";
 import lectures_se from "@/lib/locales/se/lectures.json";
+import project_group_en from "@/lib/locales/en/project-group.json";
+import project_group_se from "@/lib/locales/se/project-group.json";
+
 import i18next from "i18next";
 
 const availableLanguages: string[] = ["en", "sv"];
@@ -34,6 +37,7 @@ i18next.init({
       faq: faq_en,
       navbar: navbar_en,
       lectures: lectures_en,
+      projectGroup: project_group_en
     },
     sv: {
       common: common_se,
@@ -44,6 +48,7 @@ i18next.init({
       faq: faq_se,
       navbar: navbar_se,
       lectures: lectures_se,
+      projectGroup: project_group_se
     },
   },
 });

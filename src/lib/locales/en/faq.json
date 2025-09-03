@@ -3,11 +3,6 @@
   "subHeader": "Find answers to the most common questions about Systemvetardagen",
   "questions": [
     {
-      "id": "what-is-systemvetardagen",
-      "question": "What is Systemvetardagen?",
-      "answer": "Systemvetardagen is Sweden's premier tech job fair for IT and System Science students and professionals. It's an annual event organized by Studentkåren DISK that connects ambitious tech talent with leading companies in Sweden."
-    },
-    {
       "id": "who-can-attend",
       "question": "Who can attend Systemvetardagen?",
       "answer": "The event is primarily designed for students and recent graduates in IT, Computer Science, System Science, and related technical fields. However, anyone interested is welcome!"

@@ -175,7 +175,7 @@ const VisitInfo: React.FC = () => {
       <p className="text-gray-500 font-light mx-8 fadeRight">
         {t("sub-header")}
       </p>
-      <Events />
+      {/* <Events /> */}
       <a id="map" href="/svgs/floormap.svg" className="mt-10">
         <img
           className="max-w-[80vw] rounded-3xl"
@@ -209,7 +209,7 @@ const VisitInfo: React.FC = () => {
       <div className="max-w-[90%]">
         <SignupLink />
       </div>
-      <Partners />
+      {/* <Partners /> */}
       <div className="mt-[5vh]"></div>
     </div>
   );
