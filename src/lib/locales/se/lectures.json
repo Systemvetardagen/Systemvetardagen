@@ -1,0 +1,49 @@
+{
+  "header": "Evenemang",
+  "sub-header": "Tal, föreläsningar och andra event!",
+  "lectures": [
+    {
+      "company": "Öppning av mässan",
+      "time": "10:00",
+      "topic": "",
+      "location": "Mässområdet",
+      "note": "Välkommen att besöka alla företag och organisationer på mässan!"
+    },
+    {
+      "company": "Truesec", 
+      "time": "10:40",
+      "topic": "Dissecting the Cicada - In the shadow of the Black Cat",
+      "location": "Aula NOD",
+      "speaker": "Nicklas Keijser"
+    },
+    {
+      "company": "Northwave Cyber Security",
+      "time": "11:20",
+      "topic": "Viktiga trender och utmaningar inom cybersäkerhet",
+      "location": "Aula NOD",
+      "speakers": ["Kim Elm", "Sakarias Strand"],
+      "note": "Kim Elm, Country Manager Northwave, och Sakarias Strand, Projektledare Cybersäkerhet Kista Science City, täcker viktiga trender och utmaningar inom cybersäkerhet, tillsammans med hemligheterna för att bli ledare inom området"
+    },
+    {
+      "company": "Scania",
+      "time": "12:00",
+      "topic": "Ät, Spela, Vinn",
+      "location": "L50",
+      "note": "Njut av en gratis lunch, bra stämning och chansen att vinna spännande priser medan du nätverkar med Scania. Förregistrering krävs!"
+    },
+    {
+      "company": "Kista Science City",
+      "time": "13:00",
+      "topic": "TechTalent Connect",
+      "location": "Monter 6",
+      "note": "Individuella möten som för samman studenter med företag inom cybersäkerhetsområdet. Förregistrering krävs!"
+    },
+    {
+      "company": "After work och pub",
+      "time": "15:45",
+      "topic": "",
+      "location": "Foo Bar",
+      "note": "Foo Bar, beläget på andra våningen av DSV, öppnar! Vi bjuder in dig att dela en bit mat, mingla och varva ner efter mässan!"
+    }
+  ]
+}

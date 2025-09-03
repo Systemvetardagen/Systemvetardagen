@@ -13,7 +13,6 @@ import {
   CompanyPage,
   CompanySignupPage,
   VisitInfoPage,
-  VisitInfoTestPage,
   SignupPage,
   StudentDashboardPage,
 } from "@/pages";
@@ -38,7 +37,6 @@ const App: React.FC = () => {
         />
 
         <Route path="/visit-info" element={<VisitInfoPage />} />
-        <Route path="/visit-info-test" element={<VisitInfoTestPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
