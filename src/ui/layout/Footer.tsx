@@ -47,18 +47,11 @@ const Footer = () => {
           </div>
           <div className="text-xs text-gray-600">
             {/* dessa emails e inte rätt lol */}
-            <span>Business Relations: </span>
+            <span>Contact: </span>
             <a className="text-link" href="mailto:bsc@systemvetardagen.se">
-              bsc@systemvetardagen.se
+              systemvetardagen@disk.su.se
             </a>
             <br />
-            <span>Sales: </span>
-            <a
-              className="text-link"
-              href="mailto:management@systemvetardagen.se"
-            >
-              management@systemvetardagen.se
-            </a>
           </div>
         </div>
       </div>

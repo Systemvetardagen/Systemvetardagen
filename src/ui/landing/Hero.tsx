@@ -12,10 +12,10 @@ const Hero = () => {
   useEffect(() => {
     setTimeout(() => {
       if (ref.current) {
-        ref.current.stop()
+        ref.current.waitStop()
       }
-    }, 5000)
-  }, [])
+    }, 5000);
+  }, []);
 
   return (
     <div
