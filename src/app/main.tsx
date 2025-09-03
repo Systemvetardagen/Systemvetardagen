@@ -15,6 +15,8 @@ import companies_en from "@/lib/locales/en/companies.json";
 import companies_se from "@/lib/locales/se/companies.json";
 import faq_en from "@/lib/locales/en/faq.json";
 import faq_se from "@/lib/locales/se/faq.json";
+import navbar_en from "@/lib/locales/en/navbar.json"
+import navbar_se from "@/lib/locales/se/navbar.json"
 import i18next from "i18next";
 import { I18nextProvider } from "react-i18next";
 
@@ -35,6 +37,7 @@ i18next.init({
       about: about_en,
       companies: companies_en,
       faq: faq_en,
+      navbar: navbar_en,
     },
     sv: {
       common: common_se,
@@ -43,6 +46,7 @@ i18next.init({
       about: about_se,
       companies: companies_se,
       faq: faq_se,
+      navbar: navbar_se,
     },
   },
 });

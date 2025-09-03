@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Link } from "./Navbar";
 import { NavLink, useLocation } from "react-router-dom";
 import { LanguageSwitch } from "../common";
-import { useTranslation } from "react-i18next";
+
 interface MobileNavbarProps {
   links: Link[];
   isSticky: boolean;
@@ -16,8 +16,6 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const location = useLocation();
-
-  const [t] = useTranslation("common");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -58,7 +56,7 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
         </button>
       </div>
 
-      {/* Mobile menu overlay */}
+      {/* overlay */}
       <div
         className={`fixed inset-0 z-20 bg-black/50 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -82,7 +80,7 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
                 className={getNavLinkClass}
                 onClick={() => setIsOpen(false)}
               >
-                {t(`navbar.${link.section}.headLabel`)}
+                {link.section}
               </NavLink>
             </div>
           ))}
