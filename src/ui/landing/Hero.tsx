@@ -3,6 +3,7 @@ import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { Countdown, SplitText } from "../common";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
+import { celebrate } from "@/lib/utilities/confetti";
 
 const Hero = () => {
   const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
@@ -17,6 +18,8 @@ const Hero = () => {
     }, 1500);
   }, []);
 
+
+
   return (
     <div
       id="hero"
@@ -27,7 +30,7 @@ const Hero = () => {
         options={{
           opacity: 0.5,
           explosion: 10,
-          intensity: 100,
+          intensity: 60,
           lineWidth: { explosion: { min: 1, max: 2 } },
         }}
         style={{
@@ -40,7 +43,10 @@ const Hero = () => {
       />
       <div className="flex flex-col z-10 text-center ">
         <FadeInSection direction="fadeRight">
-          <h2 className="text-2xl md:text-4xl font-semibold mb-1">
+          <h2
+            className="text-2xl md:text-4xl font-semibold mb-1"
+            onClick={celebrate}
+          >
             {t("subHeader")}
           </h2>
         </FadeInSection>

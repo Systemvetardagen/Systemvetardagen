@@ -1,13 +1,13 @@
 import "@/app/App.css";
 import { SignupLink } from "@/ui/common";
-import { CompanyLoop } from "@/ui/company";
+// import { CompanyLoop } from "@/ui/company";
 import { Hero, Anniversary, Statistics, FairieSignup, FAQ } from "@/ui/landing";
 
 export default function LandingPage() {
   return (
     <div>
       <Hero />
-      <CompanyLoop className="mt-6" />
+      {/* <CompanyLoop className="mt-6" /> */}
       <section
         id="body"
         className="py-10 md:px-20 flex flex-col items-center gap-10"
