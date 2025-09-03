@@ -67,7 +67,7 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
             </div>
           )}
           {vice && (
-            <div className="space-y-2">
+            <div className="">
               <p className="text-xl font-semibold">{vice.name}</p>
               <p className="text-md text-gray-500">{vice.role}</p>
               <SocialLinks {...vice} />

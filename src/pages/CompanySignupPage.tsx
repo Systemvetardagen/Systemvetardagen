@@ -15,7 +15,7 @@ const CompanySignup: React.FC<CompanySignupProps> = () => {
         </h2>
         <div className="relative">
           <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
-            <h2 className="font-light  text-white">{t("Attend our fair")}</h2>
+            {/* <h2 className="font-light  text-white">{t("Attend our fair")}</h2> */}
             {/* Add any additional elements here if needed */}
           </div>
 

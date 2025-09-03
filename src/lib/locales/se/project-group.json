@@ -1,50 +1,35 @@
 {
   "groups": [
     {
-      "name": "Project Management",
+      "name": "Projektledningen",
       "head": {
         "name": "Diana Noran",
         "role": "Projecet Manager",
-        "linkedIn": "qwe",
-        "github": "qwe",
-        "email": "qwe"
+        "linkedIn": "https://www.linkedin.com/in/diana-noran/",
+        "email": "systemvetardagen@disk.su.se"
       },
       "vice": {
         "name": "David Signhateh",
-        "role": "Project Cordinator",
-        "linkedIn": "qwe",
-        "github": "qwe",
-        "email": "qwe"
+        "role": "Project Coordinator",
+        "linkedIn": "https://www.linkedin.com/in/david-singhateh-680489303/",
+        "email": "systemvetardagen@disk.su.se"
       }
     },
     {
-      "name": "Web development",
+      "name": "Web Utveckling",
       "head": {
         "name": "Willhelm Durelius",
         "role": "Head of Web Development",
-        "linkedIn": "qwe",
-        "github": "qwe",
-        "email": "qwe"
+        "linkedIn": "https://linkedin.com/in/wilhelm-durelius-6a11012b1",
+        "github": "https://github.com/durelius"
       },
       "vice": {
         "name": "Fredrik Etsare",
         "role": "Vice Head of Web Development",
-        "linkedIn": "qwe",
-        "github": "qwe",
-        "email": "qwe"
-      },
-      "members": [
-        {
-          "name": "test1",
-          "role": "test1",
-          "linkedIn": ""
-        },
-        {
-          "name": "test2",
-          "role": "test2",
-          "linkedIn": ""
-        }
-      ]
+        "linkedIn": "https://linkedIn.com/in/fredrik-etsare-20a535255/",
+        "github": "https://github.com/fetsare",
+        "email": "fredrik.etsare@disk.su.se"
+      }
     }
   ]
 }
