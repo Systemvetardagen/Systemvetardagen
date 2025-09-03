@@ -10,13 +10,13 @@ const Hero = () => {
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (ref.current) {
-        ref.current.waitStop();
-      }
-    }, 1500);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (ref.current) {
+  //       ref.current.waitStop();
+  //     }
+  //   }, 1500);
+  // }, []);
 
 
 
@@ -30,8 +30,8 @@ const Hero = () => {
         options={{
           opacity: 0.5,
           explosion: 10,
-          intensity: 60,
-          lineWidth: { explosion: { min: 1, max: 2 } },
+          intensity: 5,
+          lineWidth: { explosion: { min: 0.5, max:1 } },
         }}
         style={{
           top: 0,

@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { SignupLink, Partners, FadeInSection } from "@/ui";
+import { TramFront, SquareParking } from "lucide-react";
 
 interface Lecture {
   company: string;
@@ -185,16 +186,24 @@ const VisitInfo: React.FC = () => {
       </a>
       <section
         id="get-here"
-        className="px-10 max-w-[90vw] lg:max-w-[50vw] text-start my-8"
+        className="md:px-10 max-w-[90vw] lg:max-w-[50vw] text-start my-8"
       >
+        {/* <h2 className="text-2xl font-semibold mb-3">{t("header")}</h2>
+                <p className="text-lg leading-relaxed font-light">{t("body")}</p> */}
         <h1 className="font-light text-3xl mb-2">{t("getting-to.header")}</h1>
         <div className="mb-4">
-          <h2>{t("getting-to.metro.header")}</h2>
-          <p className="text-pretty">{t("getting-to.metro.body")}</p>
+          <div className="flex items-center gap-2">
+            <TramFront size={20} />
+            <h2 className="text-xl">{t("getting-to.metro.header")}</h2>
+          </div>
+          <p className="text-pretty font-light">{t("getting-to.metro.body")}</p>
         </div>
         <div className="mb-4">
-          <h2>{t("getting-to.parking.header")}</h2>
-          <p className="text-pretty">{t("getting-to.parking.body")}</p>
+          <div className="flex items-center gap-2">
+            <SquareParking size={20} />
+            <h2 className="text-xl">{t("getting-to.parking.header")}</h2>
+          </div>
+          <p className="text-pretty font-light">{t("getting-to.parking.body")}</p>
         </div>
       </section>
       <div className="mb-20 w-full  flex justify-center">
