@@ -1,11 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
-import { Countdown, SplitText } from "../common";
+import { SplitText } from "../common";
+import Countdown from "../common/CountdownTest";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";
+import { useSearchParams } from "react-router-dom";
 
 const Hero = () => {
+  const [searchParams] = useSearchParams();
+  const test: boolean = searchParams.get("test") === "true";
+  console.log(test);
   const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
@@ -18,8 +23,6 @@ const Hero = () => {
   //   }, 1500);
   // }, []);
 
-
-
   return (
     <div
       id="hero"
@@ -31,7 +34,7 @@ const Hero = () => {
           opacity: 0.5,
           explosion: 10,
           intensity: 5,
-          lineWidth: { explosion: { min: 0.5, max:1 } },
+          lineWidth: { explosion: { min: 0.5, max: 1 } },
         }}
         style={{
           top: 0,
