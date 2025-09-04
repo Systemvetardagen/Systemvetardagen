@@ -5,10 +5,10 @@
         "day": "Onsdag",
         "month": "Februari"
     },
-    "days": "dagar",
-    "hours": "timmar",
-    "minutes": "minuter",
-    "seconds": "sekunder",
+    "days": "Dagar",
+    "hours": "Timmar",
+    "minutes": "Minuter",
+    "seconds": "Sekunder",
     "signup": "Registrera för uppdateringar",
     "exhibitors": "Se alla utställare",
     "body": {

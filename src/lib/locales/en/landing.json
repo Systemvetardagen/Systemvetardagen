@@ -5,10 +5,10 @@
         "day": "Wednesday",
         "month": "February"
     },
-    "days": "days",
-    "hours": "hours",
-    "minutes": "minutes",
-    "seconds": "seconds",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
     "signup": "Sign up for updates",
     "exhibitors": "Browse All Exhibitors",
     "body": {
