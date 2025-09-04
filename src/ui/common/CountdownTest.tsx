@@ -17,28 +17,6 @@ interface TimeLeft {
 const CountdownTest: React.FC<CountdownProps> = ({ targetDate }) => {
   const [t] = useTranslation("landing");
 
-  // jag e prompt engineer
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-15px); }
-            }
-            .float-animation {
-                animation: float 3s ease-in-out infinite;
-            }
-            .float-delay-1 { animation-delay: 0s; }
-            .float-delay-2 { animation-delay: 0.5s; }
-            .float-delay-3 { animation-delay: 1s; }
-            .float-delay-4 { animation-delay: 1.5s; }
-        `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
-
   function calculateTimeLeft(currentTimeMillis?: number): TimeLeft | null {
     const now = currentTimeMillis ?? new Date().getTime();
     const difference = targetDate.getTime() - now;
@@ -71,7 +49,7 @@ const CountdownTest: React.FC<CountdownProps> = ({ targetDate }) => {
   }
 
   return (
-    <div className="grid lg:flex grid-cols-2 gap-2 lg:gap-4 fadeUp justify-center select-none items-center">
+    <div className="flex gap-2 lg:gap-4 fadeUp justify-center select-none items-center">
       <Timeunit
         value={timeLeft.days}
         label={t("days")}
@@ -130,8 +108,7 @@ const Timeunit: React.FC<TimeUnitProps> = ({
           alt=""
         />
         <div
-          className="absolute inset-0 flex items-center justify-center text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg"
-          style={{ marginTop: "-60px" }}
+          className="absolute inset-0 -mt-10 md:-mt-16 flex items-center justify-center text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg"
         >
           {value.toString().padStart(2, "0")}
         </div>

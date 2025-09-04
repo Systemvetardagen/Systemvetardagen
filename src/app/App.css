@@ -1,110 +1,134 @@
-
 .gradient-background {
-    background: linear-gradient(26deg, #325fff, #ff4cc2, #ffc93f);
-    background-size: 300% 150%;
-    animation: Background 20s ease infinite;
+  background: linear-gradient(26deg, #325fff, #ff4cc2, #ffc93f);
+  background-size: 300% 150%;
+  animation: Background 20s ease infinite;
 }
 
 .gradient-background-reverse {
-    background: linear-gradient(26deg, #ffc93f, #ff4cc2, #325fff);
-    background-size: 300% 150%;
-    animation: Background 20s ease infinite;
+  background: linear-gradient(26deg, #ffc93f, #ff4cc2, #325fff);
+  background-size: 300% 150%;
+  animation: Background 20s ease infinite;
 }
 
 .gradient-text {
-    -webkit-background-clip: text;
-    color: transparent;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @keyframes Background {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --background: 247, 244, 255;
-        --text: 9, 0, 27;
-        --primary: 50, 95, 255;
-        --secondary: 255, 76, 194;
-        --accent: 255, 201, 63;
-        --link: 122, 142, 255;
-    }
+  :root {
+    --background: 247, 244, 255;
+    --text: 9, 0, 27;
+    --primary: 50, 95, 255;
+    --secondary: 255, 76, 194;
+    --accent: 255, 201, 63;
+    --link: 122, 142, 255;
+  }
 }
 
 * {
-    font-family: 'poppins';
+  font-family: "poppins";
 }
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    to {
-        opacity: 100;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 100;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 
-    to {
-        opacity: 100;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 100;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
 
-    to {
-        opacity: 100;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 100;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
 
-    to {
-        opacity: 100;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 100;
+    transform: translateY(0);
+  }
 }
 
 .fadeUp {
-    animation: fadeUp 0.5s;
+  animation: fadeUp 0.5s;
 }
 
 .fadeDown {
-    animation: fadeDown 0.5s;
+  animation: fadeDown 0.5s;
 }
 
 .fadeLeft {
-    animation: fadeLeft 0.5s;
+  animation: fadeLeft 0.5s;
 }
 
 .fadeRight {
-    animation: fadeRight 0.5s;
+  animation: fadeRight 0.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+.float-delay-1 {
+  animation-delay: 0s;
+}
+.float-delay-2 {
+  animation-delay: 0.5s;
+}
+.float-delay-3 {
+  animation-delay: 1s;
+}
+.float-delay-4 {
+  animation-delay: 1.5s;
 }
