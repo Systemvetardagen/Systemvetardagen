@@ -49,7 +49,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
     return (
         <div
-            className="grid gap-4 lg:flex lg:gap-20 grid-cols-2 fadeUp"
+            className="grid gap-4 lg:flex lg:gap-20 grid-cols-2 fadeUp select-none"
         >
             <Timeunit value={timeLeft.days} label={t('days')} />
             <Timeunit value={timeLeft.hours} label={t('hours')} />

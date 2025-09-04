@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
-import Countdown from "../common/CountdownTest";
+import CountdownTest from "../common/CountdownTest";
+import Countdown from "../common/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";
@@ -9,7 +10,7 @@ import { useSearchParams } from "react-router-dom";
 
 const Hero = () => {
   const [searchParams] = useSearchParams();
-  const test: boolean = searchParams.get("test") === "true";
+  const test: boolean = searchParams.get("test") == "true";
   console.log(test);
   const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
@@ -65,7 +66,12 @@ const Hero = () => {
           threshold={0.1}
           textAlign="center"
         ></SplitText>
-        <Countdown targetDate={targetDate} />
+        {test ? (
+          <CountdownTest targetDate={targetDate} />
+        ) : (
+          <Countdown targetDate={targetDate} />
+        )}
+
         <FadeInSection direction="fadeLeft">
           <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
           <h3 className="md:text-2xl">

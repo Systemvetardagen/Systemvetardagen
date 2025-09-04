@@ -14,7 +14,7 @@ interface TimeLeft {
   seconds: number;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
+const CountdownTest: React.FC<CountdownProps> = ({ targetDate }) => {
   const [t] = useTranslation("landing");
 
   // jag e prompt engineer
@@ -71,7 +71,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   }
 
   return (
-    <div className="grid lg:flex grid-cols-2 gap-2 lg:gap-4 fadeUp justify-center items-center">
+    <div className="grid lg:flex grid-cols-2 gap-2 lg:gap-4 fadeUp justify-center select-none items-center">
       <Timeunit
         value={timeLeft.days}
         label={t("days")}
@@ -141,4 +141,4 @@ const Timeunit: React.FC<TimeUnitProps> = ({
   );
 };
 
-export default Countdown;
+export default CountdownTest;
