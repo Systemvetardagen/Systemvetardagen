@@ -81,7 +81,7 @@ const Timeunit: React.FC<TimeUnitProps> = ({ value, label }) => {
       className="font-bold flex flex-col items-center cursor-pointer hover:scale-105 transition-all duration-100 text-white"
       onClick={handleClick}
     >
-      <div className="text-4xl lg:text-7xl">
+      <div className="text-3xl lg:text-5xl font-semibold">
         {value.toString().padStart(2, "0")}{" "}
       </div>
       <div className="text-2xl lg:text-2xl">{label}</div>
