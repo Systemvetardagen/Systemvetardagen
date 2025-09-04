@@ -41,7 +41,7 @@ const Hero = () => {
           position: "absolute",
         }}
       />
-      <div className="flex flex-col z-10 text-center ">
+      <div className="flex flex-col z-10 text-center items-center ">
         <FadeInSection direction="fadeRight">
           <h2
             className="text-2xl md:text-4xl font-semibold mb-1"
