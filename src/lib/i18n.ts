@@ -16,6 +16,9 @@ import lectures_en from "@/lib/locales/en/lectures.json";
 import lectures_se from "@/lib/locales/se/lectures.json";
 import project_group_en from "@/lib/locales/en/project-group.json";
 import project_group_se from "@/lib/locales/se/project-group.json";
+import programs_en from "@/lib/locales/en/programs.json";
+import programs_se from "@/lib/locales/se/programs.json";
+
 
 import i18next from "i18next";
 
@@ -37,7 +40,8 @@ i18next.init({
       faq: faq_en,
       navbar: navbar_en,
       lectures: lectures_en,
-      projectGroup: project_group_en
+      projectGroup: project_group_en,
+      programs: programs_en
     },
     sv: {
       common: common_se,
@@ -48,7 +52,8 @@ i18next.init({
       faq: faq_se,
       navbar: navbar_se,
       lectures: lectures_se,
-      projectGroup: project_group_se
+      projectGroup: project_group_se,
+      programs: programs_se
     },
   },
 });

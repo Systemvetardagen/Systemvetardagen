@@ -1,0 +1,31 @@
+{
+  "candidatePrograms": {
+    "SYSDK": "Data- och systemvetenskap",
+    "SAFFK": "Affärssystem och tjänstedesign",
+    "SDAVK": "Datavetenskap och mjukvaruteknik",
+    "SGAMK": "Datorspelsutveckling",
+    "SDIMK": "Digitala medier",
+    "SITEK": "Företagsekonomi och IT",
+    "SIADK": "Interaktionsdesign",
+    "SMARK": "Marknadskommunikation och IT"
+  },
+  "masterPrograms": {
+    "SAIHO": "AI för hälsa",
+    "SMINO": "Informationssäkerhet",
+    "SMEFO": "Öppen förvaltning",
+    "SCSSO": "Data- och systemvetenskap",
+    "SHINO": "Hälsoinformatik",
+    "SSLIO": "Strategisk informationssystemledning",
+    "SDSBO": "Datavetenskap, statistik och beslutsanalys",
+    "SPROM": "IT-projektledning",
+    "SDKIO": "Design för kreativ och immersiv teknik"
+  },
+  "positions": {
+    "fullTime": "Heltid",
+    "partTime": "Deltid",
+    "thesis": "Examensarbete",
+    "trainee": "Traineeprogram",
+    "internship": "Praktikplats",
+    "foreignServices": "Internationella uppdrag"
+  }
+}

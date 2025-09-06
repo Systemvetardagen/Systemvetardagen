@@ -1,0 +1,31 @@
+{
+  "candidatePrograms": {
+    "SYSDK": "Computer and Systems Sciences",
+    "SAFFK": "Enterprise Systems and Service Design",
+    "SDAVK": "Computer Science and Software Engineering",
+    "SGAMK": "Computer Game Development",
+    "SDIMK": "Digital Media",
+    "SITEK": "Business Administration and Information Technology",
+    "SIADK": "Interaction Design",
+    "SMARK": "Market Communication and Information Technology"
+  },
+  "masterPrograms": {
+    "SAIHO": "AI for Health",
+    "SMINO": "Information Security",
+    "SMEFO": "Open eGovernment",
+    "SCSSO": "Computer and Systems Sciences",
+    "SHINO": "Health Informatics",
+    "SSLIO": "Strategic Information Systems Management",
+    "SDSBO": "Data Science, Statistics and Decision Analysis",
+    "SPROM": "IT Project Management",
+    "SDKIO": "Design for Creative and Immersive Technology"
+  },
+  "positions": {
+    "fullTime": "Full-time",
+    "partTime": "Part-time",
+    "thesis": "Thesis Work",
+    "trainee": "Trainee Program",
+    "internship": "Internship",
+    "foreignServices": "International Assignments"
+  }
+}
