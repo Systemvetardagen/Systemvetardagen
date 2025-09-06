@@ -1,7 +1,7 @@
 // src/app/Router.tsx
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import NotFoundPage from "@/pages/NotFoundPage";
 import RootLayout from "./RootLayout";
 
 import {
@@ -32,7 +32,7 @@ const Router: React.FC = () => {
 
         <Route path="/visit-info" element={<VisitInfoPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

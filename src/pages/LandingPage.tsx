@@ -5,7 +5,7 @@ import { Hero, Anniversary, Statistics, FairieSignup, FAQ } from "@/ui/landing";
 
 export default function LandingPage() {
   return (
-    <div>
+    <div className="grow">
       <Hero />
       {/* <CompanyLoop className="mt-6" /> */}
       <section

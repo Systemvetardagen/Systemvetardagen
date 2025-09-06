@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="min-h-[600px] md:min-h-[700px] w-screen relative gradient-background flex flex-col text-white md:flex-row items-center justify-center font-poppins  px-4 md:px-20"
+      className="min-h-[600px] md:min-h-[700px] w-full relative gradient-background flex flex-col text-white md:flex-row items-center justify-center font-poppins px-4 md:px-20"
     >
       <Fireworks
         ref={ref}

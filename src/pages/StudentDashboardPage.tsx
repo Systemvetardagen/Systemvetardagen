@@ -136,7 +136,7 @@ const StudentDashboard: React.FC = () => {
       return 0;
     });
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex flex-col items-center pt-8 px-4">
+    <div className="w-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex flex-col items-center pt-8 px-4">
       <div className="w-full max-w-6xl text-center mb-8">
         <h1 className="text-white text-4xl font-bold mb-4">
           Systemvetardagen 2025

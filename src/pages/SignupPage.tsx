@@ -35,7 +35,7 @@ const SignupForm = () => {
     if (formSubmitted) {
         return (
             <div
-                className="h-screen w-screen gradient-background
+                className="grow w-screen gradient-background
         flex flex-col items-center pt-[10vh] min-w-[351px]"
             >
                 <div className="w-full max-w-4xl text-center mb-12 mt-16">
@@ -68,7 +68,7 @@ const SignupForm = () => {
     }
     return (
         <div
-            className="min-h-screen w-full min-w-[375px] gradient-background
+            className="grow w-full min-w-[375px] gradient-background
         flex flex-col items-center justify-center pt-[5vh]"
         >
             <div className="w-full lg:max-w-4xl max-w-[80%] text-center mt-16">

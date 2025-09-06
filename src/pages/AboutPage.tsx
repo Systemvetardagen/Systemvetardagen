@@ -7,7 +7,7 @@ import Seperator from "@/ui/common/Seperator";
 const About: React.FC = () => {
   const [t] = useTranslation("about");
   return (
-    <div className="bg-background text-text flex flex-col min-h-screen">
+    <div className="">
       <img
         src={"/images/2024logoWithShirt.webp"}
         alt="Systemvetardagen Logo shirt"

@@ -8,7 +8,7 @@ interface CompanySignupProps {
 const CompanySignup: React.FC<CompanySignupProps> = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-background min-h-screen gradient-background">
+    <div className="gradient-background grow">
       <div className="flex flex-col items-center py-32 px-10">
         <h2 className="text-5xl  text-white font-semibold lg:text-6xl mb-8">
           {t("Sign up")}
