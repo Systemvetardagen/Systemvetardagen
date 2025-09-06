@@ -1,7 +1,7 @@
 {
   "navbar": [
     {
-      "section": "Home",
+      "section": "Hem",
       "href": "/",
       "childLinks": [
         {
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "section": "Companies",
+      "section": "Företag",
       "href": "/companies/signup",
       "childLinks": [
        
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "section": "Visit Info",
+      "section": "Info",
       "href": "/visit-info",
       "childLinks": [
         {
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "section": "About",
+      "section": "Om",
       "href": "/about",
       "childLinks": [
         {

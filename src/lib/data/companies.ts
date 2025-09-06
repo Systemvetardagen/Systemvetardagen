@@ -1,5 +1,4 @@
 import { CandidateProgram, MasterProgram, Position } from "../types/company";
-import companiesData from "./companies.json";
 
 export const candidatePrograms: CandidateProgram[] = [
   "SYSDK", // Computer and Systems Sciences
@@ -32,5 +31,3 @@ export const positions: Position[] = [
   "internship",
   "foreignServices",
 ];
-
-export const NUM_OF_COMPANIES = companiesData.length;
