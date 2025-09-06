@@ -46,7 +46,7 @@ const Hero = () => {
         }}
       />
       <div className="flex flex-col z-10 text-center items-center ">
-        <FadeInSection direction="fadeRight">
+        <FadeInSection direction="fadeRight" duration={1000}>
           <h2
             className="text-2xl md:text-4xl font-semibold mb-1"
             onClick={celebrate}
@@ -57,9 +57,9 @@ const Hero = () => {
         <SplitText
           text={t("header")}
           className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
-          delay={70}
-          duration={1}
-          ease="elastic.out(1, 0.3)"
+          delay={50}
+          duration={0.7}
+          ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const Hero = () => {
           <Countdown targetDate={targetDate} />
         )}
 
-        <FadeInSection direction="fadeLeft">
+        <FadeInSection direction="fadeUp" duration={1000} delay={200}>
           <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
           <h3 className="md:text-2xl">
             {t("date.day")} {targetDate.getDate()} {t("date.month")} 10:00 -

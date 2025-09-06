@@ -93,19 +93,27 @@
 }
 
 .fadeUp {
-  animation: fadeUp 0.5s;
+  animation: fadeUp var(--animation-duration, 0.5s);
+  animation-delay: var(--animation-delay, 0ms);
+  animation-fill-mode: both;
 }
 
 .fadeDown {
-  animation: fadeDown 0.5s;
+  animation: fadeDown var(--animation-duration, 0.5s);
+  animation-delay: var(--animation-delay, 0ms);
+  animation-fill-mode: both;
 }
 
 .fadeLeft {
-  animation: fadeLeft 0.5s;
+  animation: fadeLeft var(--animation-duration, 0.5s);
+  animation-delay: var(--animation-delay, 0ms);
+  animation-fill-mode: both;
 }
 
 .fadeRight {
-  animation: fadeRight 0.5s;
+  animation: fadeRight var(--animation-duration, 0.5s);
+  animation-delay: var(--animation-delay, 0ms);
+  animation-fill-mode: both;
 }
 
 @keyframes float {

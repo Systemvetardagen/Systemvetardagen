@@ -7,6 +7,8 @@ interface FadeInSectionProps extends React.HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
     direction: Direction;
     triggerOnce?: boolean;
+    duration?: number; // Duration in milliseconds
+    delay?: number; // Delay in milliseconds
 }
 
 const FadeInSection: React.FC<FadeInSectionProps> = ({
@@ -14,6 +16,8 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     direction,
     className,
     triggerOnce = true,
+    duration = 500,
+    delay = 0,
     ...props
 }) => {
     const { ref, inView } = useInView({
@@ -27,6 +31,11 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
             className={`opacity-0 ${className || ''} ${
                 inView ? `opacity-100 ${direction}` : ''
             }`}
+            style={{
+                '--animation-duration': `${duration}ms`,
+                '--animation-delay': `${delay}ms`,
+                ...props.style
+            } as React.CSSProperties}
             {...props}
         >
             {children}
