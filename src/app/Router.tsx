@@ -1,7 +1,7 @@
 // src/app/Router.tsx
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import NotFoundPage from "@/pages/NotFoundPage";
+import { Routes, Route } from "react-router-dom";
+import { NotFoundPage } from "@/pages";
 import RootLayout from "./RootLayout";
 
 import {

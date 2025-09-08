@@ -1,8 +1,9 @@
 import { useState, FormEvent } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { customFetchInsertPreSignup } from "@/lib/utilities/customFetchInsertPreSignup";
-import ProgramSelector from "@/ui/common/ProgramSelector";
+import { InputField, ProgramSelector } from "@/ui/common";
 import type { CandidateProgram, MasterProgram } from "@/lib/types/company";
+
 interface PreSignup {
   firstName: string;
   lastName: string;
@@ -81,53 +82,47 @@ const SignupForm = () => {
       <div className="bg-white rounded-lg p-8 w-[80%] max-w-2xl shadow-xl">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <input
-                type="text"
-                placeholder="First name"
-                className="w-full px-4 py-2 rounded-md bg-gray-100"
-                value={formData.firstName}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    firstName: e.target.value,
-                  })
-                }
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                placeholder="Last name"
-                className="w-full px-4 py-2 rounded-md bg-gray-100"
-                value={formData.lastName}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    lastName: e.target.value,
-                  })
-                }
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-2 rounded-md bg-gray-100"
-              value={formData.email}
+            <InputField
+            label="First Name"
+              type="text"
+              placeholder="Alan"
+              value={formData.firstName}
               onChange={(e) =>
                 setFormData({
                   ...formData,
-                  email: e.target.value,
+                  firstName: e.target.value,
+                })
+              }
+              required
+            />
+            <InputField
+            label="Last Name"
+              type="text"
+              placeholder="Turing"
+              value={formData.lastName}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  lastName: e.target.value,
                 })
               }
               required
             />
           </div>
+
+          <InputField
+          label="Email"
+            type="email"
+            placeholder="alan.turing@disk.su.se"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                email: e.target.value,
+              })
+            }
+            required
+          />
 
           <div>
             <ProgramSelector
