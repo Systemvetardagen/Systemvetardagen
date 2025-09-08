@@ -12,7 +12,7 @@
   "dependencies": {
     "@fireworks-js/react": "^2.10.8",
     "@tanstack/react-query": "^5.85.6",
-    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.11.0",
     "canvas-confetti": "^1.9.3",
     "gsap": "^3.13.0",
     "i18next": "^25.4.2",
@@ -31,6 +31,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "@types/react-router-dom": "^5.3.3",
     "@types/react-router-hash-link": "^2.4.9",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",

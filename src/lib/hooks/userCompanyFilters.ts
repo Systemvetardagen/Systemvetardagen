@@ -47,7 +47,7 @@ function deserializeFilters(raw: string | null): Filters {
   }
 }
 
-export default function useFilters(key: string) {
+export default function useCompanyFilters(key: string) {
   const [filters, setFilters] = useState<Filters>(() =>
     deserializeFilters(sessionStorage.getItem(key))
   );
