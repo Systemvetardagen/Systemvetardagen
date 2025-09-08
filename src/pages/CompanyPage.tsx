@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import companiesData from "@/assets/companies.json";
-import { Company } from "@/assets/companies";
+import { Company } from "@/lib/types/company";
 import { useTranslation } from "react-i18next";
-import { Contact as ContactType } from "@/assets/companies";
 import {
   Linkedin,
   Instagram,
@@ -15,28 +13,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FadeInSection } from "@/ui";
-
-const companies: Company[] = companiesData;
-
-const Contact: React.FC<ContactType> = ({ name, mail, phoneNumber }) => {
-  const [t] = useTranslation("companies");
-  return (
-    <FadeInSection
-      triggerOnce={true}
-      direction="fadeUp"
-      className="p-8 flex flex-col gap-1 rounded-2xl shadow-md bg-white text-center"
-    >
-      <h1 className="text-2xl">{t("global.contact")}</h1>
-      {name && <h2>{name}</h2>}
-      <a className="text-link" href={`mailto:${mail}`}>
-        {mail}
-      </a>
-      <a className="text-link" href={`tel:${phoneNumber}`}>
-        {phoneNumber}
-      </a>
-    </FadeInSection>
-  );
-};
+import { useCompanyContext } from "@/lib/context/CompanyContext";
 
 const RecruitmentCard: React.FC<Company> = (company) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -146,6 +123,7 @@ const Card: React.FC<CardProps> = ({ title, items, className }) => (
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
+  const { companies } = useCompanyContext();
   const company = companies.find((company) => company.id === companyId);
   const { t } = useTranslation("companies");
   if (!company) {
@@ -201,7 +179,9 @@ const CompanyPage: React.FC = () => {
                 <h3 className="text-gray-600 text-sm font-medium">
                   {t("global.founded")}
                 </h3>
-                <p className="text-gray-800">{company.founded}</p>
+                <p className="text-gray-800">
+                  {new Date(company.founded || "").getFullYear()}
+                </p>
               </div>
             </FadeInSection>
             {company.employeesSweden && (
@@ -223,7 +203,7 @@ const CompanyPage: React.FC = () => {
                 </div>
               </FadeInSection>
             )}
-            {company.employeesTotal && (
+            {company.employeesWorld && (
               <FadeInSection
                 triggerOnce={true}
                 direction="fadeLeft"
@@ -237,7 +217,7 @@ const CompanyPage: React.FC = () => {
                     {t("global.employeesInternationally")}
                   </h3>
                   <p className="text-gray-800">
-                    {company.employeesTotal.toLocaleString("sv-SE")}
+                    {company.employeesWorld.toLocaleString("sv-SE")}
                   </p>
                 </div>
               </FadeInSection>
@@ -246,23 +226,23 @@ const CompanyPage: React.FC = () => {
         </div>
 
         <div className="flex gap-4">
-          {company.linkedIn && (
+          {company.linkedInLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.linkedIn}>
+              <a rel="nofollow" href={company.linkedInLink}>
                 <Linkedin />
               </a>
             </FadeInSection>
           )}
-          {company.instagram && (
+          {company.instagramLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.instagram}>
+              <a rel="nofollow" href={company.instagramLink}>
                 <Instagram />
               </a>
             </FadeInSection>
           )}
-          {company.facebook && (
+          {company.facebookLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.facebook}>
+              <a rel="nofollow" href={company.facebookLink}>
                 <Facebook />
               </a>
             </FadeInSection>
@@ -275,27 +255,15 @@ const CompanyPage: React.FC = () => {
         >
           {t(`${companyId}.description.paragraph1`)}
         </FadeInSection>
-        {company.video && (
+        {/* {company.video && (
           <div className="flex justify-center">
             <video className="rounded-3xl" controls autoPlay width="600">
               <source src={company.video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
-        )}
+        )} */}
         <RecruitmentCard {...company} />
-        <div className="flex flex-col md:flex-row justify-evenly gap-10">
-          {company.contacts &&
-            company.contacts.length > 0 &&
-            company.contacts.map((contact, index) => (
-              <Contact
-                key={index}
-                name={contact.name}
-                mail={contact.mail}
-                phoneNumber={contact.phoneNumber}
-              />
-            ))}
-        </div>
         <a
           className="text-link text-2xl text-center font-bold hover:underline"
           rel="nofollow"
