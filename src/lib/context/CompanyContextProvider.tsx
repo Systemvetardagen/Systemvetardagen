@@ -19,7 +19,7 @@ export const CompanyContextProvider: FC<CompanyContextProviderProps> = ({
     clearFilters,
   } = useCompanyFilters("companyFilters");
   // Company useQuery here once backend is created
-  const companies: Company[] = []
+  const companies: Company[] = [];
 
   const filteredCompanies = useMemo(() => {
     if (!companies) return [];
@@ -58,12 +58,13 @@ export const CompanyContextProvider: FC<CompanyContextProviderProps> = ({
       return true;
     });
   }, [companies, filters]);
-
+  const partners: Company[] = [];
   return (
     <CompanyContext.Provider
       value={{
         companies,
         filteredCompanies,
+        partners,
         totalCount: companies.length,
         filteredCount: filteredCompanies.length,
         filters,

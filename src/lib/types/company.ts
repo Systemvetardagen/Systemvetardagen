@@ -52,3 +52,5 @@ export type Position =
 export type CandidatePrograms = CandidateProgram[];
 export type MasterPrograms = MasterProgram[];
 export type Positions = Position[];
+
+

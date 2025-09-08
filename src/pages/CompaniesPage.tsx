@@ -1,32 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import { Company } from "@/assets/companies";
-import {
-  candidatePrograms,
-  masterPrograms,
-  positions,
-} from "@/lib/data/companies";
-import companiesData from "@/assets/companies.json";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "@/ui";
-import { Link } from "react-router-dom";
+import { CompanyCard } from "@/ui";
 import Seperator from "@/ui/common/Seperator";
+import { useCompanyContext } from "@/lib/context/CompanyContext";
+import {
+  CandidateProgram,
+  MasterProgram,
+  Position,
+} from "@/lib/types/company";
 
 const Companies: React.FC = () => {
-  const companies: Company[] = companiesData;
   const [t] = useTranslation("companies");
-  const [selectedFilters, setSelectedFilters] = useState<{
-    [key: string]: Set<string>;
-  }>({
-    candidatePrograms: new Set(),
-    masterPrograms: new Set(),
-    positions: new Set(),
-  });
 
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const {
+    filteredCompanies,
+    partners,
+    filters,
+    setSearch,
+    toggleCandidateProgram,
+    toggleMasterProgram,
+    togglePosition,
+    clearFilters,
+  } = useCompanyContext();
 
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
+
+  const candidateProgramCodes = Object.keys(
+    t("candidatePrograms", { returnObjects: true }) as Record<string, string>
+  ) as CandidateProgram[];
+  const masterProgramCodes = Object.keys(
+    t("mastersPrograms", { returnObjects: true }) as Record<string, string>
+  ) as MasterProgram[];
+  const positions = Object.keys(
+    t("positions", { returnObjects: true }) as Record<string, string>
+  ) as Position[];
 
   const programsRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<HTMLDivElement>(null);
@@ -55,106 +65,35 @@ const Companies: React.FC = () => {
     };
   }, [programsExpanded, positionsExpanded]);
 
-  const toggleFilter = (filterType: string, filterValue: string) => {
-    setSelectedFilters((prevFilters) => {
-      const updatedFilters = new Set(prevFilters[filterType]);
-      if (updatedFilters.has(filterValue)) {
-        updatedFilters.delete(filterValue);
-      } else {
-        updatedFilters.add(filterValue);
-      }
-      return { ...prevFilters, [filterType]: updatedFilters };
-    });
-  };
-
-  const clearFilters = () => {
-    setSelectedFilters({
-      candidatePrograms: new Set(),
-      masterPrograms: new Set(),
-      positions: new Set(),
-    });
-  };
-
   const getLabel = (
     set: Set<string>,
     type: "programs" | "positions"
   ): string => {
     const size = set.size;
-
     if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
-    if (size === 1) return t(`${type}.${Array.from(set)[0]}`);
-
+    if (size === 1) {
+      const code = Array.from(set)[0];
+      if (type === "programs") {
+        if (candidateProgramCodes.includes(code as CandidateProgram)) {
+          return t(`candidatePrograms.${code}`);
+        }
+        if (masterProgramCodes.includes(code as MasterProgram)) {
+          return t(`mastersPrograms.${code}`);
+        }
+      } else if (type === "positions") {
+        return t(`positions.${code}`);
+      }
+      return code; // fallback (shouldn't normally hit)
+    }
     return `${size} ${t(`global.${type}`)}`;
   };
 
-  const filteredCompanies = companies.filter((company: Company) => {
-    const matchesSearch =
-      searchTerm === "" ||
-      company.name.toLowerCase().includes(searchTerm.toLowerCase());
-
-    const isFilterEmpty =
-      selectedFilters.candidatePrograms.size === 0 &&
-      selectedFilters.masterPrograms.size === 0 &&
-      selectedFilters.positions.size === 0;
-
-    if (isFilterEmpty && matchesSearch) {
-      return true;
-    }
-
-    const hasCandidateFilters = selectedFilters.candidatePrograms.size > 0;
-    const matchesCandidateProgram =
-      !hasCandidateFilters ||
-      (company.candidatePrograms &&
-        company.candidatePrograms.some((program: string) =>
-          selectedFilters.candidatePrograms.has(program)
-        ));
-
-    const hasMasterFilters = selectedFilters.masterPrograms.size > 0;
-    const matchesMasterProgram =
-      !hasMasterFilters ||
-      (company.masterPrograms &&
-        company.masterPrograms.some((program: string) =>
-          selectedFilters.masterPrograms.has(program)
-        ));
-
-    const hasPositionFilters = selectedFilters.positions.size > 0;
-    const matchesPosition =
-      !hasPositionFilters ||
-      (company.positions &&
-        company.positions.some((position: string) =>
-          selectedFilters.positions.has(position)
-        ));
-
-    return (
-      matchesSearch &&
-      matchesCandidateProgram &&
-      matchesMasterProgram &&
-      matchesPosition
-    );
-  });
-
-  const CompanyCard: React.FC<{ company: Company; className: string }> = ({
-    company,
-    className,
-  }) => {
-    const logoPath = `/companies/${company.id}/logo.webp`;
-    return (
-      <div className="bg-white rounded-3xl hover:scale-105 transition-transform duration-100 shadow-xl p-4">
-        <Link className="" to={`/companies/${company.id}`}>
-          <img
-            src={logoPath}
-            className={`object-contain ${className}`}
-            alt={`${company.name} logo`}
-          />
-        </Link>
-      </div>
-    );
-  };
-
   const noFiltersSelected =
-    Object.values(selectedFilters).every((filterSet) => filterSet.size === 0) &&
-    searchTerm === "";
-  const partners = companies.filter((company) => company.isPartner);
+    filters.candidatePrograms.size === 0 &&
+    filters.mastersPrograms.size === 0 &&
+    filters.positions.size === 0 &&
+    filters.search === "";
+
   return (
     <div className="flex flex-col items-center py-32 px-10">
       <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
@@ -175,8 +114,8 @@ const Companies: React.FC = () => {
               <p className="">
                 {getLabel(
                   new Set<string>([
-                    ...selectedFilters.candidatePrograms,
-                    ...selectedFilters.masterPrograms,
+                    ...filters.candidatePrograms,
+                    ...filters.mastersPrograms,
                   ]),
                   "programs"
                 )}
@@ -198,7 +137,7 @@ const Companies: React.FC = () => {
               }}
               className="flex items-center gap-2 px-4 py-2 bg-accent rounded-2xl hover:opacity-90 transition-opacity"
             >
-              {getLabel(selectedFilters.positions, "positions")}
+              {getLabel(filters.positions, "positions")}
               <ChevronDown
                 className={`transform transition-transform duration-200 ${
                   positionsExpanded ? "rotate-180" : ""
@@ -220,13 +159,13 @@ const Companies: React.FC = () => {
               type="text"
               className="w-full px-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder={t("global.searchPlaceholder")}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              value={filters.search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-            {searchTerm && (
+            {filters.search && (
               <button
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                onClick={() => setSearchTerm("")}
+                onClick={() => setSearch("")}
                 aria-label={t("search.clearSearch") || "Clear search"}
               >
                 ✕
@@ -241,29 +180,29 @@ const Companies: React.FC = () => {
               className="absolute bg-white rounded-xl flex flex-col shadow-md p-4 left-1/2 -translate-x-1/2 w-full max-w-[550px] gap-2 z-50"
             >
               <h1>Bachelor&apos;s programmes</h1>
-              {candidatePrograms.map((program) => (
+              {candidateProgramCodes.map((program) => (
                 <label key={program} className="font-light text-gray-700">
                   <input
                     type="checkbox"
                     value={program}
-                    checked={selectedFilters.candidatePrograms.has(program)}
-                    onChange={() => toggleFilter("candidatePrograms", program)}
+                    checked={filters.candidatePrograms.has(program)}
+                    onChange={() => toggleCandidateProgram(program)}
                     className="mr-2"
                   />
-                  {t(`programs.${program}`)}
+                  {t(`candidatePrograms.${program}`)}
                 </label>
               ))}
               <h1>Master&apos;s programmes</h1>
-              {masterPrograms.map((program) => (
+              {masterProgramCodes.map((program) => (
                 <label key={program} className="font-light text-gray-700">
                   <input
                     type="checkbox"
                     value={program}
-                    checked={selectedFilters.masterPrograms.has(program)}
-                    onChange={() => toggleFilter("masterPrograms", program)}
+                    checked={filters.mastersPrograms.has(program)}
+                    onChange={() => toggleMasterProgram(program)}
                     className="mr-2"
                   />
-                  {t(`programs.${program}`)}
+                  {t(`mastersPrograms.${program}`)}
                 </label>
               ))}
               <button
@@ -286,8 +225,8 @@ const Companies: React.FC = () => {
                   <input
                     type="checkbox"
                     value={position}
-                    checked={selectedFilters.positions.has(position)}
-                    onChange={() => toggleFilter("positions", position)}
+                    checked={filters.positions.has(position)}
+                    onChange={() => togglePosition(position)}
                     className="mr-2"
                   />
                   {t(`positions.${position}`)}
@@ -310,11 +249,7 @@ const Companies: React.FC = () => {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grd-flow-row gap-6">
             {partners.map((partner, index) => (
-              <CompanyCard
-                company={partner}
-                key={index}
-                className="h-44 w-[308px]"
-              />
+              <CompanyCard key={index} company={partner} />
             ))}
           </div>
           <Seperator className="my-10" />

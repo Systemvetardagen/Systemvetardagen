@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LogoLoop, { LogoItem } from "../common/LogoLoop";
-import companiesData from "@/assets/companies.json";
-import { Company } from "@/assets/companies";
+import { useCompanyContext } from "@/lib/context/CompanyContext";
 
 interface CompanyLoopProps {
   className?: string;
@@ -10,19 +9,19 @@ interface CompanyLoopProps {
 
 const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const companies: Company[] = companiesData as Company[];
+  const { companies } = useCompanyContext();
   const companyLogos: LogoItem[] = companies.map((company) => {
     return {
       src: `/companies/${company.id}/logo.webp`,

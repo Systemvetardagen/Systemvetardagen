@@ -1,243 +1,245 @@
 {
-    "global": {
-        "header": "Företag",
-        "showing": "Visar företag för",
-        "and": "och",
-        "all": "alla",
-        "programs": "program",
-        "positions": "positioner",
-        "clearFilters": "Rensa filter",
-        "searchPlaceholder": "Sök företag",
-        "partners": "Våra Partners",
-        "allCompanies": "Alla Företag",
-        "areaOfBusiness": "Affärsområde",
-        "founded": "Grundat",
-        "employeesInSweden": "Anställda i Sverige",
-        "employeesInternationally": "Anställda internationellt",
-        "lookingFor": "{{company}} söker",
-        "qualifications": "Kvalifikationer",
-        "contact": "Kontakt",
-        "learnMore": "Läs mer om att arbeta på {{company}}",
-        "backToCompanies": "Tillbaka till företagen",
-        "scrollToTop": "Skrolla till toppen"
+  "global": {
+    "header": "Företag",
+    "showing": "Visar företag för",
+    "and": "och",
+    "all": "alla",
+    "programs": "program",
+    "positions": "positioner",
+    "clearFilters": "Rensa filter",
+    "searchPlaceholder": "Sök företag",
+    "partners": "Våra Partners",
+    "allCompanies": "Alla Företag",
+    "areaOfBusiness": "Affärsområde",
+    "founded": "Grundat",
+    "employeesInSweden": "Anställda i Sverige",
+    "employeesInternationally": "Anställda internationellt",
+    "lookingFor": "{{company}} söker",
+    "qualifications": "Kvalifikationer",
+    "contact": "Kontakt",
+    "learnMore": "Läs mer om att arbeta på {{company}}",
+    "backToCompanies": "Tillbaka till företagen",
+    "scrollToTop": "Skrolla till toppen"
+  },
+  "candidatePrograms": {
+    "SYSDK": "Data- och systemvetenskap",
+    "SAFFK": "Affärssystem och tjänstedesign",
+    "SDAVK": "Datavetenskap",
+    "SGAMK": "Datorspelsutveckling",
+    "SDIMK": "Digitala medier",
+    "SITEK": "Ekonomi och IT",
+    "SIADK": "Interaktionsdesign",
+    "SMARK": "Marknadskommunikation och IT"
+  },
+  "mastersPrograms": {
+    "SAIHO": "AI for health",
+    "SMINO": "Information Security",
+    "SMEFO": "Open eGovernment",
+    "SCSSO": "Computer and Systems Sciences",
+    "SHINO": "Health Informatics",
+    "SSLIO": "Strategic Information Systems Management",
+    "SDSBO": "Data Science, Statistics and Decision Analysis",
+    "SPROM": "IT Project Management",
+    "SDKIO": "Design for Creative and Immersive Technology"
+  },
+  "positions": {
+    "fullTime": "Heltidstjänster",
+    "partTime": "Deltidtjänster",
+    "thesis": "Examensarbete",
+    "trainee": "Traineeprogram",
+    "internship": "Praktikplatser",
+    "foreignServices": "Utlandstjänster"
+  },
+  "accenture": {
+    "areaOfBusiness": "IT-Konsulttjänster, Strategi, Säkerhet, Cloud, Business Intelligence, AI, Interaktionsdesign, Front-End, Back-End, Affärssystem, Systemimplementationer, Design.",
+    "description": {
+      "paragraph1": "Accenture är ett ledande globalt tjänsteföretag som hjälper världens ledande företag, myndigheter och andra organisationer att bygga sin digitala kärna, optimera sin verksamhet, påskynda sin tillväxt och förbättra tjänster mot medborgare – vilket skapar påtagligt värde i snabbhet och skala. Vi är ett talang- och innovationsdrivet företag med cirka 774 000 personer som hjälper kunder i mer än 120 länder. Tekniken är kärnan i förändring idag och vi är en av världens ledare när det gäller att hjälpa till att driva den förändringen, med starka ekosystemrelationer. Vi kombinerar vår styrka inom teknik och ledarskap inom moln, data och AI med oöverträffad branscherfarenhet, funktionell expertis och global leveransförmåga. Vårt breda utbud av tjänster, lösningar och tillgångar inom Strategi & Consulting, Technology, Operations, Industry X och Song, tillsammans med vår kultur av delad framgång och engagemang för att skapa 360° värde, gör det möjligt för oss att hjälpa våra kunder att återuppfinna och bygga pålitliga, varaktiga relationer. Vi mäter vår framgång genom det 360° värde vi skapar för våra kunder, varandra och våra aktieägare."
     },
-    "programs": {
-        "SYSDK": "Data- och systemvetenskap",
-        "SAFFK": "Affärssystem och tjänstedesign",
-        "SDAVK": "Datavetenskap",
-        "SGAMK": "Datorspelsutveckling",
-        "SDIMK": "Digitala medier",
-        "SITEK": "Ekonomi och IT",
-        "SIADK": "Interaktionsdesign",
-        "SMARK": "Marknadskommunikation och IT",
-        "SAIHO": "AI for health",
-        "SMINO": "Information Security",
-        "SMEFO": "Open eGovernment",
-        "SCSSO": "Computer and Systems Sciences",
-        "SHINO": "Health Informatics",
-        "SSLIO": "Strategic Information Systems Management",
-        "SDSBO": "Data Science, Statistics and Decision Analysis",
-        "SPROM": "IT Project Management",
-        "SDKIO": "Design for Creative and Immersive Technology"
+    "qualifications": "Aktiv kårmedlem, Utbytestudier, Föreningsliv, Java, SQL, React, Angular, Python, HTML, CSS, Oracle, SAP, Cloud Services."
+  },
+  "handelsbanken": {
+    "areaOfBusiness": "Handelsbanken IT",
+    "description": {
+      "paragraph1": "Tillsammans utvecklar vi tjänster som används av miljoner människor dagligen och som stöttar samhällsutvecklingen. Här är du med på en spännande resa. För dig personligen och för banken i stort. Förutom att vi är en av Sveriges största banker är vi också en av landets största arbetsgivare inom tech, data och innovation − med över 2 000 medarbetare som jobbar nära affären för att utveckla bankens system."
     },
-    "positions": {
-        "fullTime": "Heltidstjänster",
-        "partTime": "Deltidtjänster",
-        "thesis": "Examensarbete",
-        "trainee": "Traineeprogram",
-        "internship": "Praktikplatser",
-        "foreignServices": "Utlandstjänster"
+    "qualifications": ""
+  },
+  "ericsson": {
+    "areaOfBusiness": "Informations- och kommunikationsteknik",
+    "description": {
+      "paragraph1": "Hos Ericsson kommer du ha en unik möjlighet. Möjligheten att använda dina kunskaper och din fantasi för att tänja på gränserna för vad som är möjligt. Att skapa lösningar på några av världens tuffaste problem. Du kommer att bli utmanad. Men du kommer inte att vara ensam. Du kommer att ingå i ett team av likasinnade innovatörer, alla drivna att gå bortom status quo för att bygga vad som kommer härnäst. Du kommer att samarbeta över discipliner, gränser och kontinenter. Du kommer att få befogenhet att leda och prestera på ditt bästa. Du kommer att forma teknik för människor, samhällen, industrier och mänskligheten. Du kommer att vara en del av en mångfaldig gemenskap där du kan ta med dig ditt eget helt unika jag på jobbet. Hos Ericsson kan du vara en upptäcktsresande, en förändringsmakare och en kraft för det goda."
     },
-    "accenture": {
-        "areaOfBusiness": "IT-Konsulttjänster, Strategi, Säkerhet, Cloud, Business Intelligence, AI, Interaktionsdesign, Front-End, Back-End, Affärssystem, Systemimplementationer, Design.",
-        "description": {
-            "paragraph1": "Accenture är ett ledande globalt tjänsteföretag som hjälper världens ledande företag, myndigheter och andra organisationer att bygga sin digitala kärna, optimera sin verksamhet, påskynda sin tillväxt och förbättra tjänster mot medborgare – vilket skapar påtagligt värde i snabbhet och skala. Vi är ett talang- och innovationsdrivet företag med cirka 774 000 personer som hjälper kunder i mer än 120 länder. Tekniken är kärnan i förändring idag och vi är en av världens ledare när det gäller att hjälpa till att driva den förändringen, med starka ekosystemrelationer. Vi kombinerar vår styrka inom teknik och ledarskap inom moln, data och AI med oöverträffad branscherfarenhet, funktionell expertis och global leveransförmåga. Vårt breda utbud av tjänster, lösningar och tillgångar inom Strategi & Consulting, Technology, Operations, Industry X och Song, tillsammans med vår kultur av delad framgång och engagemang för att skapa 360° värde, gör det möjligt för oss att hjälpa våra kunder att återuppfinna och bygga pålitliga, varaktiga relationer. Vi mäter vår framgång genom det 360° värde vi skapar för våra kunder, varandra och våra aktieägare."
-        },
-        "qualifications": "Aktiv kårmedlem, Utbytestudier, Föreningsliv, Java, SQL, React, Angular, Python, HTML, CSS, Oracle, SAP, Cloud Services."
+    "qualifications": ""
+  },
+  "cgi": {
+    "areaOfBusiness": "IT, Affärsrådgivning",
+    "description": {
+      "paragraph1": "Ett av världens största IT-konsultbolag som innefattar branscher inom industrier, bank och finans, publik sektor och försvar. Våra konsulter jobbar med allt ifrån systemutveckling, itsäkerhet, projektledning och business consulting."
     },
-    "handelsbanken": {
-        "areaOfBusiness": "Handelsbanken IT",
-        "description": {
-            "paragraph1": "Tillsammans utvecklar vi tjänster som används av miljoner människor dagligen och som stöttar samhällsutvecklingen. Här är du med på en spännande resa. För dig personligen och för banken i stort. Förutom att vi är en av Sveriges största banker är vi också en av landets största arbetsgivare inom tech, data och innovation − med över 2 000 medarbetare som jobbar nära affären för att utveckla bankens system."
-        },
-        "qualifications": ""
+    "qualifications": ".NET, Azure, projektlening, arkitektur, Java, Ai, GCP, AWS, ISTQB, REQB, COBOL, PYTHON, SCRUM, Business intelligence, qliksense, power-bi, security, it-security"
+  },
+  "akavia": {
+    "areaOfBusiness": "Fackförbund",
+    "description": {
+      "paragraph1": "Akavia är fackförbundet för dig som vill mer. Som vill utveckla och utvecklas. För dig som söker fakta och sprider kunskap. Tillsammans är vi över 144 000 akademiker som valt Akavia. 33 000 av dem är studenter. Bli medlem du också! Som ditt fackförbund stöttar Akavia dig som medlem genom hela ditt arbetsliv. Hos oss är det din utbildning som är i fokus. Det gör att du kan vara medlem genom hela ditt arbetsliv och trygga din karriär oavsett sektor, bransch eller roll. Som studentmedlem i Akavia får du verktygen för att optimera starten på din karriär genom bland annat granskning av CV, lönestatistik, karriärrådgivning och intervjuträning. Besök oss på Akavia.se för att läsa mer om hur vi som organisation arbetar för att ge dig full utväxling på sin akademiska utbildning genom hela arbetslivet.",
+      "paragraph2": "Akavia är fackförbundet för ekonomer, jurister, samhällsvetare, it-akademiker, personalvetare och kommunikatörer. Du lägger just nu stor kraft och mycket resurser på din akademiska utbildning – vi jobbar för att du ska få utväxling på den investeringen. Hos Akavia får du verktygen och nätverken för att optimera starten på din karriär. Som student är medlemskapet kostnadsfritt och våra karriärrådgivare hjälper dig med allt från var jobben finns till vad du ska begära i ingångslön."
     },
-    "ericsson": {
-        "areaOfBusiness": "Informations- och kommunikationsteknik",
-        "description": {
-            "paragraph1": "Hos Ericsson kommer du ha en unik möjlighet. Möjligheten att använda dina kunskaper och din fantasi för att tänja på gränserna för vad som är möjligt. Att skapa lösningar på några av världens tuffaste problem. Du kommer att bli utmanad. Men du kommer inte att vara ensam. Du kommer att ingå i ett team av likasinnade innovatörer, alla drivna att gå bortom status quo för att bygga vad som kommer härnäst. Du kommer att samarbeta över discipliner, gränser och kontinenter. Du kommer att få befogenhet att leda och prestera på ditt bästa. Du kommer att forma teknik för människor, samhällen, industrier och mänskligheten. Du kommer att vara en del av en mångfaldig gemenskap där du kan ta med dig ditt eget helt unika jag på jobbet. Hos Ericsson kan du vara en upptäcktsresande, en förändringsmakare och en kraft för det goda."
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "gtslAB": {
+    "areaOfBusiness": "Systemutveckling, Webbutveckling, UX design, Projektledning, Affärssystem, Business Analyst, Business Intelligence, AI, Machine Learning, IT-säkerhet och Test",
+    "description": {
+      "paragraph1": "På Guided Talent Solutions är vi specialiserade på målgruppen nyexaminerade techtalanger. Genom våra olika koncept får du som techtalang en perfekt övergång från studier till arbetsliv. Vi hjälper dig att få en flygande start på din karriär genom samarbeten med några av Sveriges främsta techbolag. Med våra talangprogram och konsultuppdrag erbjuder vi unika möjligheter som kombinerar praktiskt arbete, skräddarsydda utbildningar, sociala aktiviteter och handledning. Du kommer att få en gedigen onboarding och introduktion till din roll. Med möjlighet att bygga ett starkt nätverk och gemenskap med andra techtalanger. Vi ger dig trygg handledning och stöd genom hela din resa, för att du ska ha de bästa förutsättningarna att lyckas."
     },
-    "cgi": {
-        "areaOfBusiness": "IT, Affärsrådgivning",
-        "description": {
-            "paragraph1": "Ett av världens största IT-konsultbolag som innefattar branscher inom industrier, bank och finans, publik sektor och försvar. Våra konsulter jobbar med allt ifrån systemutveckling, itsäkerhet, projektledning och business consulting."
-        },
-        "qualifications": ".NET, Azure, projektlening, arkitektur, Java, Ai, GCP, AWS, ISTQB, REQB, COBOL, PYTHON, SCRUM, Business intelligence, qliksense, power-bi, security, it-security"
+    "qualifications": "C/C++, .Net/C#, Angular, JavaScript, HTML/CSS, React, Node.Js, Java, Python, AWS, Azure, SQL Server, ServiceNow, Kafka, PHP, Integration, DevOps, Jenkins, Kotlin, Machine Learning, AI, Test, Kravhantering, Cybersäkerhet, UX/UI, CI/CD, TDD"
+  },
+  "swedbank": {
+    "areaOfBusiness": "IT-säkerhet, mjukvaruutveckling, molntjänster, AI och maskininlärning, nätverksinfrastruktur, dataanalys, och mer.",
+    "description": {
+      "paragraph1": "Swedbank är en fullservicebank som erbjuder lån, betalningar och sparande för att förenkla vardagen för privatpersoner och företag. Vi har våra rötter i den svenska sparbanksrörelsen som startade 1820.",
+      "paragraph2": ""
     },
-    "akavia": {
-        "areaOfBusiness": "Fackförbund",
-        "description": {
-            "paragraph1": "Akavia är fackförbundet för dig som vill mer. Som vill utveckla och utvecklas. För dig som söker fakta och sprider kunskap. Tillsammans är vi över 144 000 akademiker som valt Akavia. 33 000 av dem är studenter. Bli medlem du också! Som ditt fackförbund stöttar Akavia dig som medlem genom hela ditt arbetsliv. Hos oss är det din utbildning som är i fokus. Det gör att du kan vara medlem genom hela ditt arbetsliv och trygga din karriär oavsett sektor, bransch eller roll. Som studentmedlem i Akavia får du verktygen för att optimera starten på din karriär genom bland annat granskning av CV, lönestatistik, karriärrådgivning och intervjuträning. Besök oss på Akavia.se för att läsa mer om hur vi som organisation arbetar för att ge dig full utväxling på sin akademiska utbildning genom hela arbetslivet.",
-            "paragraph2": "Akavia är fackförbundet för ekonomer, jurister, samhällsvetare, it-akademiker, personalvetare och kommunikatörer. Du lägger just nu stor kraft och mycket resurser på din akademiska utbildning – vi jobbar för att du ska få utväxling på den investeringen. Hos Akavia får du verktygen och nätverken för att optimera starten på din karriär. Som student är medlemskapet kostnadsfritt och våra karriärrådgivare hjälper dig med allt från var jobben finns till vad du ska begära i ingångslön."
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "kpmg": {
+    "areaOfBusiness": "Konsulttjänster, Cybersäkerhet, Informationssäkerhet, Riskkonsulting, Management Consulting, Teknologitransformation och AI, Dataanalys, Finansiell tjänstekonsulting, Informationsriskhantering, IT-revision.",
+    "description": {
+      "paragraph1": "Vårt syfte på KPMG är att inspirera förtroende och möjliggöra förändring. Med 2 400 medarbetare i vår region och ett globalt nätverk av 275 000 experter i 143 länder, står vi som ett av världens ledande företag inom professional services. Vi levererar insiktsfull affärsvägledning och skräddarsydda lösningar till våra kunder, inom rådgivning, revision och skatt. Ingenjörer, systemvetare och tech-experter spelar en avgörande roll i många av våra team.",
+      "paragraph2": ""
     },
-    "gtslAB": {
-        "areaOfBusiness": "Systemutveckling, Webbutveckling, UX design, Projektledning, Affärssystem, Business Analyst, Business Intelligence, AI, Machine Learning, IT-säkerhet och Test",
-        "description": {
-            "paragraph1": "På Guided Talent Solutions är vi specialiserade på målgruppen nyexaminerade techtalanger. Genom våra olika koncept får du som techtalang en perfekt övergång från studier till arbetsliv. Vi hjälper dig att få en flygande start på din karriär genom samarbeten med några av Sveriges främsta techbolag. Med våra talangprogram och konsultuppdrag erbjuder vi unika möjligheter som kombinerar praktiskt arbete, skräddarsydda utbildningar, sociala aktiviteter och handledning. Du kommer att få en gedigen onboarding och introduktion till din roll. Med möjlighet att bygga ett starkt nätverk och gemenskap med andra techtalanger. Vi ger dig trygg handledning och stöd genom hela din resa, för att du ska ha de bästa förutsättningarna att lyckas."
-        },
-        "qualifications": "C/C++, .Net/C#, Angular, JavaScript, HTML/CSS, React, Node.Js, Java, Python, AWS, Azure, SQL Server, ServiceNow, Kafka, PHP, Integration, DevOps, Jenkins, Kotlin, Machine Learning, AI, Test, Kravhantering, Cybersäkerhet, UX/UI, CI/CD, TDD"
+    "qualifications": "Starka analytiska och problemlösande färdigheter, kunskap om cybersäkerhetsramverk (t.ex. NIST, ISO 27001), Informationssäkerhetshanteringssystem (ISMS), riskbedömning och hantering, strategisk planering och organisatorisk utveckling, förändringshantering, skicklighet i dataanalysverktyg, förståelse för finansiella regler och efterlevnad, IT-revisionsstandarder och praxis, samt utmärkta kommunikations- och presentationsförmågor."
+  },
+  "columbus": {
+    "areaOfBusiness": "Vi implementerar end-to-end lösningar inom Cloud ERP, Data & AI, Digital Commerce, CX och Application Management inom tillverknings-, detaljhandels- och distributions-, livsmedels- och dryckes- samt life science-industrin.",
+    "description": {
+      "paragraph1": "Som ett ledande konsultföretag levererar Columbus projekt inom olika industrier så som manufacturing, retail & distribution, food & beverage och life science. Under många år har våra acceleratorprogram varit en hörnsten i Columbus framgång! Våra fantastiska konsulter gör det möjligt för oss att kontinuerligt implementera affärskritiska lösningar inom Cloud ERP, Data & AI, E-Handel, Customer Experience, Security och ESG.",
+      "paragraph2": ""
     },
-    "swedbank": {
-        "areaOfBusiness": "IT-säkerhet, mjukvaruutveckling, molntjänster, AI och maskininlärning, nätverksinfrastruktur, dataanalys, och mer.",
-        "description": {
-            "paragraph1": "Swedbank är en fullservicebank som erbjuder lån, betalningar och sparande för att förenkla vardagen för privatpersoner och företag. Vi har våra rötter i den svenska sparbanksrörelsen som startade 1820.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": "IT, Affärssystem, Supply Chain, Ekonomi, Finans, Produktion, E-Handel, Utveckling, Business Intelligence"
+  },
+  "lime": {
+    "areaOfBusiness": "Tech, IT, SaaS",
+    "description": {
+      "paragraph1": "I över 30 år har vi hjälpt företag nå bättre resultat med användarvänliga CRM-lösningar som vi själva utvecklar, säljer, implementerar och supportar. Trots att vi gärna skryter om att vi haft en tillväxt på 20% per år sen millennieskiftet är vi ganska ödmjuka. Idag är vi över 500 kollegor och en av Nordens ledande CRM-leverantörer med kontor i Lund, Göteborg, Stockholm, Gävle, Köpenhamn, Oslo, Helsingfors, Utrecht och Köln.",
+      "paragraph2": ""
     },
-    "kpmg": {
-        "areaOfBusiness": "Konsulttjänster, Cybersäkerhet, Informationssäkerhet, Riskkonsulting, Management Consulting, Teknologitransformation och AI, Dataanalys, Finansiell tjänstekonsulting, Informationsriskhantering, IT-revision.",
-        "description": {
-            "paragraph1": "Vårt syfte på KPMG är att inspirera förtroende och möjliggöra förändring. Med 2 400 medarbetare i vår region och ett globalt nätverk av 275 000 experter i 143 länder, står vi som ett av världens ledande företag inom professional services. Vi levererar insiktsfull affärsvägledning och skräddarsydda lösningar till våra kunder, inom rådgivning, revision och skatt. Ingenjörer, systemvetare och tech-experter spelar en avgörande roll i många av våra team.",
-            "paragraph2": ""
-        },
-        "qualifications": "Starka analytiska och problemlösande färdigheter, kunskap om cybersäkerhetsramverk (t.ex. NIST, ISO 27001), Informationssäkerhetshanteringssystem (ISMS), riskbedömning och hantering, strategisk planering och organisatorisk utveckling, förändringshantering, skicklighet i dataanalysverktyg, förståelse för finansiella regler och efterlevnad, IT-revisionsstandarder och praxis, samt utmärkta kommunikations- och presentationsförmågor."
+    "qualifications": "Affärsmässig, Intresserad av teknik och IT, Pålitlig, Smart och får saker gjorda, Inte en dålig förlorare, men du hatar att förlora, Vill utvecklas och lära dig mer, En person med hög emotionell intelligens (EQ), Trots allt detta: ödmjuk med sinne för humor, Flytande i antingen svenska, danska, finska eller norska – beroende på var du vill arbeta."
+  },
+  "fackst": {
+    "areaOfBusiness": "Administration, Ekonomi, IT, Juridik, Personalfrågor",
+    "description": {
+      "paragraph1": "Fackförbundet ST är fackförbundet för dig som student. Därför ska du som student vara med i Fackförbundet ST: Studentmedlemskapet i Fackförbundet ST är helt kostnadsfritt. Utöver det får du en rad studentförmåner, samtidigt är du med och stödjer vårt fackliga arbete för bättre arbetsvillkor. Fackförbund finns för att företräda dina intressen som arbetstagare. Vår styrka är beroende av att vi är många, därför är ditt medlemskap viktigt – även för andra. På så sätt är facket relevant för dig som student. Dessutom kan vi faktiskt företräda dig om du jobbar extra vid sidan av studierna. Som medlem hjälper vi dig också med en rad förmåner och en smidig övergång till arbetslivet. \n Du får förmåner för både plånboken och karriären: När du blir medlem i ST får du ta del av en rad förmånliga studentförmåner. Som studentmedlem får du till exempel kostnadsfri tillgång till flera tjänster som förbereder dig inför yrkeslivet – professionell feedback på ditt CV, lönerådgivning eller arbetsintervjuträning för att nämna några. Numera är också begåvningstest en viktig del av många rekryteringsprocesser. Bli studentmedlem idag genom att gå in på den här länken https://st.org/medlemskap/bli-studentmedlem"
     },
-    "columbus": {
-        "areaOfBusiness": "Vi implementerar end-to-end lösningar inom Cloud ERP, Data & AI, Digital Commerce, CX och Application Management inom tillverknings-, detaljhandels- och distributions-, livsmedels- och dryckes- samt life science-industrin.",
-        "description": {
-            "paragraph1": "Som ett ledande konsultföretag levererar Columbus projekt inom olika industrier så som manufacturing, retail & distribution, food & beverage och life science. Under många år har våra acceleratorprogram varit en hörnsten i Columbus framgång! Våra fantastiska konsulter gör det möjligt för oss att kontinuerligt implementera affärskritiska lösningar inom Cloud ERP, Data & AI, E-Handel, Customer Experience, Security och ESG.",
-            "paragraph2": ""
-        },
-        "qualifications": "IT, Affärssystem, Supply Chain, Ekonomi, Finans, Produktion, E-Handel, Utveckling, Business Intelligence"
+    "qualifications": "a"
+  },
+  "scania": {
+    "areaOfBusiness": "Programvaruutveckling, Moln, Cybersäkerhet, AI, Maskininlärning, Industri 4.0, Datorseende, Datavetenskap",
+    "description": {
+      "paragraph1": "Scanias kultur är både pragmatisk och ambitiös. Vi vill driva verklig förändring och genom att utnyttja innovationens kraft hittar vi svar på några av våra mest akuta hållbarhetsutmaningar, från urban mobilitet till klimatförändringar. Samtidigt förändrar teknologier som elektrifiering och automation vår verksamhet radikalt, vilket skapar spännande nya möjligheter och affärsmodeller."
     },
-    "lime": {
-        "areaOfBusiness": "Tech, IT, SaaS",
-        "description": {
-            "paragraph1": "I över 30 år har vi hjälpt företag nå bättre resultat med användarvänliga CRM-lösningar som vi själva utvecklar, säljer, implementerar och supportar. Trots att vi gärna skryter om att vi haft en tillväxt på 20% per år sen millennieskiftet är vi ganska ödmjuka. Idag är vi över 500 kollegor och en av Nordens ledande CRM-leverantörer med kontor i Lund, Göteborg, Stockholm, Gävle, Köpenhamn, Oslo, Helsingfors, Utrecht och Köln.",
-            "paragraph2": ""
-        },
-        "qualifications": "Affärsmässig, Intresserad av teknik och IT, Pålitlig, Smart och får saker gjorda, Inte en dålig förlorare, men du hatar att förlora, Vill utvecklas och lära dig mer, En person med hög emotionell intelligens (EQ), Trots allt detta: ödmjuk med sinne för humor, Flytande i antingen svenska, danska, finska eller norska – beroende på var du vill arbeta."
+    "qualifications": "Java, Python, C++, JavaScript, C#, SQL, TypeScript, Scala, Kotlin, AWS, Azure."
+  },
+  "capgemini": {
+    "areaOfBusiness": "Capgemini arbetar med organisationer inom bl.a energi, bank, försäkring, bilindustri, offentlig sektor, telecom, produktion, life science.",
+    "description": {
+      "paragraph1": "Capgemini är en global partner inom affärs- och tekniktransformation som hjälper organisationer att påskynda deras övergång till en digital och hållbar värld, och samtidigt göra skillnad för företag och samhälle. Det är en ansvarsfull och mångsidig organisation med 340 000 medarbetare i över 50 länder. Med ett starkt arv som sträcker sig över 55 år tillbaka har Capgemini sina kunders förtroende att hjälpa dem frigöra värdet av teknik för att tillgodose hela deras affärsbehov. Capgemini levererar helhetslösningar som utnyttjar styrkan från strategi och design till teknik. Allt drivet av en marknadsledande kapacitet inom AI, moln och data, kombinerat med en djup branschexpertis och ett ekosystem av partners. År 2023 rapporterade Capgemini Group globala intäkter på 22,5 miljarder euro.",
+      "paragraph2": ""
     },
-    "fackst": {
-        "areaOfBusiness": "Administration, Ekonomi, IT, Juridik, Personalfrågor",
-        "description": {
-            "paragraph1": "Fackförbundet ST är fackförbundet för dig som student. Därför ska du som student vara med i Fackförbundet ST: Studentmedlemskapet i Fackförbundet ST är helt kostnadsfritt. Utöver det får du en rad studentförmåner, samtidigt är du med och stödjer vårt fackliga arbete för bättre arbetsvillkor. Fackförbund finns för att företräda dina intressen som arbetstagare. Vår styrka är beroende av att vi är många, därför är ditt medlemskap viktigt – även för andra. På så sätt är facket relevant för dig som student. Dessutom kan vi faktiskt företräda dig om du jobbar extra vid sidan av studierna. Som medlem hjälper vi dig också med en rad förmåner och en smidig övergång till arbetslivet. \n Du får förmåner för både plånboken och karriären: När du blir medlem i ST får du ta del av en rad förmånliga studentförmåner. Som studentmedlem får du till exempel kostnadsfri tillgång till flera tjänster som förbereder dig inför yrkeslivet – professionell feedback på ditt CV, lönerådgivning eller arbetsintervjuträning för att nämna några. Numera är också begåvningstest en viktig del av många rekryteringsprocesser. Bli studentmedlem idag genom att gå in på den här länken https://st.org/medlemskap/bli-studentmedlem"
-        },
-        "qualifications": "a"
+    "qualifications": ""
+  },
+  "soprasteria": {
+    "areaOfBusiness": "Helhetslösningar inom allt från dataanalys, affärs- och verksamhetsutveckling via projekt- och förändringsledning till systemutveckling, testning, driftsättning och daglig förvaltning av IT-system.",
+    "description": {
+      "paragraph1": "Sopra Steria är en internationell partner inom IT, management och design, med en tjänsteportfölj som täcker allt ni behöver för att lyckas i en digital värld. Vi bygger samhället med smarta och innovativa lösningar och hjälper företag från första idé till färdig lösning. Vi har utsetts till Sveriges Bästa Arbetsplats av Great Place to Work och har tilldelats utmärkelsen Karriärföretag sex år i rad. Med oss får ni en partner som levererar, inspirerar och gör skillnad på riktigt.",
+      "paragraph2": ""
     },
-    "scania": {
-        "areaOfBusiness": "Programvaruutveckling, Moln, Cybersäkerhet, AI, Maskininlärning, Industri 4.0, Datorseende, Datavetenskap",
-        "description": {
-            "paragraph1": "Scanias kultur är både pragmatisk och ambitiös. Vi vill driva verklig förändring och genom att utnyttja innovationens kraft hittar vi svar på några av våra mest akuta hållbarhetsutmaningar, från urban mobilitet till klimatförändringar. Samtidigt förändrar teknologier som elektrifiering och automation vår verksamhet radikalt, vilket skapar spännande nya möjligheter och affärsmodeller."
-        },
-        "qualifications": "Java, Python, C++, JavaScript, C#, SQL, TypeScript, Scala, Kotlin, AWS, Azure."
+    "qualifications": "Är på väg att avsluta dina studier eller är nyutexaminerad på kandidat- eller masternivå från universitet eller högskola (examen 2024 eller 2025). Har läst en ingenjörsutbildning eller annan relevant teknisk utbildning inom data/systemvetenskap, IT eller liknande. Har goda kunskaper i tal och skrift på svenska och engelska. Är både en bra lyssnare och en god kommunikatör vilket gör att du kan se nya möjligheter i ditt uppdrag. En av de saker som symboliserar en framgångsrik konsult är högt affärsmannaskap. Ute i ditt uppdrag är du en relationsbyggare för Sopra Steria och kunden. Är ambitiös och målinriktad och kan visa att du klarar att förverkliga det du har bestämt dig för att göra, både genom studier och på fritiden. Vi ser gärna att du har visat driv och nyfikenhet genom att engagera dig i olika aktiviteter vid sidan om dina studier. Framför allt, brinner du för att jobba med digitalisering!"
+  },
+  "polisen": {
+    "areaOfBusiness": "Systemutveckling, uppdragsledning, UX-design, test, kravanalytiker, teknikspecialister, tekniska produktspecialister, CI/CD, AI, ML, NLP, analytiker, it-säkerhet",
+    "description": {
+      "paragraph1": "Polisens IT är en del i det brottsbekämpande arbetet, vi ger service till medborgarna och underlättar för myndighetens medarbetare att utföra sina uppdrag. I takt med att digitaliseringen ökar måste polisen kunna hantera allt större datamängder, dra nytta av nya teknologier och ligga steget före de kriminella, utan att kompromissa med säkerhet och rättssäkerhet. Att jobba på polisens IT är att vara en avgörande del i det brottsbekämpande arbetet. Oavsett om det handlar om att utveckla ny forensisk teknologi eller kommunicera via polisradion krävs väl fungerande IT-lösningar.",
+      "paragraph2": ""
     },
-    "capgemini": {
-        "areaOfBusiness": "Capgemini arbetar med organisationer inom bl.a energi, bank, försäkring, bilindustri, offentlig sektor, telecom, produktion, life science.",
-        "description": {
-            "paragraph1": "Capgemini är en global partner inom affärs- och tekniktransformation som hjälper organisationer att påskynda deras övergång till en digital och hållbar värld, och samtidigt göra skillnad för företag och samhälle. Det är en ansvarsfull och mångsidig organisation med 340 000 medarbetare i över 50 länder. Med ett starkt arv som sträcker sig över 55 år tillbaka har Capgemini sina kunders förtroende att hjälpa dem frigöra värdet av teknik för att tillgodose hela deras affärsbehov. Capgemini levererar helhetslösningar som utnyttjar styrkan från strategi och design till teknik. Allt drivet av en marknadsledande kapacitet inom AI, moln och data, kombinerat med en djup branschexpertis och ett ekosystem av partners. År 2023 rapporterade Capgemini Group globala intäkter på 22,5 miljarder euro.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "innofactor": {
+    "areaOfBusiness": "IT-konsultbolag",
+    "description": {
+      "paragraph1": "På Innofactor arbetar nästan 600 experter i Finland, Sverige, Danmark och Norge. Vi är ett IT‑konsultbolag som sätter individen i fokus och erbjuder en arbetsmiljö som främjar personlig utveckling samt en god balans mellan arbete och privatliv.",
+      "paragraph2": ""
     },
-    "soprasteria": {
-        "areaOfBusiness": "Helhetslösningar inom allt från dataanalys, affärs- och verksamhetsutveckling via projekt- och förändringsledning till systemutveckling, testning, driftsättning och daglig förvaltning av IT-system.",
-        "description": {
-            "paragraph1": "Sopra Steria är en internationell partner inom IT, management och design, med en tjänsteportfölj som täcker allt ni behöver för att lyckas i en digital värld. Vi bygger samhället med smarta och innovativa lösningar och hjälper företag från första idé till färdig lösning. Vi har utsetts till Sveriges Bästa Arbetsplats av Great Place to Work och har tilldelats utmärkelsen Karriärföretag sex år i rad. Med oss får ni en partner som levererar, inspirerar och gör skillnad på riktigt.",
-            "paragraph2": ""
-        },
-        "qualifications": "Är på väg att avsluta dina studier eller är nyutexaminerad på kandidat- eller masternivå från universitet eller högskola (examen 2024 eller 2025). Har läst en ingenjörsutbildning eller annan relevant teknisk utbildning inom data/systemvetenskap, IT eller liknande. Har goda kunskaper i tal och skrift på svenska och engelska. Är både en bra lyssnare och en god kommunikatör vilket gör att du kan se nya möjligheter i ditt uppdrag. En av de saker som symboliserar en framgångsrik konsult är högt affärsmannaskap. Ute i ditt uppdrag är du en relationsbyggare för Sopra Steria och kunden. Är ambitiös och målinriktad och kan visa att du klarar att förverkliga det du har bestämt dig för att göra, både genom studier och på fritiden. Vi ser gärna att du har visat driv och nyfikenhet genom att engagera dig i olika aktiviteter vid sidan om dina studier. Framför allt, brinner du för att jobba med digitalisering!"
+    "qualifications": "Dynamics 365 CE och Power Platform, C#, .Net, JS, VS Code, git, Azure, DevOps."
+  },
+  "deloitte": {
+    "areaOfBusiness": "Cyber Security, IT Audit, Data & Analytics, Management Consulting, Tax Technology Consulting, FinTech, och mer.",
+    "description": {
+      "paragraph1": "Deloitte är en ledande global leverantör av revision, konsulttjänster, finansiell rådgivning, riskrådgivning, skatt och relaterade tjänster. Vårt globala nätverk av medlemsföretag och relaterade enheter består av cirka 460 000+ personer i mer än 150 länder och territorier, vilket gör att vi betjänar fyra av fem Fortune Global 500‑företag.",
+      "paragraph2": ""
     },
-    "polisen": {
-        "areaOfBusiness": "Systemutveckling, uppdragsledning, UX-design, test, kravanalytiker, teknikspecialister, tekniska produktspecialister, CI/CD, AI, ML, NLP, analytiker, it-säkerhet",
-        "description": {
-            "paragraph1": "Polisens IT är en del i det brottsbekämpande arbetet, vi ger service till medborgarna och underlättar för myndighetens medarbetare att utföra sina uppdrag. I takt med att digitaliseringen ökar måste polisen kunna hantera allt större datamängder, dra nytta av nya teknologier och ligga steget före de kriminella, utan att kompromissa med säkerhet och rättssäkerhet. Att jobba på polisens IT är att vara en avgörande del i det brottsbekämpande arbetet. Oavsett om det handlar om att utveckla ny forensisk teknologi eller kommunicera via polisradion krävs väl fungerande IT-lösningar.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "pension": {
+    "areaOfBusiness": "Statlig verksamhet",
+    "description": {
+      "paragraph1": "Vi går pensioner enklare. Vi informerar om hela pensionen, administrerar och betalar ut allmän pension samt analyserar pensioner och pensionssystemet.",
+      "paragraph2": ""
     },
-    "innofactor": {
-        "areaOfBusiness": "IT-konsultbolag",
-        "description": {
-            "paragraph1": "På Innofactor arbetar nästan 600 experter i Finland, Sverige, Danmark och Norge. Vi är ett IT‑konsultbolag som sätter individen i fokus och erbjuder en arbetsmiljö som främjar personlig utveckling samt en god balans mellan arbete och privatliv.",
-            "paragraph2": ""
-        },
-        "qualifications": "Dynamics 365 CE och Power Platform, C#, .Net, JS, VS Code, git, Azure, DevOps."
+    "qualifications": ""
+  },
+  "folksam": {
+    "areaOfBusiness": "Juridik, Ekonomi, Försäkring, IT, Systemvetenskap och försäkringsmatematik/statistik",
+    "description": {
+      "paragraph1": "Folksam är ett kundägt företag med stort fokus på hållbarhetsfrågor. Vi erbjuder försäkringar och långsiktigt sparande som skapar trygghet i livets alla skeden, samtidigt som vi engagerar oss i trafiksäkerhet, miljöarbete och ansvarsfulla investeringar.",
+      "paragraph2": ""
     },
-    "deloitte": {
-        "areaOfBusiness": "Cyber Security, IT Audit, Data & Analytics, Management Consulting, Tax Technology Consulting, FinTech, och mer.",
-        "description": {
-            "paragraph1": "Deloitte är en ledande global leverantör av revision, konsulttjänster, finansiell rådgivning, riskrådgivning, skatt och relaterade tjänster. Vårt globala nätverk av medlemsföretag och relaterade enheter består av cirka 460 000+ personer i mer än 150 länder och territorier, vilket gör att vi betjänar fyra av fem Fortune Global 500‑företag.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "unionenStudent": {
+    "areaOfBusiness": "Fackligt medlemskap – privat arbetsmarknad",
+    "description": {
+      "paragraph1": "Unionen Student är Sveriges största fackförbund för studenter på den privata arbetsmarknaden. Som medlem får du hjälp med att vässa ditt CV, personligt brev och din LinkedIn-profil, samt tillgång till en rad studentrabatter och rådgivning.",
+      "paragraph2": ""
     },
-    "pension": {
-        "areaOfBusiness": "Statlig verksamhet",
-        "description": {
-            "paragraph1": "Vi går pensioner enklare. Vi informerar om hela pensionen, administrerar och betalar ut allmän pension samt analyserar pensioner och pensionssystemet.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": ""
+  },
+  "deviera": {
+    "areaOfBusiness": "IT‑konsulter",
+    "description": {
+      "paragraph1": "Deviera samlar engagerade IT‑konsulter som använder teknik för att skapa positiv förändring. Vi moderniserar verksamheter genom innovativa lösningar med hjälp av AI, maskininlärning, DevOps och mycket mer.",
+      "paragraph2": ""
     },
-    "folksam": {
-        "areaOfBusiness": "Juridik, Ekonomi, Försäkring, IT, Systemvetenskap och försäkringsmatematik/statistik",
-        "description": {
-            "paragraph1": "Folksam är ett kundägt företag med stort fokus på hållbarhetsfrågor. Vi erbjuder försäkringar och långsiktigt sparande som skapar trygghet i livets alla skeden, samtidigt som vi engagerar oss i trafiksäkerhet, miljöarbete och ansvarsfulla investeringar.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": "AI, LLM, DevOps, Azure, AWS, JavaScript, Grafisk Design, Agila arbetssätt."
+  },
+  "scandicHotels": {
+    "areaOfBusiness": "Webb- och apputveckling, integration, design, analys, IT-säkerhet, arkitektur och CRM",
+    "description": {
+      "paragraph1": "Scandic Hotels är Nordens största hotelloperatör som driver digital transformation inom hotellbranschen. Vi strävar efter att utveckla nästa generations digitala upplevelser för våra gäster och skapa en modern och hållbar hotellmiljö.",
+      "paragraph2": ""
     },
-    "unionenStudent": {
-        "areaOfBusiness": "Fackligt medlemskap – privat arbetsmarknad",
-        "description": {
-            "paragraph1": "Unionen Student är Sveriges största fackförbund för studenter på den privata arbetsmarknaden. Som medlem får du hjälp med att vässa ditt CV, personligt brev och din LinkedIn-profil, samt tillgång till en rad studentrabatter och rådgivning.",
-            "paragraph2": ""
-        },
-        "qualifications": ""
+    "qualifications": "Azure cloud, .NET, Javascript, TypeScript, Next.js 15, React Native, React, Kubernetes, test automation."
+  },
+  "saab": {
+    "areaOfBusiness": "Försvars- och säkerhetsindustri, flygteknik, flygtrafikledning, civil säkerhet",
+    "description": {
+      "paragraph1": "Saab betjänar den globala marknaden med världsledande produkter, tjänster och lösningar från militärt försvar till civil säkerhet. Med verksamhet på varje kontinent utvecklar, anpassar och förbättrar Saab kontinuerligt ny teknik för att möta kundernas förändrade behov. De viktigaste marknaderna är Europa, Asien och Nordamerika. Saab har cirka 24 000 anställda med en årlig omsättning på cirka 40 miljarder kronor, varav cirka 25 procent är relaterat till forskning och utveckling."
     },
-    "deviera": {
-        "areaOfBusiness": "IT‑konsulter",
-        "description": {
-            "paragraph1": "Deviera samlar engagerade IT‑konsulter som använder teknik för att skapa positiv förändring. Vi moderniserar verksamheter genom innovativa lösningar med hjälp av AI, maskininlärning, DevOps och mycket mer.",
-            "paragraph2": ""
-        },
-        "qualifications": "AI, LLM, DevOps, Azure, AWS, JavaScript, Grafisk Design, Agila arbetssätt."
+    "qualifications": "Ingenjörskompetens, mjukvaruutveckling, systemintegration, analytiskt tänkande, projektledning"
+  },
+  "softronic": {
+    "areaOfBusiness": "Konsultföretag inom IT - mjukvaruutveckling och driftnära tjänster. Innovativa digitala lösningar som skapar verklig samhällsnytta.",
+    "description": {
+      "paragraph1": "Vår ambition är att utveckla ledande teknik med ett långsiktigt perspektiv på affärsrelationer och samhällsnytta. GoodTech är teknik som vässar affärsprocesser och hjälper människor att få snabb och effektiv samhällsservice. Hållbarhetsperspektivet finns med i alla delar, i såväl relationer som i våra lösningars miljöavtryck. Hos oss kan du jobba med allt från AI och automatisering till UX och rationell drift. Som rådgivare grundar vi oss alltid i kundens verkliga behov och vi förväntar oss att du stimuleras av att bidra med dina insikter för att nå den bästa lösningen.",
+      "paragraph2": ""
     },
-    "scandicHotels": {
-        "areaOfBusiness": "Webb- och apputveckling, integration, design, analys, IT-säkerhet, arkitektur och CRM",
-        "description": {
-            "paragraph1": "Scandic Hotels är Nordens största hotelloperatör som driver digital transformation inom hotellbranschen. Vi strävar efter att utveckla nästa generations digitala upplevelser för våra gäster och skapa en modern och hållbar hotellmiljö.",
-            "paragraph2": ""
-        },
-        "qualifications": "Azure cloud, .NET, Javascript, TypeScript, Next.js 15, React Native, React, Kubernetes, test automation."
+    "qualifications": ".Net, C#, Java, AI, BC"
+  },
+  "skatteverket": {
+    "areaOfBusiness": "Vi bygger system som stöttar samhällsviktig verksamhet så som finansiering av det offentliga, folkbokföring och brottsbekämpning.",
+    "description": {
+      "paragraph1": "Hos oss får du arbeta med modern teknik ihop med andra som delar ditt samhällsengagemang. Tillsammans bidrar ni till lösningar som gynnar alla i Sverige, till exempel e-tjänster för den som deklarerar, driver företag, flyttar eller gifter sig. It-avdelningen har cirka 1 500 medarbetare och finns i Göteborg, Malmö, Sundbyberg, Umeå, Visby, Västerås och Östersund. Vi arbetar med utveckling, drift, förvaltning och underhåll av it-system för Skatteverket, Kronofogden, Valmyndigheten och Utbetalningsmyndigheten. På Skatteverket jobbar vi ständigt med systemförnyelse genom att införa modern teknik och utveckla vår arkitektur. Vi utvecklar backend-tjänster i Java med verktyg som Spring Boot, Gradle, Maven, Oracle, IntelliJ, Visual Studio Code, Eclipse och Jenkins. För webbutveckling använder vi ramverk som React, Angular och Vue.js. Vår tekniska miljö omfattar bland annat OpenShift Container Platform, Kubernetes, Red Hat Enterprise Linux och Git. Hos oss har du goda chanser till balans mellan jobb och fritid. De flesta roller ger möjlighet till flexibel arbetstid och att jobba delvis hemifrån. Du får också en friskvårdstimme i veckan och friskvårdsbidrag. Vårt traineeprogram är en kickstart för dig som är ambitiös och nyutexaminerad inom it. Du blir anställd i ett av våra team och levererar i verksamheten från dag ett. Samtidigt utvecklar du både bred och djup kompetens genom traineeprogrammet. Läs mer på skatteverket.se/jobbamedit",
+      "paragraph2": ""
     },
-    "saab": {
-        "areaOfBusiness": "Försvars- och säkerhetsindustri, flygteknik, flygtrafikledning, civil säkerhet",
-        "description": {
-            "paragraph1": "Saab betjänar den globala marknaden med världsledande produkter, tjänster och lösningar från militärt försvar till civil säkerhet. Med verksamhet på varje kontinent utvecklar, anpassar och förbättrar Saab kontinuerligt ny teknik för att möta kundernas förändrade behov. De viktigaste marknaderna är Europa, Asien och Nordamerika. Saab har cirka 24 000 anställda med en årlig omsättning på cirka 40 miljarder kronor, varav cirka 25 procent är relaterat till forskning och utveckling."
-        },
-        "qualifications": "Ingenjörskompetens, mjukvaruutveckling, systemintegration, analytiskt tänkande, projektledning"
-    },
-    "softronic": {
-        "areaOfBusiness": "Konsultföretag inom IT - mjukvaruutveckling och driftnära tjänster. Innovativa digitala lösningar som skapar verklig samhällsnytta.",
-        "description": {
-            "paragraph1": "Vår ambition är att utveckla ledande teknik med ett långsiktigt perspektiv på affärsrelationer och samhällsnytta. GoodTech är teknik som vässar affärsprocesser och hjälper människor att få snabb och effektiv samhällsservice. Hållbarhetsperspektivet finns med i alla delar, i såväl relationer som i våra lösningars miljöavtryck. Hos oss kan du jobba med allt från AI och automatisering till UX och rationell drift. Som rådgivare grundar vi oss alltid i kundens verkliga behov och vi förväntar oss att du stimuleras av att bidra med dina insikter för att nå den bästa lösningen.",
-            "paragraph2": ""
-        },
-        "qualifications": ".Net, C#, Java, AI, BC"
-    },
-    "skatteverket": {
-        "areaOfBusiness": "Vi bygger system som stöttar samhällsviktig verksamhet så som finansiering av det offentliga, folkbokföring och brottsbekämpning.",
-        "description": {
-            "paragraph1": "Hos oss får du arbeta med modern teknik ihop med andra som delar ditt samhällsengagemang. Tillsammans bidrar ni till lösningar som gynnar alla i Sverige, till exempel e-tjänster för den som deklarerar, driver företag, flyttar eller gifter sig. It-avdelningen har cirka 1 500 medarbetare och finns i Göteborg, Malmö, Sundbyberg, Umeå, Visby, Västerås och Östersund. Vi arbetar med utveckling, drift, förvaltning och underhåll av it-system för Skatteverket, Kronofogden, Valmyndigheten och Utbetalningsmyndigheten. På Skatteverket jobbar vi ständigt med systemförnyelse genom att införa modern teknik och utveckla vår arkitektur. Vi utvecklar backend-tjänster i Java med verktyg som Spring Boot, Gradle, Maven, Oracle, IntelliJ, Visual Studio Code, Eclipse och Jenkins. För webbutveckling använder vi ramverk som React, Angular och Vue.js. Vår tekniska miljö omfattar bland annat OpenShift Container Platform, Kubernetes, Red Hat Enterprise Linux och Git. Hos oss har du goda chanser till balans mellan jobb och fritid. De flesta roller ger möjlighet till flexibel arbetstid och att jobba delvis hemifrån. Du får också en friskvårdstimme i veckan och friskvårdsbidrag. Vårt traineeprogram är en kickstart för dig som är ambitiös och nyutexaminerad inom it. Du blir anställd i ett av våra team och levererar i verksamheten från dag ett. Samtidigt utvecklar du både bred och djup kompetens genom traineeprogrammet. Läs mer på skatteverket.se/jobbamedit",
-            "paragraph2": ""
-        },
-        "qualifications": "För att göra ett bra jobb och trivas hos oss på Skatteverket behöver du vara lyhörd, tänka nytt och ta ansvar."
-    }
+    "qualifications": "För att göra ett bra jobb och trivas hos oss på Skatteverket behöver du vara lyhörd, tänka nytt och ta ansvar."
+  }
 }

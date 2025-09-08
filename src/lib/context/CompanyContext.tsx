@@ -1,12 +1,17 @@
 import { createContext, useContext } from "react";
-import { Company, CandidateProgram, MasterProgram, Position } from "../types/company";
-
+import {
+  Company,
+  CandidateProgram,
+  MasterProgram,
+  Position,
+} from "../types/company";
 
 import { Filters } from "../hooks/userCompanyFilters";
 
 interface CompanyContextType {
   companies: Company[];
   filteredCompanies: Company[];
+  partners: Company[];
   totalCount: number;
   filteredCount: number;
   filters: Filters;
