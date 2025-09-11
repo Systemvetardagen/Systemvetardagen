@@ -6,18 +6,15 @@
       "childLinks": [
         {
           "name": "30 Years!",
-          "href": "/",
-          "hashLink": "30"
+          "href": "/#30"
         },
         {
           "name": "Join the Team!",
-          "href": "/",
-          "hashLink": "fairie"
+          "href": "/#fairie"
         },
         {
           "name": "Stay Updated",
-          "href": "/signup",
-          "hashLink": "signup"
+          "href": "/signup"
         }
       ]
     },
@@ -37,18 +34,15 @@
       "childLinks": [
         {
           "name": "Events",
-          "href": "/visit-info",
-          "hashLink": "events"
+          "href": "/visit-info#events"
         },
         {
           "name": "Map",
-          "href": "/visit-info",
-          "hashLink": "map"
+          "href": "/visit-info#map"
         },
         {
           "name": "Get to the Fair",
-          "href": "/visit-info",
-          "hashLink": "get-here"
+          "href": "/visit-info#get-here"
         }
       ]
     },
@@ -62,8 +56,7 @@
         },
         {
           "name": "Project Group",
-          "href": "/about",
-          "hashLink": "project-group"
+          "href": "/about#project-group"
         }
       ]
     }

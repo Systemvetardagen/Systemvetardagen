@@ -1,0 +1,75 @@
+{
+  "footer": {
+    "sections": [
+      {
+        "title": "Utforska",
+        "links": [
+          { "name": "Hem", "href": "/" },
+          { "name": "Företag", "href": "/companies" },
+          { "name": "Företagsanmäla", "href": "/companies/signup" },
+          { "name": "Besöksinfo", "href": "/visit-info" },
+          { "name": "Om", "href": "/about" },
+          { "name": "Anmäl dig", "href": "/signup" }
+        ]
+      },
+      {
+        "title": "För Studenter",
+        "links": [
+          { "name": "Håll dig uppdaterad", "href": "/signup" },
+          { "name": "Gå med i teamet", "href": "/#fairie" },
+          { "name": "Karta", "href": "/visit-info#map" },
+          { "name": "Evenemang", "href": "/visit-info#events" }
+        ]
+      },
+      {
+        "title": "För Företag",
+        "links": [
+          { "name": "Ställ ut / Partner", "href": "/companies/signup" },
+          {
+            "name": "Program vi riktar oss mot",
+            "href": "/companies#programs"
+          },
+          { "name": "Varför delta?", "href": "/about#systemvetardagen" }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Kontakt",
+      "emailLabel": "E-post",
+      "email": "systemvetardagen@disk.su.se"
+    },
+    "location": {
+      "title": "Plats",
+      "venueName": "",
+      "addressLine1": "Borgarfjordsgatan 12",
+      "addressLine2": "164 55 Kista, Sverige",
+      "mapLabel": "Öppna i Maps",
+      "mapsHref": "https://maps.google.com/?q=Borgarfjordsgatan+12+Kista"
+    },
+    "organization": {
+      "hostedBy": "Anordnas av Studentkåren DISK",
+      "studentUnion": "Studentkårens DISK"
+    },
+    "social": {
+      "title": "Följ oss",
+      "links": [
+        {
+          "name": "Instagram",
+          "href": "https://www.instagram.com/systemvetardagen"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "https://www.linkedin.com/company/systemvetardagen/posts"
+        },
+        {
+          "name": "Facebook",
+          "href": "https://www.facebook.com/Systemvetardagen"
+        }
+      ]
+    },
+    "meta": {
+      "copyright": "© {{year}} Systemvetardagen",
+      "allRightsReserved": "Alla rättigheter förbehållna"
+    }
+  }
+}

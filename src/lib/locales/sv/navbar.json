@@ -6,18 +6,15 @@
       "childLinks": [
         {
           "name": "30 År!",
-          "href": "/",
-          "hashLink": "30"
+          "href": "/#30"
         },
         {
           "name": "Bli en del av Teamet!",
-          "href": "/",
-          "hashLink": "fairie"
+          "href": "/#fairie"
         },
         {
           "name": "Håll dig uppdaterad",
-          "href": "/signup",
-          "hashLink": "signup"
+          "href": "/signup"
         }
       ]
     },
@@ -25,12 +22,10 @@
       "section": "Företag",
       "href": "/companies/signup",
       "childLinks": [
-       
         {
           "name": "Företagsanmälan",
           "href": "/companies/signup"
         }
-      
       ]
     },
     {
@@ -39,18 +34,15 @@
       "childLinks": [
         {
           "name": "Evenemang",
-          "href": "/visit-info",
-          "hashLink": "events"
+          "href": "/visit-info#events"
         },
         {
           "name": "Karta",
-          "href": "/visit-info",
-          "hashLink": "map"
+          "href": "/visit-info#map"
         },
         {
           "name": "Hitta hit",
-          "href": "/visit-info",
-          "hashLink": "get-here"
+          "href": "/visit-info#get-here"
         }
       ]
     },
@@ -64,8 +56,7 @@
         },
         {
           "name": "Projekt Gruppen",
-          "href": "/about",
-          "hashLink": "project-group"
+          "href": "/about#project-group"
         }
       ]
     }

@@ -1,0 +1,56 @@
+{
+  "sections": [
+    {
+      "title": "Explore",
+      "links": [
+        { "name": "Home", "href": "/" },
+        { "name": "Companies", "href": "/companies" },
+        { "name": "Company Signup", "href": "/companies/signup" },
+        { "name": "Visit Info", "href": "/visit-info" },
+        { "name": "About", "href": "/about" },
+        { "name": "Signup", "href": "/signup" }
+      ]
+    },
+    {
+      "title": "For Students",
+      "links": [
+        {
+          "name": "Stay Updated",
+          "href": "https://mitt.systemvetardagen.se"
+        },
+        { "name": "Join the Team", "href": "/#fairie" },
+        { "name": "Map", "href": "/visit-info#map" },
+        { "name": "Events", "href": "/visit-info#events" }
+      ]
+    },
+    {
+      "title": "For Companies",
+      "links": [
+        { "name": "Signup", "href": "/companies/signup" },
+        { "name": "Sponsor Us!", "href": "/companies/signup" },
+        { "name": "Why Attend?", "href": "/about#systemvetardagen" }
+      ]
+    }
+  ],
+  "contact": {
+    "title": "Contact",
+    "emailLabel": "Email",
+    "email": "systemvetardagen@disk.su.se"
+  },
+  "location": {
+    "title": "Location",
+    "venueName": "Nodhuset",
+    "addressLine1": "Borgarfjordsgatan 12",
+    "addressLine2": "164 55 Kista, Sweden",
+    "mapLabel": "Open in Maps",
+    "mapsHref": "https://maps.google.com/?q=Borgarfjordsgatan+12+Kista"
+  },
+  "organization": {
+    "hostedBy": "Organized by Studentkåren DISK",
+    "studentUnion": "Studentkåren DISK"
+  },
+  "meta": {
+    "copyright": "© {{year}} Systemvetardagen",
+    "allRightsReserved": "All rights reserved"
+  }
+}
