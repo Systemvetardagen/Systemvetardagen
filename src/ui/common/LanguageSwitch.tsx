@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useQueryClient } from "@tanstack/react-query";
 
 interface ButtonProps {
   className?: string;
@@ -9,17 +8,11 @@ interface ButtonProps {
 const LanguageSwitch: React.FC<ButtonProps> = ({ className }) => {
   const [, i18n] = useTranslation();
   const [isEnglish, setIsEnglish] = useState(i18n.language === "en");
-  const queryClient = useQueryClient();
 
   const handleChangeLanguage = () => {
     const newLanguage = isEnglish ? "sv" : "en";
     i18n.changeLanguage(newLanguage);
     setIsEnglish(!isEnglish);
-
-    // Invalidate all Strapi queries so they refetch with the new locale
-    queryClient.invalidateQueries({
-      queryKey: ["strapi"],
-    });
   };
 
   return (
@@ -40,7 +33,7 @@ const LanguageSwitch: React.FC<ButtonProps> = ({ className }) => {
           isEnglish && "opacity-50"
         } `}
       >
-        SE
+        SV
       </h1>
     </button>
   );

@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Navbar, Footer } from "@/ui";
+import { Navbar, Footer} from "@/ui";
 import ScrollToTop from "@/lib/utilities/ScrollToTop";
-import React from "react";
 
 export default function RootLayout() {
   return (

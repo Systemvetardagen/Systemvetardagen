@@ -11,4 +11,6 @@ export { default as SplitText } from "./SplitText";
 export { default as TeamSection } from "./ProjectGroupSection";
 export { default as SignupLink } from "./SignupLink";
 export { default as ProgramSelector } from "./ProgramSelector";
+export { default as Seperator } from "./Seperator";
+
 export * from "./teamData";

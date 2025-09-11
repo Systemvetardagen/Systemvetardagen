@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { Link } from "./Navbar";
 import { NavLink, useLocation } from "react-router-dom";
-import { LanguageSwitch } from "../common";
+import { LanguageSwitch, Seperator } from "../common";
 
 interface MobileNavbarProps {
   links: Link[];
@@ -87,7 +87,7 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
           <div onClick={() => setIsOpen(false)}>
             <LanguageSwitch />
           </div>
-          <div className="absolute bottom-0 left-0 w-screen h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+          <Seperator />
         </div>
       </div>
     </>

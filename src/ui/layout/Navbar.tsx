@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { LanguageSwitch } from "../common";
+import { LanguageSwitch, Seperator } from "../common";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,6 @@ export interface Link {
   childLinks: {
     name: string;
     href: string;
-    hashLink?: string;
   }[];
 }
 
@@ -29,17 +28,11 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollWithOffset = (el: HTMLElement) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
-
   const getNavLinkClass = ({ isActive }: { isActive: boolean }): string =>
     `font-semibold text-[20px] text-black relative ${
       isActive
-        ? "text-black underline underline-offset-4"
-        : "hover:text-gray-500"
+      ? "text-black underline underline-offset-4 underline decoration-2"
+      : "hover:text-link"
     }`;
 
   return (
@@ -66,7 +59,6 @@ const Navbar: React.FC = () => {
       <DesktopNavbar
         links={links}
         getNavLinkClass={getNavLinkClass}
-        scrollWithOffset={scrollWithOffset}
       />
 
       <MobileNavbar
@@ -74,9 +66,7 @@ const Navbar: React.FC = () => {
         isSticky={isSticky}
         getNavLinkClass={getNavLinkClass}
       />
-      {isSticky && (
-        <div className="absolute bottom-0 left-0 w-screen h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-      )}
+      {isSticky && <Seperator className="absolute bottom-0 left-0 w-screen" />}
       <div className="hidden lg:flex">
         <LanguageSwitch />
       </div>
