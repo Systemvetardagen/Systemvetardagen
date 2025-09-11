@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CandidateProgram, MasterProgram, Position } from "../types/company";
+import { CandidateProgram, MasterProgram, Position } from "../types/program";
 
 export interface Filters {
   search: string;

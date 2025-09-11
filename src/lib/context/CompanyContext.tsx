@@ -1,11 +1,6 @@
 import { createContext, useContext } from "react";
-import {
-  Company,
-  CandidateProgram,
-  MasterProgram,
-  Position,
-} from "../types/company";
-
+import { Company } from "../types/company";
+import { CandidateProgram, MasterProgram, Position } from "../types/program";
 import { Filters } from "../hooks/userCompanyFilters";
 
 interface CompanyContextType {

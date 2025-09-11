@@ -72,9 +72,6 @@ const Timeunit: React.FC<TimeUnitProps> = ({ value, label }) => {
       triggerConfetti(positionRef.current);
     }
   };
-  // useEffect(() => {
-  //   handleClick();
-  // }, []);
   return (
     <div
       ref={positionRef}

@@ -4,7 +4,4 @@ export { default as CompaniesPage } from "./CompaniesPage";
 export { default as CompanyPage } from "./CompanyPage";
 export { default as CompanySignupPage } from "./CompanySignupPage";
 export { default as VisitInfoPage } from "./VisitInfoPage";
-export { default as LoginPage } from "./LoginPage";
-export { default as SignupPage } from "./SignupPage";
-export { default as StudentDashboardPage } from "./StudentDashboardPage";
 export { default as NotFoundPage } from "./NotFoundPage";

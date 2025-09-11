@@ -8,8 +8,10 @@ import { useCompanyContext } from "@/lib/context/CompanyContext";
 import {
   CandidateProgram,
   MasterProgram,
-  Position,
-} from "@/lib/types/company";
+  CANDIDATE_PROGRAMS,
+  MASTER_PROGRAMS,
+  POSITIONS,
+} from "@/lib/types/program";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
@@ -28,15 +30,15 @@ const Companies: React.FC = () => {
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
 
-  const candidateProgramCodes = Object.keys(
-    t("candidatePrograms", { returnObjects: true }) as Record<string, string>
-  ) as CandidateProgram[];
-  const masterProgramCodes = Object.keys(
-    t("mastersPrograms", { returnObjects: true }) as Record<string, string>
-  ) as MasterProgram[];
-  const positions = Object.keys(
-    t("positions", { returnObjects: true }) as Record<string, string>
-  ) as Position[];
+  // const candidateProgramCodes = Object.keys(
+  //   t("candidatePrograms", { returnObjects: true }) as Record<string, string>
+  // ) as CandidateProgram[];
+  // const masterProgramCodes = Object.keys(
+  //   t("mastersPrograms", { returnObjects: true }) as Record<string, string>
+  // ) as MasterProgram[];
+  // const positions = Object.keys(
+  //   t("positions", { returnObjects: true }) as Record<string, string>
+  // ) as Position[];
 
   const programsRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<HTMLDivElement>(null);
@@ -74,10 +76,10 @@ const Companies: React.FC = () => {
     if (size === 1) {
       const code = Array.from(set)[0];
       if (type === "programs") {
-        if (candidateProgramCodes.includes(code as CandidateProgram)) {
+        if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
           return t(`candidatePrograms.${code}`);
         }
-        if (masterProgramCodes.includes(code as MasterProgram)) {
+        if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
           return t(`mastersPrograms.${code}`);
         }
       } else if (type === "positions") {
@@ -180,7 +182,7 @@ const Companies: React.FC = () => {
               className="absolute bg-white rounded-xl flex flex-col shadow-md p-4 left-1/2 -translate-x-1/2 w-full max-w-[550px] gap-2 z-50"
             >
               <h1>Bachelor&apos;s programmes</h1>
-              {candidateProgramCodes.map((program) => (
+              {CANDIDATE_PROGRAMS.map((program) => (
                 <label key={program} className="font-light text-gray-700">
                   <input
                     type="checkbox"
@@ -193,7 +195,7 @@ const Companies: React.FC = () => {
                 </label>
               ))}
               <h1>Master&apos;s programmes</h1>
-              {masterProgramCodes.map((program) => (
+              {MASTER_PROGRAMS.map((program) => (
                 <label key={program} className="font-light text-gray-700">
                   <input
                     type="checkbox"
@@ -220,7 +222,7 @@ const Companies: React.FC = () => {
               ref={positionsRef}
               className="absolute bg-white rounded-xl flex flex-col right-0 shadow-md p-4 gap-2 z-50"
             >
-              {positions.map((position) => (
+              {POSITIONS.map((position) => (
                 <label key={position} className="font-light text-gray-700">
                   <input
                     type="checkbox"
