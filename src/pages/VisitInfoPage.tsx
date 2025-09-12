@@ -196,14 +196,14 @@ const VisitInfo: React.FC = () => {
             <TramFront size={20} />
             <h2 className="text-xl">{t("getting-to.metro.header")}</h2>
           </div>
-          <p className="text-pretty font-light">{t("getting-to.metro.body")}</p>
+          <p className="text-pretty font-light font-ibm">{t("getting-to.metro.body")}</p>
         </div>
         <div className="mb-4">
           <div className="flex items-center gap-2">
             <SquareParking size={20} />
             <h2 className="text-xl">{t("getting-to.parking.header")}</h2>
           </div>
-          <p className="text-pretty font-light">{t("getting-to.parking.body")}</p>
+          <p className="text-pretty font-light font-ibm">{t("getting-to.parking.body")}</p>
         </div>
       </section>
       <div className="mb-20 w-full  flex justify-center">

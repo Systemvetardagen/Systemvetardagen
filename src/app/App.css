@@ -40,8 +40,8 @@
   }
 }
 
-* {
-  font-family: "poppins";
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 @keyframes fadeUp {

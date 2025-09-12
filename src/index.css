@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-body: "WorkSans"
+  --font-ibm: "IBM Plex Mono", monospace;
 
   --color-background: #f7f4ff;
   --color-text: #09001b;

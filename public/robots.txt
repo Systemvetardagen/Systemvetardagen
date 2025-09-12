@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /studentdashboard
 
 Sitemap: https://systemvetardagen.se/sitemap.xml
