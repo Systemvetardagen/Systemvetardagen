@@ -19,6 +19,8 @@ export type MasterProgram =
   | "SPROM" // IT Project Management
   | "SDKIO"; // Design for Creative and Immersive Technology
 
+export type Program = CandidateProgram | MasterProgram
+
 export type Position =
   | "fullTime"
   | "partTime"

@@ -15,17 +15,17 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
         (className ? ` ${className}` : "")
       }
     >
-      <Link to={`/companies/${company.id}`} aria-label={company.name}>
-        {company.logo ? (
+      <Link to={`/companies/${company.slug}`} aria-label={company.companyName}>
+        {company.logoURL ? (
           <img
-            src={company.logo}
+            src={company.logoURL}
             className="object-contain mx-auto h-full w-full"
-            alt={`${company.name} logo`}
+            alt={`${company.companyName} logo`}
             loading="lazy"
           />
         ) : (
           <div className="flex items-center justify-center text-black text-2xl font-semibold h-full w-full">
-            {company.name}
+            {company.companyName}
           </div>
         )}
       </Link>

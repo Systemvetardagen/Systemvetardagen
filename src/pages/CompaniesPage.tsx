@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FadeInSection } from "@/ui";
 import { CompanyCard } from "@/ui";
 import Seperator from "@/ui/common/Seperator";
-import { useCompanyContext } from "@/lib/context/CompanyContext";
+import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
   CandidateProgram,
   MasterProgram,
@@ -16,17 +16,7 @@ import {
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
-  const {
-    filteredCompanies,
-    partners,
-    filters,
-    setSearch,
-    toggleCandidateProgram,
-    toggleMasterProgram,
-    togglePosition,
-    clearFilters,
-  } = useCompanyContext();
-
+  const { companies, isLoading, isError } = useCompanies();
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
 
@@ -40,68 +30,68 @@ const Companies: React.FC = () => {
   //   t("positions", { returnObjects: true }) as Record<string, string>
   // ) as Position[];
 
-  const programsRef = useRef<HTMLDivElement>(null);
-  const positionsRef = useRef<HTMLDivElement>(null);
+  // const programsRef = useRef<HTMLDivElement>(null);
+  // const positionsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        programsExpanded &&
-        programsRef.current &&
-        !programsRef.current.contains(e.target as Node)
-      ) {
-        setProgramsExpanded(false);
-      }
-      if (
-        positionsExpanded &&
-        positionsRef.current &&
-        !positionsRef.current.contains(e.target as Node)
-      ) {
-        setPositionsExpanded(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (e: MouseEvent) => {
+  //     if (
+  //       programsExpanded &&
+  //       programsRef.current &&
+  //       !programsRef.current.contains(e.target as Node)
+  //     ) {
+  //       setProgramsExpanded(false);
+  //     }
+  //     if (
+  //       positionsExpanded &&
+  //       positionsRef.current &&
+  //       !positionsRef.current.contains(e.target as Node)
+  //     ) {
+  //       setPositionsExpanded(false);
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [programsExpanded, positionsExpanded]);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [programsExpanded, positionsExpanded]);
 
-  const getLabel = (
-    set: Set<string>,
-    type: "programs" | "positions"
-  ): string => {
-    const size = set.size;
-    if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
-    if (size === 1) {
-      const code = Array.from(set)[0];
-      if (type === "programs") {
-        if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
-          return t(`candidatePrograms.${code}`);
-        }
-        if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
-          return t(`mastersPrograms.${code}`);
-        }
-      } else if (type === "positions") {
-        return t(`positions.${code}`);
-      }
-      return code; // fallback (shouldn't normally hit)
-    }
-    return `${size} ${t(`global.${type}`)}`;
-  };
+  // const getLabel = (
+  //   set: Set<string>,
+  //   type: "programs" | "positions"
+  // ): string => {
+  //   const size = set.size;
+  //   if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
+  //   if (size === 1) {
+  //     const code = Array.from(set)[0];
+  //     if (type === "programs") {
+  //       if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
+  //         return t(`candidatePrograms.${code}`);
+  //       }
+  //       if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
+  //         return t(`mastersPrograms.${code}`);
+  //       }
+  //     } else if (type === "positions") {
+  //       return t(`positions.${code}`);
+  //     }
+  //     return code; // fallback (shouldn't normally hit)
+  //   }
+  //   return `${size} ${t(`global.${type}`)}`;
+  // };
 
-  const noFiltersSelected =
-    filters.candidatePrograms.size === 0 &&
-    filters.mastersPrograms.size === 0 &&
-    filters.positions.size === 0 &&
-    filters.search === "";
+  // const noFiltersSelected =
+  //   filters.candidatePrograms.size === 0 &&
+  //   filters.mastersPrograms.size === 0 &&
+  //   filters.positions.size === 0 &&
+  //   filters.search === "";
 
   return (
     <div className="flex flex-col items-center py-32 px-10">
       <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
         {t("global.header")}
       </h2>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
           <h2 className="font-light text-gray-700">{t("global.showing")}</h2>
           <div className="">
@@ -243,8 +233,8 @@ const Companies: React.FC = () => {
             </div>
           )}
         </div>
-      </div>
-      {noFiltersSelected ? (
+      </div> */}
+      {/* {noFiltersSelected ? (
         <div>
           <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
             {t("global.partners")}
@@ -266,9 +256,9 @@ const Companies: React.FC = () => {
       )}
       <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
         {t("global.allCompanies")}
-      </h1>
+      </h1> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-        {filteredCompanies.map((company, index) => (
+        {companies.map((company, index) => (
           <FadeInSection key={index} direction="fadeLeft">
             <CompanyCard company={company} className="h-32 w-56" />
           </FadeInSection>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LogoLoop, { LogoItem } from "../common/LogoLoop";
-import { useCompanyContext } from "@/lib/context/CompanyContext";
+import { useCompanies } from "@/lib/hooks/useCompanyContext";
 
 interface CompanyLoopProps {
   className?: string;
@@ -21,11 +21,11 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const { companies } = useCompanyContext();
-  const companyLogos: LogoItem[] = companies.map((company) => {
+  const { companies } = useCompanies();
+  const companyLogos: LogoItem[] = (companies ?? []).map((company) => {
     return {
-      src: `/companies/${company.id}/logo.webp`,
-      href: `/companies/${company.id}`,
+      src: company.logoURL,
+      href: `/companies/${company.slug}`,
     };
   });
 

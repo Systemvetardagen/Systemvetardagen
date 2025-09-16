@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
-import { Company } from "@/lib/types/company";
 import { useTranslation } from "react-i18next";
 import {
   Linkedin,
@@ -13,131 +12,45 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FadeInSection } from "@/ui";
-import { useCompanyContext } from "@/lib/context/CompanyContext";
-
-const RecruitmentCard: React.FC<Company> = (company) => {
-  const [open, setOpen] = useState<boolean>(false);
-  const [t] = useTranslation("companies");
-  return (
-    company.candidatePrograms &&
-    company.masterPrograms &&
-    company.positions && (
-      <div className="p-6 bg-white shadow-lg rounded-lg w-full max-w-5xl mx-auto">
-        <FadeInSection
-          triggerOnce={true}
-          direction="fadeDown"
-          className="text-2xl font-bold text-center mb-6"
-        >
-          {t("global.lookingFor", { company: company.name })}
-        </FadeInSection>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <FadeInSection direction="fadeLeft" triggerOnce={true}>
-            <Card
-              title="Bachelor Programs"
-              items={company.candidatePrograms.map((program) =>
-                t(`programs.${program}`)
-              )}
-              className="bg-[#ffe2e2] border-[#DB2677] text-[#DB2677]"
-            />
-          </FadeInSection>
-          <FadeInSection direction="fadeDown" triggerOnce={true}>
-            <Card
-              title="Master Programs"
-              items={company.masterPrograms.map((program) =>
-                t(`programs.${program}`)
-              )}
-              expandable
-              onExpand={() => setOpen(true)}
-              className="bg-[#e7d3ff] border-[#9332E9] text-[#9332E9]"
-            />
-          </FadeInSection>
-          <FadeInSection direction="fadeRight" triggerOnce={true}>
-            <Card
-              title="Positions"
-              items={company.positions.map((position) =>
-                t(`positions.${position}`)
-              )}
-              className="bg-[#cae0ff] border-[#2762EA] text-[#2762EA]"
-            />
-          </FadeInSection>
-        </div>
-        {t(`${company.id}.qualifications`)?.trim() && (
-          <FadeInSection
-            triggerOnce={true}
-            direction="fadeUp"
-            className="mt-6 p-4 bg-[#FEF9C2] border-l-4 shadow-md font-light border-[#CA8C0A] rounded-lg"
-          >
-            <h3 className="font-semibold text-lg mb-2 text-[#CA8C0A]">
-              {t("global.qualifications")}
-            </h3>
-            <p className="font-light text-gray-900">
-              {t(`${company.id}.qualifications`)}
-            </p>
-          </FadeInSection>
-        )}
-        {open && (
-          <div className="p-6 bg-white rounded-lg w-96 shadow-md mx-auto">
-            <h3 className="text-xl font-bold mb-4">
-              Bachelor&apos;s programmes
-            </h3>
-            <ul className="list-disc pl-6 space-y-2">
-              {company.candidatePrograms.map((program, index) => (
-                <li key={index}>{t(`programs.${program}`)}</li>
-              ))}
-            </ul>
-            <button
-              className="mt-4 w-full bg-gray-200 p-2 rounded"
-              onClick={() => setOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-        )}
-      </div>
-    )
-  );
-};
-
-type CardProps = {
-  title: string;
-  items: string[];
-  expandable?: boolean;
-  onExpand?: () => void;
-  className?: string;
-};
-
-const Card: React.FC<CardProps> = ({ title, items, className }) => (
-  <div
-    className={`p-4 h-full rounded-lg border-l-4 shadow-md font-light ${className}`}
-  >
-    <h3 className="font-semibold text-lg mb-2">{title}</h3>
-    <ul className="space-y-1 list-disc pl-4">
-      {items.map((item, index) => (
-        <li className="font-light text-gray-600" key={index}>
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+import { useCompany } from "@/lib/hooks/useCompanyContext";
+import { NotFoundPage } from ".";
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
-  const { companies } = useCompanyContext();
-  const company = companies.find((company) => company.id === companyId);
+  const { company, isLoading, isError } = useCompany(companyId || "");
   const { t } = useTranslation("companies");
-  if (!company) {
-    return <p>Company not found</p>;
+  console.log(company);
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
   }
-  const logoPath = `/companies/${company.id}/logo.webp`;
+  if (isError || !company) {
+    return <NotFoundPage />;
+  }
   return (
     <div className="min-h-screen overflow-x-hidden items-center flex flex-col gap-10 bg-[#F7F4FF]">
       <div className="relative w-full">
-        <div className="flex items-center justify-center h-[30vh] min-h-[300px] max-h-[400px] w-full overflow-hidden gradient-background">
-          <div className="absolute -bottom-10 left-1/2 transform shadow-md -translate-x-1/2 bg-white rounded-xl p-6">
+        <div
+          className={`relative flex items-center justify-center h-[30vh] min-h-[300px] max-h-[400px] w-full ${
+            company.bannerURL.length > 0 ? "" : "gradient-background"
+          }`}
+          style={
+            company.bannerURL
+              ? {
+                  backgroundImage: `url(${company.bannerURL})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }
+              : {}
+          }
+        >
+          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-white rounded-xl p-6 shadow-md">
             <img
-              src={logoPath}
-              alt={`${company.name} logo`}
+              src={company.logoURL}
+              alt={`${company.companyName} logo`}
               className="h-32 w-auto max-w-[70vw] object-contain"
             />
           </div>
@@ -162,9 +75,7 @@ const CompanyPage: React.FC = () => {
                 <h3 className="text-gray-600 text-sm font-medium">
                   {t("global.areaOfBusiness")}
                 </h3>
-                <p className="text-gray-800">
-                  {t(`${companyId}.areaOfBusiness`)}
-                </p>
+                <p className="text-gray-800">{company.areaOfBusiness}</p>
               </div>
             </FadeInSection>
             <FadeInSection
@@ -180,7 +91,7 @@ const CompanyPage: React.FC = () => {
                   {t("global.founded")}
                 </h3>
                 <p className="text-gray-800">
-                  {new Date(company.founded || "").getFullYear()}
+                  {new Date(company.foundedYear || "").getFullYear()}
                 </p>
               </div>
             </FadeInSection>
@@ -248,28 +159,22 @@ const CompanyPage: React.FC = () => {
             </FadeInSection>
           )}
         </div>
-        <FadeInSection
-          triggerOnce={true}
-          direction="fadeLeft"
-          className="w-full max-w-5xl mx-auto"
-        >
-          {t(`${companyId}.description.paragraph1`)}
+        {/* <RecruitmentCard {...company} /> */}
+        {/* Temporary */}
+        <FadeInSection triggerOnce={true} direction="fadeUp">
+          <span className="text-justify">{company.description}</span>
         </FadeInSection>
-        {/* {company.video && (
-          <div className="flex justify-center">
-            <video className="rounded-3xl" controls autoPlay width="600">
-              <source src={company.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )} */}
-        <RecruitmentCard {...company} />
+        <div className="flex gap-2">
+          {company.programs.map((program, index) => (
+            <span key={index}>{program}</span>
+          ))}
+        </div>
         <a
           className="text-link text-2xl text-center font-bold hover:underline"
           rel="nofollow"
           href={company.websiteLink}
         >
-          {t("global.learnMore", { company: company.name })}
+          {/* {t("global.learnMore", { company: company.companyName })} */}
         </a>
         <div className="flex gap-4">
           <Link

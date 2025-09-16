@@ -2,7 +2,7 @@ import React from "react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Router from "./Router";
-import { CompanyContextProvider } from "@/lib/context/CompanyContextProvider";
+import { CompanyContextProvider } from "@/lib/context/CompanyContext";
 
 const App: React.FC = () => {
   const queryClient = new QueryClient();
