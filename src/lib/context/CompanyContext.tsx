@@ -29,7 +29,7 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
   });
   const value: CompanyContextType = useMemo(
     () => ({
-      companies: data ?? [],
+      companies: data,
       isLoading,
       isError,
       refetch: () => {

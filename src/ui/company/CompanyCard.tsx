@@ -11,7 +11,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
   return (
     <div
       className={
-        `bg-white rounded-lg hover:scale-105 transition-transform duration-100 shadow-xl p-4 h-44 w-[308px]` +
+        `bg-white rounded-lg hover:scale-105 transition-transform duration-300 shadow-xl p-4 h-44 w-[308px]` +
         (className ? ` ${className}` : "")
       }
     >

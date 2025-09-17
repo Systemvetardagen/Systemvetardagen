@@ -11,87 +11,138 @@ import {
   CANDIDATE_PROGRAMS,
   MASTER_PROGRAMS,
   POSITIONS,
+  Position,
+  Program,
 } from "@/lib/types/program";
+import useCompanyFilters from "@/lib/hooks/userCompanyFilters";
+import { Company } from "@/lib/types/company";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
   const { companies, isLoading, isError } = useCompanies();
+  const {
+    filters,
+    setSearch,
+    toggleCandidateProgram,
+    toggleMasterProgram,
+    togglePosition,
+    clearFilters,
+  } = useCompanyFilters("companies");
+
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
 
-  // const candidateProgramCodes = Object.keys(
-  //   t("candidatePrograms", { returnObjects: true }) as Record<string, string>
-  // ) as CandidateProgram[];
-  // const masterProgramCodes = Object.keys(
-  //   t("mastersPrograms", { returnObjects: true }) as Record<string, string>
-  // ) as MasterProgram[];
-  // const positions = Object.keys(
-  //   t("positions", { returnObjects: true }) as Record<string, string>
-  // ) as Position[];
+  const candidateProgramCodes = Object.keys(
+    t("candidatePrograms", { returnObjects: true }) as Record<string, string>
+  ) as CandidateProgram[];
+  const masterProgramCodes = Object.keys(
+    t("mastersPrograms", { returnObjects: true }) as Record<string, string>
+  ) as MasterProgram[];
+  const positions = Object.keys(
+    t("positions", { returnObjects: true }) as Record<string, string>
+  ) as Position[];
 
-  // const programsRef = useRef<HTMLDivElement>(null);
-  // const positionsRef = useRef<HTMLDivElement>(null);
+  const programsRef = useRef<HTMLDivElement>(null);
+  const positionsRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const handleClickOutside = (e: MouseEvent) => {
-  //     if (
-  //       programsExpanded &&
-  //       programsRef.current &&
-  //       !programsRef.current.contains(e.target as Node)
-  //     ) {
-  //       setProgramsExpanded(false);
-  //     }
-  //     if (
-  //       positionsExpanded &&
-  //       positionsRef.current &&
-  //       !positionsRef.current.contains(e.target as Node)
-  //     ) {
-  //       setPositionsExpanded(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        programsExpanded &&
+        programsRef.current &&
+        !programsRef.current.contains(e.target as Node)
+      ) {
+        setProgramsExpanded(false);
+      }
+      if (
+        positionsExpanded &&
+        positionsRef.current &&
+        !positionsRef.current.contains(e.target as Node)
+      ) {
+        setPositionsExpanded(false);
+      }
+    };
 
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [programsExpanded, positionsExpanded]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [programsExpanded, positionsExpanded]);
 
-  // const getLabel = (
-  //   set: Set<string>,
-  //   type: "programs" | "positions"
-  // ): string => {
-  //   const size = set.size;
-  //   if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
-  //   if (size === 1) {
-  //     const code = Array.from(set)[0];
-  //     if (type === "programs") {
-  //       if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
-  //         return t(`candidatePrograms.${code}`);
-  //       }
-  //       if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
-  //         return t(`mastersPrograms.${code}`);
-  //       }
-  //     } else if (type === "positions") {
-  //       return t(`positions.${code}`);
-  //     }
-  //     return code; // fallback (shouldn't normally hit)
-  //   }
-  //   return `${size} ${t(`global.${type}`)}`;
-  // };
+  const getLabel = (
+    set: Set<string>,
+    type: "programs" | "positions"
+  ): string => {
+    const size = set.size;
+    if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
+    if (size === 1) {
+      const code = Array.from(set)[0];
+      if (type === "programs") {
+        if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
+          return t(`candidatePrograms.${code}`);
+        }
+        if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
+          return t(`mastersPrograms.${code}`);
+        }
+      } else if (type === "positions") {
+        return t(`positions.${code}`);
+      }
+      return code; // fallback (shouldn't normally hit)
+    }
+    return `${size} ${t(`global.${type}`)}`;
+  };
 
-  // const noFiltersSelected =
-  //   filters.candidatePrograms.size === 0 &&
-  //   filters.mastersPrograms.size === 0 &&
-  //   filters.positions.size === 0 &&
-  //   filters.search === "";
+  const noFiltersSelected =
+    filters.candidatePrograms.size === 0 &&
+    filters.mastersPrograms.size === 0 &&
+    filters.positions.size === 0 &&
+    filters.search === "";
 
+  const filteredCompanies = companies
+    ? companies.filter((company: Company) => {
+        const hasCandidateProgram =
+          filters.candidatePrograms.size === 0 ||
+          (company.programs &&
+            company.programs.some((p: Program) =>
+              filters.candidatePrograms.has(p)
+            ));
+
+        const hasMasterProgram =
+          filters.mastersPrograms.size === 0 ||
+          (company.programs &&
+            company.programs.some((p: Program) =>
+              filters.mastersPrograms.has(p)
+            ));
+
+        // const hasPosition =
+        //   filters.positions.size === 0 ||
+        //   (company.positions && company.positions.some((pos: string) => filters.positions.has(pos)));
+
+        const matchesSearch =
+          !filters.search ||
+          company.companyName
+            .toLowerCase()
+            .includes(filters.search.toLowerCase()) ||
+          (company.areaOfBusiness &&
+            company.areaOfBusiness
+              .toLowerCase()
+              .includes(filters.search.toLowerCase()));
+
+        return hasCandidateProgram && hasMasterProgram && matchesSearch;
+      })
+    : [];
+  const partners = companies
+    ? companies.filter((company) => {
+        return company.isSponsor;
+      })
+    : [];
   return (
     <div className="flex flex-col items-center py-32 px-10">
       <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
         {t("global.header")}
       </h2>
-      {/* <div className="relative">
+      <div className="relative">
         <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
           <h2 className="font-light text-gray-700">{t("global.showing")}</h2>
           <div className="">
@@ -233,18 +284,19 @@ const Companies: React.FC = () => {
             </div>
           )}
         </div>
-      </div> */}
-      {/* {noFiltersSelected ? (
-        <div>
+      </div>
+      {noFiltersSelected ? (
+        <div className="mb-8">
           <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
             {t("global.partners")}
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grd-flow-row gap-6">
+          <div className="flex flex-wrap justify-center gap-6 w-full">
             {partners.map((partner, index) => (
-              <CompanyCard key={index} company={partner} />
+              <FadeInSection key={index} direction="fadeLeft">
+                <CompanyCard company={partner} className="h-32 w-56" />
+              </FadeInSection>
             ))}
           </div>
-          <Seperator className="my-10" />
         </div>
       ) : (
         <button
@@ -254,15 +306,17 @@ const Companies: React.FC = () => {
           {t("global.clearFilters")}
         </button>
       )}
+
       <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
         {t("global.allCompanies")}
-      </h1> */}
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-        {companies.map((company, index) => (
-          <FadeInSection key={index} direction="fadeLeft">
-            <CompanyCard company={company} className="h-32 w-56" />
-          </FadeInSection>
-        ))}
+        {filteredCompanies &&
+          filteredCompanies.map((company, index) => (
+            <FadeInSection key={index} direction="fadeLeft">
+              <CompanyCard company={company} className="h-32 w-56" />
+            </FadeInSection>
+          ))}
       </div>
     </div>
   );

@@ -9,14 +9,13 @@ const customFetch = async (
     const config: AxiosRequestConfig = {
       url: `/${paramUrl}`,
       method: "GET",
-      params
+      params,
     };
 
     const response = await axiosInstance(config);
     return response.data;
   } catch (error) {
-    const axiosError = error as AxiosError;
-    return axiosError
+    throw error as AxiosError;
   }
 };
 
