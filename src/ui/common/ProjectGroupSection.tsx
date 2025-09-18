@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ChevronDown, Linkedin, Github, Mail } from "lucide-react";
+import { FaChevronDown, FaLinkedin, FaGithub } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { FadeInSection } from "../layout";
 import {
   ProjectGroupMember,
@@ -20,7 +21,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           rel="noopener noreferrer"
           className="text-link hover:opacity-80"
         >
-          <Linkedin size={20} />
+          <FaLinkedin size={20} />
         </a>
       )}
       {github && (
@@ -30,7 +31,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           rel="noopener noreferrer"
           className="text-link hover:opacity-80"
         >
-          <Github size={20} />
+          <FaGithub size={20} />
         </a>
       )}
       {email && (
@@ -40,7 +41,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           rel="noopener noreferrer"
           className="text-link hover:opacity-80"
         >
-          <Mail size={20} />
+          <IoMdMail size={20} />
         </a>
       )}
     </div>
@@ -73,7 +74,7 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
               className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-md hover:opacity-90 transition-opacity"
             >
               Team Members
-              <ChevronDown
+              <FaChevronDown
                 className={`transform transition-transform duration-200 ${
                   isExpanded ? "rotate-180" : ""
                 }`}

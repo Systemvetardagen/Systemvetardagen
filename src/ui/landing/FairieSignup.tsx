@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { PartyPopper, HeartHandshake, Star } from "lucide-react";
+import { LuPartyPopper, LuHeartHandshake, LuStar } from "react-icons/lu";
 import { Button } from "../common";
 import { Trans } from "react-i18next";
 import { NavLink } from "react-router-dom";
@@ -14,15 +14,15 @@ const FairieSignup = () => {
   const SignupUrl: string = "/";
   const cards: Card[] = [
     {
-      icon: <HeartHandshake height={48} width={48} color="#325fff" />,
+      icon: <LuHeartHandshake height={48} width={48} color="#325fff" />,
       transKey: "help",
     },
     {
-      icon: <Star height={48} width={48} color="#325fff" />,
+      icon: <LuStar height={48} width={48} color="#325fff" />,
       transKey: "fair",
     },
     {
-      icon: <PartyPopper height={48} width={48} color="#325fff" />,
+      icon: <LuPartyPopper height={48} width={48} color="#325fff" />,
       transKey: "party",
     },
   ];

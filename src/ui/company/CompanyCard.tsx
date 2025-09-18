@@ -11,7 +11,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
   return (
     <div
       className={
-        `bg-white rounded-lg hover:scale-105 transition-transform duration-300 shadow-xl p-4 h-44 w-[308px]` +
+        `bg-white rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl p-4 h-44 w-[308px]` +
         (className ? ` ${className}` : "")
       }
     >
@@ -24,7 +24,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
             loading="lazy"
           />
         ) : (
-          <div className="flex items-center justify-center text-black text-2xl font-semibold h-full w-full">
+          <div className="flex items-center justify-center text-black text-2xl font-bold h-full w-full">
             {company.companyName}
           </div>
         )}

@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import {
-  Linkedin,
-  Instagram,
-  Facebook,
-  Briefcase,
-  Calendar,
-  Users,
-} from "lucide-react";
+  LuLinkedin,
+  LuInstagram,
+  LuFacebook,
+  LuBriefcase,
+  LuCalendar,
+  LuUsers,
+} from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { FadeInSection } from "@/ui";
+import { CompanyCard, FadeInSection } from "@/ui";
 import { useCompany } from "@/lib/hooks/useCompanyContext";
 import { NotFoundPage } from ".";
 
@@ -47,13 +47,12 @@ const CompanyPage: React.FC = () => {
               : {}
           }
         >
-          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-white rounded-xl p-6 shadow-md">
-            <img
-              src={company.logoURL}
-              alt={`${company.companyName} logo`}
-              className="h-32 w-auto max-w-[70vw] object-contain"
-            />
-          </div>
+          <FadeInSection
+            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 "
+            direction="fadeLeft"
+          >
+            <CompanyCard company={company} className="h-32 w-56" />
+          </FadeInSection>
         </div>
       </div>
 
@@ -69,7 +68,7 @@ const CompanyPage: React.FC = () => {
               className="flex items-start gap-3"
             >
               <div className="text-blue-500 mt-1">
-                <Briefcase size={20} />
+                <LuBriefcase size={20} />
               </div>
               <div className="flex-1">
                 <h3 className="text-gray-600 text-sm font-medium">
@@ -84,7 +83,7 @@ const CompanyPage: React.FC = () => {
               className="flex items-start gap-3"
             >
               <div className="text-blue-500 mt-1">
-                <Calendar size={20} />
+                <LuCalendar size={20} />
               </div>
               <div className="flex-1">
                 <h3 className="text-gray-600 text-sm font-medium">
@@ -102,7 +101,7 @@ const CompanyPage: React.FC = () => {
                 className="flex items-start gap-3"
               >
                 <div className="text-blue-500 mt-1">
-                  <Users size={20} />
+                  <LuUsers size={20} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-gray-600 text-sm font-medium">
@@ -121,7 +120,7 @@ const CompanyPage: React.FC = () => {
                 className="flex items-start gap-3"
               >
                 <div className="text-blue-500 mt-1">
-                  <Users size={20} />
+                  <LuUsers size={20} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-gray-600 text-sm font-medium">
@@ -140,21 +139,21 @@ const CompanyPage: React.FC = () => {
           {company.linkedInLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" href={company.linkedInLink}>
-                <Linkedin />
+                <LuLinkedin />
               </a>
             </FadeInSection>
           )}
           {company.instagramLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" href={company.instagramLink}>
-                <Instagram />
+                <LuInstagram />
               </a>
             </FadeInSection>
           )}
           {company.facebookLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" href={company.facebookLink}>
-                <Facebook />
+                <LuFacebook />
               </a>
             </FadeInSection>
           )}

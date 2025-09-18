@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { SignupLink, Partners, FadeInSection } from "@/ui";
-import { TramFront, SquareParking } from "lucide-react";
+import { LuTramFront, LuSquareParking } from "react-icons/lu";
 
 interface Lecture {
   company: string;
@@ -193,14 +193,14 @@ const VisitInfo: React.FC = () => {
         <h1 className="font-light text-3xl mb-2">{t("getting-to.header")}</h1>
         <div className="mb-4">
           <div className="flex items-center gap-2">
-            <TramFront size={20} />
+            <LuTramFront size={20} />
             <h2 className="text-xl">{t("getting-to.metro.header")}</h2>
           </div>
           <p className="text-pretty font-light font-ibm">{t("getting-to.metro.body")}</p>
         </div>
         <div className="mb-4">
           <div className="flex items-center gap-2">
-            <SquareParking size={20} />
+            <LuSquareParking size={20} />
             <h2 className="text-xl">{t("getting-to.parking.header")}</h2>
           </div>
           <p className="text-pretty font-light font-ibm">{t("getting-to.parking.body")}</p>

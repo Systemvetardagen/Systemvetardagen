@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronDown } from "lucide-react";
+import { LuChevronDown } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
-import { FadeInSection } from "@/ui";
+import { FadeInSection, LoadingSpinner } from "@/ui";
 import { CompanyCard } from "@/ui";
-import Seperator from "@/ui/common/Seperator";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
-  CandidateProgram,
-  MasterProgram,
   CANDIDATE_PROGRAMS,
   MASTER_PROGRAMS,
   POSITIONS,
-  Position,
   Program,
 } from "@/lib/types/program";
 import useCompanyFilters from "@/lib/hooks/userCompanyFilters";
@@ -33,15 +29,18 @@ const Companies: React.FC = () => {
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
 
-  const candidateProgramCodes = Object.keys(
-    t("candidatePrograms", { returnObjects: true }) as Record<string, string>
-  ) as CandidateProgram[];
-  const masterProgramCodes = Object.keys(
-    t("mastersPrograms", { returnObjects: true }) as Record<string, string>
-  ) as MasterProgram[];
-  const positions = Object.keys(
-    t("positions", { returnObjects: true }) as Record<string, string>
-  ) as Position[];
+  const candidateProgramLabels = t("candidatePrograms", {
+    returnObjects: true,
+  }) as Record<string, string>;
+  const masterProgramLabels = t("mastersPrograms", {
+    returnObjects: true,
+  }) as Record<string, string>;
+  const positionLabels = t("positions", {
+    returnObjects: true,
+  }) as Record<string, string>;
+  const globalLabels = t("global", {
+    returnObjects: true,
+  }) as Record<string, string>;
 
   const programsRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<HTMLDivElement>(null);
@@ -70,27 +69,46 @@ const Companies: React.FC = () => {
     };
   }, [programsExpanded, positionsExpanded]);
 
-  const getLabel = (
-    set: Set<string>,
-    type: "programs" | "positions"
+  const getProgramLabel = (
+    candidatePrograms: Set<string>,
+    masterPrograms: Set<string>
   ): string => {
-    const size = set.size;
-    if (size === 0) return `${t("global.all")} ${t(`global.${type}`)}`;
-    if (size === 1) {
-      const code = Array.from(set)[0];
-      if (type === "programs") {
-        if (CANDIDATE_PROGRAMS.includes(code as CandidateProgram)) {
-          return t(`candidatePrograms.${code}`);
-        }
-        if (MASTER_PROGRAMS.includes(code as MasterProgram)) {
-          return t(`mastersPrograms.${code}`);
-        }
-      } else if (type === "positions") {
-        return t(`positions.${code}`);
-      }
-      return code; // fallback (shouldn't normally hit)
+    const totalSize = candidatePrograms.size + masterPrograms.size;
+
+    if (totalSize === 0) {
+      return `${globalLabels.all} ${globalLabels.programs}`;
     }
-    return `${size} ${t(`global.${type}`)}`;
+
+    if (totalSize === 1) {
+      const code =
+        candidatePrograms.size > 0
+          ? Array.from(candidatePrograms)[0]
+          : Array.from(masterPrograms)[0];
+
+      if (candidatePrograms.has(code)) {
+        return candidateProgramLabels[code] || code;
+      }
+      if (masterPrograms.has(code)) {
+        return masterProgramLabels[code] || code;
+      }
+    }
+
+    return `${totalSize} ${globalLabels.programs}`;
+  };
+
+  const getPositionLabel = (positions: Set<string>): string => {
+    const size = positions.size;
+
+    if (size === 0) {
+      return `${globalLabels.all} ${globalLabels.positions}`;
+    }
+
+    if (size === 1) {
+      const code = Array.from(positions)[0];
+      return positionLabels[code] || code;
+    }
+
+    return `${size} ${globalLabels.positions}`;
   };
 
   const noFiltersSelected =
@@ -140,11 +158,11 @@ const Companies: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-32 px-10">
       <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
-        {t("global.header")}
+        {globalLabels.header}
       </h2>
       <div className="relative">
         <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
-          <h2 className="font-light text-gray-700">{t("global.showing")}</h2>
+          <h2 className="font-light text-gray-700">{globalLabels.showing}</h2>
           <div className="">
             <button
               onMouseDown={(e) => e.stopPropagation()}
@@ -155,22 +173,19 @@ const Companies: React.FC = () => {
               className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-2xl hover:opacity-90 transition-opacity"
             >
               <p className="">
-                {getLabel(
-                  new Set<string>([
-                    ...filters.candidatePrograms,
-                    ...filters.mastersPrograms,
-                  ]),
-                  "programs"
+                {getProgramLabel(
+                  filters.candidatePrograms,
+                  filters.mastersPrograms
                 )}
               </p>
-              <ChevronDown
+              <LuChevronDown
                 className={`transform transition-transform duration-200 ${
                   programsExpanded ? "rotate-180" : ""
                 }`}
               />
             </button>
           </div>
-          <h1 className="font-light text-gray-700">{t("global.and")}</h1>
+          <h1 className="font-light text-gray-700">{globalLabels.and}</h1>
           <div className="">
             <button
               onMouseDown={(e) => e.stopPropagation()}
@@ -180,8 +195,8 @@ const Companies: React.FC = () => {
               }}
               className="flex items-center gap-2 px-4 py-2 bg-accent rounded-2xl hover:opacity-90 transition-opacity"
             >
-              {getLabel(filters.positions, "positions")}
-              <ChevronDown
+              {getPositionLabel(filters.positions)}
+              <LuChevronDown
                 className={`transform transition-transform duration-200 ${
                   positionsExpanded ? "rotate-180" : ""
                 }`}
@@ -201,7 +216,7 @@ const Companies: React.FC = () => {
             <input
               type="text"
               className="w-full px-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder={t("global.searchPlaceholder")}
+              placeholder={globalLabels.searchPlaceholder}
               value={filters.search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -209,7 +224,7 @@ const Companies: React.FC = () => {
               <button
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
                 onClick={() => setSearch("")}
-                aria-label={t("search.clearSearch") || "Clear search"}
+                aria-label={globalLabels.clearSearch || "Clear search"}
               >
                 ✕
               </button>
@@ -232,7 +247,7 @@ const Companies: React.FC = () => {
                     onChange={() => toggleCandidateProgram(program)}
                     className="mr-2"
                   />
-                  {t(`candidatePrograms.${program}`)}
+                  {candidateProgramLabels[program]}
                 </label>
               ))}
               <h1>Master&apos;s programmes</h1>
@@ -245,14 +260,14 @@ const Companies: React.FC = () => {
                     onChange={() => toggleMasterProgram(program)}
                     className="mr-2"
                   />
-                  {t(`mastersPrograms.${program}`)}
+                  {masterProgramLabels[program]}
                 </label>
               ))}
               <button
                 onClick={clearFilters}
                 className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-xl mt-2 hover:opacity-90 transition-opacity"
               >
-                {t("global.clearFilters")}
+                {globalLabels.clearFilters}
               </button>
             </div>
           )}
@@ -272,23 +287,31 @@ const Companies: React.FC = () => {
                     onChange={() => togglePosition(position)}
                     className="mr-2"
                   />
-                  {t(`positions.${position}`)}
+                  {positionLabels[position]}
                 </label>
               ))}
               <button
                 onClick={clearFilters}
                 className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-xl mt-2 hover:opacity-90 transition-opacity"
               >
-                {t("global.clearFilters")}
+                {globalLabels.clearFilters}
               </button>
             </div>
           )}
         </div>
       </div>
-      {noFiltersSelected ? (
+      {!noFiltersSelected && (
+        <button
+          onClick={clearFilters}
+          className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-md hover:opacity-90 transition-opacity mb-8"
+        >
+          {globalLabels.clearFilters}
+        </button>
+      )}
+      {noFiltersSelected && partners.length > 0 && (
         <div className="mb-8">
           <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
-            {t("global.partners")}
+            {globalLabels.partners}
           </h1>
           <div className="flex flex-wrap justify-center gap-6 w-full">
             {partners.map((partner, index) => (
@@ -298,26 +321,23 @@ const Companies: React.FC = () => {
             ))}
           </div>
         </div>
-      ) : (
-        <button
-          onClick={clearFilters}
-          className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-md hover:opacity-90 transition-opacity mb-8"
-        >
-          {t("global.clearFilters")}
-        </button>
       )}
 
       <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
-        {t("global.allCompanies")}
+        {globalLabels.allCompanies}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-        {filteredCompanies &&
-          filteredCompanies.map((company, index) => (
-            <FadeInSection key={index} direction="fadeLeft">
-              <CompanyCard company={company} className="h-32 w-56" />
-            </FadeInSection>
-          ))}
-      </div>
+      {isLoading ? (
+        <LoadingSpinner isLoading={isLoading} />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
+          {filteredCompanies &&
+            filteredCompanies.map((company, index) => (
+              <FadeInSection key={index} direction="fadeLeft">
+                <CompanyCard company={company} className="h-32 w-56" />
+              </FadeInSection>
+            ))}
+        </div>
+      )}
     </div>
   );
 };
