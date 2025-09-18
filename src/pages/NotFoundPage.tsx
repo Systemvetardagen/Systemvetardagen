@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ButtonNavigate } from "@/components/ui/buttonNavigate";
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -23,16 +23,20 @@ const NotFoundPage: React.FC = () => {
         </div>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-          <Link
+          {/* <Link
             to="/"
             className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Tillbaka till startsidan
-          </Link>
+          </Link> */}
+          <ButtonNavigate variant={"gradient"} size={"xl"} to="/">
+            Till startsidan
+          </ButtonNavigate>
+
           <Button
             onClick={() => window.history.back()}
             variant={"plain"}
-            size={"lg"}
+            size={"xl"}
           >
             Gå tillbaka
           </Button>
