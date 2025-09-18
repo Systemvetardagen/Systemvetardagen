@@ -138,22 +138,22 @@ const CompanyPage: React.FC = () => {
         <div className="flex gap-4">
           {company.linkedInLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.linkedInLink}>
-                <LuLinkedin />
+              <a rel="nofollow" target="_blank" href={company.linkedInLink}>
+                <LuLinkedin size={20}/>
               </a>
             </FadeInSection>
           )}
           {company.instagramLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.instagramLink}>
-                <LuInstagram />
+              <a rel="nofollow" target="_blank" href={company.instagramLink}>
+                <LuInstagram size={20}/>
               </a>
             </FadeInSection>
           )}
           {company.facebookLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" href={company.facebookLink}>
-                <LuFacebook />
+              <a rel="nofollow" target="_blank" href={company.facebookLink}>
+                <LuFacebook size={20}/>
               </a>
             </FadeInSection>
           )}

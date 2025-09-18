@@ -7,6 +7,7 @@ import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
   CANDIDATE_PROGRAMS,
   MASTER_PROGRAMS,
+  Position,
   POSITIONS,
   Program,
 } from "@/lib/types/program";
@@ -17,14 +18,8 @@ const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
   const { companies, isLoading, isError } = useCompanies();
-  const {
-    filters,
-    setSearch,
-    toggleCandidateProgram,
-    toggleMasterProgram,
-    togglePosition,
-    clearFilters,
-  } = useCompanyFilters("companies");
+  const { filters, setSearch, toggleProgram, togglePosition, clearFilters } =
+    useCompanyFilters();
 
   const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
   const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
@@ -69,28 +64,23 @@ const Companies: React.FC = () => {
     };
   }, [programsExpanded, positionsExpanded]);
 
-  const getProgramLabel = (
-    candidatePrograms: Set<string>,
-    masterPrograms: Set<string>
-  ): string => {
-    const totalSize = candidatePrograms.size + masterPrograms.size;
+  const getProgramLabel = (programs: Set<string>): string => {
+    const totalSize = programs.size;
 
     if (totalSize === 0) {
       return `${globalLabels.all} ${globalLabels.programs}`;
     }
 
     if (totalSize === 1) {
-      const code =
-        candidatePrograms.size > 0
-          ? Array.from(candidatePrograms)[0]
-          : Array.from(masterPrograms)[0];
+      const [code] = programs.entries().next().value as [string, unknown];
 
-      if (candidatePrograms.has(code)) {
-        return candidateProgramLabels[code] || code;
+      if (candidateProgramLabels && code in candidateProgramLabels) {
+        return candidateProgramLabels[code];
       }
-      if (masterPrograms.has(code)) {
-        return masterProgramLabels[code] || code;
+      if (masterProgramLabels && code in masterProgramLabels) {
+        return masterProgramLabels[code];
       }
+      return code; //fallback
     }
 
     return `${totalSize} ${globalLabels.programs}`;
@@ -112,30 +102,23 @@ const Companies: React.FC = () => {
   };
 
   const noFiltersSelected =
-    filters.candidatePrograms.size === 0 &&
-    filters.mastersPrograms.size === 0 &&
+    filters.programs.size === 0 &&
     filters.positions.size === 0 &&
     filters.search === "";
 
   const filteredCompanies = companies
     ? companies.filter((company: Company) => {
-        const hasCandidateProgram =
-          filters.candidatePrograms.size === 0 ||
+        const hasProgram =
+          filters.programs.size === 0 ||
           (company.programs &&
-            company.programs.some((p: Program) =>
-              filters.candidatePrograms.has(p)
-            ));
+            company.programs.some((p: Program) => filters.programs.has(p)));
 
-        const hasMasterProgram =
-          filters.mastersPrograms.size === 0 ||
-          (company.programs &&
-            company.programs.some((p: Program) =>
-              filters.mastersPrograms.has(p)
+        const hasPosition =
+          filters.positions.size === 0 ||
+          (company.positions &&
+            company.positions.some((pos: Position) =>
+              filters.positions.has(pos)
             ));
-
-        // const hasPosition =
-        //   filters.positions.size === 0 ||
-        //   (company.positions && company.positions.some((pos: string) => filters.positions.has(pos)));
 
         const matchesSearch =
           !filters.search ||
@@ -147,7 +130,7 @@ const Companies: React.FC = () => {
               .toLowerCase()
               .includes(filters.search.toLowerCase()));
 
-        return hasCandidateProgram && hasMasterProgram && matchesSearch;
+        return hasProgram && hasPosition && matchesSearch;
       })
     : [];
   const partners = companies
@@ -172,12 +155,7 @@ const Companies: React.FC = () => {
               }}
               className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-2xl hover:opacity-90 transition-opacity"
             >
-              <p className="">
-                {getProgramLabel(
-                  filters.candidatePrograms,
-                  filters.mastersPrograms
-                )}
-              </p>
+              <p className="">{getProgramLabel(filters.programs)}</p>
               <LuChevronDown
                 className={`transform transition-transform duration-200 ${
                   programsExpanded ? "rotate-180" : ""
@@ -243,8 +221,8 @@ const Companies: React.FC = () => {
                   <input
                     type="checkbox"
                     value={program}
-                    checked={filters.candidatePrograms.has(program)}
-                    onChange={() => toggleCandidateProgram(program)}
+                    checked={filters.programs.has(program)}
+                    onChange={() => toggleProgram(program)}
                     className="mr-2"
                   />
                   {candidateProgramLabels[program]}
@@ -256,8 +234,8 @@ const Companies: React.FC = () => {
                   <input
                     type="checkbox"
                     value={program}
-                    checked={filters.mastersPrograms.has(program)}
-                    onChange={() => toggleMasterProgram(program)}
+                    checked={filters.programs.has(program)}
+                    onChange={() => toggleProgram(program)}
                     className="mr-2"
                   />
                   {masterProgramLabels[program]}

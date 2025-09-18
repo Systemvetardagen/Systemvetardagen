@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { CandidateProgram, MasterProgram, Position } from "../types/program";
+import {
+  Position,
+  Program,
+} from "../types/program";
 
 export interface Filters {
   search: string;
-  candidatePrograms: Set<CandidateProgram>;
-  mastersPrograms: Set<MasterProgram>;
+  programs: Set<Program>;
   positions: Set<Position>;
 }
 
 const initialFilters: Filters = {
   search: "",
-  candidatePrograms: new Set(),
-  mastersPrograms: new Set(),
+  programs: new Set(),
   positions: new Set(),
 };
-
 
 export default function useCompanyFilters() {
   const [filters, setFilters] = useState<Filters>(initialFilters);
@@ -23,34 +23,22 @@ export default function useCompanyFilters() {
     setFilters((prev) => ({ ...prev, search }));
   };
 
-  const toggleCandidateProgram = (program: CandidateProgram) => {
+  const toggleProgram = (program: Program) => {
     setFilters((prev) => {
-      const newCandidatePrograms = new Set(prev.candidatePrograms);
-      if (newCandidatePrograms.has(program)) {
-        newCandidatePrograms.delete(program);
+      const newPrograms = new Set(prev.programs);
+      if (newPrograms.has(program)) {
+        newPrograms.delete(program);
       } else {
-        newCandidatePrograms.add(program);
+        newPrograms.add(program);
       }
-      return { ...prev, candidatePrograms: newCandidatePrograms };
-    });
-  };
-
-  const toggleMasterProgram = (program: MasterProgram) => {
-    setFilters((prev) => {
-      const newMasterPrograms = new Set(prev.mastersPrograms);
-      if (newMasterPrograms.has(program)) {
-        newMasterPrograms.delete(program);
-      } else {
-        newMasterPrograms.add(program);
-      }
-      return { ...prev, mastersPrograms: newMasterPrograms };
+      return { ...prev, programs: newPrograms };
     });
   };
 
   const togglePosition = (position: Position) => {
     setFilters((prev) => {
       const newPositions = new Set(prev.positions);
-      if (newPositions.has(position)) {
+      if (prev.positions.has(position)) {
         newPositions.delete(position);
       } else {
         newPositions.add(position);
@@ -62,8 +50,7 @@ export default function useCompanyFilters() {
   const clearFilters = () => {
     setFilters({
       search: "",
-      candidatePrograms: new Set(),
-      mastersPrograms: new Set(),
+      programs: new Set(),
       positions: new Set(),
     });
   };
@@ -71,8 +58,7 @@ export default function useCompanyFilters() {
   return {
     filters,
     setSearch,
-    toggleCandidateProgram,
-    toggleMasterProgram,
+    toggleProgram,
     togglePosition,
     clearFilters,
   };

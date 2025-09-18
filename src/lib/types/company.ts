@@ -1,4 +1,4 @@
-import { Program } from "./program";
+import { Position, Program } from "./program";
 
 export interface Company {
   companyName: string;
@@ -15,10 +15,8 @@ export interface Company {
   isSponsor: boolean;
   qualifications: string;
   programs: Program[];
+  positions: Position[];
   slug: string;
   logoURL: string;
   bannerURL: string;
 }
-
-
-
