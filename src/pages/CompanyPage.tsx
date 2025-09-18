@@ -14,12 +14,13 @@ import { Link } from "react-router-dom";
 import { CompanyCard, FadeInSection } from "@/ui";
 import { useCompany } from "@/lib/hooks/useCompanyContext";
 import { NotFoundPage } from ".";
+import { CANDIDATE_PROGRAMS, MASTER_PROGRAMS } from "@/lib/types/program";
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
   const { company, isLoading, isError } = useCompany(companyId || "");
-  const { t } = useTranslation("companies");
-  console.log(company);
+  const { t: tCompanies } = useTranslation("companies");
+  const { t: tPrograms } = useTranslation("programs");
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -72,7 +73,7 @@ const CompanyPage: React.FC = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-gray-600 text-sm font-medium">
-                  {t("global.areaOfBusiness")}
+                  {tCompanies("global.areaOfBusiness")}
                 </h3>
                 <p className="text-gray-800">{company.areaOfBusiness}</p>
               </div>
@@ -87,7 +88,7 @@ const CompanyPage: React.FC = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-gray-600 text-sm font-medium">
-                  {t("global.founded")}
+                  {tCompanies("global.founded")}
                 </h3>
                 <p className="text-gray-800">
                   {new Date(company.foundedYear || "").getFullYear()}
@@ -105,7 +106,7 @@ const CompanyPage: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-gray-600 text-sm font-medium">
-                    {t("global.employeesInSweden")}
+                    {tCompanies("global.employeesInSweden")}
                   </h3>
                   <p className="text-gray-800">
                     {company.employeesSweden.toLocaleString("sv-SE")}
@@ -124,7 +125,7 @@ const CompanyPage: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-gray-600 text-sm font-medium">
-                    {t("global.employeesInternationally")}
+                    {tCompanies("global.employeesInternationally")}
                   </h3>
                   <p className="text-gray-800">
                     {company.employeesWorld.toLocaleString("sv-SE")}
@@ -139,21 +140,21 @@ const CompanyPage: React.FC = () => {
           {company.linkedInLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" target="_blank" href={company.linkedInLink}>
-                <LuLinkedin size={20}/>
+                <LuLinkedin size={20} />
               </a>
             </FadeInSection>
           )}
           {company.instagramLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" target="_blank" href={company.instagramLink}>
-                <LuInstagram size={20}/>
+                <LuInstagram size={20} />
               </a>
             </FadeInSection>
           )}
           {company.facebookLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
               <a rel="nofollow" target="_blank" href={company.facebookLink}>
-                <LuFacebook size={20}/>
+                <LuFacebook size={20} />
               </a>
             </FadeInSection>
           )}
@@ -164,8 +165,19 @@ const CompanyPage: React.FC = () => {
           <span className="text-justify">{company.description}</span>
         </FadeInSection>
         <div className="flex gap-2">
-          {company.programs.map((program, index) => (
-            <span key={index}>{program}</span>
+          {company.programs.map((program, index) => {
+            let key = "";
+            if (CANDIDATE_PROGRAMS.includes(program as typeof CANDIDATE_PROGRAMS[number])) {
+              key = `candidatePrograms.${program}`;
+            } else if (MASTER_PROGRAMS.includes(program as typeof MASTER_PROGRAMS[number])) {
+              key = `masterPrograms.${program}`;
+            }
+            return <span key={index}>{tPrograms(key)}</span>;
+          })}
+        </div>
+        <div className="flex gap-2">
+          {company.positions.map((position, index) => (
+            <span key={index}>{tPrograms(`positions.${position}`)}</span>
           ))}
         </div>
         <a
@@ -173,20 +185,20 @@ const CompanyPage: React.FC = () => {
           rel="nofollow"
           href={company.websiteLink}
         >
-          {/* {t("global.learnMore", { company: company.companyName })} */}
+          {tCompanies("global.learnMore", { company: company.companyName })}
         </a>
         <div className="flex gap-4">
           <Link
             to="/companies"
             className="rounded-2xl p-4 border-2 transition-all duration-100 hover:scale-105 flex items-center justify-center"
           >
-            <span className="text-center">{t("global.backToCompanies")}</span>
+            <span className="text-center">{tCompanies("global.backToCompanies")}</span>
           </Link>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="rounded-2xl p-4 border-2 transition-all duration-100 hover:scale-105"
           >
-            {t("global.scrollToTop")}
+            {tCompanies("global.scrollToTop")}
           </button>
         </div>
       </div>
