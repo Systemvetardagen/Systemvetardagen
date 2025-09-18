@@ -29,7 +29,13 @@ const NotFoundPage: React.FC = () => {
           >
             Tillbaka till startsidan
           </Link>
-          <Button onClick={() => window.history.back()}></Button>
+          <Button
+            onClick={() => window.history.back()}
+            variant={"plain"}
+            size={"lg"}
+          >
+            Gå tillbaka
+          </Button>
           {/* <button
             onClick={() => window.history.back()}
             className="inline-block bg-transparent border-2 border-black hover:bg-white hover:text-gray-900 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
