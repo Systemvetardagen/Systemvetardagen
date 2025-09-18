@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ButtonNavigate } from "@/components/ui/buttonNavigate";
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -10,31 +11,43 @@ const NotFoundPage: React.FC = () => {
             404
           </h1>
         </div>
-        
+
         <div className="mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Sidan kunde inte hittas
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-md mx-auto">
-            Vi kan tyvärr inte hitta sidan du letar efter. Den kanske har flyttats eller finns inte längre.
+            Vi kan tyvärr inte hitta sidan du letar efter. Den kanske har
+            flyttats eller finns inte längre.
           </p>
         </div>
-        
+
         <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-          <Link
+          {/* <Link
             to="/"
             className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Tillbaka till startsidan
-          </Link>
-          <button
+          </Link> */}
+          <ButtonNavigate variant={"gradient"} size={"xl"} to="/">
+            Till startsidan
+          </ButtonNavigate>
+
+          <Button
+            onClick={() => window.history.back()}
+            variant={"plain"}
+            size={"xl"}
+          >
+            Gå tillbaka
+          </Button>
+          {/* <button
             onClick={() => window.history.back()}
             className="inline-block bg-transparent border-2 border-black hover:bg-white hover:text-gray-900 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Gå tillbaka
-          </button>
+          </button> */}
         </div>
-        
+
         <div className="mt-12 text-sm text-gray-400">
           <p>Om du tror att detta är ett fel, vänligen kontakta oss.</p>
         </div>
