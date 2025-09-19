@@ -1,5 +1,11 @@
 {
-    "partners": "Our partners",
-    "disk": "Organized by Studentkåren DISK at the Department of Computer and Systems Sciences at Stockholm University."
+  "partners": "Our partners",
+  "disk": "Organized by Studentkåren DISK at the Department of Computer and Systems Sciences at Stockholm University.",
+  "notfound": {
+    "header": "This site could not be found",
+    "subheader": "We could not find the site you are looking for. It may have been moved or does not exist.",
+    "start": "Home",
+    "back": "Go back",
+    "fault": "If you think this is a error, please contact us"
   }
-  
+}

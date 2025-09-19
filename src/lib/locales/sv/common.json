@@ -1,4 +1,11 @@
 {
-    "partners": "Våra partners",
-    "disk": "Studentkåren DISK"
+  "partners": "Våra partners",
+  "disk": "Studentkåren DISK",
+  "notfound": {
+    "header": "Sidan kunde inte hittas",
+    "subheader": "Vi kan tyvärr inte hitta sidan du letar efter. Den kanske har flyttats eller finns inte längre.",
+    "start": "Till startsidan",
+    "back": "Gå tillbaka",
+    "fault": "Om du tror att detta är ett fel, vänligen kontakta oss"
+  }
 }

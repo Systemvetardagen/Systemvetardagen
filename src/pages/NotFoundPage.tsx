@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ButtonNavigate } from "@/components/ui/buttonNavigate";
+import { useTranslation } from "react-i18next";
 
 const NotFoundPage: React.FC = () => {
+  const [t] = useTranslation("common");
   return (
     <div className="grow flex flex-col items-center justify-center bg-white px-4">
       <div className="text-center">
@@ -14,17 +16,16 @@ const NotFoundPage: React.FC = () => {
 
         <div className="mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Sidan kunde inte hittas
+            {t("notfound.header")}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-md mx-auto">
-            Vi kan tyvärr inte hitta sidan du letar efter. Den kanske har
-            flyttats eller finns inte längre.
+            {t("notfound.subheader")}
           </p>
         </div>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
           <ButtonNavigate variant={"gradient"} size={"xl"} to="/">
-            Till startsidan
+            {t("notfound.start")}
           </ButtonNavigate>
 
           <Button
@@ -32,12 +33,12 @@ const NotFoundPage: React.FC = () => {
             variant={"plain"}
             size={"xl"}
           >
-            Gå tillbaka
+            {t("notfound.back")}
           </Button>
         </div>
 
         <div className="mt-12 text-sm text-gray-400">
-          <p>Om du tror att detta är ett fel, vänligen kontakta oss.</p>
+          <p>{t("notfound.fault")}</p>
         </div>
       </div>
     </div>
