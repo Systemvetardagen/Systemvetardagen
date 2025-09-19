@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { FaChevronDown } from "react-icons/fa";
+import { CompanyCardSkeleton } from "@/ui/company/CompanyCard";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
@@ -251,36 +252,47 @@ const Companies: React.FC = () => {
           {globalLabels.clearFilters}
         </Button>
       )}
-      {noFiltersSelected && partners.length > 0 && (
-        <div className="mb-8">
-          <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
-            {globalLabels.partners}
-          </h1>
-          <div className="flex flex-wrap justify-center gap-6 w-full">
-            {partners.map((partner, index) => (
-              <FadeInSection key={index} direction="fadeLeft">
-                <CompanyCard company={partner} className="h-32 w-56" />
-              </FadeInSection>
-            ))}
+      {(noFiltersSelected && partners.length > 0) ||
+        (isLoading && (
+          <div className="mb-8">
+            <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
+              {globalLabels.partners}
+            </h1>
+            <div className="flex flex-wrap justify-center gap-6 w-full">
+              {isLoading
+                ? Array.from({ length: 3 }).map((_, index) => (
+                    <FadeInSection key={index} direction="fadeLeft">
+                      <CompanyCardSkeleton className="h-44 w-[308px]" />
+                    </FadeInSection>
+                  ))
+                : partners.map((partner, index) => (
+                    <FadeInSection key={index} direction="fadeLeft">
+                      <CompanyCard
+                        company={partner}
+                        className="h-44 w-[308px]"
+                      />
+                    </FadeInSection>
+                  ))}
+            </div>
           </div>
-        </div>
-      )}
-
+        ))}
       <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
         {globalLabels.allCompanies}
       </h1>
-      {isLoading ? (
-        <LoadingSpinner isLoading={isLoading} />
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-          {filteredCompanies &&
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
+        {isLoading
+          ? Array.from({ length: 12 }).map((_, index) => (
+              <FadeInSection key={index} direction="fadeLeft">
+                <CompanyCardSkeleton className="h-32 w-56" />
+              </FadeInSection>
+            ))
+          : filteredCompanies &&
             filteredCompanies.map((company, index) => (
               <FadeInSection key={index} direction="fadeLeft">
                 <CompanyCard company={company} className="h-32 w-56" />
               </FadeInSection>
             ))}
-        </div>
-      )}
+      </div>
     </div>
   );
 };

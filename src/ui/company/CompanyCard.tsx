@@ -1,6 +1,8 @@
 import { Company } from "@/lib/types/company";
 import React from "react";
 import { Link } from "react-router-dom";
+import { LoadingSpinner } from "../common";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface CompanyCardProps {
   company: Company;
@@ -10,10 +12,7 @@ interface CompanyCardProps {
 const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
   return (
     <div
-      className={
-        `bg-white rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl p-4 h-44 w-[308px]` +
-        (className ? ` ${className}` : "")
-      }
+      className={`bg-white rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl p-4 ${className}`}
     >
       <Link to={`/companies/${company.slug}`} aria-label={company.companyName}>
         {company.logoURL ? (
@@ -24,12 +23,24 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, className }) => {
             loading="lazy"
           />
         ) : (
-          <div className="flex items-center justify-center text-black text-2xl font-bold h-full w-full">
+          <div className="flex items-center justify-center text-black text-xl text-center font-bold h-full w-full">
             {company.companyName}
           </div>
         )}
       </Link>
     </div>
+  );
+};
+
+interface CompanyCardSkeletonProps {
+  className?: string;
+}
+
+export const CompanyCardSkeleton: React.FC<CompanyCardSkeletonProps> = ({
+  className,
+}) => {
+  return (
+    <Skeleton className={`rounded-2xl shadow-xl p-4 ${className}`}></Skeleton>
   );
 };
 
