@@ -2,63 +2,19 @@
   "navbar": [
     {
       "section": "Hem",
-      "href": "/",
-      "childLinks": [
-        {
-          "name": "30 År!",
-          "href": "/#30"
-        },
-        {
-          "name": "Bli en del av Teamet!",
-          "href": "/#fairie"
-        },
-        {
-          "name": "Håll dig uppdaterad",
-          "href": "/signup"
-        }
-      ]
+      "href": "/"
     },
     {
       "section": "Företag",
-      "href": "/companies/signup",
-      "childLinks": [
-        {
-          "name": "Företagsanmälan",
-          "href": "/companies/signup"
-        }
-      ]
+      "href": "/companies/signup"
     },
     {
       "section": "Info",
-      "href": "/visit-info",
-      "childLinks": [
-        {
-          "name": "Evenemang",
-          "href": "/visit-info#events"
-        },
-        {
-          "name": "Karta",
-          "href": "/visit-info#map"
-        },
-        {
-          "name": "Hitta hit",
-          "href": "/visit-info#get-here"
-        }
-      ]
+      "href": "/visit-info"
     },
     {
       "section": "Om",
-      "href": "/about",
-      "childLinks": [
-        {
-          "name": "Systemvetardagen",
-          "href": "/about"
-        },
-        {
-          "name": "Projekt Gruppen",
-          "href": "/about#project-group"
-        }
-      ]
+      "href": "/about"
     }
   ]
 }

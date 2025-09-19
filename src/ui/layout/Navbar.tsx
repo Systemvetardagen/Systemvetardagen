@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { LanguageSwitch, Seperator } from "../common";
+import { LanguageSwitch } from "../common";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
 import { useTranslation } from "react-i18next";
@@ -8,10 +8,6 @@ import { useTranslation } from "react-i18next";
 export interface Link {
   section: string;
   href: string;
-  childLinks: {
-    name: string;
-    href: string;
-  }[];
 }
 
 const Navbar: React.FC = () => {
@@ -31,8 +27,8 @@ const Navbar: React.FC = () => {
   const getNavLinkClass = ({ isActive }: { isActive: boolean }): string =>
     `font-semibold text-[20px] text-black relative ${
       isActive
-      ? "text-black underline underline-offset-4 underline decoration-2"
-      : "hover:text-link"
+        ? "text-black underline underline-offset-4 underline decoration-2"
+        : "hover:text-link"
     }`;
 
   return (
@@ -41,7 +37,7 @@ const Navbar: React.FC = () => {
         isSticky
           ? "fixed top-0 left-0 w-full rounded-none h-14"
           : "absolute top-8 w-[90vw] mx-[5vw] rounded-full"
-      } flex bg-white text-black px-4 lg:py-1 z-20 items-center justify-between transition-all duration-150 shadow-md `}
+      } flex bg-white text-black px-4 lg:py-2 z-20 items-center justify-between transition-all duration-150 shadow-md `}
     >
       {/* FREDRIK SNÄLLAAA LÅT DEN VARA SNÄLLA */}
       {/* NE DEDÄR ÄR ACTUALLY ETT BROTT SLUTA JAG ACCEPTERAR MAX P-2 JAG KOMMER LÄGGA EN --force JAG SVÄR*/}
@@ -56,17 +52,13 @@ const Navbar: React.FC = () => {
         />
       </NavLink>
 
-      <DesktopNavbar
-        links={links}
-        getNavLinkClass={getNavLinkClass}
-      />
+      <DesktopNavbar links={links} getNavLinkClass={getNavLinkClass} />
 
       <MobileNavbar
         links={links}
         isSticky={isSticky}
         getNavLinkClass={getNavLinkClass}
       />
-      {isSticky && <Seperator className="absolute bottom-0 left-0 w-screen" />}
       <div className="hidden lg:flex">
         <LanguageSwitch />
       </div>

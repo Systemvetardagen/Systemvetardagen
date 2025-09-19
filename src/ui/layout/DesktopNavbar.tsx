@@ -19,19 +19,6 @@ const DesktopNavbar: FC<DesktopNavbarProps> = ({ links, getNavLinkClass }) => {
           </NavLink>
           {/* invisible bridge div */}
           <div className="absolute left-1/2 -translate-x-1/2 w-full h-4 bg-transparent"></div>
-          <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 ease-in-out flex flex-col gap-2 p-2 bg-white absolute left-1/2 -translate-x-1/2 mt-4 rounded-md shadow-lg min-w-max z-50">
-            {link.childLinks.map((childLink, index) => (
-              <NavHashLink
-                to={childLink.href}
-                key={index}
-                smooth
-                scroll={scrollWithOffset}
-                className="hover:text-link whitespace-nowrap px-2 py-1 rounded"
-              >
-                {childLink.name}
-              </NavHashLink>
-            ))}
-          </div>
         </div>
       ))}
     </div>

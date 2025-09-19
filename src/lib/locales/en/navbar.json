@@ -2,63 +2,19 @@
   "navbar": [
     {
       "section": "Home",
-      "href": "/",
-      "childLinks": [
-        {
-          "name": "30 Years!",
-          "href": "/#30"
-        },
-        {
-          "name": "Join the Team!",
-          "href": "/#fairie"
-        },
-        {
-          "name": "Stay Updated",
-          "href": "/signup"
-        }
-      ]
+      "href": "/"
     },
     {
       "section": "Companies",
-      "href": "/companies/signup",
-      "childLinks": [
-        {
-          "name": "Company Signup",
-          "href": "/companies/signup"
-        }
-      ]
+      "href": "/companies/signup"
     },
     {
       "section": "Visit Info",
-      "href": "/visit-info",
-      "childLinks": [
-        {
-          "name": "Events",
-          "href": "/visit-info#events"
-        },
-        {
-          "name": "Map",
-          "href": "/visit-info#map"
-        },
-        {
-          "name": "Get to the Fair",
-          "href": "/visit-info#get-here"
-        }
-      ]
+      "href": "/visit-info"
     },
     {
       "section": "About",
-      "href": "/about",
-      "childLinks": [
-        {
-          "name": "Systemvetardagen",
-          "href": "/about"
-        },
-        {
-          "name": "Project Group",
-          "href": "/about#project-group"
-        }
-      ]
+      "href": "/about"
     }
   ]
 }
