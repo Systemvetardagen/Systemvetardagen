@@ -23,12 +23,6 @@ const NotFoundPage: React.FC = () => {
         </div>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-          {/* <Link
-            to="/"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Tillbaka till startsidan
-          </Link> */}
           <ButtonNavigate variant={"gradient"} size={"xl"} to="/">
             Till startsidan
           </ButtonNavigate>
@@ -40,12 +34,6 @@ const NotFoundPage: React.FC = () => {
           >
             Gå tillbaka
           </Button>
-          {/* <button
-            onClick={() => window.history.back()}
-            className="inline-block bg-transparent border-2 border-black hover:bg-white hover:text-gray-900 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Gå tillbaka
-          </button> */}
         </div>
 
         <div className="mt-12 text-sm text-gray-400">

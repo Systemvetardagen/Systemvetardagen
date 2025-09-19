@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { LuChevronDown } from "react-icons/lu";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FadeInSection, LoadingSpinner } from "@/ui";
 import { CompanyCard } from "@/ui";
@@ -13,16 +12,26 @@ import {
 } from "@/lib/types/program";
 import useCompanyFilters from "@/lib/hooks/userCompanyFilters";
 import { Company } from "@/lib/types/company";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { FaChevronDown } from "react-icons/fa";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
-  const { companies, isLoading, isError } = useCompanies();
-  const { filters, setSearch, toggleProgram, togglePosition, clearFilters } =
+  const { companies, isLoading } = useCompanies();
+  const { filters, toggleProgram, togglePosition, clearFilters } =
     useCompanyFilters();
 
-  const [programsExpanded, setProgramsExpanded] = useState<boolean>(false);
-  const [positionsExpanded, setPositionsExpanded] = useState<boolean>(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
+  const [positionsOpen, setPositionsOpen] = useState(false);
 
   const candidateProgramLabels = t("candidatePrograms", {
     returnObjects: true,
@@ -37,42 +46,18 @@ const Companies: React.FC = () => {
     returnObjects: true,
   }) as Record<string, string>;
 
-  const programsRef = useRef<HTMLDivElement>(null);
-  const positionsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        programsExpanded &&
-        programsRef.current &&
-        !programsRef.current.contains(e.target as Node)
-      ) {
-        setProgramsExpanded(false);
-      }
-      if (
-        positionsExpanded &&
-        positionsRef.current &&
-        !positionsRef.current.contains(e.target as Node)
-      ) {
-        setPositionsExpanded(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [programsExpanded, positionsExpanded]);
-
-  const getProgramLabel = (programs: Set<string>): string => {
-    const totalSize = programs.size;
+  const getProgramLabel = (): string => {
+    const totalSize = filters.programs.size;
 
     if (totalSize === 0) {
       return `${globalLabels.all} ${globalLabels.programs}`;
     }
 
     if (totalSize === 1) {
-      const [code] = programs.entries().next().value as [string, unknown];
+      const [code] = filters.programs.entries().next().value as [
+        string,
+        unknown
+      ];
 
       if (candidateProgramLabels && code in candidateProgramLabels) {
         return candidateProgramLabels[code];
@@ -86,15 +71,15 @@ const Companies: React.FC = () => {
     return `${totalSize} ${globalLabels.programs}`;
   };
 
-  const getPositionLabel = (positions: Set<string>): string => {
-    const size = positions.size;
+  const getPositionLabel = (): string => {
+    const size = filters.positions.size;
 
     if (size === 0) {
       return `${globalLabels.all} ${globalLabels.positions}`;
     }
 
     if (size === 1) {
-      const code = Array.from(positions)[0];
+      const code = Array.from(filters.positions)[0];
       return positionLabels[code] || code;
     }
 
@@ -143,148 +128,86 @@ const Companies: React.FC = () => {
       <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
         {globalLabels.header}
       </h2>
-      <div className="relative">
-        <div className="flex items-center flex-wrap justify-center gap-2 mb-4">
-          <h2 className="font-light text-gray-700">{globalLabels.showing}</h2>
-          <div className="">
-            <button
-              onMouseDown={(e) => e.stopPropagation()}
-              onClick={() => {
-                setProgramsExpanded(!programsExpanded);
-                setPositionsExpanded(false);
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-2xl hover:opacity-90 transition-opacity"
-            >
-              <p className="">{getProgramLabel(filters.programs)}</p>
-              <LuChevronDown
+      <div className="flex gap-4 py-4">
+        <DropdownMenu open={programsOpen} onOpenChange={setProgramsOpen}>
+          <DropdownMenuTrigger asChild>
+            <Button variant="default">
+              {getProgramLabel()}{" "}
+              <FaChevronDown
                 className={`transform transition-transform duration-200 ${
-                  programsExpanded ? "rotate-180" : ""
+                  programsOpen ? "rotate-180" : ""
                 }`}
               />
-            </button>
-          </div>
-          <h1 className="font-light text-gray-700">{globalLabels.and}</h1>
-          <div className="">
-            <button
-              onMouseDown={(e) => e.stopPropagation()}
-              onClick={() => {
-                setPositionsExpanded(!positionsExpanded);
-                setProgramsExpanded(false);
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-accent rounded-2xl hover:opacity-90 transition-opacity"
-            >
-              {getPositionLabel(filters.positions)}
-              <LuChevronDown
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="">
+            <DropdownMenuLabel>Bachelor&apos;s programmes</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {CANDIDATE_PROGRAMS.map((program, index) => (
+              <DropdownMenuCheckboxItem
+                key={index}
+                className="cursor-pointer"
+                checked={filters.programs.has(program)}
+                onCheckedChange={() => toggleProgram(program)}
+                onSelect={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                {candidateProgramLabels[program]}
+              </DropdownMenuCheckboxItem>
+            ))}
+            <DropdownMenuLabel>Master&apos;s programmes</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {MASTER_PROGRAMS.map((program, index) => (
+              <DropdownMenuCheckboxItem
+                key={index}
+                className="cursor-pointer"
+                checked={filters.programs.has(program)}
+                onCheckedChange={() => toggleProgram(program)}
+                onSelect={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                {masterProgramLabels[program]}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+        <DropdownMenu open={positionsOpen} onOpenChange={setPositionsOpen}>
+          <DropdownMenuTrigger asChild>
+            <Button variant="default">
+              {getPositionLabel()}{" "}
+              <FaChevronDown
                 className={`transform transition-transform duration-200 ${
-                  positionsExpanded ? "rotate-180" : ""
+                  positionsOpen ? "rotate-180" : ""
                 }`}
               />
-            </button>
-            <div
-              className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ease-in-out ${
-                positionsExpanded
-                  ? "max-h-[1000px] opacity-100"
-                  : "max-h-0 opacity-0 overflow-hidden"
-              }`}
-            ></div>
-          </div>
-        </div>
-        <div className="w-full mb-4">
-          <div className="relative">
-            <input
-              type="text"
-              className="w-full px-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder={globalLabels.searchPlaceholder}
-              value={filters.search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            {filters.search && (
-              <button
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                onClick={() => setSearch("")}
-                aria-label={globalLabels.clearSearch || "Clear search"}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="">
+            <DropdownMenuLabel>Positions</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {POSITIONS.map((position, index) => (
+              <DropdownMenuCheckboxItem
+                key={index}
+                className="cursor-pointer"
+                color=""
+                checked={filters.positions.has(position)}
+                onCheckedChange={() => togglePosition(position)}
+                onSelect={(e) => {
+                  e.preventDefault();
+                }}
               >
-                ✕
-              </button>
-            )}
-          </div>
-        </div>
-        <div className="relative">
-          {programsExpanded && (
-            <div
-              ref={programsRef}
-              className="absolute bg-white rounded-xl flex flex-col shadow-md p-4 left-1/2 -translate-x-1/2 w-full max-w-[550px] gap-2 z-50"
-            >
-              <h1>Bachelor&apos;s programmes</h1>
-              {CANDIDATE_PROGRAMS.map((program) => (
-                <label key={program} className="font-light text-gray-700">
-                  <input
-                    type="checkbox"
-                    value={program}
-                    checked={filters.programs.has(program)}
-                    onChange={() => toggleProgram(program)}
-                    className="mr-2"
-                  />
-                  {candidateProgramLabels[program]}
-                </label>
-              ))}
-              <h1>Master&apos;s programmes</h1>
-              {MASTER_PROGRAMS.map((program) => (
-                <label key={program} className="font-light text-gray-700">
-                  <input
-                    type="checkbox"
-                    value={program}
-                    checked={filters.programs.has(program)}
-                    onChange={() => toggleProgram(program)}
-                    className="mr-2"
-                  />
-                  {masterProgramLabels[program]}
-                </label>
-              ))}
-              <button
-                onClick={clearFilters}
-                className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-xl mt-2 hover:opacity-90 transition-opacity"
-              >
-                {globalLabels.clearFilters}
-              </button>
-            </div>
-          )}
-        </div>
-        <div className="relative">
-          {positionsExpanded && (
-            <div
-              ref={positionsRef}
-              className="absolute bg-white rounded-xl flex flex-col right-0 shadow-md p-4 gap-2 z-50"
-            >
-              {POSITIONS.map((position) => (
-                <label key={position} className="font-light text-gray-700">
-                  <input
-                    type="checkbox"
-                    value={position}
-                    checked={filters.positions.has(position)}
-                    onChange={() => togglePosition(position)}
-                    className="mr-2"
-                  />
-                  {positionLabels[position]}
-                </label>
-              ))}
-              <button
-                onClick={clearFilters}
-                className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-xl mt-2 hover:opacity-90 transition-opacity"
-              >
-                {globalLabels.clearFilters}
-              </button>
-            </div>
-          )}
-        </div>
+                {positionLabels[position]}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       {!noFiltersSelected && (
-        <button
-          onClick={clearFilters}
-          className="flex items-center gap-2 px-4 py-2 bg-link text-white rounded-md hover:opacity-90 transition-opacity mb-8"
-        >
+        <Button onClick={clearFilters} variant={"secondary"}>
           {globalLabels.clearFilters}
-        </button>
+        </Button>
       )}
       {noFiltersSelected && partners.length > 0 && (
         <div className="mb-8">

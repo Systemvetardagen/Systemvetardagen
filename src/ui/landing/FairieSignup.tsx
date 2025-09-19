@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { LuPartyPopper, LuHeartHandshake, LuStar } from "react-icons/lu";
-import { Button } from "../common";
+import { Button } from "@/components/ui/button";
 import { Trans } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { FadeInSection } from "../layout";
@@ -66,8 +66,8 @@ const FairieSignup = () => {
           </div>
         ))}
       </div>
-       <NavLink to={SignupUrl} className={"w-full"} target="_blank">
-        <Button size="md" className="w-full" variant="primary">
+      <NavLink to={SignupUrl} className={"w-full"} target="_blank">
+        <Button size="xl" className="w-full" variant="default">
           Sign Up
         </Button>
       </NavLink>

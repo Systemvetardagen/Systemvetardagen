@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { Button } from ".";
+import { Button } from "@/components/ui/button";
 import { FadeInSection } from "../layout";
 
 const SignupLink: React.FC = () => {
@@ -16,7 +16,7 @@ const SignupLink: React.FC = () => {
         {t("body.uppdated.body")}
       </p>
       <NavLink to={signupUrl} className="">
-        <Button size="md" variant="secondary" className="w-full">
+        <Button size={'xl'} variant="secondary" className="w-full">
           {t("body.uppdated.button")}
         </Button>
       </NavLink>
