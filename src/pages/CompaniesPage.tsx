@@ -27,7 +27,7 @@ const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
   const { companies, isLoading } = useCompanies();
-  const { filters, toggleProgram, togglePosition, clearFilters } =
+  const { filters, setSearch, toggleProgram, togglePosition, clearFilters } =
     useCompanyFilters();
 
   const [programsOpen, setProgramsOpen] = useState(false);
@@ -125,87 +125,129 @@ const Companies: React.FC = () => {
     : [];
   return (
     <div className="flex flex-col items-center py-32 px-10">
-      <h2 className="text-5xl font-semibold lg:text-6xl mb-8">
+      <h2 className="text-5xl font-semibold lg:text-6xl mb-4 sm:mb-6">
         {globalLabels.header}
       </h2>
-      <div className="flex gap-4 py-4">
-        <DropdownMenu open={programsOpen} onOpenChange={setProgramsOpen}>
-          <DropdownMenuTrigger asChild>
-            <Button variant="default">
-              {getProgramLabel()}{" "}
-              <FaChevronDown
-                className={`transform transition-transform duration-200 ${
-                  programsOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="">
-            <DropdownMenuLabel>Bachelor&apos;s programmes</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {CANDIDATE_PROGRAMS.map((program, index) => (
-              <DropdownMenuCheckboxItem
-                key={index}
-                className="cursor-pointer"
-                checked={filters.programs.has(program)}
-                onCheckedChange={() => toggleProgram(program)}
-                onSelect={(e) => {
-                  e.preventDefault();
-                }}
+      <div className="flex flex-col sm:flex-row gap-2 py-4 items-center">
+        <h2 className="font-light text-gray-700">{globalLabels.showing}</h2>
+        <div className="flex flex-row gap-2 items-center">
+          <DropdownMenu open={programsOpen} onOpenChange={setProgramsOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="secondary"
+                className="text-black max-w-[90vw] sm:max-w-sm md:max-w-md truncate"
               >
-                {candidateProgramLabels[program]}
-              </DropdownMenuCheckboxItem>
-            ))}
-            <DropdownMenuLabel>Master&apos;s programmes</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {MASTER_PROGRAMS.map((program, index) => (
-              <DropdownMenuCheckboxItem
-                key={index}
-                className="cursor-pointer"
-                checked={filters.programs.has(program)}
-                onCheckedChange={() => toggleProgram(program)}
-                onSelect={(e) => {
-                  e.preventDefault();
-                }}
+                <span className="truncate flex-1">{getProgramLabel()} </span>
+                <FaChevronDown
+                  className={`transform transition-transform duration-200 ${
+                    programsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="">
+              <DropdownMenuLabel>Bachelor&apos;s programmes</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {CANDIDATE_PROGRAMS.map((program, index) => (
+                <DropdownMenuCheckboxItem
+                  key={index}
+                  className="cursor-pointer"
+                  checked={filters.programs.has(program)}
+                  onCheckedChange={() => toggleProgram(program)}
+                  onSelect={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {candidateProgramLabels[program]}
+                </DropdownMenuCheckboxItem>
+              ))}
+              <DropdownMenuLabel>Master&apos;s programmes</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {MASTER_PROGRAMS.map((program, index) => (
+                <DropdownMenuCheckboxItem
+                  key={index}
+                  className="cursor-pointer"
+                  checked={filters.programs.has(program)}
+                  onCheckedChange={() => toggleProgram(program)}
+                  onSelect={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {masterProgramLabels[program]}
+                </DropdownMenuCheckboxItem>
+              ))}
+              <DropdownMenuLabel
+                onClick={clearFilters}
+                className="hover:underline cursor-pointer"
               >
-                {masterProgramLabels[program]}
-              </DropdownMenuCheckboxItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu open={positionsOpen} onOpenChange={setPositionsOpen}>
-          <DropdownMenuTrigger asChild>
-            <Button variant="default">
-              {getPositionLabel()}{" "}
-              <FaChevronDown
-                className={`transform transition-transform duration-200 ${
-                  positionsOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="">
-            <DropdownMenuLabel>Positions</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {POSITIONS.map((position, index) => (
-              <DropdownMenuCheckboxItem
-                key={index}
-                className="cursor-pointer"
-                color=""
-                checked={filters.positions.has(position)}
-                onCheckedChange={() => togglePosition(position)}
-                onSelect={(e) => {
-                  e.preventDefault();
-                }}
+                Clear Filters
+              </DropdownMenuLabel>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <h1 className="hidden md:block font-light text-gray-700">
+            {globalLabels.and}
+          </h1>
+          <DropdownMenu open={positionsOpen} onOpenChange={setPositionsOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="accent" className="text-black">
+                {getPositionLabel()}{" "}
+                <FaChevronDown
+                  className={`transform transition-transform duration-200 ${
+                    positionsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="">
+              <DropdownMenuLabel>Positions</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {POSITIONS.map((position, index) => (
+                <DropdownMenuCheckboxItem
+                  key={index}
+                  className="cursor-pointer"
+                  color=""
+                  checked={filters.positions.has(position)}
+                  onCheckedChange={() => togglePosition(position)}
+                  onSelect={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {positionLabels[position]}
+                </DropdownMenuCheckboxItem>
+              ))}
+              <DropdownMenuLabel
+                onClick={clearFilters}
+                className="hover:underline cursor-pointer"
               >
-                {positionLabels[position]}
-              </DropdownMenuCheckboxItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+                Clear Filters
+              </DropdownMenuLabel>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </div>
+      <div className="max-w-2xl mb-4">
+        <div className="relative">
+          <input
+            type="text"
+            className="w-full px-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder={globalLabels.searchPlaceholder}
+            value={filters.search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+          {filters.search && (
+            <button
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              onClick={() => setSearch("")}
+              aria-label={globalLabels.clearSearch || "Clear search"}
+            >
+              ✕
+            </button>
+          )}
+        </div>
       </div>
       {!noFiltersSelected && (
-        <Button onClick={clearFilters} variant={"secondary"}>
+        <Button className="mb-2" onClick={clearFilters} variant={"default"}>
           {globalLabels.clearFilters}
         </Button>
       )}
