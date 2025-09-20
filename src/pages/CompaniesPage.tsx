@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FadeInSection, LoadingSpinner } from "@/ui";
+import { FadeInSection } from "@/ui";
 import { CompanyCard } from "@/ui";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
@@ -27,7 +27,7 @@ import { CompanyCardSkeleton } from "@/ui/company/CompanyCard";
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
 
-  const { companies, isLoading } = useCompanies();
+  const { companies, partners, isLoading } = useCompanies();
   const { filters, setSearch, toggleProgram, togglePosition, clearFilters } =
     useCompanyFilters();
 
@@ -91,6 +91,7 @@ const Companies: React.FC = () => {
     filters.programs.size === 0 &&
     filters.positions.size === 0 &&
     filters.search === "";
+  console.log(partners);
 
   const filteredCompanies = companies
     ? companies.filter((company: Company) => {
@@ -119,11 +120,7 @@ const Companies: React.FC = () => {
         return hasProgram && hasPosition && matchesSearch;
       })
     : [];
-  const partners = companies
-    ? companies.filter((company) => {
-        return company.isSponsor;
-      })
-    : [];
+
   return (
     <div className="flex flex-col items-center py-32 px-10">
       <h2 className="text-5xl font-semibold lg:text-6xl mb-4 sm:mb-6">
@@ -252,30 +249,26 @@ const Companies: React.FC = () => {
           {globalLabels.clearFilters}
         </Button>
       )}
-      {(noFiltersSelected && partners.length > 0) ||
-        (isLoading && (
-          <div className="mb-8">
-            <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
-              {globalLabels.partners}
-            </h1>
-            <div className="flex flex-wrap justify-center gap-6 w-full">
-              {isLoading
-                ? Array.from({ length: 3 }).map((_, index) => (
-                    <FadeInSection key={index} direction="fadeLeft">
-                      <CompanyCardSkeleton className="h-44 w-[308px]" />
-                    </FadeInSection>
-                  ))
-                : partners.map((partner, index) => (
-                    <FadeInSection key={index} direction="fadeLeft">
-                      <CompanyCard
-                        company={partner}
-                        className="h-44 w-[308px]"
-                      />
-                    </FadeInSection>
-                  ))}
-            </div>
+      {((noFiltersSelected && partners.length > 0) || isLoading) && (
+        <div className="mb-8">
+          <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
+            {globalLabels.partners}
+          </h1>
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            {isLoading
+              ? Array.from({ length: 3 }).map((_, index) => (
+                  <FadeInSection key={index} direction="fadeLeft">
+                    <CompanyCardSkeleton className="h-44 w-[308px]" />
+                  </FadeInSection>
+                ))
+              : partners.map((partner, index) => (
+                  <FadeInSection key={index} direction="fadeLeft">
+                    <CompanyCard company={partner} className="h-44 w-[308px]" />
+                  </FadeInSection>
+                ))}
           </div>
-        ))}
+        </div>
+      )}
       <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
         {globalLabels.allCompanies}
       </h1>

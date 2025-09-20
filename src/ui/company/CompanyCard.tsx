@@ -1,7 +1,6 @@
 import { Company } from "@/lib/types/company";
 import React from "react";
 import { Link } from "react-router-dom";
-import { LoadingSpinner } from "../common";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface CompanyCardProps {

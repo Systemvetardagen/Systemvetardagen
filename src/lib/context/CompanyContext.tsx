@@ -7,6 +7,7 @@ const companiesQueryKey = ["companies", "public"] as const;
 
 interface CompanyContextType {
   companies: Company[];
+  partners: Company[];
   isLoading: boolean;
   isError: boolean;
   refetch: () => void;
@@ -27,9 +28,19 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
     gcTime: 30 * 60 * 1000, // 30 min cache
     retry: 1,
   });
+  
+  const partners = useMemo(() => {
+    return data
+      ? data.filter((company: Company) => {
+          return company.isSponsor;
+        })
+      : [];
+  }, [data]);
+
   const value: CompanyContextType = useMemo(
     () => ({
       companies: data,
+      partners,
       isLoading,
       isError,
       refetch: () => {
@@ -51,7 +62,7 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
         );
       },
     }),
-    [data, isLoading, isError, refetch, queryClient]
+    [data, partners, isLoading, isError, refetch, queryClient]
   );
   return (
     <CompanyContext.Provider value={value}>{children}</CompanyContext.Provider>

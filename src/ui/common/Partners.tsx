@@ -1,39 +1,28 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import partners from '@/assets/partners.json';
-
-interface Partner {
-    id: string;
-    logo: string;
-}
-
-const partnersData: Partner[] = partners;
+import { useCompanies } from "@/lib/hooks/useCompanyContext";
+import { useTranslation } from "react-i18next";
 
 const Partners = () => {
-    const { t } = useTranslation('common');
-
-    return (
-        <div className="w-screen flex flex-col items-center max-w-[90vw]">
-            <h2 className="text-xl lg:text-3xl mb-8 font-light">
-                {t('partners')}
-            </h2>
-            <div className="md:flex grid grid-cols-2 flex-row gap-4 md:gap-8">
-                {partnersData.map(({ id }, index) => (
-                    <a
-                        className="bg-white flex items-center justify-center rounded-3xl hover:rounded-3xl transition-all duration-100 ease-linear shadow-xl p-2 hover:scale-105"
-                        href={`/companies/${id}`}
-                        key={index}
-                    >
-                        <img
-                            src={`/companies/${id}/logo.webp`}
-                            className="object-contain w-64"
-                            alt="company logo"
-                        />
-                    </a>
-                ))}
-            </div>
+  const { t } = useTranslation("common");
+  const { partners } = useCompanies();
+  return (
+    partners &&
+    partners.length > 0 && (
+      <div className="w-screen flex flex-col items-center max-w-4xl px-4 my-10 sm:px-6 lg:px-8">
+        <h2 className="text-xl lg:text-3xl mb-8 font-light">{t("partners")}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
+          {partners.map((partner, index) => (
+            <a className="" href={`/companies/${partner.slug}`} key={index}>
+              <img
+                src={partner.logoURL}
+                className="object-contain h-32 w-56"
+                alt="company logo"
+              />
+            </a>
+          ))}
         </div>
-    );
+      </div>
+    )
+  );
 };
 
 export default Partners;
