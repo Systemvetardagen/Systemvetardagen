@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { SignupLink, Partners, FadeInSection } from "@/ui";
 import { LuTramFront, LuSquareParking } from "react-icons/lu";
-
+import { CiLink } from "react-icons/ci";
 interface Lecture {
   company: string;
   time: string;
@@ -146,7 +146,7 @@ const Events: React.FC = () => {
   return (
     <section
       id="events"
-      className="w-[600px] max-w-[90vw] tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
+      className="w-full tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
     >
       <h1 className="text-2xl lg:text-3xl font-light">{t("header")}</h1>
       <h2 className="text-lg lg:text-xl w-3/4 font-light">{t("sub-header")}</h2>
@@ -162,7 +162,7 @@ const Events: React.FC = () => {
 const VisitInfo: React.FC = () => {
   const [t] = useTranslation("visitInfo");
   return (
-    <div className="w-full overflow-x-hidden flex flex-col items-center font-poppins bg-background text-center">
+    <div className="w-full overflow-x-hidden flex flex-col items-center bg-background text-center">
       <div className="w-full h-[20vh] lg:h-[40vh] max-h-[400px] overflow-hidden">
         <img
           src="/images/nod.webp"
@@ -170,56 +170,60 @@ const VisitInfo: React.FC = () => {
           className="object-cover w-full h-full object-[50%_70%]"
         />
       </div>
-      <h1 className="font-bold text-2xl lg:text-4xl mt-10 fadeLeft">
-        {t("header")}
-      </h1>
-      <p className="text-gray-500 font-light mx-8 fadeRight">
-        {t("sub-header")}
-      </p>
-      {/* <Events /> */}
-      <a id="map" href="/svgs/floormap.svg" className="mt-10">
-        <img
-          className="max-w-[80vw] rounded-3xl"
-          src="/svgs/floormap.svg"
-          alt="Floor map"
-        />
-      </a>
-      <section
-        id="get-here"
-        className="md:px-10 max-w-[90vw] lg:max-w-[50vw] text-start my-8"
-      >
-        {/* <h2 className="text-2xl font-semibold mb-3">{t("header")}</h2>
-                <p className="text-lg leading-relaxed font-light">{t("body")}</p> */}
-        <h1 className="font-light text-3xl mb-2">{t("getting-to.header")}</h1>
-        <div className="mb-4">
-          <div className="flex items-center gap-2">
-            <LuTramFront size={20} />
-            <h2 className="text-xl">{t("getting-to.metro.header")}</h2>
+      <section className="flex flex-col items-center max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h1 className="font-bold text-2xl lg:text-4xl mt-10 fadeLeft">
+          {t("header")}
+        </h1>
+        <p className="text-gray-500 font-light mx-8 fadeRight">
+          {t("sub-header")}
+        </p>
+        {/* <Events /> */}
+        <a id="map" href="/svgs/floormap.svg" className="mt-10">
+          <img
+            className="w-full rounded-3xl"
+            src="/svgs/floormap.svg"
+            alt="Floor map"
+          />
+        </a>
+        <section id="get-here" className="w-full text-start my-8 ">
+          <h2 className="font-light text-3xl mb-2">{t("getting-to.header")}</h2>
+          <div className="mb-4">
+            <div className="flex items-center gap-2">
+              <LuTramFront size={20} />
+              <h2 className="text-xl">{t("getting-to.metro.header")}</h2>
+              <a
+                className="text-link flex gap-1 items-center"
+                href="https://sl.se/?timeType=NOW&destPlaceId=OTA5MTAwMTAwMDAwOTMwMg%3D%3D&origPlaceId=OTA5MTAwMTAwMTAwOTAwMQ%3D%3D&destName=Kista+%28Stockholm%29&origName=Tcentralen+%28Stockholm%29&transportTypes=%5B%22METRO%22%2C%22TRAIN%22%2C%22TRAM%22%2C%22SHIP%22%2C%22BUS%22%2C%22LOCALBUS%22%5D"
+                rel="nofollow"
+                target="_blank"
+              >
+                Tcentralen → Kista
+                <CiLink size={30} />
+              </a>
+            </div>
+            <p className="text-pretty font-light font-ibm">
+              {t("getting-to.metro.body")}
+            </p>
           </div>
-          <p className="text-pretty font-light font-ibm">{t("getting-to.metro.body")}</p>
-        </div>
-        <div className="mb-4">
-          <div className="flex items-center gap-2">
-            <LuSquareParking size={20} />
-            <h2 className="text-xl">{t("getting-to.parking.header")}</h2>
+          <div className="mb-4">
+            <div className="flex items-center gap-2">
+              <LuSquareParking size={20} />
+              <h2 className="text-xl">{t("getting-to.parking.header")}</h2>
+            </div>
+            <p className="text-pretty font-light font-ibm">
+              {t("getting-to.parking.body")}
+            </p>
           </div>
-          <p className="text-pretty font-light font-ibm">{t("getting-to.parking.body")}</p>
-        </div>
-      </section>
-      <div className="mb-20 w-full  flex justify-center">
+        </section>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927.2724538117486!2d17.94447928059294!3d59.40656019752912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9eed05efbb67%3A0x18ac39c13897c4a9!2sDSV%2C%20Institutionen%20f%C3%B6r%20data-%20och%20systemvetenskap!5e0!3m2!1ssv!2sse!4v1738844966811!5m2!1ssv!2sse"
           width="100%"
           height="500px"
           loading="lazy"
-          className="rounded-3xl md:max-w-[60%] max-w-[95%]"
+          className="rounded-3xl"
         ></iframe>
-      </div>
-      <div className="max-w-[90%]">
-        <SignupLink />
-      </div>
-      {/* <Partners /> */}
-      <div className="mt-[5vh]"></div>
+        <Partners />
+      </section>
     </div>
   );
 };

@@ -7,13 +7,13 @@ import Seperator from "@/ui/common/Seperator";
 const About: React.FC = () => {
   const [t] = useTranslation("about");
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
       <img
         src={"/images/2024logoWithShirt.webp"}
         alt="Systemvetardagen Logo shirt"
         className="w-screen h-[20vh] lg:h-[40vh] max-h-[400px] object-cover object-[20%_50%]"
       />
-      <div className="flex-grow max-w-4xl mx-auto px-4 py-8">
+      <div className="flex flex-col items-center max-w-4xl px-4 sm:px-6 lg:px-8 my-10">
         <div className="space-y-12">
           <section className="space-y-8">
             <div className="space-y-6">

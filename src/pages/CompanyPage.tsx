@@ -1,20 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import { LoadingSpinner } from "@/ui";
 import { useTranslation } from "react-i18next";
-import {
-  LuLinkedin,
-  LuInstagram,
-  LuFacebook,
-  LuBriefcase,
-  LuCalendar,
-  LuUsers,
-} from "react-icons/lu";
-import { Link } from "react-router-dom";
-import { CompanyCard, FadeInSection } from "@/ui";
+import { LuBriefcase, LuCalendar, LuUsers } from "react-icons/lu";
+import { FadeInSection } from "@/ui";
 import { useCompany } from "@/lib/hooks/useCompanyContext";
 import { NotFoundPage } from ".";
 import { CANDIDATE_PROGRAMS, MASTER_PROGRAMS } from "@/lib/types/program";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { ButtonNavigate } from "@/components/ui/buttonNavigate";
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
@@ -24,7 +19,7 @@ const CompanyPage: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        Loading...
+        <LoadingSpinner isLoading={isLoading} />
       </div>
     );
   }
@@ -50,52 +45,72 @@ const CompanyPage: React.FC = () => {
         >
           <FadeInSection
             className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 "
-            direction="fadeLeft"
+            direction="fadeUp"
           >
-            <CompanyCard company={company} className="h-32 w-56" />
+            <div
+              className={"bg-white rounded-2xl shadow-xl p-4 h-44 w-[308px]"}
+            >
+              {company.logoURL ? (
+                <img
+                  src={company.logoURL}
+                  className="object-contain mx-auto h-full w-full"
+                  alt={`${company.companyName} logo`}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="flex items-center justify-center text-black text-xl text-center font-bold h-full w-full">
+                  {company.companyName}
+                </div>
+              )}
+            </div>
           </FadeInSection>
         </div>
       </div>
 
-      <div className="max-w-[90vw] gap-10 flex flex-col items-center my-10">
+      <div className="flex flex-col items-center my-10 gap-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         {company.slogan && (
           <h2 className="text-lg text-gray-600">{company.slogan}</h2>
         )}
-        <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] p-6 shadow-md">
+        {/* {company.areaOfBusiness || company.foundedYear || company.employeesSweden || company.} */}
+        <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] shadow-md p-6 empty:hidden">
           <div className="flex flex-col gap-5">
-            <FadeInSection
-              triggerOnce={true}
-              direction="fadeLeft"
-              className="flex items-start gap-3"
-            >
-              <div className="text-blue-500 mt-1">
-                <LuBriefcase size={20} />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-gray-600 text-sm font-medium">
-                  {tCompanies("global.areaOfBusiness")}
-                </h3>
-                <p className="text-gray-800">{company.areaOfBusiness}</p>
-              </div>
-            </FadeInSection>
-            <FadeInSection
-              triggerOnce={true}
-              direction="fadeLeft"
-              className="flex items-start gap-3"
-            >
-              <div className="text-blue-500 mt-1">
-                <LuCalendar size={20} />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-gray-600 text-sm font-medium">
-                  {tCompanies("global.founded")}
-                </h3>
-                <p className="text-gray-800">
-                  {new Date(company.foundedYear || "").getFullYear()}
-                </p>
-              </div>
-            </FadeInSection>
-            {company.employeesSweden && (
+            {company.areaOfBusiness && (
+              <FadeInSection
+                triggerOnce={true}
+                direction="fadeLeft"
+                className="flex items-start gap-3"
+              >
+                <div className="text-blue-500 mt-1">
+                  <LuBriefcase size={20} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-gray-600 text-sm font-medium">
+                    {tCompanies("global.areaOfBusiness")}
+                  </h3>
+                  <p className="text-gray-800">{company.areaOfBusiness}</p>
+                </div>
+              </FadeInSection>
+            )}
+            {company.foundedYear ? (
+              <FadeInSection
+                triggerOnce={true}
+                direction="fadeLeft"
+                className="flex items-start gap-3"
+              >
+                <div className="text-blue-500 mt-1">
+                  <LuCalendar size={20} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-gray-600 text-sm font-medium">
+                    {tCompanies("global.founded")}
+                  </h3>
+                  <p className="text-gray-800">
+                    {new Date(company.foundedYear || "").getFullYear()}
+                  </p>
+                </div>
+              </FadeInSection>
+            ) : null}
+            {company.employeesSweden ? (
               <FadeInSection
                 triggerOnce={true}
                 direction="fadeLeft"
@@ -113,8 +128,8 @@ const CompanyPage: React.FC = () => {
                   </p>
                 </div>
               </FadeInSection>
-            )}
-            {company.employeesWorld && (
+            ) : null}
+            {company.employeesWorld ? (
               <FadeInSection
                 triggerOnce={true}
                 direction="fadeLeft"
@@ -132,29 +147,44 @@ const CompanyPage: React.FC = () => {
                   </p>
                 </div>
               </FadeInSection>
-            )}
+            ) : null}
           </div>
         </div>
 
         <div className="flex gap-4">
           {company.linkedInLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" target="_blank" href={company.linkedInLink}>
-                <LuLinkedin size={20} />
+              <a
+                rel="nofollow"
+                target="_blank"
+                href={company.linkedInLink}
+                className="hover:text-link transition-colors duration-300"
+              >
+                <FaLinkedin size={40} />
               </a>
             </FadeInSection>
           )}
           {company.instagramLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" target="_blank" href={company.instagramLink}>
-                <LuInstagram size={20} />
+              <a
+                rel="nofollow"
+                target="_blank"
+                href={company.instagramLink}
+                className="hover:text-link transition-colors duration-300"
+              >
+                <FaInstagram size={40} />
               </a>
             </FadeInSection>
           )}
           {company.facebookLink && (
             <FadeInSection triggerOnce={true} direction="fadeUp">
-              <a rel="nofollow" target="_blank" href={company.facebookLink}>
-                <LuFacebook size={20} />
+              <a
+                rel="nofollow"
+                target="_blank"
+                href={company.facebookLink}
+                className="hover:text-link transition-colors duration-300"
+              >
+                <FaFacebook size={40} />
               </a>
             </FadeInSection>
           )}
@@ -162,14 +192,22 @@ const CompanyPage: React.FC = () => {
         {/* <RecruitmentCard {...company} /> */}
         {/* Temporary */}
         <FadeInSection triggerOnce={true} direction="fadeUp">
-          <span className="text-justify">{company.description}</span>
+          <p className="text-justify">{company.description}</p>
         </FadeInSection>
         <div className="flex gap-2">
           {company.programs.map((program, index) => {
             let key = "";
-            if (CANDIDATE_PROGRAMS.includes(program as typeof CANDIDATE_PROGRAMS[number])) {
+            if (
+              CANDIDATE_PROGRAMS.includes(
+                program as (typeof CANDIDATE_PROGRAMS)[number]
+              )
+            ) {
               key = `candidatePrograms.${program}`;
-            } else if (MASTER_PROGRAMS.includes(program as typeof MASTER_PROGRAMS[number])) {
+            } else if (
+              MASTER_PROGRAMS.includes(
+                program as (typeof MASTER_PROGRAMS)[number]
+              )
+            ) {
               key = `masterPrograms.${program}`;
             }
             return <span key={index}>{tPrograms(key)}</span>;
@@ -188,18 +226,18 @@ const CompanyPage: React.FC = () => {
           {tCompanies("global.learnMore", { company: company.companyName })}
         </a>
         <div className="flex gap-4">
-          <Link
-            to="/companies"
-            className="rounded-2xl p-4 border-2 transition-all duration-100 hover:scale-105 flex items-center justify-center"
-          >
-            <span className="text-center">{tCompanies("global.backToCompanies")}</span>
-          </Link>
-          <button
+          <ButtonNavigate to="/companies" variant={"plain"} size={"xl"}>
+            <span className="text-center">
+              {tCompanies("global.backToCompanies")}
+            </span>
+          </ButtonNavigate>
+          <Button
+            variant={"plain"}
+            size={"xl"}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="rounded-2xl p-4 border-2 transition-all duration-100 hover:scale-105"
           >
             {tCompanies("global.scrollToTop")}
-          </button>
+          </Button>
         </div>
       </div>
     </div>
