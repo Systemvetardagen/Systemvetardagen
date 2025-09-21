@@ -19,7 +19,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           href={linkedIn}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-link hover:opacity-80"
+          className="text-link hover:text-black transition-colors duration-300"
         >
           <FaLinkedin size={20} />
         </a>
@@ -29,7 +29,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-link hover:opacity-80"
+          className="text-link hover:text-black transition-colors duration-300"
         >
           <FaGithub size={20} />
         </a>
@@ -39,7 +39,7 @@ const SocialLinks: React.FC<ProjectGroupMember> = ({
           href={`mailto:${email}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-link hover:opacity-80"
+          className="text-link hover:text-black transition-colors duration-300"
         >
           <IoMdMail size={20} />
         </a>
@@ -58,10 +58,15 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
     <FadeInSection direction="fadeLeft">
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold">{name}</h3>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {leaders.map((leader, index) => (
             <div className="" key={index}>
-              <p className="text-xl font-semibold">{leader.name}</p>
+              {/* <img
+                src={leader.image}
+                className="h-60 rounded-lg object-cover"
+                alt={`${leader.name} portrait`}
+              /> */}
+              <p className="text-xl">{leader.name}</p>
               <p className="text-md text-gray-500">{leader.role}</p>
               <SocialLinks {...leader} />
             </div>

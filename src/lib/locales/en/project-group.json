@@ -7,19 +7,19 @@
           "name": "Diana Noran",
           "role": "Project Manager",
           "linkedIn": "https://www.linkedin.com/in/diana-noran/",
-          "email": "systemvetardagen@disk.su.se"
+          "email": "diana.noran@disk.su.se"
         },
         {
           "name": "Tanja Hosseinzadeh",
           "role": "Project Coordinator",
           "linkedIn": "https://www.linkedin.com/in/tanja-hosseinzadeh/",
-          "email": "systemvetardagen@disk.su.se"
+          "email": "tanja.hosseinzadeh@disk.su.se"
         },
         {
           "name": "David Singhateh",
           "role": "Project Coordinator",
           "linkedIn": "https://www.linkedin.com/in/david-singhateh-680489303/",
-          "email": "systemvetardagen@disk.su.se"
+          "email": "david.singhateh@disk.su.se"
         }
       ]
     },
@@ -30,7 +30,8 @@
           "name": "Willhelm Durelius",
           "role": "Head of Web Development",
           "linkedIn": "https://linkedin.com/in/wilhelm-durelius-6a11012b1",
-          "github": "https://github.com/durelius"
+          "github": "https://github.com/durelius",
+          "email": "wilhelm.durelius@disk.su.se"
         },
         {
           "name": "Fredrik Etsare",
@@ -38,6 +39,73 @@
           "linkedIn": "https://linkedIn.com/in/fredrik-etsare-20a535255/",
           "github": "https://github.com/fetsare",
           "email": "fredrik.etsare@disk.su.se"
+        }
+      ]
+    },
+    {
+      "name": "Business Relations & Sales",
+      "leaders": [
+        {
+          "name": "Sophie Sandberg",
+          "role": "Head of Business Relations & Sales",
+          "linkedIn": "https://www.linkedin.com/in/sophie-sandberg/",
+          "email": "sophie.sandberg@disk.su.se"
+        },
+        {
+          "name": "Natnael Debesay",
+          "role": "Vice Head of Business Relations & Sales",
+          "linkedIn": "https://www.linkedin.com/in/natnael-debesay/",
+          "email": "natnael.debesay@disk.su.se"
+        }
+      ]
+    },
+    {
+      "name": "Marketing",
+      "leaders": [
+        {
+          "name": "Smilla Flodin",
+          "role": "Head of Marketing",
+          "linkedIn": "https://www.linkedin.com/in/smilla-flodin/",
+          "email": "smilla.flodin@disk.su.se"
+        },
+        {
+          "name": "Evin Findik",
+          "role": "Vice Head of Marketing",
+          "linkedIn": "https://www.linkedin.com/in/evin-f-0028a924a/",
+          "email": "evin.findik@disk.su.se"
+        }
+      ]
+    },
+    {
+      "name": "Logistics",
+      "leaders": [
+        {
+          "name": "Omid Khan",
+          "role": "Head of Logistics",
+          "linkedIn": "https://www.linkedin.com/in/omid-khan-0386a3295/",
+          "email": "omid.khan@disk.su.se"
+        },
+        {
+          "name": "Ellika Lind",
+          "role": "Vice Head of Logistics",
+          "linkedIn": "https://www.linkedin.com/in/ellika-lind-996411241/",
+          "email": "ellika.lind@disk.su.se"
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "leaders": [
+        {
+          "name": "Ellen Hillborg",
+          "role": "Head of Events",
+          "linkedIn": "https://www.linkedin.com/in/ellen-hillborg-562508237/",
+          "email": "ellen.hillborg@disk.su.se"
+        },
+        {
+          "name": "Maria Ontiveros Balderas",
+          "role": "Vice Head of Events",
+          "email": "maria.ontiveros.balderas@disk.su.se"
         }
       ]
     }

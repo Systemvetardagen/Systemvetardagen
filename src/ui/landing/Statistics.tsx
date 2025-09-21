@@ -53,19 +53,17 @@ const Statistics: React.FC<StatisticsProps> = ({
 }) => {
   const [t] = useTranslation("landing");
   return (
-    <FadeInSection direction="fadeUp" triggerOnce>
-      <div className="mb-10 hidden md:block">
-        <div
-          className={`flex w-full justify-center ${className}`}
-        >
+    <FadeInSection className="my-10" direction="fadeUp" triggerOnce>
+      <div className="hidden md:block">
+        <div className={`flex w-full justify-center ${className}`}>
           {statistics.map((stat, index) => (
             <div
               key={index}
               className="p-10 rounded-md flex flex-col items-center"
             >
-              <div>
+              <div className="min-w-[140px] flex justify-center">
                 {stat.valueKey ? (
-                  <span className="text-3xl md:text-5xl font-semibold">
+                  <span className="text-4xl font-semibold">
                     {t("body.stats.unlimited")}
                   </span>
                 ) : (
@@ -82,7 +80,9 @@ const Statistics: React.FC<StatisticsProps> = ({
                   <span className="text-5xl font-semibold">+</span>
                 )}
               </div>
-              <span className="text-3xl">{t(`body.stats.${stat.labelKey}`)}</span>
+              <span className="text-3xl">
+                {t(`body.stats.${stat.labelKey}`)}
+              </span>
             </div>
           ))}
         </div>

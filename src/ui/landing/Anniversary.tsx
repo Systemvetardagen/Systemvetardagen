@@ -7,7 +7,7 @@ const Anniversary = () => {
     <FadeInSection
       direction="fadeLeft"
       id="30"
-      className="flex flex-col gap-2 md:max-w-[80%] mb-10"
+      className="flex flex-col gap-2 md:max-w-[80%]"
     >
       <h2 className="text-2xl md:text-4xl font-semibold">
         {t("body.anniversary.header")}
