@@ -91,7 +91,6 @@ const Companies: React.FC = () => {
     filters.programs.size === 0 &&
     filters.positions.size === 0 &&
     filters.search === "";
-  console.log(partners);
 
   const filteredCompanies = companies
     ? companies.filter((company: Company) => {
