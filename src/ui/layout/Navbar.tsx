@@ -49,6 +49,7 @@ const Navbar: React.FC = () => {
           src="/svgs/specialLogo.svg"
           alt="Left Logo"
           className="h-10 p-0 m-0"
+          fetchPriority="high"
         />
       </NavLink>
 
