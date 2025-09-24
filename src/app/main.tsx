@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "@/index.css";
+import "@systemvetardagen/react-ui/styles.css";
 import App from "./App";
 
 import i18next from "@/lib/i18n"
