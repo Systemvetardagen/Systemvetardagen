@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
         isSticky
           ? "fixed top-0 left-0 w-full rounded-none h-14"
           : "absolute top-8 w-[90vw] mx-[5vw] rounded-full"
-      } flex bg-white text-black px-4 lg:py-2 z-20 items-center justify-between transition-all duration-150 shadow-md `}
+      } flex bg-white text-black px-4 lg:py-1 z-20 items-center justify-between transition-all duration-150 shadow-md `}
     >
       {/* FREDRIK SNÄLLAAA LÅT DEN VARA SNÄLLA */}
       {/* NE DEDÄR ÄR ACTUALLY ETT BROTT SLUTA JAG ACCEPTERAR MAX P-2 JAG KOMMER LÄGGA EN --force JAG SVÄR*/}
