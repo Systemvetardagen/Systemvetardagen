@@ -1,7 +1,6 @@
 import "@/app/App.css";
-import { SignupLink } from "@/ui/common";
 // import { CompanyLoop } from "@/ui/company";
-import { Hero, Anniversary, Statistics, FairieSignup, FAQ } from "@/ui/landing";
+import { Hero, Anniversary, Statistics, FAQ } from "@/ui/landing";
 
 export default function LandingPage() {
   return (

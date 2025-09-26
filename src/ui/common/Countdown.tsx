@@ -1,62 +1,61 @@
-import React, { useState, useEffect, useRef } from 'react';
-import '@/app/App.css';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect, useRef } from "react";
+import "@/app/App.css";
+import { useTranslation } from "react-i18next";
 import { triggerConfetti } from "@/lib/utilities/confetti";
 
 interface CountdownProps {
-    targetDate: Date;
+  targetDate: Date;
 }
 
 interface TimeLeft {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
 }
 
 const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
-    const [t] = useTranslation('landing');
+  const [t] = useTranslation("landing");
 
-
-    function calculateTimeLeft(currentTimeMillis?: number): TimeLeft | null {
-        const now = currentTimeMillis ?? new Date().getTime();
-        const difference = targetDate.getTime() - now;
-        if (difference > 0) {
-            return {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / (1000 * 60)) % 60),
-                seconds: Math.floor((difference / 1000) % 60)
-            };
-        }
-        return null;
+  function calculateTimeLeft(currentTimeMillis?: number): TimeLeft | null {
+    const now = currentTimeMillis ?? new Date().getTime();
+    const difference = targetDate.getTime() - now;
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
     }
+    return null;
+  }
 
-    const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
+    calculateTimeLeft()
+  );
 
-    useEffect(() => {
-        const tickInterval = 25;
-        const timer = setInterval(() => {
-            const now = new Date().getTime();
-            setTimeLeft(calculateTimeLeft(now));
-        }, tickInterval);
-        return () => clearInterval(timer);
-    }, [targetDate]);
+  useEffect(() => {
+    const tickInterval = 25;
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      setTimeLeft(calculateTimeLeft(now));
+    }, tickInterval);
+    return () => clearInterval(timer);
+  }, [targetDate]);
 
-    if (!timeLeft) {
-        return <div>See you there 😉</div>;
-    }
+  if (!timeLeft) {
+    return <div>See you there 😉</div>;
+  }
 
-    return (
-        <div
-            className="grid gap-4 lg:flex lg:gap-20 grid-cols-2 fadeUp select-none"
-        >
-            <Timeunit value={timeLeft.days} label={t('days')} />
-            <Timeunit value={timeLeft.hours} label={t('hours')} />
-            <Timeunit value={timeLeft.minutes} label={t('minutes')} />
-            <Timeunit value={timeLeft.seconds} label={t('seconds')} />
-        </div>
-    );
+  return (
+    <div className="grid gap-4 lg:flex lg:gap-20 grid-cols-2 fadeUp select-none">
+      <Timeunit value={timeLeft.days} label={t("days")} />
+      <Timeunit value={timeLeft.hours} label={t("hours")} />
+      <Timeunit value={timeLeft.minutes} label={t("minutes")} />
+      <Timeunit value={timeLeft.seconds} label={t("seconds")} />
+    </div>
+  );
 };
 
 interface TimeUnitProps {
@@ -65,9 +64,27 @@ interface TimeUnitProps {
 }
 
 const Timeunit: React.FC<TimeUnitProps> = ({ value, label }) => {
-  const positionRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current
+        .play()
+        .catch((err) => console.log("Playback prevented:", err));
+    }
+  };
+  const [timesPressed, setTimesPressed] = useState(0);
+
+  const positionRef = useRef<HTMLDivElement>(null);
   const handleClick = () => {
+    if (timesPressed === 10) {
+      console.log("Will something happen if you click 50 times?");
+    }
+    setTimesPressed(timesPressed + 1);
+    if (timesPressed === 50 && positionRef.current) {
+      playSound();
+      triggerConfetti(positionRef.current, true);
+    }
     if (positionRef.current) {
       triggerConfetti(positionRef.current);
     }
@@ -81,6 +98,8 @@ const Timeunit: React.FC<TimeUnitProps> = ({ value, label }) => {
       <div className="text-3xl lg:text-5xl font-semibold">
         {value.toString().padStart(2, "0")}{" "}
       </div>
+      <audio ref={audioRef} src="nuke.mp3" preload="auto" />
+
       <div className="text-2xl lg:text-2xl">{label}</div>
     </div>
   );

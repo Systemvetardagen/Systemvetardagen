@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
 import CountdownTest from "../common/CountdownTest";
@@ -15,7 +15,6 @@ const Hero = () => {
   const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
-
 
   return (
     <div
