@@ -1,7 +1,6 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
-import CountdownTest from "../common/CountdownTest";
 import Countdown from "../common/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
@@ -59,13 +58,21 @@ const Hero = () => {
           textAlign="center"
         ></SplitText>
         {test ? (
-          <CountdownTest targetDate={targetDate} />
+          <Countdown targetDate={targetDate} />
         ) : (
           <Countdown targetDate={targetDate} />
         )}
 
-        <FadeInSection direction="fadeUp" duration={1000} delay={200}>
-          <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
+        <FadeInSection direction="fadeUp" duration={1000} delay={1000}>
+          <h3 className="md:text-2xl mt-10">
+            <a
+              href="https://maps.app.goo.gl/qf3VPrddNHJzNX7M7"
+              rel="noreferrer nofollow"
+              target="_blank"
+            >
+              Kista Nod, Borgarfjordsgatan 12
+            </a>
+          </h3>
           <h3 className="md:text-2xl">
             {t("date.day")} {targetDate.getDate()} {t("date.month")} 10:00 -
             16:00
