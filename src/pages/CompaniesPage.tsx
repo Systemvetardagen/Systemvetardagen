@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FadeInSection } from "@/ui";
-import { CompanyCard } from "@/ui";
+import { FadeInSection } from "@/components";
+import { CompanyCard } from "@/components";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
   CANDIDATE_PROGRAMS,
@@ -19,10 +19,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from "@/components/common/dropdown-menu";
+import { Button } from "@/components/common/button";
 import { FaChevronDown } from "react-icons/fa";
-import { CompanyCardSkeleton } from "@/ui/company/CompanyCard";
+import { CompanyCardSkeleton } from "@/components/company/CompanyCard";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");

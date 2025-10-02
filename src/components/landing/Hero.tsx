@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
-import Countdown from "../common/Countdown";
+import Countdown from "@/components/common/Countdown/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";

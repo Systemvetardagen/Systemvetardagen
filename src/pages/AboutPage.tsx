@@ -1,8 +1,8 @@
 import React from "react";
-import ProjectGroup from "@/ui/common/ProjectContributors";
+import ProjectGroup from "@/components/common/ProjectContributors";
 import { useTranslation } from "react-i18next";
-import { FadeInSection } from "@/ui";
-import Seperator from "@/ui/common/Seperator";
+import { FadeInSection } from "@/components";
+import Seperator from "@/components/common/Seperator";
 
 const About: React.FC = () => {
   const [t] = useTranslation("about");

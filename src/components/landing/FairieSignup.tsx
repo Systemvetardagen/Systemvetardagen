@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { LuPartyPopper, LuHeartHandshake, LuStar } from "react-icons/lu";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/common/button";
 import { Trans } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { FadeInSection } from "../layout";

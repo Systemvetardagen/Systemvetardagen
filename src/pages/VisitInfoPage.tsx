@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { SignupLink, Partners, FadeInSection } from "@/ui";
+import { SignupLink, Partners, FadeInSection } from "@/components";
 import { LuTramFront, LuSquareParking } from "react-icons/lu";
 import { CiLink } from "react-icons/ci";
 interface Lecture {

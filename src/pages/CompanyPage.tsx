@@ -1,15 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { LoadingSpinner } from "@/ui";
+import { LoadingSpinner } from "@/components";
 import { useTranslation } from "react-i18next";
 import { LuBriefcase, LuCalendar, LuUsers } from "react-icons/lu";
-import { FadeInSection } from "@/ui";
+import { FadeInSection } from "@/components";
 import { useCompany } from "@/lib/hooks/useCompanyContext";
 import { NotFoundPage } from ".";
 import { CANDIDATE_PROGRAMS, MASTER_PROGRAMS } from "@/lib/types/program";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import { ButtonNavigate } from "@/components/ui/buttonNavigate";
+import { Button } from "@/components/common/button";
+import { ButtonNavigate } from "@/components/common/buttonNavigate";
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();

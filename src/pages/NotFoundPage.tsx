@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { ButtonNavigate } from "@/components/ui/buttonNavigate";
+import { Button } from "@/components/common/button";
+import { ButtonNavigate } from "@/components/common/buttonNavigate";
 import { useTranslation } from "react-i18next";
 
 const NotFoundPage: React.FC = () => {

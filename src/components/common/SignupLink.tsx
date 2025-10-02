@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/common/button";
 import { FadeInSection } from "../layout";
 
 const SignupLink: React.FC = () => {

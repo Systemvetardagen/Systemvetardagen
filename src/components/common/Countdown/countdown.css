@@ -5,7 +5,8 @@
   }
 
   & > * {
-    @apply inline-block overflow-y-hidden;
+    @apply inline-block;
+    overflow: hidden;
     height: 1em;
 
     &:before {

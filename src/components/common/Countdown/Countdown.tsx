@@ -3,7 +3,7 @@ import "@/app/App.css";
 import { useTranslation } from "react-i18next";
 import { triggerConfetti } from "@/lib/utilities/confetti";
 import "./countdown.css";
-import { FadeInSection } from "../layout";
+import { FadeInSection } from "@/components/layout";
 
 interface CountdownProps {
   targetDate: Date;

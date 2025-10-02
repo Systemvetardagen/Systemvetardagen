@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Navbar, Footer } from "@/ui";
+import { Navbar, Footer } from "@/components";
 import { useEffect } from "react";
 
 export default function RootLayout() {
