@@ -1,12 +1,12 @@
 import "@/app/App.css";
-// import { CompanyLoop } from "@/ui/company";
+// import { CompanyLoop } from "@/components";
 import { Hero, Anniversary, Statistics, FAQ } from "@/components/landing";
 
 export default function LandingPage() {
   return (
     <div className="grow">
       <Hero />
-      {/* <CompanyLoop className="mt-6" /> */}
+      {/* <CompanyLoop className="py-10" /> */}
       <section
         id="body"
         className="py-10 md:px-20 flex flex-col items-center gap-10"
