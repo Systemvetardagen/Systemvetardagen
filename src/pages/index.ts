@@ -5,3 +5,4 @@ export { default as CompanyPage } from "./CompanyPage";
 export { default as CompanySignupPage } from "./CompanySignupPage";
 export { default as VisitInfoPage } from "./VisitInfoPage";
 export { default as NotFoundPage } from "./NotFoundPage";
+export { default as Companies } from "./CompaniesPageOld";
