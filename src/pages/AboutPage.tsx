@@ -17,11 +17,11 @@ const About: React.FC = () => {
         <div className="space-y-12">
           <section className="space-y-8">
             <div className="space-y-6">
-              <FadeInSection direction="fadeLeft">
+              <FadeInSection direction="fadeLeft" delay={100}>
                 <h2 className="text-2xl font-semibold mb-3">{t("header")}</h2>
                 <p className="text-lg leading-relaxed font-light">{t("body")}</p>
               </FadeInSection>
-              <FadeInSection direction="fadeLeft">
+              <FadeInSection direction="fadeLeft" delay={200}>
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("where-when.header")}
                 </h2>
@@ -41,7 +41,7 @@ const About: React.FC = () => {
                   .
                 </p>
               </FadeInSection> */}
-              <FadeInSection direction="fadeLeft">
+              <FadeInSection direction="fadeLeft" delay={300}>
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("company-display.header")}
                 </h2>

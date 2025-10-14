@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   const getNavLinkClass = ({ isActive }: { isActive: boolean }): string =>
     `relative font-semibold text-[18px] px-2 py-1 transition-all duration-200 inline-block
    ${isActive ? "text-black" : "text-black hover:text-link"} 
-   after:content-[''] after:absolute after:left-2 after:right-2 after:-bottom-[0.5px] 
+   after:content-[''] after:absolute after:left-2 after:right-2 after:bottom-1 
    after:h-[2px] after:rounded-full after:transition-all after:duration-300
    ${
      isActive
