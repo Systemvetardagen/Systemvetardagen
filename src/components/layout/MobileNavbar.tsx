@@ -87,7 +87,6 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
           <div onClick={() => setIsOpen(false)}>
             <LanguageSwitch />
           </div>
-          <Seperator />
         </div>
       </div>
     </>

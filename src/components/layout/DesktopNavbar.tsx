@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { Link } from "./Navbar";
 import { NavLink } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
-import { scrollWithOffset } from "@/lib/utilities/utils";
 
 interface DesktopNavbarProps {
   links: Link[];

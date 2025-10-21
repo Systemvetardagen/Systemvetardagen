@@ -14,7 +14,7 @@ export function useCompanies() {
   return useCompaniesContext();
 }
 
-export function useCompany(slug: string ) {
+export function useCompany(slug: string) {
   const { getBySlug, isLoading, isError } = useCompaniesContext();
   return { company: getBySlug(slug), isLoading, isError };
 }

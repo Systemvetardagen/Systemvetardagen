@@ -1,61 +1,61 @@
 {
-    "header": "Systemvetardagen",
-    "subHeader": "30 år av",
-    "date": {
-        "day": "Onsdag",
-        "month": "Februari"
+  "header": "Systemvetardagen",
+  "subHeader": "Vi firar 30 år av",
+  "date": {
+    "day": "Onsdag",
+    "month": "Februari"
+  },
+  "days": "Dagar",
+  "hours": "Timmar",
+  "minutes": "Minuter",
+  "seconds": "Sekunder",
+  "signup": "Registrera för uppdateringar",
+  "exhibitors": "Se alla utställare",
+  "body": {
+    "anniversary": {
+      "header": "Systemvetardagen 2026",
+      "subHeader": "30 år av att skapa kontakter med toppföretag",
+      "body": "I år firar vi den <1>30:e årliga Systemvetardagen</1>, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av <2>Studentkåren DISK</2>, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige.",
+      "body2": "Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är <1>Systemvetardagen 2026</1> platsen att vara på. Följ med oss på en dag fylld av nätverkande, inspirerande föreläsningar och spännande möjligheter att möta dina framtida kollegor."
     },
-    "days": "Dagar",
-    "hours": "Timmar",
-    "minutes": "Minuter",
-    "seconds": "Sekunder",
-    "signup": "Registrera för uppdateringar",
-    "exhibitors": "Se alla utställare",
-    "body": {
-        "anniversary": {
-            "header": "Systemvetardagen 2026",
-            "subHeader": "30 år av att skapa kontakter med toppföretag",
-            "body": "I år firar vi den <1>30:e årliga Systemvetardagen</1>, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av <2>Studentkåren DISK</2>, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige.",
-            "body2": "Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är <1>Systemvetardagen 2026</1> platsen att vara på. Följ med oss på en dag fylld av nätverkande, inspirerande föreläsningar och spännande möjligheter att möta dina framtida kollegor."
+    "stats": {
+      "visitors": "Besökare",
+      "exhibitors": "Utställare",
+      "years": "År!",
+      "unlimited": "Obegränsade",
+      "opportunities": "Möjligheter"
+    },
+    "fairie": {
+      "header": "Bli en <1>Fair'ie</1>",
+      "body": "Gå med i teamet som gör mässan möjlig! Som mässfunktionär hjälper du till med huvudlogistiken samtidigt som du fortfarande har gott om tid att njuta av allt mässan har att erbjuda. Dessutom är du inbjuden till vår speciella Tackfest",
+      "cards": {
+        "help": {
+          "header": "Hjälp mässan",
+          "body": "Stöd logistiken och se till att allt går smidigt för besökarna."
         },
-        "stats": {
-            "visitors": "Besökare",
-            "exhibitors": "Utställare",
-            "years": "År!",
-            "unlimited": "Obegränsade",
-            "opportunities": "Möjligheter"
+        "fair": {
+          "header": "Upplev mässan",
+          "body": "Du har fortfarande gott om tid att njuta av evenemangen, montrar och aktiviteter."
         },
-        "fairie": {
-            "header": "Bli en <1>Fair'ie</1>",
-            "body": "Gå med i teamet som gör mässan möjlig! Som mässfunktionär hjälper du till med huvudlogistiken samtidigt som du fortfarande har gott om tid att njuta av allt mässan har att erbjuda. Dessutom är du inbjuden till vår speciella Tackfest",
-            "cards": {
-                "help": {
-                    "header": "Hjälp mässan",
-                    "body": "Stöd logistiken och se till att allt går smidigt för besökarna."
-                },
-                "fair": {
-                    "header": "Upplev mässan",
-                    "body": "Du har fortfarande gott om tid att njuta av evenemangen, montrar och aktiviteter."
-                },
-                "party": {
-                    "header": "Tackfest",
-                    "body": "Fira med alla mässfunktionärer på vår exklusiva uppskattningsfest!"
-                },
-                "button": "Registrera dig"
-            }
+        "party": {
+          "header": "Tackfest",
+          "body": "Fira med alla mässfunktionärer på vår exklusiva uppskattningsfest!"
         },
-        "qr-codes": {
-            "header": "Boka en speeddejtingsession med ett företag",
-            "buttonKPMG": "Boka med KPMG",
-            "buttonNORTHWAVE": "Boka med Northwave",
-            "buttonSOURCECOM": "Boka med Sourcecom",
-            "buttoneEBUILDER": "Boka med eBuilder",
-            "buttonECICERON": "Boka med eCiceron"
-        },
-        "uppdated": {
-            "header": "Håll dig uppdaterad",
-            "body": "Vill du få uppdateringar om Systemvetardagen med skräddarsydd information via e-post?",
-            "button": "Klicka här!"
-        }
+        "button": "Registrera dig"
+      }
+    },
+    "qr-codes": {
+      "header": "Boka en speeddejtingsession med ett företag",
+      "buttonKPMG": "Boka med KPMG",
+      "buttonNORTHWAVE": "Boka med Northwave",
+      "buttonSOURCECOM": "Boka med Sourcecom",
+      "buttoneEBUILDER": "Boka med eBuilder",
+      "buttonECICERON": "Boka med eCiceron"
+    },
+    "uppdated": {
+      "header": "Håll dig uppdaterad",
+      "body": "Vill du få uppdateringar om Systemvetardagen med skräddarsydd information via e-post?",
+      "button": "Klicka här!"
     }
+  }
 }

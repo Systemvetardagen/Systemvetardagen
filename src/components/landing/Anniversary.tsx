@@ -13,7 +13,7 @@ const Anniversary = () => {
         {t("body.anniversary.header")}
       </h2>
       <h3 className="text-xl md:text-2xl">{t("body.anniversary.subHeader")}</h3>
-      <p className="md:text-justify">
+      <p className="">
         <Trans
           i18nKey={"body.anniversary.body"}
           ns="landing"
@@ -24,7 +24,7 @@ const Anniversary = () => {
           }}
         />
       </p>
-      <p className="md:text-justify">
+      <p className="">
         <Trans
           i18nKey={"body.anniversary.body2"}
           ns="landing"

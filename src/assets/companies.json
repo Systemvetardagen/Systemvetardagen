@@ -53,7 +53,7 @@
     "linkedIn": "https://www.linkedin.com/company/deloitte/",
     "instagram": "https://www.instagram.com/deloittesweden/",
     "facebook": "https://www.facebook.com/DeloitteSweden/?locale=sv_SE",
-    "isPartner": true,
+    "isPartner": false,
     "candidatePrograms": [
       "SDAVK",
       "SAFFK",
@@ -214,7 +214,7 @@
     "slogan": "Fackförbundet för akademiker",
     "founded": 2020,
     "employeesSweden": 130,
-    "isPartner": true,
+    "isPartner": false,
     "websiteLink": "https://www.akavia.se/medlemskapet/bli-studentmedlem/",
     "contacts": [
       {

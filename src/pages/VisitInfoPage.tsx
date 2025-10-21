@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { SignupLink, Partners, FadeInSection } from "@/ui";
+import { Partners, FadeInSection } from "@/components";
 import { LuTramFront, LuSquareParking } from "react-icons/lu";
 import { CiLink } from "react-icons/ci";
 interface Lecture {
@@ -162,7 +162,7 @@ const Events: React.FC = () => {
 const VisitInfo: React.FC = () => {
   const [t] = useTranslation("visitInfo");
   return (
-    <div className="w-full overflow-x-hidden flex flex-col items-center bg-background text-center">
+    <div className="w-full overflow-x-hidden flex flex-col items-center bg-background text-center mb-10">
       <div className="w-full h-[20vh] lg:h-[40vh] max-h-[400px] overflow-hidden">
         <img
           src="/images/nod.webp"

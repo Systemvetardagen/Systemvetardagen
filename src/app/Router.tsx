@@ -11,6 +11,7 @@ import {
   CompanyPage,
   CompanySignupPage,
   VisitInfoPage,
+  Companies,
 } from "@/pages";
 
 const Router: React.FC = () => {
@@ -19,6 +20,7 @@ const Router: React.FC = () => {
       <Route element={<RootLayout />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/companies" element={<CompaniesPage />} />
+        <Route path="/companies/old" element={<Companies />} />
         <Route path="/companies/:companyId" element={<CompanyPage />} />
         <Route
           path="/companies/signup"

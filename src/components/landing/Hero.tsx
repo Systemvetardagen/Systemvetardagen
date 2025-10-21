@@ -1,8 +1,7 @@
 import { useRef } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
-import CountdownTest from "../common/CountdownTest";
-import Countdown from "../common/Countdown";
+import Countdown from "@/components/common/Countdown/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";
@@ -12,10 +11,9 @@ const Hero = () => {
   const [searchParams] = useSearchParams();
   const test: boolean = searchParams.get("test") == "true";
   console.log(test);
-  const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
+  const targetDate: Date = new Date("2026-02-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
-
 
   return (
     <div
@@ -60,13 +58,21 @@ const Hero = () => {
           textAlign="center"
         ></SplitText>
         {test ? (
-          <CountdownTest targetDate={targetDate} />
+          <Countdown targetDate={targetDate} />
         ) : (
           <Countdown targetDate={targetDate} />
         )}
 
-        <FadeInSection direction="fadeUp" duration={1000} delay={200}>
-          <h3 className="md:text-2xl mt-10">Kista Nod, Borgarfjordsgatan 12</h3>
+        <FadeInSection direction="fadeUp" duration={1000} delay={1000}>
+          <h3 className="md:text-2xl mt-10">
+            <a
+              href="https://maps.app.goo.gl/qf3VPrddNHJzNX7M7"
+              rel="noreferrer nofollow"
+              target="_blank"
+            >
+              Kista Nod, Borgarfjordsgatan 12
+            </a>
+          </h3>
           <h3 className="md:text-2xl">
             {t("date.day")} {targetDate.getDate()} {t("date.month")} 10:00 -
             16:00
