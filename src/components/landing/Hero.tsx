@@ -11,7 +11,7 @@ const Hero = () => {
   const [searchParams] = useSearchParams();
   const test: boolean = searchParams.get("test") == "true";
   console.log(test);
-  const targetDate: Date = new Date("2026-03-18T10:00:00+01:00");
+  const targetDate: Date = new Date("2026-02-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
 
