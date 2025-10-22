@@ -12,6 +12,22 @@
   "signup": "Registrera för uppdateringar",
   "exhibitors": "Se alla utställare",
   "body": {
+    "infoSections": {
+      "anniversary": {
+        "title": "30 År av Systemvetardagen",
+        "body": "I år firar vi den 30:e årliga Systemvetardagen, den främsta tekniska jobbmässan för studenter och yrkesverksamma inom IT och systemvetenskap! Organiserad av Studentkåren DISK, har Systemvetardagen varit det självklara eventet för att skapa kontakter mellan ambitiösa teknikstudenter och ledande företag i Sverige. Oavsett om du letar efter praktikplatser, heltidsanställningar eller bara vill utforska de senaste trenderna inom IT, är Systemvetardagen 2026 platsen att vara på.",
+        "link": "Läs Mer Om Vår Jubileum"
+      },
+      "meet": {
+        "title": "Systemvetardagen Meet",
+        "body": "Boka enskilda möten med företag under mässan! Systemvetardagen Meet ger dig möjligheten att ha direkta samtal med rekryterare och företagsrepresentanter. Sticka ut från mängden och öka dina chanser att få ditt drömjobb genom att boka personliga möten i förväg. Anslut, nätverka och gör ett bestående intryck hos Sveriges ledande teknikföretag.",
+        "link": "Boka Ditt Möte Nu"
+      },
+      "management": {
+        "title": "Ett Meddelande från Ledningsgruppen",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      }
+    },
     "anniversary": {
       "header": "Systemvetardagen 2026",
       "subHeader": "30 år av att skapa kontakter med toppföretag",

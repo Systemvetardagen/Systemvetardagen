@@ -12,6 +12,22 @@
     "signup": "Sign up for updates",
     "exhibitors": "Browse All Exhibitors",
     "body": {
+        "infoSections": {
+            "anniversary": {
+                "title": "30 Years of Systemvetardagen",
+                "body": "This year marks the 30th annual Systemvetardagen, the premier tech job fair for students and professionals in the IT and System Science field! Organized by Studentkåren DISK, Systemvetardagen has been the go-to event for fostering connections between ambitious tech students and leading companies in Sweden. Whether you're looking for internships, full-time positions, or just want to explore the latest trends in IT, Systemvetardagen 2026 is the place to be.",
+                "link": "Learn More About Our Anniversary"
+            },
+            "meet": {
+                "title": "Systemvetardagen Meet",
+                "body": "Book one-on-one meetings with companies during the fair! Systemvetardagen Meet gives you the opportunity to have direct conversations with recruiters and company representatives. Stand out from the crowd and increase your chances of landing your dream job by booking personalized meetings in advance. Connect, network, and make a lasting impression with Sweden's leading tech companies.",
+                "link": "Book Your Meeting Now"
+            },
+            "management": {
+                "title": "A Message from The Management Team",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            }
+        },
         "anniversary": {
             "header": "Systemvetardagen 2026",
             "subHeader": "Three decades of connecting with top companies",

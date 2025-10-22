@@ -84,7 +84,7 @@ const Footer = () => {
     <footer className="bg-white w-full">
       <Seperator />
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-8 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 text-gray-600">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 text-black">
           <style>
             {`
             .instagram-hover:hover {
@@ -98,10 +98,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold pb-2">
               {sections.information.title}
             </h3>
-            <p className="text-xs italic max-w-md mb-2">
+            <p className="text-xs max-w-md mb-2">
               {sections.information.description}
             </p>
-            <div className="mb-1">
+            <div className="flex flex-col gap-2 [&>a]:hover:text-link">
               <a
                 className="text-sm hover:text-black transition-colors"
                 href={sections.information.studentUnion.url}
@@ -110,32 +110,33 @@ const Footer = () => {
               >
                 {sections.information.studentUnion.label}
               </a>
-            </div>
-            <div className="mb-1">
-              <Link className="text-sm hover:text-black transition-colors" to="/companies">
+              <Link
+                className="text-sm hover:text-black transition-colors"
+                to="/companies"
+              >
                 {sections.information.navigation.companies}
               </Link>
-            </div>
-            <div className="mb-1">
-              <Link className="text-sm hover:text-black transition-colors" to="/visit-info">
+              <Link
+                className="text-sm hover:text-black transition-colors"
+                to="/visit-info"
+              >
                 {sections.information.navigation.visitor}
               </Link>
-            </div>
-            <div className="mb-1">
-              <Link className="text-sm hover:text-black transition-colors" to="/about">
+              <Link
+                className="text-sm hover:text-black transition-colors"
+                to="/about"
+              >
                 {sections.information.navigation.about}
               </Link>
-            </div>
-            <div className="mt-3">
               <p className="text-sm mb-1">
-                {sections.information.contact.label}
+                {sections.information.contact.label}{" "}
+                <a
+                  className="text-sm text-link hover:underline"
+                  href={`mailto:${sections.information.contact.email}`}
+                >
+                  {sections.information.contact.email}
+                </a>
               </p>
-              <a
-                className="text-sm text-link hover:underline"
-                href={`mailto:${sections.information.contact.email}`}
-              >
-                {sections.information.contact.email}
-              </a>
             </div>
           </div>
 
@@ -144,7 +145,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold pb-2">
               {sections.socials.title}
             </h3>
-            <p className="text-xs italic max-w-md mb-2">
+            <p className="text-xs max-w-md mb-2">
               {sections.socials.description}
             </p>
             <div className="flex gap-3 py-2">
@@ -239,7 +240,9 @@ const Footer = () => {
                 </div>
               ) : (
                 <div className="hover:scale-105 transition-transform duration-200">
-                  <p className="text-sm">{sections.socials.countdown.ongoing.prefix}</p>
+                  <p className="text-sm">
+                    {sections.socials.countdown.ongoing.prefix}
+                  </p>
                   <p className="font-bold">
                     {sections.socials.countdown.ongoing.message}
                   </p>

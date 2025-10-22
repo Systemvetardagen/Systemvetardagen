@@ -5,12 +5,8 @@ import Countdown from "@/components/common/Countdown/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";
-import { useSearchParams } from "react-router-dom";
 
 const Hero = () => {
-  const [searchParams] = useSearchParams();
-  const test: boolean = searchParams.get("test") == "true";
-  console.log(test);
   const targetDate: Date = new Date("2026-02-18T10:00:00+01:00");
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
@@ -57,11 +53,7 @@ const Hero = () => {
           threshold={0.1}
           textAlign="center"
         ></SplitText>
-        {test ? (
-          <Countdown targetDate={targetDate} />
-        ) : (
-          <Countdown targetDate={targetDate} />
-        )}
+        <Countdown targetDate={targetDate} />
 
         <FadeInSection direction="fadeUp" duration={1000} delay={1000}>
           <h3 className="md:text-2xl mt-10">
