@@ -1,56 +1,64 @@
 {
-  "sections": [
-    {
-      "title": "Explore",
-      "links": [
-        { "name": "Home", "href": "/" },
-        { "name": "Companies", "href": "/companies" },
-        { "name": "Company Signup", "href": "/companies/signup" },
-        { "name": "Visit Info", "href": "/visit-info" },
-        { "name": "About", "href": "/about" },
-        { "name": "Signup", "href": "/signup" }
-      ]
+  "heading": "Systemvetardagen 2026",
+  "description": "Systemvetardagen is an annual career fair organized by and for students at the Department of Computer and Systems Sciences (DSV) at Stockholm University.",
+  "sections": {
+    "information": {
+      "title": "Systemvetardagen 2026",
+      "description": "Systemvetardagen is an annual career fair organized by and for students at the Department of Computer and Systems Sciences (DSV) at Stockholm University.",
+      "studentUnion": {
+        "label": "Studentkåren DISK",
+        "url": "https://disk.su.se/"
+      },
+      "navigation": {
+        "companies": "Companies",
+        "visitor": "Visitor",
+        "about": "About us"
+      },
+      "contact": {
+        "label": "Contact:",
+        "email": "systemvetardagen@disk.su.se"
+      }
     },
-    {
-      "title": "For Students",
-      "links": [
-        {
-          "name": "Stay Updated",
-          "href": "https://mitt.systemvetardagen.se"
+    "socials": {
+      "title": "Socials",
+      "description": "For more information follow us on our social medias to receive regular updates about the event.",
+      "platforms": {
+        "facebook": {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/Systemvetardagen/"
         },
-        { "name": "Join the Team", "href": "/#fairie" },
-        { "name": "Map", "href": "/visit-info#map" },
-        { "name": "Events", "href": "/visit-info#events" }
-      ]
+        "instagram": {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/systemvetardagen/"
+        },
+        "linkedin": {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/company/systemvetardagen/"
+        }
+      },
+      "countdown": {
+        "prefix": "Or see us at the event in",
+        "days": "days",
+        "hours": "hours",
+        "minutes": "minutes",
+        "seconds": "seconds",
+        "suffix": "and",
+        "ongoing": {
+          "prefix": "Or see us at the event",
+          "message": "ongoing right now!"
+        }
+      }
     },
-    {
-      "title": "For Companies",
-      "links": [
-        { "name": "Signup", "href": "/companies/signup" },
-        { "name": "Sponsor Us!", "href": "/companies/signup" },
-        { "name": "Why Attend?", "href": "/about#systemvetardagen" }
-      ]
+    "location": {
+      "title": "Find us",
+      "address": "Borgarfjordsgatan 6C 164 40 Kista",
+      "mapUrl": "https://www.google.com/maps/place/DSV,+Institutionen+f%C3%B6r+data-+och+systemvetenskap/@59.4068103,17.9426538,543m/data=!3m1!1e3!4m15!1m8!3m7!1s0x465f9eedb4b0b12f:0x17108ff333fa684a!2sBorgarfjordsgatan+6C,+164+40+Kista!3b1!8m2!3d59.4068103!4d17.9452287!16s%2Fg%2F11c5d8mhp9!3m5!1s0x465f9eed05efbb67:0x18ac39c13897c4a9!8m2!3d59.4067198!4d17.9452225!16s%2Fg%2F1tczcj6x?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927.2724538117486!2d17.94447928059294!3d59.40656019752912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9eed05efbb67%3A0x18ac39c13897c4a9!2sDSV%2C%20Institutionen%20f%C3%B6r%20data-%20och%20systemvetenskap!5e0!3m2!1ssv!2sse!4v1738844966811!5m2!1ssv!2sse"
     }
-  ],
-  "contact": {
-    "title": "Contact",
-    "emailLabel": "Email",
-    "email": "systemvetardagen@disk.su.se"
   },
-  "location": {
-    "title": "Location",
-    "venueName": "Nodhuset",
-    "addressLine1": "Borgarfjordsgatan 12",
-    "addressLine2": "164 55 Kista, Sweden",
-    "mapLabel": "Open in Maps",
-    "mapsHref": "https://maps.google.com/?q=Borgarfjordsgatan+12+Kista"
-  },
-  "organization": {
-    "hostedBy": "Organized by Studentkåren DISK",
-    "studentUnion": "Studentkåren DISK"
-  },
-  "meta": {
-    "copyright": "© {{year}} Systemvetardagen",
-    "allRightsReserved": "All rights reserved"
+  "copyright": "© 2025 Systemvetardagen",
+  "logo": {
+    "alt": "Systemvetardagen Logo",
+    "src": "/svgs/specialLogo.svg"
   }
 }
