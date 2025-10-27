@@ -27,7 +27,7 @@ const InfoSection = ({
   return (
     <FadeInSection
       direction={imagePosition === "left" ? "fadeRight" : "fadeLeft"}
-      className="flex flex-col md:flex-row gap-2 md:gap-10 py-4 md:py-10"
+      className="flex flex-col md:flex-row gap-8 md:gap-20 py-4 md:py-10"
     >
       {imagePosition === "left" && (
         <div className="w-full md:w-1/2 order-2 md:order-1">
@@ -38,7 +38,7 @@ const InfoSection = ({
           />
         </div>
       )}
-      <div className="w-full md:w-1/2 flex flex-col gap-4 order-1 md:order-2">
+      <div className="w-full md:w-1/2 flex flex-col justify-center text-center order-1 md:order-2">
         <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
           {t(titleKey)}
         </h2>
@@ -46,7 +46,7 @@ const InfoSection = ({
           {t(bodyKey)}
         </p>
         {linkTo && linkTextKey && (
-          <div className="mb-4">
+          <div className="my-4">
             <Link to={linkTo}>
               <Button variant="plain" size="lg" className="rounded-full">
                 {t(linkTextKey)}
@@ -83,13 +83,14 @@ const InfoSections = () => {
       />
       <InfoSection
         imagePosition="right"
-        imageSrc="/images/auditorium-seats.webp"
+        imageSrc="/images/nod.webp"
         imageAlt="Systemvetardagen Meet"
         titleKey="body.infoSections.meet.title"
         bodyKey="body.infoSections.meet.body"
         linkTo="https://mitt.systemvetardagen.se"
         linkTextKey="body.infoSections.meet.link"
       />
+      <div className="w-full h-0.5 bg-gray-400/30"></div>
 {/* 
       <InfoSection
         imagePosition="left"

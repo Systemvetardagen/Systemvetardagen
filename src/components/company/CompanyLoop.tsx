@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import LogoLoop, { LogoItem } from "../common/LogoLoop";
-// import { useCompanies } from "@/lib/hooks/useCompanyContext";
+import companiesData from "@/assets/companies.json";
+import { Company } from "@/assets/companies";
+import { NavLink } from "react-router-dom";
 
 interface CompanyLoopProps {
   className?: string;
@@ -22,31 +24,25 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // const { companies } = useCompanies();
-  // const companyLogos: LogoItem[] = (companies ?? []).map((company) => {
-  //   return {
-  //     src: company.logoURL,
-  //     href: `/companies/${company.slug}`,
-  //   };
-  // });
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
-  // Hardcoded test logos from public folder
-  const companyLogos: LogoItem[] = [
-    { src: "/companies/accenture/logo.webp", href: "#" },
-    { src: "/companies/deloitte/logo.webp", href: "#" },
-    { src: "/companies/handelsbanken/logo.webp", href: "#" },
-    { src: "/companies/ericsson/logo.webp", href: "#" },
-    { src: "/companies/cgi/logo.webp", href: "#" },
-    { src: "/companies/akavia/logo.webp", href: "#" },
-    { src: "/companies/swedbank/logo.webp", href: "#" },
-    { src: "/companies/kpmg/logo.webp", href: "#" },
-    { src: "/companies/columbus/logo.webp", href: "#" },
-    { src: "/companies/lime/logo.webp", href: "#" },
-    { src: "/companies/scania/logo.webp", href: "#" },
-    { src: "/companies/capgemini/logo.webp", href: "#" },
-  ];
+  const companies: Company[] = useMemo(() => shuffleArray(companiesData), []);
 
-  const totalCompanies = companyLogos.length;
+  const companyLogos: LogoItem[] = companies.map((company) => {
+    return {
+      src: `/companies/${company.id}/logo.webp`,
+      href: company.websiteLink,
+    };
+  });
+
+  const totalCompanies = companies.length;
 
   return (
     <div ref={ref} className={className}>
@@ -70,13 +66,13 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
       </div>
       
       <div className="mt-8 flex justify-center">
-        <a
-          href="/companies"
+        <NavLink
+          to="/companies/old"
           className="inline-flex items-center gap-2 text-lg font-medium hover:underline transition-all group"
         >
-          See all {totalCompanies} exhibitors
+          See all {totalCompanies} exhibitors from last year
           <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-        </a>
+        </NavLink>
       </div>
     </div>
   );
