@@ -1,4 +1,5 @@
 import "@/app/App.css";
+import { Seperator } from "@/components";
 // import { CompanyLoop } from "@/components";
 import { Hero, InfoSections, Statistics, FAQ } from "@/components/landing";
 
