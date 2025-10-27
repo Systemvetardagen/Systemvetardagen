@@ -27,7 +27,7 @@ const InfoSection = ({
   return (
     <FadeInSection
       direction={imagePosition === "left" ? "fadeRight" : "fadeLeft"}
-      className="flex flex-col md:flex-row gap-2 md:gap-10 items-center py-4 md:py-12"
+      className="flex flex-col md:flex-row gap-2 md:gap-10 py-4 md:py-10"
     >
       {imagePosition === "left" && (
         <div className="w-full md:w-1/2 order-2 md:order-1">
@@ -46,9 +46,9 @@ const InfoSection = ({
           {t(bodyKey)}
         </p>
         {linkTo && linkTextKey && (
-          <div className="my-2">
+          <div className="mb-4">
             <Link to={linkTo}>
-              <Button variant="default" size="lg">
+              <Button variant="plain" size="lg" className="rounded-full">
                 {t(linkTextKey)}
               </Button>
             </Link>
@@ -70,7 +70,8 @@ const InfoSection = ({
 
 const InfoSections = () => {
   return (
-    <div className="w-full flex flex-col gap-4 md:gap-10">
+    <div className="w-full flex flex-col gap-4">
+      <div className="w-full h-0.5 bg-gray-400/30"></div>
       <InfoSection
         imagePosition="left"
         imageSrc="/images/2024logoWithShirt.webp"
@@ -80,7 +81,6 @@ const InfoSections = () => {
         // linkTo="/anniversary"
         linkTextKey="body.infoSections.anniversary.link"
       />
-
       <InfoSection
         imagePosition="right"
         imageSrc="/images/auditorium-seats.webp"

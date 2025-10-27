@@ -1,4 +1,5 @@
 import "@/app/App.css";
+import { Seperator } from "@/components";
 // import { CompanyLoop } from "@/components";
 import { Hero, InfoSections, Statistics, FAQ } from "@/components/landing";
 
@@ -16,8 +17,31 @@ export default function LandingPage() {
             <span>{t("exhibitors")}</span>
           </Button>
         </NavLink> */}
-        <div className="w-full max-w-[90%] md:max-w-6xl flex flex-col items-center">
+        <div className="w-full max-w-[90%] md:max-w-5xl flex flex-col items-center">
           <InfoSections />
+          {/* <div className="flex flex-col p-4 my-10 gap-4 md:flex-row md:items-center md:max-w-2xl mx-auto border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+              <img
+                src="/images/nod.webp"
+                alt="Systemvetardagen"
+                className="h-40 object-cover rounded-2xl"
+              />
+              <div className="flex flex-col justify-between">
+                <h2 className="text-lg font-semibold mb-2">
+                  Systemvetardagen 2026: Av studenter, för studenter!
+                </h2>
+                <p className="text-gray-500 text-sm mb-2">
+                  Vi är otroligt glada att kunna berätta att Systemvetardagen är
+                  tillbaka! Från första dagen i det här projektet har vi lagt
+                  stor...
+                </p>
+                <a
+                  href="#"
+                  className="text-blue-500 font-medium text-sm hover:underline"
+                >
+                  Läs mer
+                </a>
+              </div>
+          </div> */}
           <Statistics />
           <FAQ />
           {/* <FairieSignup /> */}
