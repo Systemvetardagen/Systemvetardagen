@@ -27,10 +27,10 @@ const InfoSection = ({
   return (
     <FadeInSection
       direction={imagePosition === "left" ? "fadeRight" : "fadeLeft"}
-      className="flex flex-col md:flex-row gap-6 md:gap-10 items-center"
+      className="flex flex-col md:flex-row gap-2 md:gap-10 items-center py-4 md:py-12"
     >
       {imagePosition === "left" && (
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 order-2 md:order-1">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -38,7 +38,7 @@ const InfoSection = ({
           />
         </div>
       )}
-      <div className="w-full md:w-1/2 flex flex-col gap-4">
+      <div className="w-full md:w-1/2 flex flex-col gap-4 order-1 md:order-2">
         <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
           {t(titleKey)}
         </h2>
@@ -46,7 +46,7 @@ const InfoSection = ({
           {t(bodyKey)}
         </p>
         {linkTo && linkTextKey && (
-          <div className="mt-2">
+          <div className="my-2">
             <Link to={linkTo}>
               <Button variant="default" size="lg">
                 {t(linkTextKey)}
@@ -56,7 +56,7 @@ const InfoSection = ({
         )}
       </div>
       {imagePosition === "right" && (
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 order-2">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -70,7 +70,7 @@ const InfoSection = ({
 
 const InfoSections = () => {
   return (
-    <div className="w-full flex flex-col gap-28">
+    <div className="w-full flex flex-col gap-4 md:gap-10">
       <InfoSection
         imagePosition="left"
         imageSrc="/images/2024logoWithShirt.webp"

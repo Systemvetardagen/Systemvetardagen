@@ -155,7 +155,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   ]);
 
   return (
-    <p
+    <h1
       ref={ref}
       className={`split-parent inline-block whitespace-nowrap ${className}`}
       style={{
@@ -164,7 +164,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       }}
     >
       {text}
-    </p>
+    </h1>
   );
 };
 

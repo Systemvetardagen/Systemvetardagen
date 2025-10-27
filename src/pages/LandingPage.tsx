@@ -9,7 +9,7 @@ export default function LandingPage() {
       {/* <CompanyLoop className="pt-10" /> */}
       <section
         id="body"
-        className="py-20 md:px-20 flex flex-col items-center gap-10"
+        className="pt-4 pb-20 md:pt-20 md:px-20 flex flex-col items-center gap-10"
       >
         {/* <NavLink to={"/companies"}>
           <Button variant="outline" size="lg">

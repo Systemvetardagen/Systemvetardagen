@@ -43,7 +43,7 @@ const Hero = () => {
         </FadeInSection>
         <SplitText
           text={t("header")}
-          className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 overflow-visible"
           delay={50}
           duration={0.7}
           ease="power3.out"
