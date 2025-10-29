@@ -15,7 +15,6 @@ const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
   const { company, isLoading, isError } = useCompany(companyId || "");
   const { t: tCompanies } = useTranslation("companies");
-  const { t: tPrograms } = useTranslation("programs");
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -67,12 +66,15 @@ const CompanyPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center my-10 gap-10 max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center my-10 gap-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         {company.slogan && (
-          <h2 className="text-lg text-gray-600">{company.slogan}</h2>
+          <FadeInSection triggerOnce={true} direction="fadeUp">
+            <h2 className="text-lg text-gray-600">{company.slogan}</h2>
+          </FadeInSection>
         )}
         {/* {company.areaOfBusiness || company.foundedYear || company.employeesSweden || company.} */}
-        <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] shadow-md p-6 empty:hidden">
+        <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full flex justify-center">
+          <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] shadow-md p-6 empty:hidden">
           <div className="flex flex-col gap-5">
             {company.areaOfBusiness && (
               <FadeInSection
@@ -150,6 +152,7 @@ const CompanyPage: React.FC = () => {
             ) : null}
           </div>
         </div>
+        </FadeInSection>
 
         <div className="flex gap-4">
           {company.linkedInLink && (
@@ -189,56 +192,107 @@ const CompanyPage: React.FC = () => {
             </FadeInSection>
           )}
         </div>
-        {/* <RecruitmentCard {...company} /> */}
-        {/* Temporary */}
-        <FadeInSection triggerOnce={true} direction="fadeUp">
-          <p className="text-justify">{company.description}</p>
+        <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
+          <p className="text-justify text-gray-700 leading-relaxed max-w-[90%] mx-auto">
+            {company.description}
+          </p>
         </FadeInSection>
-        <div className="flex gap-2">
-          {company.programs.map((program, index) => {
-            let key = "";
-            if (
-              CANDIDATE_PROGRAMS.includes(
-                program as (typeof CANDIDATE_PROGRAMS)[number]
-              )
-            ) {
-              key = `candidatePrograms.${program}`;
-            } else if (
-              MASTER_PROGRAMS.includes(
-                program as (typeof MASTER_PROGRAMS)[number]
-              )
-            ) {
-              key = `masterPrograms.${program}`;
-            }
-            return <span key={index}>{tPrograms(key)}</span>;
-          })}
-        </div>
-        <div className="flex gap-2">
-          {company.positions.map((position, index) => (
-            <span key={index}>{tPrograms(`positions.${position}`)}</span>
-          ))}
-        </div>
-        <a
-          className="text-link text-2xl text-center font-bold hover:underline"
-          rel="nofollow"
-          href={company.websiteLink}
-        >
-          {tCompanies("global.learnMore", { company: company.companyName })}
-        </a>
-        <div className="flex gap-4">
-          <ButtonNavigate to="/companies" variant={"plain"} size={"xl"}>
-            <span className="text-center">
-              {tCompanies("global.backToCompanies")}
-            </span>
-          </ButtonNavigate>
-          <Button
-            variant={"plain"}
-            size={"xl"}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
+        {company.programs && company.programs.length > 0 && (
+          <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
+            <div className="w-full">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                {tCompanies("global.programs")}
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-center max-w-[90%] mx-auto">
+                {company.programs.map((program, index) => {
+                  let key = "";
+                  if (
+                    CANDIDATE_PROGRAMS.includes(
+                      program as (typeof CANDIDATE_PROGRAMS)[number]
+                    )
+                  ) {
+                    key = `candidatePrograms.${program}`;
+                  } else if (
+                    MASTER_PROGRAMS.includes(
+                      program as (typeof MASTER_PROGRAMS)[number]
+                    )
+                  ) {
+                    key = `mastersPrograms.${program}`;
+                  }
+                  return (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-gray-800 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
+                    >
+                      {tCompanies(key)}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </FadeInSection>
+        )}
+
+        {/* Qualifications Section */}
+        {company.qualifications && (
+          <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
+            <div className="w-full">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                {tCompanies("global.qualifications")}
+              </h2>
+              <p className="text-gray-700 leading-relaxed max-w-[90%] mx-auto whitespace-pre-line">
+                {company.qualifications}
+              </p>
+            </div>
+          </FadeInSection>
+        )}
+
+        {/* Positions Section */}
+        {company.positions && company.positions.length > 0 && (
+          <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
+            <div className="w-full">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                {tCompanies("global.positions")}
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-center max-w-[90%] mx-auto">
+                {company.positions.map((position, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-gradient-to-r from-green-100 to-teal-100 text-gray-800 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
+                  >
+                    {tCompanies(`positions.${position}`)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </FadeInSection>
+        )}
+        <FadeInSection triggerOnce={true} direction="fadeUp">
+          <a
+            className="text-link text-2xl text-center font-bold hover:underline"
+            rel="nofollow"
+            href={company.websiteLink}
           >
-            {tCompanies("global.scrollToTop")}
-          </Button>
-        </div>
+            {tCompanies("global.learnMore", { company: company.companyName })}
+          </a>
+        </FadeInSection>
+        <FadeInSection triggerOnce={true} direction="fadeUp">
+          <div className="flex gap-4">
+            <ButtonNavigate to="/companies" variant={"plain"} size={"xl"}>
+              <span className="text-center">
+                {tCompanies("global.backToCompanies")}
+              </span>
+            </ButtonNavigate>
+            <Button
+              variant={"plain"}
+              size={"xl"}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              {tCompanies("global.scrollToTop")}
+            </Button>
+          </div>
+        </FadeInSection>
       </div>
     </div>
   );

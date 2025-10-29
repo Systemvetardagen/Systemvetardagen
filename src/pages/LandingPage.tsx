@@ -1,5 +1,5 @@
 import "@/app/App.css";
-import { CompanyLoop } from "@/components";
+import { CompanyLoop, Partners } from "@/components";
 import { Hero, InfoSections, Statistics, FAQ, HighlightSection } from "@/components/landing";
 
 export default function LandingPage() {
@@ -13,11 +13,12 @@ export default function LandingPage() {
       >
         {/* <NavLink to={"/companies"}>
           <Button variant="outline" size="lg">
-            <span>{t("exhibitors")}</span>
+          <span>{t("exhibitors")}</span>
           </Button>
-        </NavLink> */}
+          </NavLink> */}
         <div className="w-full max-w-[90%] md:max-w-5xl flex flex-col items-center">
           <InfoSections />
+          <Partners containerClassName="mt-10" />
           <Statistics />
           <HighlightSection />
           <FAQ />

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
 import { CompanyCard } from "../company";
 import { CompanyCardSkeleton } from "../company/CompanyCard";
+import { NavLink } from "react-router-dom";
 
 interface PartnersProps {
   title?: string;
@@ -17,9 +18,9 @@ interface PartnersProps {
 const Partners: React.FC<PartnersProps> = ({
   title,
   showTitle = true,
-  cardClassName = "h-44 w-[308px]",
+  cardClassName = "h-32 w-56",
   containerClassName = "",
-  useCards = true,
+  useCards = false,
   isLoading = false,
 }) => {
   const { t } = useTranslation("common");
@@ -35,9 +36,9 @@ const Partners: React.FC<PartnersProps> = ({
   return (
     <div className={`flex flex-col items-center ${containerClassName}`}>
       {showTitle && (
-        <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
+        <h3 className="text-2xl mb-8 text-center text-gray-700 font-light">
           {displayTitle}
-        </h1>
+        </h3>
       )}
       <div className="flex flex-wrap justify-center gap-6 w-full">
         {loading
@@ -55,13 +56,13 @@ const Partners: React.FC<PartnersProps> = ({
                 {useCards ? (
                   <CompanyCard company={partner} className={cardClassName} />
                 ) : (
-                  <a href={`/companies/${partner.slug}`}>
+                  <NavLink to={`/companies/${partner.slug}`}>
                     <img
                       src={partner.logoURL}
                       className={`object-contain ${cardClassName}`}
                       alt={`${partner.companyName} logo`}
                     />
-                  </a>
+                  </NavLink>
                 )}
               </FadeInSection>
             ))}

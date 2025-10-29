@@ -222,6 +222,7 @@ const VisitInfo: React.FC = () => {
           loading="lazy"
           className="rounded-3xl"
         ></iframe>
+        <div className="w-full h-0.5 bg-gray-400/30 my-10"></div>
         <Partners />
       </section>
     </div>
