@@ -12,11 +12,12 @@ export interface Company {
   linkedInLink: string;
   instagramLink: string;
   facebookLink: string;
-  isSponsor: boolean;
   qualifications: string;
   programs: Program[];
   positions: Position[];
   slug: string;
+  packageId: number;
+  networkMeeting: boolean;
   logoURL: string;
   bannerURL: string;
 }

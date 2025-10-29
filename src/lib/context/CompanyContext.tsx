@@ -28,11 +28,11 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
     gcTime: 30 * 60 * 1000, // 30 min cache
     retry: 1,
   });
-  
+
   const partners = useMemo(() => {
     return data
       ? data.filter((company: Company) => {
-          return company.isSponsor;
+          return company.packageId >= 3;
         })
       : [];
   }, [data]);
@@ -49,8 +49,8 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
       getBySlug: (slug: string) =>
         data?.find((c: { slug: string }) => c.slug === slug),
       upsertCompany: (c: Company) => {
-      queryClient.setQueryData<Company[] | undefined>(
-        companiesQueryKey,
+        queryClient.setQueryData<Company[] | undefined>(
+          companiesQueryKey,
           (old) => {
             if (!old) return [c];
             const idx = old.findIndex((o) => o.slug === c.slug);

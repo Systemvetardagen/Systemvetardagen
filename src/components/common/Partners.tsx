@@ -1,27 +1,72 @@
+import React from "react";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import { useTranslation } from "react-i18next";
+import { FadeInSection } from "../layout";
+import { CompanyCard } from "../company";
+import { CompanyCardSkeleton } from "../company/CompanyCard";
 
-const Partners = () => {
+interface PartnersProps {
+  title?: string;
+  showTitle?: boolean;
+  cardClassName?: string;
+  containerClassName?: string;
+  useCards?: boolean;
+  isLoading?: boolean;
+}
+
+const Partners: React.FC<PartnersProps> = ({
+  title,
+  showTitle = true,
+  cardClassName = "h-44 w-[308px]",
+  containerClassName = "",
+  useCards = true,
+  isLoading = false,
+}) => {
   const { t } = useTranslation("common");
-  const { partners } = useCompanies();
+  const { partners, isLoading: contextLoading } = useCompanies();
+  
+  const loading = isLoading || contextLoading;
+  const displayTitle = title || t("partners");
+
+  if (!loading && (!partners || partners.length === 0)) {
+    return null;
+  }
+
   return (
-    partners &&
-    partners.length > 0 && (
-      <div className="w-screen flex flex-col items-center max-w-4xl px-4 my-10 sm:px-6 lg:px-8">
-        <h2 className="text-xl lg:text-3xl mb-8 font-light">{t("partners")}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-          {partners.map((partner, index) => (
-            <a className="" href={`/companies/${partner.slug}`} key={index}>
-              <img
-                src={partner.logoURL}
-                className="object-contain h-32 w-56"
-                alt="company logo"
-              />
-            </a>
-          ))}
-        </div>
+    <div className={`flex flex-col items-center ${containerClassName}`}>
+      {showTitle && (
+        <h1 className="text-2xl mb-8 text-center text-gray-700 font-light">
+          {displayTitle}
+        </h1>
+      )}
+      <div className="flex flex-wrap justify-center gap-6 w-full">
+        {loading
+          ? Array.from({ length: 3 }).map((_, index) => (
+              <FadeInSection key={index} direction="fadeLeft">
+                {useCards ? (
+                  <CompanyCardSkeleton className={cardClassName} />
+                ) : (
+                  <div className={`bg-gray-200 animate-pulse rounded-lg ${cardClassName}`} />
+                )}
+              </FadeInSection>
+            ))
+          : partners.map((partner, index) => (
+              <FadeInSection key={index} direction="fadeLeft">
+                {useCards ? (
+                  <CompanyCard company={partner} className={cardClassName} />
+                ) : (
+                  <a href={`/companies/${partner.slug}`}>
+                    <img
+                      src={partner.logoURL}
+                      className={`object-contain ${cardClassName}`}
+                      alt={`${partner.companyName} logo`}
+                    />
+                  </a>
+                )}
+              </FadeInSection>
+            ))}
       </div>
-    )
+    </div>
   );
 };
 
