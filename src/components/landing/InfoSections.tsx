@@ -38,8 +38,8 @@ const InfoSection = ({
           />
         </div>
       )}
-      <div className="w-full md:w-1/2 flex flex-col justify-center text-center order-1 md:order-2">
-        <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+      <div className="w-full md:w-1/2 flex flex-col gap-1 justify-center text-center order-1 md:order-2">
+        <h2 className="text-3xl md:text-4xl font-bold">
           {t(titleKey)}
         </h2>
         <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
@@ -74,7 +74,7 @@ const InfoSections = () => {
       <div className="w-full h-0.5 bg-gray-400/30"></div>
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/2024logoWithShirt.webp"
+        imageSrc="/images/crowded.webp"
         imageAlt="Systemvetardagen 30th Anniversary"
         titleKey="body.infoSections.anniversary.title"
         bodyKey="body.infoSections.anniversary.body"
@@ -90,15 +90,16 @@ const InfoSections = () => {
         linkTo="https://mitt.systemvetardagen.se"
         linkTextKey="body.infoSections.meet.link"
       />
-      <div className="w-full h-0.5 bg-gray-400/30"></div>
-{/* 
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/nod.webp"
-        imageAlt="Management Team"
-        titleKey="body.infoSections.management.title"
-        bodyKey="body.infoSections.management.body"
-      /> */}
+        imageSrc="/images/2024logoWithShirt.webp"
+        imageAlt="Become a Fair'ie"
+        titleKey="body.infoSections.fairie.title"
+        bodyKey="body.infoSections.fairie.body"
+        linkTo="https://forms.office.com/pages/responsepage.aspx?id=-d6Dd48OpkmgDUGVg8iFYw0XRXYagRNBnDGOWJUt59hUQUFDM0xOWTI2RlYyUDNFNlE5WDZVTFFKTS4u&route=shorturl"
+        linkTextKey="body.infoSections.fairie.link"
+      />
+      <div className="w-full h-0.5 bg-gray-400/30"></div>
     </div>
   );
 };
