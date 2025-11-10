@@ -34,7 +34,7 @@ const InfoSection = ({
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="rounded-lg shadow-lg w-full h-auto object-cover"
+            className="rounded-lg w-full h-auto object-cover"
           />
         </div>
       )}
@@ -72,7 +72,7 @@ const InfoSections = () => {
       <div className="w-full h-0.5 bg-gray-400/30"></div>
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/crowded.webp"
+        imageSrc="/images/systemvetardagen-logo-2026-black.png"
         imageAlt="Systemvetardagen 30th Anniversary"
         titleKey="body.infoSections.anniversary.title"
         bodyKey="body.infoSections.anniversary.body"
@@ -81,7 +81,7 @@ const InfoSections = () => {
       />
       <InfoSection
         imagePosition="right"
-        imageSrc="/images/nod.webp"
+        imageSrc="/images/crowded.webp"
         imageAlt="Systemvetardagen Meet"
         titleKey="body.infoSections.meet.title"
         bodyKey="body.infoSections.meet.body"

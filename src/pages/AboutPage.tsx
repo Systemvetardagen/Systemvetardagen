@@ -9,7 +9,7 @@ const About: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
       <img
-        src={"/images/2024logoWithShirt.webp"}
+        src={"/images/nod2.jpg"}
         alt="Systemvetardagen Logo shirt"
         className="w-screen h-[20vh] lg:h-[40vh] max-h-[400px] object-cover object-[20%_50%]"
       />
