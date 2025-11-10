@@ -39,9 +39,7 @@ const InfoSection = ({
         </div>
       )}
       <div className="w-full md:w-1/2 flex flex-col gap-1 justify-center text-center order-1 md:order-2">
-        <h2 className="text-3xl md:text-4xl font-bold">
-          {t(titleKey)}
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold">{t(titleKey)}</h2>
         <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           {t(bodyKey)}
         </p>
@@ -92,7 +90,7 @@ const InfoSections = () => {
       />
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/2024logoWithShirt.webp"
+        imageSrc="/images/workers.jpg"
         imageAlt="Become a Fair'ie"
         titleKey="body.infoSections.fairie.title"
         bodyKey="body.infoSections.fairie.body"
