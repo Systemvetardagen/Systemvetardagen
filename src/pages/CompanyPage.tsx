@@ -67,92 +67,96 @@ const CompanyPage: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center my-10 gap-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        <FadeInSection triggerOnce={true} direction="fadeUp">
+          <h2 className="text-3xl font-bold text-gray-800">{company.companyName}</h2>
+        </FadeInSection>
         {company.slogan && (
           <FadeInSection triggerOnce={true} direction="fadeUp">
-            <h2 className="text-lg text-gray-600">{company.slogan}</h2>
+            <h3 className="text-lg text-gray-600">{company.slogan}</h3>
           </FadeInSection>
         )}
-        {/* {company.areaOfBusiness || company.foundedYear || company.employeesSweden || company.} */}
-        <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full flex justify-center">
-          <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] shadow-md p-6 empty:hidden">
-          <div className="flex flex-col gap-5">
-            {company.areaOfBusiness && (
-              <FadeInSection
-                triggerOnce={true}
-                direction="fadeLeft"
-                className="flex items-start gap-3"
-              >
-                <div className="text-blue-500 mt-1">
-                  <LuBriefcase size={20} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-gray-600 text-sm font-medium">
-                    {tCompanies("global.areaOfBusiness")}
-                  </h3>
-                  <p className="text-gray-800">{company.areaOfBusiness}</p>
-                </div>
-              </FadeInSection>
-            )}
-            {company.foundedYear ? (
-              <FadeInSection
-                triggerOnce={true}
-                direction="fadeLeft"
-                className="flex items-start gap-3"
-              >
-                <div className="text-blue-500 mt-1">
-                  <LuCalendar size={20} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-gray-600 text-sm font-medium">
-                    {tCompanies("global.founded")}
-                  </h3>
-                  <p className="text-gray-800">
-                    {new Date(company.foundedYear || "").getFullYear()}
-                  </p>
-                </div>
-              </FadeInSection>
-            ) : null}
-            {company.employeesSweden ? (
-              <FadeInSection
-                triggerOnce={true}
-                direction="fadeLeft"
-                className="flex items-start gap-3"
-              >
-                <div className="text-blue-500 mt-1">
-                  <LuUsers size={20} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-gray-600 text-sm font-medium">
-                    {tCompanies("global.employeesInSweden")}
-                  </h3>
-                  <p className="text-gray-800">
-                    {company.employeesSweden.toLocaleString("sv-SE")}
-                  </p>
-                </div>
-              </FadeInSection>
-            ) : null}
-            {company.employeesWorld ? (
-              <FadeInSection
-                triggerOnce={true}
-                direction="fadeLeft"
-                className="flex items-start gap-3"
-              >
-                <div className="text-blue-500 mt-1">
-                  <LuUsers size={20} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-gray-600 text-sm font-medium">
-                    {tCompanies("global.employeesInternationally")}
-                  </h3>
-                  <p className="text-gray-800">
-                    {company.employeesWorld.toLocaleString("sv-SE")}
-                  </p>
-                </div>
-              </FadeInSection>
-            ) : null}
-          </div>
-        </div>
-        </FadeInSection>
+        {(company.areaOfBusiness || company.foundedYear || company.employeesSweden || company.employeesWorld) && (
+          <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full flex justify-center">
+            <div className="bg-white rounded-3xl w-[500px] max-w-[95vw] shadow-md p-6">
+              <div className="flex flex-col gap-5">
+                {company.areaOfBusiness && (
+                  <FadeInSection
+                    triggerOnce={true}
+                    direction="fadeLeft"
+                    className="flex items-start gap-3"
+                  >
+                    <div className="text-blue-500 mt-1">
+                      <LuBriefcase size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-gray-600 text-sm font-medium">
+                        {tCompanies("global.areaOfBusiness")}
+                      </h3>
+                      <p className="text-gray-800">{company.areaOfBusiness}</p>
+                    </div>
+                  </FadeInSection>
+                )}
+                {company.foundedYear ? (
+                  <FadeInSection
+                    triggerOnce={true}
+                    direction="fadeLeft"
+                    className="flex items-start gap-3"
+                  >
+                    <div className="text-blue-500 mt-1">
+                      <LuCalendar size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-gray-600 text-sm font-medium">
+                        {tCompanies("global.founded")}
+                      </h3>
+                      <p className="text-gray-800">
+                        {new Date(company.foundedYear || "").getFullYear()}
+                      </p>
+                    </div>
+                  </FadeInSection>
+                ) : null}
+                {company.employeesSweden ? (
+                  <FadeInSection
+                    triggerOnce={true}
+                    direction="fadeLeft"
+                    className="flex items-start gap-3"
+                  >
+                    <div className="text-blue-500 mt-1">
+                      <LuUsers size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-gray-600 text-sm font-medium">
+                        {tCompanies("global.employeesInSweden")}
+                      </h3>
+                      <p className="text-gray-800">
+                        {company.employeesSweden.toLocaleString("sv-SE")}
+                      </p>
+                    </div>
+                  </FadeInSection>
+                ) : null}
+                {company.employeesWorld ? (
+                  <FadeInSection
+                    triggerOnce={true}
+                    direction="fadeLeft"
+                    className="flex items-start gap-3"
+                  >
+                    <div className="text-blue-500 mt-1">
+                      <LuUsers size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-gray-600 text-sm font-medium">
+                        {tCompanies("global.employeesInternationally")}
+                      </h3>
+                      <p className="text-gray-800">
+                        {company.employeesWorld.toLocaleString("sv-SE")}
+                      </p>
+                    </div>
+                  </FadeInSection>
+                ) : null}
+              </div>
+            </div>
+          </FadeInSection>
+        )}
 
         <div className="flex gap-4">
           {company.linkedInLink && (
@@ -194,7 +198,7 @@ const CompanyPage: React.FC = () => {
         </div>
         <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
           <p className="text-justify text-gray-700 leading-relaxed max-w-[90%] mx-auto">
-            {company.description}
+            {company.description || tCompanies("global.defaultDescription", { company: company.companyName })}
           </p>
         </FadeInSection>
 
@@ -234,7 +238,6 @@ const CompanyPage: React.FC = () => {
           </FadeInSection>
         )}
 
-        {/* Qualifications Section */}
         {company.qualifications && (
           <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
             <div className="w-full">
@@ -248,7 +251,6 @@ const CompanyPage: React.FC = () => {
           </FadeInSection>
         )}
 
-        {/* Positions Section */}
         {company.positions && company.positions.length > 0 && (
           <FadeInSection triggerOnce={true} direction="fadeUp" className="w-full">
             <div className="w-full">

@@ -19,7 +19,8 @@
     "contact": "Contact",
     "learnMore": "Learn more about working at {{company}}",
     "backToCompanies": "Back to companies",
-    "scrollToTop": "Scroll to top"
+    "scrollToTop": "Scroll to top",
+    "defaultDescription": "Meet {{company}} at Systemvetardagen! We're excited to connect with talented students and share insights about career opportunities. Visit our booth to learn more about what we do, our company culture, and the exciting roles we have available for graduates."
   },
   "candidatePrograms": {
     "SYSDK": "Computer and Systems Sciences",
