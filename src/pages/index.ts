@@ -6,3 +6,6 @@ export { default as CompanySignupPage } from "./CompanySignupPage";
 export { default as VisitInfoPage } from "./VisitInfoPage";
 export { default as NotFoundPage } from "./NotFoundPage";
 export { default as Companies } from "./CompaniesPageOld";
+export { default as BlogPost } from "./BlogPost";
+export { default as BlogListPage } from "./BlogListPage";
+export { default as BlogDetailPage } from "./BlogDetailPage";

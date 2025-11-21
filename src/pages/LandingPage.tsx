@@ -22,8 +22,6 @@ export default function LandingPage() {
           <Statistics />
           <HighlightSection />
           <FAQ />
-          {/* <FairieSignup /> */}
-          {/* <SignupLink /> */}
         </div>
       </section>
     </div>

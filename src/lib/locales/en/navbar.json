@@ -15,6 +15,10 @@
     {
       "section": "About",
       "href": "/about"
+    },
+    {
+      "section": "Blog",
+      "href": "/blog"
     }
   ]
 }
