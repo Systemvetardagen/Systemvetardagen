@@ -179,7 +179,7 @@ const Footer = () => {
                   viewBox="0 0 24 24"
                   width="36px"
                   height="36px"
-                  className="text-gray-900 hover:text-pink-600 w-9 h-9"
+                  className="text-gray-900 hover:text-pink-600 transition-colors"
                   fill="currentColor"
                 >
                   {/* <defs>
