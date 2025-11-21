@@ -1,6 +1,53 @@
 {
   "readMore": "Läs mer",
   "posts": {
+    "fairie": {
+      "title": "Bli en Fair'ie - Hjälp till att Göra Systemvetardagen 2026 Oförglömlig!",
+      "date": "22 November, 2025",
+      "image": "/images/workers.jpg",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "Brinner du för att skapa minnesvärda upplevelser och vara en del av något större? Vi söker entusiastiska Fair'ies som kan hjälpa till att förverkliga Systemvetardagen 2026!"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna - hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Vad får du i utbyte? Om du arbetar får du aktiv DISK-status, värdefull erfarenhet för ditt CV och möjlighet att nätverka med ledande teknikföretag och ambitiösa studenter. Dessutom blir du inbjuden till vår exklusiva Tackfest med gratis mat, dryck, musik och firande!"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Redo att gå med i teamet? "
+          },
+          {
+            "type": "link",
+            "content": "Anmäl dig här",
+            "href": "https://forms.office.com/pages/responsepage.aspx?id=-d6Dd48OpkmgDUGVg8iFYw0XRXYagRNBnDGOWJUt59hUQUFDM0xOWTI2RlYyUDNFNlE5WDZVTFFKTS4u&route=shorturl",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " för att uttrycka ditt intresse. Närmare mässan kommer du att bjudas in till ett informationsmöte där du får lära dig mer om tillgängliga skift och vad du kan förvänta dig."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Hjälp oss att göra Systemvetardagen 2026 verkligt oförglömlig!"
+          }
+        ]
+      ]
+    },
     "announcement": {
       "title": "Systemvetardagen 2026: Av studenter, för studenter!",
       "date": "20 November, 2025",
@@ -9,7 +56,7 @@
         [
           {
             "type": "text",
-            "content": "Vi är otroligt glada att kunna berätta att Systemvetardagen är tillbaka! Från första dagen i det här projektet har vi lagt stor vikt vid att skapa en oförglömlig upplevelse för alla studenter och företag som deltar i årets jubileumsutgåva - vår 30:e årsdag!"
+            "content": "Vi är otroligt glada att kunna berätta att Systemvetardagen är tillbaka! Från första dagen i det här projektet har vi lagt stor vikt vid att planera en oförglömlig upplevelse för alla studenter och företag som kommer att delta i årets jubileumsutgåva - vår 30:e årsdag!"
           }
         ],
         [
@@ -30,13 +77,13 @@
           },
           {
             "type": "text",
-            "content": " och besökare till Kista Nod. Oavsett om du söker praktikplatser, examensarbetesmöjligheter eller din första karriärposition, erbjuder Systemvetardagen 2026 oöverträffade nätverksmöjligheter med branschledare. Vårt team har arbetat outtröttligt för att säkerställa att varje detalj - från företagsplaceringar till spännande föreläsningar och aktiviteter - skapar bästa möjliga upplevelse för alla."
+            "content": " och besökare till Kista Nod. Oavsett om du söker praktikplatser, examensarbetesmöjligheter eller din första karriärposition, kommer Systemvetardagen 2026 att erbjuda oöverträffade nätverksmöjligheter med branschledare. Vårt team arbetar hårt för att säkerställa att varje detalj - från företagsplaceringar till spännande föreläsningar och aktiviteter - skapar bästa möjliga upplevelse för alla."
           }
         ],
         [
           {
             "type": "text",
-            "content": "Vi vill rikta ett hjärtligt tack till alla deltagande företag, våra engagerade volontärer, och framför allt till er - studenterna som gör detta evenemang meningsfullt. Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
+            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er - studenterna som gör detta evenemang meningsfullt. Vi letar också efter engagerade volontärer som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
           }
         ],
         [
@@ -83,103 +130,6 @@
           {
             "type": "text",
             "content": "Projektledningsteamet, Systemvetardagen 2026"
-          }
-        ]
-      ]
-    },
-    "welcome": {
-      "title": "Välkommen till Systemvetardagen 2026 - Jubileumsutgåvan!",
-      "date": "22 November, 2025",
-      "image": "/images/crowded.webp",
-      "paragraphs": [
-        [
-          {
-            "type": "text",
-            "content": "Vi är glada att kunna meddela att Systemvetardagen 2026 närmar sig! I år firar vi vårt 30-årsjubileum, och vi celebrerar tre decennier av att skapa kontakter mellan talangfulla studenter och ledande teknikföretag."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Mässan äger rum den 18 februari 2026, och vi förväntar oss över 2 000 besökare och mer än 50 utställande företag. Oavsett om du letar efter praktikplatser, examensarbeten eller heltidsanställningar är detta evenemanget du inte vill missa!"
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Glöm inte att kolla in vår "
-          },
-          {
-            "type": "link",
-            "content": "utställarsida",
-            "href": "/companies"
-          },
-          {
-            "type": "text",
-            "content": " för att se vilka företag som kommer att delta. Du kan också "
-          },
-          {
-            "type": "link",
-            "content": "boka intervjuer",
-            "href": "https://mitt.systemvetardagen.se",
-            "external": true
-          },
-          {
-            "type": "text",
-            "content": " med företag i förväg för att maximera din tid på mässan."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Håll utkik efter fler uppdateringar, och vi ser fram emot att träffa dig på Systemvetardagen 2026!"
-          }
-        ]
-      ]
-    },
-    "fairie": {
-      "title": "Bli en Fair'ie - Hjälp till att Göra Systemvetardagen 2026 Oförglömlig!",
-      "date": "21 November, 2025",
-      "image": "/images/workers.jpg",
-      "paragraphs": [
-        [
-          {
-            "type": "text",
-            "content": "Brinner du för att skapa minnesvärda upplevelser och vara en del av något större? Vi söker entusiastiska Fair'ies som kan hjälpa till att förverkliga Systemvetardagen 2026!"
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna - hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Vad får du i utbyte? Om du arbetar två skift får du aktiv DISK-status, värdefull erfarenhet för ditt CV och möjlighet att nätverka med ledande teknikföretag och ambitiösa studenter. Dessutom blir du inbjuden till vår exklusiva Tackfest med gratis mat, dryck, musik och firande!"
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Redo att gå med i teamet? "
-          },
-          {
-            "type": "link",
-            "content": "Anmäl dig här",
-            "href": "https://forms.office.com/pages/responsepage.aspx?id=-d6Dd48OpkmgDUGVg8iFYw0XRXYagRNBnDGOWJUt59hUQUFDM0xOWTI2RlYyUDNFNlE5WDZVTFFKTS4u&route=shorturl",
-            "external": true
-          },
-          {
-            "type": "text",
-            "content": " för att uttrycka ditt intresse. Närmare mässan kommer du att bjudas in till ett informationsmöte där du får lära dig mer om tillgängliga skift och vad du kan förvänta dig."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Hjälp oss att göra Systemvetardagen 2026 verkligt oförglömlig!"
           }
         ]
       ]

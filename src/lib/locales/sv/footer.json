@@ -12,7 +12,8 @@
       "navigation": {
         "companies": "Företag",
         "visitor": "Besökare",
-        "about": "Om oss"
+        "about": "Om oss",
+        "blog": "Blogg"
       },
       "contact": {
         "label": "Kontakt:",

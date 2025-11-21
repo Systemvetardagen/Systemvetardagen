@@ -14,7 +14,7 @@ const Footer = () => {
       title: string;
       description: string;
       studentUnion: { label: string; url: string };
-      navigation: { companies: string; visitor: string; about: string };
+      navigation: { companies: string; visitor: string; about: string; blog: string };
       contact: { label: string; email: string };
     };
     socials: {
@@ -127,6 +127,12 @@ const Footer = () => {
                 to="/about"
               >
                 {sections.information.navigation.about}
+              </Link>
+              <Link
+                className="text-sm hover:text-black transition-colors"
+                to="/blog"
+              >
+                {sections.information.navigation.blog}
               </Link>
               <p className="text-sm mb-1">
                 {sections.information.contact.label}{" "}

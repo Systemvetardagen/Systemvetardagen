@@ -1,95 +1,9 @@
 {
   "readMore": "Read more",
   "posts": {
-    "announcement": {
-      "title": "Systemvetardagen 2026: By Students, For Students!",
-      "date": "November 20, 2025",
-      "image": "/images/nod.webp",
-      "paragraphs": [
-        [
-          {
-            "type": "text",
-            "content": "We are incredibly excited to announce that Systemvetardagen is back! From day one of this project, we have dedicated ourselves to creating an unforgettable experience for all students and companies participating in this year's jubilee edition - our 30th anniversary!"
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "This milestone is not just a celebration of three decades of connecting students with leading tech companies, but also a testament to the hard work and passion of countless students who have made Systemvetardagen what it is today. Organized entirely by students, for students, through the Student Union DISK, this fair has become the premier event for IT and System Science students in Sweden."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "On February 18, 2026, we welcome leading tech "
-          },
-          {
-            "type": "link",
-            "content": "companies",
-            "href": "/companies"
-          },
-          {
-            "type": "text",
-            "content": " and visitors to Kista Nod. Whether you're seeking internships, thesis opportunities, or your first career position, Systemvetardagen 2026 offers unparalleled networking opportunities with industry leaders. Our team has worked tirelessly to ensure every detail - from company placements to exciting lectures and activities - creates the best possible experience for everyone."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "We want to extend our heartfelt thanks to all participating companies, our dedicated volunteers, and most importantly, to you - the students who make this event meaningful. Together, we're not just hosting a job fair; we're building bridges between ambition and opportunity, between education and career, between today's students and tomorrow's leaders."
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "See you at Systemvetardagen 2026 - let's make this jubilee edition one to remember!"
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Best regards,"
-          }
-        ],
-        [
-          {
-            "type": "link",
-            "content": "Diana Noran",
-            "href": "https://www.linkedin.com/in/diana-noran/",
-            "external": true
-          },
-          {
-            "type": "text",
-            "content": ", "
-          },
-          {
-            "type": "link",
-            "content": "Tanja Hosseinzadeh",
-            "href": "https://www.linkedin.com/in/tanja-hosseinzadeh/",
-            "external": true
-          },
-          {
-            "type": "text",
-            "content": " & "
-          },
-          {
-            "type": "link",
-            "content": "David Singhateh",
-            "href": "https://www.linkedin.com/in/david-singhateh-680489303/",
-            "external": true
-          }
-        ],
-        [
-          {
-            "type": "text",
-            "content": "Project Management Team, Systemvetardagen 2026"
-          }
-        ]
-      ]
-    },
     "fairie": {
       "title": "Become a Fair'ie - Help Make Systemvetardagen 2026 Unforgettable!",
-      "date": "November 21, 2025",
+      "date": "November 22, 2025",
       "image": "/images/workers.jpg",
       "paragraphs": [
         [
@@ -130,6 +44,92 @@
           {
             "type": "text",
             "content": "Help us make Systemvetardagen 2026 truly unforgettable!"
+          }
+        ]
+      ]
+    },
+    "announcement": {
+      "title": "Systemvetardagen 2026: By Students, For Students!",
+      "date": "November 20, 2025",
+      "image": "/images/nod.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "We are incredibly excited to announce that Systemvetardagen is back! From day one of this project, we have dedicated ourselves to planning an unforgettable experience for all students and companies who will participate in this year's jubilee edition - our 30th anniversary!"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "This milestone is not just a celebration of three decades of connecting students with leading tech companies, but also a testament to the hard work and passion of countless students who have made Systemvetardagen what it is today. Organized entirely by students, for students, through the Student Union DISK, this fair has become the premier event for IT and System Science students in Sweden."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "On February 18, 2026, we will welcome leading tech "
+          },
+          {
+            "type": "link",
+            "content": "companies",
+            "href": "/companies"
+          },
+          {
+            "type": "text",
+            "content": " and visitors to Kista Nod. Whether you're seeking internships, thesis opportunities, or your first career position, Systemvetardagen 2026 will offer unparalleled networking opportunities with industry leaders."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "We want to extend our heartfelt thanks to all participating companies and most importantly, to you - the students who make this event meaningful. We are also looking for dedicated volunteers who want to help create this amazing event! Together, we're not just hosting a job fair; we're building bridges between ambition and opportunity, between education and career, between today's students and tomorrow's leaders."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "See you at Systemvetardagen 2026 - let's make this jubilee one to remember!"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Best regards,"
+          }
+        ],
+        [
+          {
+            "type": "link",
+            "content": "Diana Noran",
+            "href": "https://www.linkedin.com/in/diana-noran/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": ", "
+          },
+          {
+            "type": "link",
+            "content": "Tanja Hosseinzadeh",
+            "href": "https://www.linkedin.com/in/tanja-hosseinzadeh/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " & "
+          },
+          {
+            "type": "link",
+            "content": "David Singhateh",
+            "href": "https://www.linkedin.com/in/david-singhateh-680489303/",
+            "external": true
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Project Management Team, Systemvetardagen 2026"
           }
         ]
       ]

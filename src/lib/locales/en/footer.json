@@ -12,7 +12,8 @@
       "navigation": {
         "companies": "Companies",
         "visitor": "Visitor",
-        "about": "About us"
+        "about": "About us",
+        "blog": "Blog"
       },
       "contact": {
         "label": "Contact:",

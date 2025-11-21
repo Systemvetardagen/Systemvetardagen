@@ -15,15 +15,14 @@ const BlogListPage = () => {
         
         <div className="flex flex-col gap-8 max-w-5xl mx-auto">
           <BlogPostPreview
-            postKey="posts.announcement"
-            postId="announcement"
-            imageSrc="/images/nod.webp"
-          />
-          
-          <BlogPostPreview
             postKey="posts.fairie"
             postId="fairie"
             imageSrc="/images/workers.jpg"
+          />
+          <BlogPostPreview
+            postKey="posts.announcement"
+            postId="announcement"
+            imageSrc="/images/nod.webp"
           />
         </div>
       </div>
