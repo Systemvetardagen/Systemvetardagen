@@ -1,32 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
+import BlogPostPreview from "@/components/common/BlogPostPreview";
 
 export const HighlightSection: React.FC = () => {
   return (
     <div className="w-full flex flex-col gap-8 my-12 md:mt-0">
-      {/* <div className="flex flex-col p-4 gap-4 md:flex-row md:items-center border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-        <img
-          src="/images/nod.webp"
-          alt="Systemvetardagen"
-          className="h-40 object-cover rounded-2xl"
-        />
-        <div className="flex flex-col justify-between">
-          <h2 className="text-lg font-semibold mb-2">
-            Systemvetardagen 2026: Av studenter, för studenter!
-          </h2>
-          <p className="text-gray-500 text-sm mb-2">
-            Vi är otroligt glada att kunna berätta att Systemvetardagen är
-            tillbaka! Från första dagen i det här projektet har vi lagt
-            stor...
-          </p>
-          <a
-            href="#"
-            className="text-blue-500 font-medium text-sm hover:underline"
-          >
-            Läs mer
-          </a>
-        </div>
-      </div> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <NavLink
           to="/visit-info"
@@ -73,6 +52,22 @@ export const HighlightSection: React.FC = () => {
             </div>
           </div>
         </NavLink>
+      </div>
+      <div className="flex flex-col max-w-[90%] mx-auto">
+        <BlogPostPreview
+          postKey="posts.announcement"
+          postId="announcement"
+          imageSrc="/images/nod.webp"
+        />
+        <div className="mt-8 flex justify-center">
+          <NavLink
+            to="/blog"
+            className="inline-flex items-center gap-2 text-lg font-medium hover:underline transition-all group"
+          >
+            View all blog posts
+            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </NavLink>
+        </div>
       </div>
     </div>
   );

@@ -20,6 +20,8 @@ import programs_en from "@/lib/locales/en/programs.json";
 import programs_sv from "@/lib/locales/sv/programs.json";
 import footer_en from "@/lib/locales/en/footer.json";
 import footer_sv from "@/lib/locales/sv/footer.json";
+import blog_en from "@/lib/locales/en/blog.json";
+import blog_sv from "@/lib/locales/sv/blog.json";
 
 
 
@@ -45,7 +47,8 @@ i18next.init({
       lectures: lectures_en,
       projectGroup: project_group_en,
       programs: programs_en,
-      footer: footer_en
+      footer: footer_en,
+      blog: blog_en
     },
     sv: {
       common: common_sv,
@@ -58,7 +61,8 @@ i18next.init({
       lectures: lectures_sv,
       projectGroup: project_group_sv,
       programs: programs_sv,
-      footer: footer_sv
+      footer: footer_sv,
+      blog: blog_sv
     },
   },
 });
