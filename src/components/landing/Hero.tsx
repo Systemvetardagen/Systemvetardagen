@@ -61,6 +61,7 @@ const Hero = () => {
               href="https://maps.app.goo.gl/qf3VPrddNHJzNX7M7"
               rel="noreferrer nofollow"
               target="_blank"
+              className="hover:text-gray-200 inline-block transition-transform duration-150 hover:scale-102"
             >
               Kista Nod, Borgarfjordsgatan 12
             </a>
