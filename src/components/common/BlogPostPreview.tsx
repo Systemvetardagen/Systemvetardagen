@@ -29,13 +29,13 @@ const BlogPostPreview = ({ postKey, postId, imageSrc }: BlogPostPreviewProps) =>
   return (
     <NavLink
       to={`/blog/${postId}`}
-      className="flex flex-col max-w-[90%] mx-auto p-4 gap-4 md:flex-row md:items-center border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800"
+      className="flex flex-col w-full p-4 gap-4 md:flex-row md:items-center border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800"
     >
       {imageSrc && (
         <img
           src={imageSrc}
           alt={post.title}
-          className="h-40 md:w-48 object-cover rounded-2xl"
+          className="w-full h-48 md:w-48 md:h-40 object-cover rounded-2xl"
         />
       )}
       <div className="flex flex-col justify-between flex-1">

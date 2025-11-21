@@ -53,7 +53,7 @@ export const HighlightSection: React.FC = () => {
           </div>
         </NavLink>
       </div>
-      <div className="flex flex-col max-w-[90%] mx-auto">
+      <div className="flex flex-col w-full px-4 md:max-w-[90%] md:mx-auto">
         <BlogPostPreview
           postKey="posts.announcement"
           postId="announcement"
