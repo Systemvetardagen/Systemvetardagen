@@ -83,7 +83,16 @@
         [
           {
             "type": "text",
-            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er studenterna som gör detta evenemang meningsfullt. Vi letar också efter engagerade volontärer som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
+            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er studenterna som gör detta evenemang meningsfullt. Vi letar också efter"
+          },
+          {
+            "type": "link",
+            "content": " engagerade volontärer ",
+            "href": "/blog/fairie"
+          },
+          {
+            "type": "text",
+            "content": "som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
           }
         ],
         [
