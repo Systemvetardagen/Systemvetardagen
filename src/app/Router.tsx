@@ -13,7 +13,7 @@ import {
   VisitInfoPage,
   Companies,
   BlogListPage,
-  BlogDetailPage,
+  BlogPage,
 } from "@/pages";
 
 const Router: React.FC = () => {
@@ -31,7 +31,7 @@ const Router: React.FC = () => {
         <Route path="/visit-info" element={<VisitInfoPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<BlogListPage />} />
-        <Route path="/blog/:postId" element={<BlogDetailPage />} />
+        <Route path="/blog/:postId" element={<BlogPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

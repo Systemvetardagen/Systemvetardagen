@@ -73,6 +73,17 @@
             "header": "Keep yourself updated",
             "body": "Would you like to receive updates about Systemvetardagen with tailored information via email?",
             "button": "Click here!"
+        },
+        "highlights": {
+            "visitorInfo": {
+                "title": "Visitor Information",
+                "subtitle": "Plan your visit"
+            },
+            "aboutUs": {
+                "title": "About Us",
+                "subtitle": "Learn more about the event"
+            },
+            "viewAllBlogPosts": "View all blog posts"
         }
     }
 }

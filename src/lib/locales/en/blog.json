@@ -1,4 +1,6 @@
 {
+  "title": "Blog",
+  "subtitle": "Stay updated with the latest news, announcements, and insights from Systemvetardagen 2026",
   "readMore": "Read more",
   "posts": {
     "fairie": {
@@ -15,7 +17,7 @@
         [
           {
             "type": "text",
-            "content": "As a Fair'ie, you'll be at the heart of the action helping with preparations, welcoming companies and guests, guiding visitors, and ensuring everything runs smoothly. You'll enjoy free food and drinks throughout the day, and you'll still have plenty of time to explore the fair and talk to companies yourself."
+            "content": "As a Fair'ie, you'll be at the heart of the action - helping with preparations, welcoming companies and guests, guiding visitors, and ensuring everything runs smoothly. You'll enjoy free food and drinks throughout the day, and you'll still have plenty of time to explore the fair and talk to companies yourself."
           }
         ],
         [
@@ -49,14 +51,14 @@
       ]
     },
     "announcement": {
-      "title": "Systemvetardagen 2026 - By Students, For Students!",
+      "title": "Announcing Systemvetardagen 2026!",
       "date": "November 20, 2025",
-      "image": "/images/nod.webp",
+      "image": "/images/heads.jpeg",
       "paragraphs": [
         [
           {
             "type": "text",
-            "content": "We are incredibly excited to announce that Systemvetardagen is back! From day one of this project, we have dedicated ourselves to planning an unforgettable experience for all students and companies who will participate in this year's jubilee edition, our 30th anniversary!"
+            "content": "We are incredibly excited to announce that Systemvetardagen is back! From day one of this project, we have dedicated ourselves to planning an unforgettable experience for all students and companies who will participate in this year's jubilee edition - our 30th anniversary!"
           }
         ],
         [
@@ -83,23 +85,13 @@
         [
           {
             "type": "text",
-            "content": "We want to extend our heartfelt thanks to all participating companies and most importantly, to the students who make this event meaningful. We are also looking for "
-          },
-          {
-            "type": "link",
-            "content": "dedicated volunteers",
-            "href": "/blog/fairie"
-          },
-          {
-            "type": "text",
-            "content": " who want to help create this amazing event! Together, we're not just hosting a job fair, we're building bridges between ambition and opportunity, between education and career, between today's students and tomorrow's leaders."
+            "content": "We want to extend our heartfelt thanks to all participating companies and most importantly, to you - the students who make this event meaningful. We are also looking for dedicated volunteers who want to help create this amazing event! Together, we're not just hosting a job fair; we're building bridges between ambition and opportunity, between education and career, between today's students and tomorrow's leaders."
           }
-
         ],
         [
           {
             "type": "text",
-            "content": "See you at Systemvetardagen 2026, let's make this jubilee one to remember!"
+            "content": "See you at Systemvetardagen 2026 - let's make this jubilee one to remember!"
           }
         ],
         [
