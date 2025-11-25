@@ -35,7 +35,7 @@ const BlogPostPreview = ({ postKey, postId, imageSrc }: BlogPostPreviewProps) =>
         <img
           src={imageSrc}
           alt={post.title}
-          className="w-full h-48 md:w-48 md:h-40 object-cover rounded-2xl"
+          className="w-full h-48 md:w-64 md:h-40 object-cover rounded-2xl flex-shrink-0"
         />
       )}
       <div className="flex flex-col justify-between flex-1">
