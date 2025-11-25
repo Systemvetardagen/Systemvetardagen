@@ -60,7 +60,7 @@ export const HighlightSection: React.FC = () => {
         <BlogPostPreview
           postKey="posts.announcement"
           postId="announcement"
-          imageSrc="/images/nod.webp"
+          imageSrc="/images/heads.jpeg"
         />
         <div className="mt-8 flex justify-center">
           <NavLink
