@@ -73,6 +73,17 @@
       "header": "Håll dig uppdaterad",
       "body": "Vill du få uppdateringar om Systemvetardagen med skräddarsydd information via e-post?",
       "button": "Klicka här!"
+    },
+    "highlights": {
+      "visitorInfo": {
+        "title": "Besöksinformation",
+        "subtitle": "Planera ditt besök"
+      },
+      "aboutUs": {
+        "title": "Om oss",
+        "subtitle": "Läs mer om evenemanget"
+      },
+      "viewAllBlogPosts": "Visa alla blogginlägg"
     }
   }
 }

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { FadeInSection } from "../components/layout";
 
 export interface BlogParagraph {
@@ -16,25 +16,37 @@ export interface BlogPostData {
   paragraphs: BlogParagraph[][];
 }
 
-interface BlogPostProps {
-  postKey: string;
+interface BlogPosts {
+  [key: string]: BlogPostData;
 }
 
-const BlogPost = ({ postKey }: BlogPostProps) => {
+const BlogPage = () => {
+  const { postId } = useParams<{ postId: string }>();
   const [t] = useTranslation("blog");
-  const post = t(postKey, { returnObjects: true }) as BlogPostData;
+  const allPosts = t("posts", { returnObjects: true }) as BlogPosts;
+
+  // Check if postId exists in the posts
+  if (!postId || !allPosts[postId]) {
+    return <Navigate to="/blog" replace />;
+  }
+
+  const post = allPosts[postId];
 
   if (!post || typeof post === "string" || !post.paragraphs) {
     return (
-      <div className="max-w-4xl mx-auto py-8 px-4">
-        <div className="bg-red-100 dark:bg-red-900 rounded-lg p-6 text-red-800 dark:text-red-200">
-          <p className="font-semibold">Error loading blog post</p>
-          <p className="text-sm mt-2">
-            Post key: <code className="bg-red-200 dark:bg-red-800 px-2 py-1 rounded">{postKey}</code>
-          </p>
-          <p className="text-sm mt-1">
-            Make sure the translation file is loaded and the post key exists.
-          </p>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto py-20">
+          <div className="max-w-4xl mx-auto py-8 px-4">
+            <div className="bg-red-100 dark:bg-red-900 rounded-lg p-6 text-red-800 dark:text-red-200">
+              <p className="font-semibold">Error loading blog post</p>
+              <p className="text-sm mt-2">
+                Post ID: <code className="bg-red-200 dark:bg-red-800 px-2 py-1 rounded">{postId}</code>
+              </p>
+              <p className="text-sm mt-1">
+                Make sure the translation file is loaded and the post exists.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -71,8 +83,10 @@ const BlogPost = ({ postKey }: BlogPostProps) => {
   };
 
   return (
-    <FadeInSection direction="fadeUp" className="max-w-4xl mx-auto py-8 px-4">
-      <article className="overflow-hidden p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto py-20">
+        <FadeInSection direction="fadeUp" className="max-w-4xl mx-auto py-8 px-4">
+          <article className="overflow-hidden p-8">
         {post.image && (
           <img
             src={post.image}
@@ -108,7 +122,9 @@ const BlogPost = ({ postKey }: BlogPostProps) => {
         </div>
       </article>
     </FadeInSection>
+      </div>
+    </div>
   );
 };
 
-export default BlogPost;
+export default BlogPage;

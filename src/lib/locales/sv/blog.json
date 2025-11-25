@@ -1,4 +1,6 @@
 {
+  "title": "Blogg",
+  "subtitle": "Håll dig uppdaterad med de senaste nyheterna, tillkännagivandena och insikterna från Systemvetardagen 2026",
   "readMore": "Läs mer",
   "posts": {
     "fairie": {
@@ -15,7 +17,7 @@
         [
           {
             "type": "text",
-            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna, hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
+            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna - hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
           }
         ],
         [
@@ -43,13 +45,13 @@
         [
           {
             "type": "text",
-            "content": "Hjälp oss att göra Systemvetardagen 2026 oförglömlig!"
+            "content": "Hjälp oss att göra Systemvetardagen 2026 verkligt oförglömlig!"
           }
         ]
       ]
     },
     "announcement": {
-      "title": "Systemvetardagen 2026 - Av studenter, för studenter!",
+      "title": "Systemvetardagen 2026 är här!",
       "date": "20 November, 2025",
       "image": "/images/heads.jpeg",
       "paragraphs": [
@@ -77,28 +79,19 @@
           },
           {
             "type": "text",
-            "content": " och besökare till Kista Nod. Oavsett om du söker praktikplatser, examensarbetesmöjligheter eller din första karriärposition, kommer Systemvetardagen 2026 att erbjuda oöverträffade nätverksmöjligheter med branschledare. Vårt team arbetar hårt för att säkerställa att varje detalj, från företagsplaceringar till spännande föreläsningar och aktiviteter skapar bästa möjliga upplevelse för alla."
+            "content": " och besökare till Kista Nod. Oavsett om du söker praktikplatser, examensarbetesmöjligheter eller din första karriärposition, kommer Systemvetardagen 2026 att erbjuda oöverträffade nätverksmöjligheter med branschledare. Vårt team arbetar hårt för att säkerställa att varje detalj - från företagsplaceringar till spännande föreläsningar och aktiviteter - skapar bästa möjliga upplevelse för alla."
           }
         ],
         [
           {
             "type": "text",
-            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er studenterna som gör detta evenemang meningsfullt. Vi letar också efter"
-          },
-          {
-            "type": "link",
-            "content": " engagerade volontärer ",
-            "href": "/blog/fairie"
-          },
-          {
-            "type": "text",
-            "content": "som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
+            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er - studenterna som gör detta evenemang meningsfullt. Vi letar också efter engagerade volontärer som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
           }
         ],
         [
           {
             "type": "text",
-            "content": "Vi ses på Systemvetardagen 2026, låt oss göra detta jubileum minnesvärt!"
+            "content": "Vi ses på Systemvetardagen 2026 - låt oss göra denna jubileumsutgåva minnesvärd!"
           }
         ],
         [
