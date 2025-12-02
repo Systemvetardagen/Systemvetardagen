@@ -17,7 +17,7 @@
         [
           {
             "type": "text",
-            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna - hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
+            "content": "Som Fair'ie kommer du att vara i hjärtat av händelserna, hjälpa till med förberedelser, välkomna företag och gäster, vägleda besökare och se till att allt fungerar smidigt. Du kommer att njuta av gratis mat och dryck under hela dagen, och du har fortfarande gott om tid att utforska mässan och prata med företag själv."
           }
         ],
         [
@@ -53,12 +53,12 @@
     "announcement": {
       "title": "Systemvetardagen 2026 är här!",
       "date": "20 November, 2025",
-      "image": "/images/heads.jpeg",
+      "image": "/images/heads.jpg",
       "paragraphs": [
         [
           {
             "type": "text",
-            "content": "Vi är otroligt glada att kunna berätta att Systemvetardagen är tillbaka! Från första dagen i det här projektet har vi lagt stor vikt vid att planera en oförglömlig upplevelse för alla studenter och företag som kommer att delta i årets jubileumsutgåva - vår 30:e årsdag!"
+            "content": "Vi är otroligt glada att kunna berätta att Systemvetardagen är tillbaka! Från första dagen i det här projektet har vi lagt stor vikt vid att planera en oförglömlig upplevelse för alla studenter och företag som kommer att delta i årets jubileumsutgåva, vår 30:e årsdag!"
           }
         ],
         [
@@ -85,13 +85,13 @@
         [
           {
             "type": "text",
-            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er - studenterna som gör detta evenemang meningsfullt. Vi letar också efter engagerade volontärer som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
+            "content": "Vi vill rikta ett stort tack till alla deltagande företag och framför allt till er, studenterna som gör detta evenemang meningsfullt. Vi letar också efter engagerade volontärer som vill vara med och skapa detta fantastiska evenemang! Tillsammans arrangerar vi inte bara en jobbmässa; vi bygger broar mellan ambition och möjlighet, mellan utbildning och karriär, mellan dagens studenter och morgondagens ledare."
           }
         ],
         [
           {
             "type": "text",
-            "content": "Vi ses på Systemvetardagen 2026 - låt oss göra denna jubileumsutgåva minnesvärd!"
+            "content": "Vi ses på Systemvetardagen 2026, låt oss göra denna jubileumsutgåva minnesvärd!"
           }
         ],
         [
