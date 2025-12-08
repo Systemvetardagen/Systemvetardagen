@@ -3,8 +3,133 @@
   "subtitle": "Håll dig uppdaterad med de senaste nyheterna, tillkännagivandena och insikterna från Systemvetardagen 2026",
   "readMore": "Läs mer",
   "posts": {
+    "meet": {
+      "title": "Maxa Systemvetardagen, Anmäl dig till möten!",
+      "date": "8 December, 2025",
+      "image": "/images/sysdagen.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "Systemvetardagen närmar sig, och även om det är kul att samla gratis merch är det verkliga värdet de kontakter du skapar. För att hjälpa dig gå från småprat till seriösa karriärsamtal är vi glada att presentera Systemvetardagens Mötesplattform."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Detta heltäckande verktyg kopplar studenter direkt till företag för fokuserade, schemalagda samtal under mässan. "
+          },
+          {
+            "type": "link",
+            "content": "Registrera dig nu",
+            "href": "https://mitt.systemvetardagen.se/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " och säkra ditt drömjobb."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Så Fungerar Det"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Att navigera på plattformen är enkelt. Följ bara dessa fyra steg för att förbereda ditt schema:"
+          }
+        ],
+        [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              {
+                "title": "Registrera dig:",
+                "content": "Skapa din profil och välj ditt nuvarande utbildningsprogram."
+              },
+              {
+                "title": "Ladda upp ditt CV:",
+                "content": "Bifoga ett koncist CV så att rekryterare snabbt kan bedöma din lämplighet för deras roller."
+              },
+              {
+                "title": "Ansök:",
+                "content": "Bläddra bland företag med lediga platser och ansök om möten. Du får bekräftelser direkt i plattformen."
+              },
+              {
+                "title": "Möts:",
+                "content": "På mässdagen träffar du företagsrepresentanterna vid din schemalagda tid."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Tips för en bra Intervju"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "När du har säkrat dina platser är förberedelse nyckeln. Här är hur du gör ett bestående intryck:"
+          }
+        ],
+        [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              {
+                "title": "Ansök Strategiskt:",
+                "content": "Kvalitet slår kvantitet. Ansök inte till varenda företag. Fokusera på 3–5 företag som verkligen intresserar dig för att säkerställa mer meningsfulla samtal."
+              },
+              {
+                "title": "Researcha & Förbered:",
+                "content": "Undersök företaget i förväg. Förbered genomtänkta frågor om deras arbetskultur, teknikstack och karriärmöjligheter."
+              },
+              {
+                "title": "Uppdatera ditt CV:",
+                "content": "Håll ditt CV kortfattat (1–2 sidor). Framhäv relevanta projekt, färdigheter och erfarenheter som specifikt matchar de företag du ska träffa."
+              },
+              {
+                "title": "Kom i God Tid:",
+                "content": "Dyk upp till ditt schemalagda möte några minuter i förväg. Punktlighet visar professionalism och ger dig ett ögonblick att samla dig."
+              },
+              {
+                "title": "Var Autentisk:",
+                "content": "Företag värdesätter ditt unika perspektiv som student. Var dig själv, visa genuint intresse och låt din personlighet lysa igenom."
+              },
+              {
+                "title": "Följ Upp:",
+                "content": "Skicka ett kort tack-mejl efter mässan. Det är ett bra sätt att förstärka ditt intresse och säkerställa att du blir minnesvärd."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Redo att börja? "
+          },
+          {
+            "type": "link",
+            "content": "Logga in på plattformen",
+            "href": "https://mitt.systemvetardagen.se/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " idag och börja planera din framtid!"
+          }
+        ]
+      ]
+    },
     "fairie": {
-      "title": "Bli en Fair'ie - Hjälp till att Göra Systemvetardagen 2026 Oförglömlig!",
+      "title": "Bli en Fair'ie & Hjälp till att Göra Systemvetardagen 2026 Oförglömlig!",
       "date": "22 November, 2025",
       "image": "/images/workers.jpg",
       "paragraphs": [
