@@ -3,8 +3,133 @@
   "subtitle": "Stay updated with the latest news, announcements, and insights from Systemvetardagen 2026",
   "readMore": "Read more",
   "posts": {
+    "meet": {
+      "title": "Master Systemvetardagen, Sign up for meetings!",
+      "date": "December 8, 2025",
+      "image": "/images/sysdagen.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "Systemvetardagen is right around the corner, and while collecting free merch is fun, the real value lies in the connections you make. To help you move beyond small talk and into serious career discussions, we are excited to introduce Systemvetardagen's Meeting Platform."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "This all-in-one tool connects students directly with companies for focused, scheduled conversations during the fair. "
+          },
+          {
+            "type": "link",
+            "content": "Sign up now",
+            "href": "https://mitt.systemvetardagen.se/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " to secure your dream job."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "How It Works"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Navigating the platform is simple. Just follow these four steps to get your schedule ready:"
+          }
+        ],
+        [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              {
+                "title": "Sign Up:",
+                "content": "Create your profile and select your current educational program."
+              },
+              {
+                "title": "Upload Your CV:",
+                "content": "Attach a concise CV so recruiters can quickly assess your fit for their roles."
+              },
+              {
+                "title": "Apply:",
+                "content": "Browse companies with open slots and apply for meetings. You will receive confirmations directly in the platform."
+              },
+              {
+                "title": "Meet:",
+                "content": "On the day of the fair, meet the company representatives at your scheduled time."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Tips for a Successful Interview"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Once you have secured your slots, preparation is key. Here is how to make a lasting impression:"
+          }
+        ],
+        [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              {
+                "title": "Apply Strategically:",
+                "content": "Quality beats quantity. Don't apply to every single company. Focus on 3–5 companies that truly interest you to ensure more meaningful and relaxed conversations."
+              },
+              {
+                "title": "Research & Prepare:",
+                "content": "Look into the company beforehand. Prepare thoughtful questions about their work culture, tech stack, and career opportunities."
+              },
+              {
+                "title": "Update Your CV:",
+                "content": "Keep your CV concise (1–2 pages). Highlight relevant projects, skills, and experiences that specifically match the companies you are meeting."
+              },
+              {
+                "title": "Arrive Early:",
+                "content": "Show up to your scheduled meeting a few minutes early. Punctuality demonstrates professionalism and gives you a moment to compose yourself."
+              },
+              {
+                "title": "Be Authentic:",
+                "content": "Companies value your unique perspective as a student. Be yourself, show genuine interest, and let your personality shine."
+              },
+              {
+                "title": "Follow Up:",
+                "content": "Send a brief thank-you email after the fair. It is a great way to reinforce your interest and ensure you stay memorable."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Ready to get started? "
+          },
+          {
+            "type": "link",
+            "content": "Log in to the platform",
+            "href": "https://mitt.systemvetardagen.se/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": " today and start planning your future!"
+          }
+        ]
+      ]
+    },
     "fairie": {
-      "title": "Become a Fair'ie - Help Make Systemvetardagen 2026 Unforgettable!",
+      "title": "Become a Fair'ie & Help Make Systemvetardagen 2026 Unforgettable!",
       "date": "November 22, 2025",
       "image": "/images/workers.jpg",
       "paragraphs": [

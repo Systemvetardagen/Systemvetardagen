@@ -2,11 +2,18 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { FadeInSection } from "../components/layout";
 
-export interface BlogParagraph {
-  type: "text" | "link";
+export interface BlogListItem {
+  title: string;
   content: string;
+}
+
+export interface BlogParagraph {
+  type: "text" | "link" | "list" | "heading";
+  content?: string;
   href?: string;
   external?: boolean;
+  ordered?: boolean;
+  items?: BlogListItem[];
 }
 
 export interface BlogPostData {
@@ -57,6 +64,43 @@ const BlogPage = () => {
 
   const renderParagraphContent = (paragraph: BlogParagraph[]) => {
     return paragraph.map((segment, index) => {
+      if (segment.type === "heading") {
+        return (
+          <h3
+            key={index}
+            className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4"
+          >
+            {segment.content}
+          </h3>
+        );
+      }
+      
+      if (segment.type === "list") {
+        const ListTag = segment.ordered ? "ol" : "ul";
+        return (
+          <ListTag
+            key={index}
+            className={`space-y-3 my-4 ${
+              segment.ordered
+                ? "list-decimal list-inside"
+                : "list-disc list-inside"
+            }`}
+          >
+            {segment.items?.map((item, itemIndex) => (
+              <li
+                key={itemIndex}
+                className="text-gray-700 dark:text-gray-300 leading-relaxed"
+              >
+                <strong className="font-semibold text-gray-900 dark:text-white">
+                  {item.title}
+                </strong>{" "}
+                {item.content}
+              </li>
+            ))}
+          </ListTag>
+        );
+      }
+      
       if (segment.type === "link") {
         if (segment.external) {
           return (
