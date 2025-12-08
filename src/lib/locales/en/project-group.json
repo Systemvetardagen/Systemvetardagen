@@ -81,9 +81,14 @@
       "leaders": [
         {
           "name": "Ellen Hillborg",
-          "role": "Head of Events",
+          "role": "Head of Marketing & Events",
           "linkedIn": "https://www.linkedin.com/in/ellen-hillborg-562508237/",
           "email": "ellen.hillborg@disk.su.se"
+        },
+        {
+          "name": "Maria Ontiveros Balderas",
+          "role": "Vice Head of Events",
+          "email": "maria.ontiveros.balderas@disk.su.se"
         }
       ]
     }
