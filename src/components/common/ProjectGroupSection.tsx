@@ -61,11 +61,11 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
         <div className="grid sm:grid-cols-2 gap-6">
           {leaders.map((leader, index) => (
             <div className="" key={index}>
-              {/* <img
-                src={leader.image}
-                className="h-60 rounded-lg object-cover"
+              <img
+                src={`/images/portraits/${leader.image}`}
+                className="h-60 rounded-lg object-cover mb-2"
                 alt={`${leader.name} portrait`}
-              /> */}
+              />
               <p className="text-xl">{leader.name}</p>
               <p className="text-md text-gray-500">{leader.role}</p>
               <SocialLinks {...leader} />
