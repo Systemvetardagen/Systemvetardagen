@@ -310,7 +310,7 @@ const CompanyPage: React.FC = () => {
           )}
 
           {company.websiteLink && (
-            <FadeInSection triggerOnce={true} direction="fadeUp">
+            <FadeInSection triggerOnce={true} direction="fadeUp" className="text-center">
               <a
                 className="text-link text-2xl text-center font-bold hover:underline"
                 rel="nofollow"

@@ -29,17 +29,28 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
     retry: 1,
   });
 
+  const shuffledCompanies = useMemo(() => {
+    if (!data) return [];
+    //fisher yates
+    const shuffled = [...data];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, [data]);
+
   const partners = useMemo(() => {
-    return data
-      ? data.filter((company: Company) => {
+    return shuffledCompanies
+      ? shuffledCompanies.filter((company: Company) => {
           return company.packageId >= 3;
         })
       : [];
-  }, [data]);
+  }, [shuffledCompanies]);
 
   const value: CompanyContextType = useMemo(
     () => ({
-      companies: data,
+      companies: shuffledCompanies,
       partners,
       isLoading,
       isError,
@@ -47,7 +58,7 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
         void refetch();
       },
       getBySlug: (slug: string) =>
-        data?.find((c: { slug: string }) => c.slug === slug),
+        shuffledCompanies?.find((c: { slug: string }) => c.slug === slug),
       upsertCompany: (c: Company) => {
         queryClient.setQueryData<Company[] | undefined>(
           companiesQueryKey,
@@ -62,7 +73,7 @@ export function CompanyContextProvider({ children }: PropsWithChildren) {
         );
       },
     }),
-    [data, partners, isLoading, isError, refetch, queryClient]
+    [shuffledCompanies, partners, isLoading, isError, refetch, queryClient]
   );
   return (
     <CompanyContext.Provider value={value}>{children}</CompanyContext.Provider>
