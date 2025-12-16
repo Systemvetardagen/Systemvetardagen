@@ -4,8 +4,10 @@
     "showing": "Visar företag för",
     "and": "och",
     "all": "alla",
-    "programs": "Program",
-    "positions": "Positioner",
+    "programs": "program",
+    "positions": "positioner",
+    "interestedPrograms": "Intresserande Program",
+    "availablePositions": "Tillgängliga Positioner",
     "clearFilters": "Rensa filter",
     "searchPlaceholder": "Sök företag",
     "partners": "Våra Partners",
@@ -20,7 +22,8 @@
     "learnMore": "Läs mer om att arbeta på {{company}}",
     "backToCompanies": "Tillbaka till företagen",
     "scrollToTop": "Skrolla till toppen",
-    "defaultDescription": "Möt {{company}} på Systemvetardagen! Vi ser fram emot att träffa talangfulla studenter och dela med oss av insikter om karriärmöjligheter. Besök vår monter för att lära dig mer om vad vi gör, vår företagskultur och de spännande roller vi har tillgängliga för nyexaminerade."
+    "defaultDescription": "Möt {{company}} på Systemvetardagen! Vi ser fram emot att träffa talangfulla studenter och dela med oss av insikter om karriärmöjligheter. Besök vår monter för att lära dig mer om vad vi gör, vår företagskultur och de spännande roller vi har tillgängliga för nyexaminerade.",
+    "becomeExhibitor": "Bli en Utställare"
   },
   "candidatePrograms": {
     "SYSDK": "Data- och systemvetenskap",

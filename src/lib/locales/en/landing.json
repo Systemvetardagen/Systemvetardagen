@@ -11,6 +11,7 @@
     "seconds": "Seconds",
     "signup": "Sign up for updates",
     "exhibitors": "Browse All Exhibitors",
+    "companies": "See all {{count}} exhibitors (more coming)",
     "body": {
         "infoSections": {
             "anniversary": {
