@@ -67,7 +67,15 @@ const CompanyPage: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center my-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-10 w-full">
+        <div className="flex flex-col items-center gap-10 w-full relative">
+          <FadeInSection triggerOnce={true} direction="fadeLeft" className="absolute top-0 left-0">
+            <a 
+              href="/companies"
+              className="text-gray-600 hover:text-gray-900 text-sm hover:underline inline-flex items-center gap-1"
+            >
+              ← {tCompanies("global.backToCompanies")}
+            </a>
+          </FadeInSection>
           <FadeInSection triggerOnce={true} direction="fadeUp">
             <h2 className="text-3xl font-bold text-gray-800">
               {company.companyName}
@@ -236,7 +244,7 @@ const CompanyPage: React.FC = () => {
             >
               <div className="w-full">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                  {tCompanies("global.programs")}
+                  {tCompanies("global.interestedPrograms")}
                 </h2>
                 <div className="flex flex-wrap gap-3 justify-center max-w-[90%] mx-auto">
                   {company.programs.map((program, index) => {
@@ -293,7 +301,7 @@ const CompanyPage: React.FC = () => {
             >
               <div className="w-full">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                  {tCompanies("global.positions")}
+                  {tCompanies("global.availablePositions")}
                 </h2>
                 <div className="flex flex-wrap gap-3 justify-center max-w-[90%] mx-auto">
                   {company.positions.map((position, index) => (

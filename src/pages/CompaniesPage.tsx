@@ -284,6 +284,19 @@ const Companies: React.FC = () => {
                 <CompanyCard company={company} className="h-32 w-56" />
               </FadeInSection>
             ))}
+        {!isLoading && (
+          <FadeInSection direction="fadeLeft">
+            <a
+              href="mailto:systemvetardagen@disk.su.se"
+              className="group relative h-32 w-56 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center p-6 text-white cursor-pointer overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <h3 className="font-bold text-xl text-center relative z-10">
+                {globalLabels.becomeExhibitor}
+              </h3>
+            </a>
+          </FadeInSection>
+        )}
       </div>
     </div>
   );
