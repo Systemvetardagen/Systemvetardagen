@@ -4,6 +4,7 @@ import LogoLoop, { LogoItem } from "../common/LogoLoop";
 import { NavLink } from "react-router-dom";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import { useTranslation } from "react-i18next";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 interface CompanyLoopProps {
   className?: string;
@@ -12,7 +13,7 @@ interface CompanyLoopProps {
 
 const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
   const [isMobile, setIsMobile] = useState(false);
-  const { companies } = useCompanies();
+  const { companies, isLoading } = useCompanies();
   const [t] = useTranslation("landing");
 
   useEffect(() => {
@@ -34,6 +35,14 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
   });
 
   const totalCompanies = companies.length;
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center pt-10">
+        <LoadingSpinner isLoading={isLoading} size={32} />
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} className={className}>
