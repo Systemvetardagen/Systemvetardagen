@@ -1,10 +1,12 @@
 import "@/app/App.css";
 import { CompanyLoop, Partners } from "@/components";
 import { Hero, InfoSections, Statistics, FAQ, HighlightSection } from "@/components/landing";
+import { SnowOverlay } from 'react-snow-overlay';
 
 export default function LandingPage() {
   return (
     <div className="grow">
+      <SnowOverlay />
       <Hero />
       <CompanyLoop className="pt-10" />
       <section
