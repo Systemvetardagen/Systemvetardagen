@@ -10,6 +10,7 @@ import { CANDIDATE_PROGRAMS, MASTER_PROGRAMS } from "@/lib/types/program";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/common/button";
 import { ButtonNavigate } from "@/components/common/buttonNavigate";
+import { NavLink } from "react-router-dom";
 
 const CompanyPage: React.FC = () => {
   const { companyId } = useParams<{ companyId: string }>();
@@ -69,12 +70,12 @@ const CompanyPage: React.FC = () => {
       <div className="flex flex-col items-center my-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-10 w-full relative">
           <FadeInSection triggerOnce={true} direction="fadeLeft" className="absolute top-0 left-0">
-            <a 
-              href="/companies"
+            <NavLink 
+              to="/companies"
               className="text-gray-600 hover:text-gray-900 text-sm hover:underline inline-flex items-center gap-1"
             >
               ← {tCompanies("global.backToCompanies")}
-            </a>
+            </NavLink>
           </FadeInSection>
           <FadeInSection triggerOnce={true} direction="fadeUp">
             <h2 className="text-3xl font-bold text-gray-800">
