@@ -20,7 +20,7 @@ export default function LandingPage() {
           </NavLink> */}
         <div className="w-full max-w-[90%] md:max-w-5xl flex flex-col items-center">
           <InfoSections />
-          <Partners containerClassName="mt-10" />
+          <Partners containerClassName="mt-10" useCards />
           <Statistics />
           <HighlightSection />
           <FAQ />

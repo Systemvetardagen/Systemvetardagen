@@ -52,7 +52,7 @@ const Partners: React.FC<PartnersProps> = ({
               </FadeInSection>
             ))
           : partners.map((partner, index) => (
-              <FadeInSection key={index} direction="fadeLeft">
+              <FadeInSection key={index} direction="fadeDown" delay={index * 200}>
                 {useCards ? (
                   <CompanyCard company={partner} className={cardClassName} />
                 ) : (

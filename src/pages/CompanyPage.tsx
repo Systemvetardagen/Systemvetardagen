@@ -69,25 +69,26 @@ const CompanyPage: React.FC = () => {
 
       <div className="flex flex-col items-center my-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-10 w-full relative">
-          <FadeInSection triggerOnce={true} direction="fadeLeft" className="absolute top-0 left-0">
-            <NavLink 
+          <FadeInSection
+            triggerOnce={true}
+            direction="fadeLeft"
+            className="absolute top-0 left-0"
+          >
+            <NavLink
               to="/companies"
               className="text-gray-600 hover:text-gray-900 text-sm hover:underline inline-flex items-center gap-1"
             >
               ← {tCompanies("global.backToCompanies")}
             </NavLink>
           </FadeInSection>
-          <FadeInSection triggerOnce={true} direction="fadeUp">
+          <FadeInSection triggerOnce={true} direction="fadeUp" className="flex flex-col items-center text-center">
             <h2 className="text-3xl font-bold text-gray-800">
               {company.companyName}
             </h2>
-          </FadeInSection>
-
-          {company.slogan && (
-            <FadeInSection triggerOnce={true} direction="fadeUp">
+            {company.slogan && (
               <h3 className="text-lg text-gray-600">{company.slogan}</h3>
-            </FadeInSection>
-          )}
+            )}
+          </FadeInSection>
 
           {(!!company.areaOfBusiness ||
             !!company.foundedYear ||
@@ -319,7 +320,11 @@ const CompanyPage: React.FC = () => {
           )}
 
           {company.websiteLink && (
-            <FadeInSection triggerOnce={true} direction="fadeUp" className="text-center">
+            <FadeInSection
+              triggerOnce={true}
+              direction="fadeUp"
+              className="text-center"
+            >
               <a
                 className="text-link text-2xl text-center font-bold hover:underline"
                 rel="nofollow"
