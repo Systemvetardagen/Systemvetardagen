@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FadeInSection } from "@/components";
+import { FadeInSection, LoadingSpinner } from "@/components";
 import { CompanyCard } from "@/components";
 import { useCompanies } from "@/lib/hooks/useCompanyContext";
 import {
@@ -22,7 +22,6 @@ import {
 } from "@/components/common/dropdown-menu";
 import { Button } from "@/components/common/button";
 import { FaChevronDown } from "react-icons/fa";
-import { CompanyCardSkeleton } from "@/components/company/CompanyCard";
 
 const Companies: React.FC = () => {
   const [t] = useTranslation("companies");
@@ -254,17 +253,20 @@ const Companies: React.FC = () => {
             {globalLabels.partners}
           </h1>
           <div className="flex flex-wrap justify-center gap-6 w-full">
-            {isLoading
-              ? Array.from({ length: 3 }).map((_, index) => (
-                  <FadeInSection key={index} direction="fadeLeft">
-                    <CompanyCardSkeleton className="h-44 w-[308px]" />
-                  </FadeInSection>
-                ))
-              : partners.map((partner, index) => (
-                  <FadeInSection key={index} direction="fadeLeft">
-                    <CompanyCard company={partner} className="h-44 w-[308px]" />
-                  </FadeInSection>
-                ))}
+            {isLoading ? (
+              <LoadingSpinner isLoading={isLoading} />
+            ) : (
+              partners.map((partner, index) => (
+                <FadeInSection
+                  key={index}
+                  immediate
+                  delay={index * 70}
+                  direction="fadeLeft"
+                >
+                  <CompanyCard company={partner} className="h-44 w-[308px]" />
+                </FadeInSection>
+              ))
+            )}
           </div>
         </div>
       )}
@@ -272,18 +274,23 @@ const Companies: React.FC = () => {
         {globalLabels.allCompanies}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-6">
-        {isLoading
-          ? Array.from({ length: 12 }).map((_, index) => (
-              <FadeInSection key={index} direction="fadeLeft">
-                <CompanyCardSkeleton className="h-32 w-56" />
-              </FadeInSection>
-            ))
-          : filteredCompanies &&
-            filteredCompanies.map((company, index) => (
-              <FadeInSection key={index} direction="fadeLeft">
-                <CompanyCard company={company} className="h-32 w-56" />
-              </FadeInSection>
-            ))}
+        {isLoading ? (
+          <div className="col-span-full flex justify-center">
+            <LoadingSpinner isLoading={isLoading} />
+          </div>
+        ) : (
+          filteredCompanies &&
+          filteredCompanies.map((company, index) => (
+            <FadeInSection
+              key={index}
+              immediate
+              delay={index * 70}
+              direction="fadeLeft"
+            >
+              <CompanyCard company={company} className="h-32 w-56" />
+            </FadeInSection>
+          ))
+        )}
         {!isLoading && (
           <FadeInSection direction="fadeLeft">
             <a

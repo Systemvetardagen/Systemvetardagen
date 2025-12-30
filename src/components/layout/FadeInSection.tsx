@@ -9,6 +9,7 @@ interface FadeInSectionProps extends React.HTMLAttributes<HTMLDivElement> {
     triggerOnce?: boolean;
     duration?: number; // Duration in milliseconds
     delay?: number; // Delay in milliseconds
+    immediate?: boolean;
 }
 
 const FadeInSection: React.FC<FadeInSectionProps> = ({
@@ -18,6 +19,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
     triggerOnce = true,
     duration = 500,
     delay = 0,
+    immediate = false,
     ...props
 }) => {
     const { ref, inView } = useInView({
@@ -25,11 +27,13 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
         triggerOnce: triggerOnce,
     });
 
+    const shouldAnimate: boolean = immediate || inView;
+
     return (
         <div
             ref={ref}
             className={`opacity-0 ${className || ''} ${
-                inView ? `opacity-100 ${direction}` : ''
+                shouldAnimate ? `opacity-100 ${direction}` : ''
             }`}
             style={{
                 '--animation-duration': `${duration}ms`,
