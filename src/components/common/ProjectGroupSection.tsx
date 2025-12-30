@@ -58,12 +58,12 @@ const ProjectGroupSection: React.FC<ProjectGroupType> = ({
     <FadeInSection direction="fadeLeft">
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold">{name}</h3>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2">
           {leaders.map((leader, index) => (
             <div className="" key={index}>
               <img
                 src={`/images/portraits/${leader.image}`}
-                className="h-60 rounded-lg object-cover mb-2"
+                className="h-52 rounded-lg object-cover mb-2"
                 alt={`${leader.name} portrait`}
               />
               <p className="text-xl">{leader.name}</p>
