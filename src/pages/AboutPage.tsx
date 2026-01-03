@@ -9,7 +9,7 @@ const About: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
       <img
-        src={"/images/nod2.jpg"}
+        src={"/images/nod2.webp"}
         alt="Systemvetardagen Logo shirt"
         className="w-screen h-[20vh] lg:h-[40vh] max-h-[400px] object-cover object-[20%_50%]"
       />
@@ -19,7 +19,9 @@ const About: React.FC = () => {
             <div className="space-y-6">
               <FadeInSection direction="fadeLeft" delay={100}>
                 <h2 className="text-2xl font-semibold mb-3">{t("header")}</h2>
-                <p className="text-lg leading-relaxed font-light">{t("body")}</p>
+                <p className="text-lg leading-relaxed font-light">
+                  {t("body")}
+                </p>
               </FadeInSection>
               <FadeInSection direction="fadeLeft" delay={200}>
                 <h2 className="text-2xl font-semibold mb-3">
@@ -29,7 +31,7 @@ const About: React.FC = () => {
                   {t("where-when.body")}
                 </p>
               </FadeInSection>
-              {/* <FadeInSection direction="fadeLeft">
+              <FadeInSection direction="fadeLeft">
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("companies.header")}
                 </h2>
@@ -40,12 +42,12 @@ const About: React.FC = () => {
                   </a>
                   .
                 </p>
-              </FadeInSection> */}
+              </FadeInSection>
               <FadeInSection direction="fadeLeft" delay={300}>
                 <h2 className="text-2xl font-semibold mb-3">
                   {t("company-display.header")}
                 </h2>
-                <p className="text-lg leading-relaxed font-light" >
+                <p className="text-lg leading-relaxed font-light">
                   {t("company-display.body")}{" "}
                   <a
                     href="mailto:systemvetardagen@disk.su.se"
@@ -58,7 +60,7 @@ const About: React.FC = () => {
               </FadeInSection>
             </div>
           </section>
-          <Seperator/>
+          <Seperator />
           <ProjectGroup />
         </div>
       </div>

@@ -5,21 +5,21 @@
       "leaders": [
         {
           "name": "Diana Noran",
-          "image": "diana.png",
+          "image": "diana.webp",
           "role": "Project Manager",
           "linkedIn": "https://www.linkedin.com/in/diana-noran/",
           "email": "diana.noran@disk.su.se"
         },
         {
           "name": "Tanja Hosseinzadeh",
-          "image": "tanja.png",
+          "image": "tanja.webp",
           "role": "Project Coordinator",
           "linkedIn": "https://www.linkedin.com/in/tanja-hosseinzadeh/",
           "email": "tanja.hosseinzadeh@disk.su.se"
         },
         {
           "name": "David Singhateh",
-          "image": "david.png",
+          "image": "david.webp",
           "role": "Project Coordinator",
           "linkedIn": "https://www.linkedin.com/in/david-singhateh-680489303/",
           "email": "david.singhateh@disk.su.se"
@@ -31,7 +31,7 @@
       "leaders": [
         {
           "name": "Willhelm Durelius",
-          "image": "wille.png",
+          "image": "wille.webp",
           "role": "Head of Web Development",
           "linkedIn": "https://linkedin.com/in/wilhelm-durelius-6a11012b1",
           "github": "https://github.com/durelius",
@@ -39,7 +39,7 @@
         },
         {
           "name": "Fredrik Etsare",
-          "image": "frippe.png",
+          "image": "frippe.webp",
           "role": "Vice Head of Web Development",
           "linkedIn": "https://linkedIn.com/in/fredrik-etsare-20a535255/",
           "github": "https://github.com/fetsare",
@@ -52,14 +52,14 @@
       "leaders": [
         {
           "name": "Sophie Sandberg",
-          "image": "sophie.png",
+          "image": "sophie.webp",
           "role": "Head of Business Relations & Sales",
           "linkedIn": "https://www.linkedin.com/in/sophie-sandberg/",
           "email": "sophie.sandberg@disk.su.se"
         },
         {
           "name": "Natnael Debesay",
-          "image": "natnael.png",
+          "image": "natnael.webp",
           "role": "Vice Head of Business Relations & Sales",
           "linkedIn": "https://www.linkedin.com/in/natnael-debesay/",
           "email": "natnael.debesay@disk.su.se"
@@ -71,14 +71,14 @@
       "leaders": [
         {
           "name": "Omid Khan",
-          "image": "omid.png",
+          "image": "omid.webp",
           "role": "Head of Logistics",
           "linkedIn": "https://www.linkedin.com/in/omid-khan-0386a3295/",
           "email": "omid.khan@disk.su.se"
         },
         {
           "name": "Ellika Lind",
-          "image": "elika.png",
+          "image": "elika.webp",
           "role": "Vice Head of Logistics",
           "linkedIn": "https://www.linkedin.com/in/ellika-lind-996411241/",
           "email": "ellika.lind@disk.su.se"
@@ -90,14 +90,14 @@
       "leaders": [
         {
           "name": "Ellen Hillborg",
-          "image": "ellen.png",
+          "image": "ellen.webp",
           "role": "Head of Marketing & Events",
           "linkedIn": "https://www.linkedin.com/in/ellen-hillborg-562508237/",
           "email": "ellen.hillborg@disk.su.se"
         },
         {
           "name": "Maria Ontiveros Balderas",
-          "image": "maria.png",
+          "image": "maria.webp",
           "role": "Vice Head of Events",
           "email": "maria.ontiveros.balderas@disk.su.se"
         }

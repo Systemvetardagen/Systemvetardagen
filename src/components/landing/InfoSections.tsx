@@ -72,7 +72,7 @@ const InfoSections = () => {
       <div className="w-full h-0.5 bg-gray-400/30"></div>
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/systemvetardagen-logo-2026-black.png"
+        imageSrc="/images/systemvetardagen-logo-2026-black.webp"
         imageAlt="Systemvetardagen 30th Anniversary"
         titleKey="body.infoSections.anniversary.title"
         bodyKey="body.infoSections.anniversary.body"
@@ -90,7 +90,7 @@ const InfoSections = () => {
       />
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/workers.jpg"
+        imageSrc="/images/workers.webp"
         imageAlt="Become a Fair'ie"
         titleKey="body.infoSections.fairie.title"
         bodyKey="body.infoSections.fairie.body"
