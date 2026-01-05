@@ -13,6 +13,11 @@
       "answer": "Nej, registrering krävs inte för att delta på Systemvetardagen. Men du kan alltid registrera dig via vår webbplats för att få uppdateringar."
     },
     {
+      "id": "book-interviews",
+      "question": "Kan jag boka intervjuer med företag?",
+      "answer": "Ja! Du kan boka individuella intervjuer med företag under mässan via vår nya plattform. Träffa rekryterare och kom före genom att boka dina intervjutider i förväg. Besök mitt.systemvetardagen.se för att registrera dig."
+    },
+    {
       "id": "what-to-expect",
       "question": "Vad kan jag förvänta mig på mässan?",
       "answer": "Du kan förvänta dig företagsmonter, nätverksmöjligheter, inspirerande föreläsningar, karriärvägledningssessioner och chansen att träffa potentiella arbetsgivare. Många företag erbjuder också intervjuer och praktikplatser på plats."

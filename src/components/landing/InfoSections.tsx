@@ -94,8 +94,6 @@ const InfoSections = () => {
         imageAlt="Become a Fair'ie"
         titleKey="body.infoSections.fairie.title"
         bodyKey="body.infoSections.fairie.body"
-        linkTo="https://forms.office.com/pages/responsepage.aspx?id=-d6Dd48OpkmgDUGVg8iFYw0XRXYagRNBnDGOWJUt59hUQUFDM0xOWTI2RlYyUDNFNlE5WDZVTFFKTS4u&route=shorturl"
-        linkTextKey="body.infoSections.fairie.link"
       />
       <div className="w-full h-0.5 bg-gray-400/30"></div>
     </div>

@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Seperator from "../common/Seperator";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { triggerConfetti } from "@/lib/utilities/confetti";
@@ -82,7 +81,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white w-full">
-      <Seperator />
+      <div className="w-full h-0.5 bg-gray-200"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 text-black">
           <style>

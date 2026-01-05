@@ -1,7 +1,13 @@
 import "@/app/App.css";
 import { CompanyLoop, Partners } from "@/components";
-import { Hero, InfoSections, Statistics, FAQ, HighlightSection } from "@/components/landing";
-import { SnowOverlay } from 'react-snow-overlay';
+import {
+  Hero,
+  InfoSections,
+  Statistics,
+  FAQ,
+  HighlightSection,
+} from "@/components/landing";
+import { SnowOverlay } from "react-snow-overlay";
 
 export default function LandingPage() {
   return (
@@ -23,6 +29,7 @@ export default function LandingPage() {
           <Partners containerClassName="mt-10" useCards />
           <Statistics />
           <HighlightSection />
+          <div className="w-full h-0.5 bg-gray-400/30 mb-10"></div>
           <FAQ />
         </div>
       </section>

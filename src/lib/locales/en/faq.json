@@ -13,6 +13,11 @@
       "answer": "No, registration is not required to attend Systemvetardagen. But you can always sign up to receive updates."
     },
     {
+      "id": "book-interviews",
+      "question": "Can I book interviews with companies?",
+      "answer": "Yes! You can schedule one-on-one interviews with companies during the fair using our new platform. Connect directly with recruiters and get ahead by booking your interview slots in advance. Visit meet.systemvetardagen.se to register."
+    },
+    {
       "id": "what-to-expect",
       "question": "What can I expect at the fair?",
       "answer": "You can expect company booths, networking opportunities, inspiring lectures, career guidance sessions, and the chance to meet potential employers. Many companies also offer on-site interviews and internship opportunities."
