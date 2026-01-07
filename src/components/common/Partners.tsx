@@ -25,7 +25,7 @@ const Partners: React.FC<PartnersProps> = ({
 }) => {
   const { t } = useTranslation("common");
   const { partners, isLoading: contextLoading } = useCompanies();
-  
+
   const loading = isLoading || contextLoading;
   const displayTitle = title || t("partners");
 
@@ -34,7 +34,7 @@ const Partners: React.FC<PartnersProps> = ({
   }
 
   return (
-    <div className={`flex flex-col items-center ${containerClassName}`}>
+    <div className={`flex flex-col items-center ${containerClassName} pb-5`}>
       {showTitle && (
         <h3 className="text-2xl mb-8 text-center text-gray-700 font-light">
           {displayTitle}
@@ -47,12 +47,18 @@ const Partners: React.FC<PartnersProps> = ({
                 {useCards ? (
                   <CompanyCardSkeleton className={cardClassName} />
                 ) : (
-                  <div className={`bg-gray-200 animate-pulse rounded-lg ${cardClassName}`} />
+                  <div
+                    className={`bg-gray-200 animate-pulse rounded-lg ${cardClassName}`}
+                  />
                 )}
               </FadeInSection>
             ))
           : partners.map((partner, index) => (
-              <FadeInSection key={index} direction="fadeDown" delay={index * 200}>
+              <FadeInSection
+                key={index}
+                direction="fadeDown"
+                delay={index * 200}
+              >
                 {useCards ? (
                   <CompanyCard company={partner} className={cardClassName} />
                 ) : (

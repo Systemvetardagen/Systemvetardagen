@@ -178,13 +178,13 @@ const VisitInfo: React.FC = () => {
           {t("sub-header")}
         </p>
         {/* <Events /> */}
-        <a id="map" href="/svgs/floormap.svg" className="mt-10">
+        {/* <a id="map" href="/svgs/floormap.svg" className="mt-10">
           <img
             className="w-full rounded-3xl"
             src="/svgs/floormap.svg"
             alt="Floor map"
           />
-        </a>
+        </a> */}
         <section id="get-here" className="w-full text-start my-8 ">
           <h2 className="font-light text-3xl mb-2">{t("getting-to.header")}</h2>
           <div className="mb-4">
