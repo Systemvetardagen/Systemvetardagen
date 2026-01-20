@@ -3,6 +3,73 @@
   "subtitle": "Stay updated with the latest news, announcements, and insights from Systemvetardagen 2026",
   "readMore": "Read more",
   "posts": {
+    "afterparty": {
+      "title": "Party & After Work!!🥳🥳",
+      "date": "January 14, 2026",
+      "image": "/images/afterparty.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "After a day filled with inspiration, networking, and exciting meetings with companies, it's time to unwind and celebrate! We invite you to Systemvetardagen's Afterparty & After Work, an evening full of good food, chats and entertainment."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "When & Where?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Date: February 18, 2026"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Time: 15:45 – 03:00"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Location: Foo Bar, second floor, DSV"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "What Can You Expect?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "After the fair, Foo Bar opens its doors for a relaxed evening where you can continue networking in a more casual environment. Whether you want to discuss your fair impressions with other students, continue conversations with company representatives, or simply enjoy the atmosphere, this is the perfect opportunity!"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Who's Welcome?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "All students, company representatives, and Fair'ies are warmly welcome! This is your chance to relax after the fair and create memories that last longer than just one day."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "See you at Foo Bar!🎉🎉🎉"
+          }
+        ]
+      ]
+    },
     "meet": {
       "title": "Master Systemvetardagen, Sign up for meetings!",
       "date": "December 8, 2025",
