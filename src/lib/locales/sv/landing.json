@@ -11,7 +11,7 @@
   "seconds": "Sekunder",
   "signup": "Registrera för uppdateringar",
   "exhibitors": "Se alla utställare",
-  "companies": "Se alla {{count}} utställare (fler kommer)",
+  "companies": "Se alla {{count}} utställare",
   "body": {
     "infoSections": {
       "anniversary": {

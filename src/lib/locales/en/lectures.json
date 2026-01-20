@@ -10,33 +10,12 @@
       "note": "Welcome to visit all of the companies and organisations on the fair!"
     },
     {
-      "company": "Truesec",
-      "time": "10:40",
-      "topic": "Dissecting the Cicada - In the shadow of the Black Cat",
+      "company": "IBM Sweden",
+      "time": "14:00",
+      "topic": "From Curiosity to Impact: A Personal Journey Through Generative AI and Cybersecurity",
       "location": "Aula NOD",
-      "speaker": "Nicklas Keijser"
-    },
-    {
-      "company": "Northwave Cyber Security",
-      "time": "11:20",
-      "topic": "Key trends and challenges in cybersecurity",
-      "location": "Aula NOD",
-      "speakers": ["Kim Elm", "Sakarias Strand"],
-      "note": "Kim Elm, Country Manager Northwave, and Sakarias Strand, Project Manager Cybersecurity Kista Science City, covering the key trends and challenges in cybersecurity, along with the secrets to becoming a leader in the field"
-    },
-    {
-      "company": "Scania",
-      "time": "12:00",
-      "topic": "Eat, Play, Win",
-      "location": "L50",
-      "note": "Enjoy a free lunch, a great vibe, and the chance to win exciting prices while connecting with Scania. Pre-registration required!"
-    },
-    {
-      "company": "Kista Science City",
-      "time": "13:00",
-      "topic": "TechTalent Connect",
-      "location": "Booth 6",
-      "note": "One-on-one meetings bringing students together with companies within the field of cybersecurity. Pre-registration required!"
+      "speaker": "Vahid Zohali, Managing Director of IBM Sweden",
+      "note": "Through an inspiring and personal journey in the world of IT, Vahid shares his path from early technical curiosity to leading roles within a global tech organization. He highlights the lessons, challenges, and key decisions that have shaped his perspective on innovation, leadership, generative AI, and cybersecurity. Generative AI is one of the most significant technological shifts of our time and is transforming how we work, lead, and protect digital systems. This lecture explores how generative AI and cybersecurity interact, covering innovation, risks, responsibility, and the future of digital security."
     },
     {
       "company": "After work and pub",

@@ -177,7 +177,7 @@ const VisitInfo: React.FC = () => {
         <p className="text-gray-500 font-light mx-8 fadeRight">
           {t("sub-header")}
         </p>
-        {/* <Events /> */}
+        <Events />
         {/* <a id="map" href="/svgs/floormap.svg" className="mt-10">
           <img
             className="w-full rounded-3xl"
