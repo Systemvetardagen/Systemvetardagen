@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import { Link } from "./Navbar";
 import { NavLink, useLocation } from "react-router-dom";
-import { LanguageSwitch, Seperator } from "../common";
+import { LanguageSwitch } from "../common";
+import { FaUserCircle } from "react-icons/fa";
 
 interface MobileNavbarProps {
   links: Link[];
@@ -67,24 +68,31 @@ const MobileNavbar: FC<MobileNavbarProps> = ({
           onClick={(e) => e.stopPropagation()}
           className={`absolute top-0 left-0 flex flex-col justify-center gap-4 ${
             isSticky ? "pt-3" : "pt-10"
-          } pl-12 pr-10 ${
+          } px-4 ${
             isSticky ? "pb-4" : "pb-10"
           } font-bold font-heading tracking-wide bg-white w-screen transition-transform duration-300 ease-out ${
             isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           {links.map((link, index) => (
-            <div key={index}>
-              <NavLink
-                to={link.href}
-                className={getNavLinkClass}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.section}
-              </NavLink>
-            </div>
+            <NavLink
+              key={index}
+              to={link.href}
+              className={getNavLinkClass}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.section}
+            </NavLink>
           ))}
-          <div onClick={() => setIsOpen(false)}>
+          <div className="flex items-center gap-3 px-2" onClick={() => setIsOpen(false)}>
+            <a
+              href="https://mitt.systemvetardagen.se"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-link transition-colors duration-200"
+            >
+              <FaUserCircle size={24} />
+            </a>
             <LanguageSwitch />
           </div>
         </div>

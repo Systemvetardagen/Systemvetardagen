@@ -4,6 +4,7 @@ import { LanguageSwitch } from "../common";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
 import { useTranslation } from "react-i18next";
+import { FaUserCircle } from "react-icons/fa";
 
 export interface Link {
   section: string;
@@ -64,8 +65,16 @@ const Navbar: React.FC = () => {
         isSticky={isSticky}
         getNavLinkClass={getNavLinkClass}
       />
-      <div className="hidden lg:flex">
+      <div className="hidden lg:flex items-center gap-3">
         <LanguageSwitch />
+        <a
+          href="https://mitt.systemvetardagen.se"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black hover:text-link transition-colors duration-200"
+        >
+          <FaUserCircle size={28} />
+        </a>
       </div>
     </nav>
   );
