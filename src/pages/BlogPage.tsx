@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { FadeInSection } from "../components/layout";
+import { Partners } from "@/components";
 
 export interface BlogListItem {
   title: string;
@@ -74,7 +75,7 @@ const BlogPage = () => {
           </h3>
         );
       }
-      
+
       if (segment.type === "list") {
         const ListTag = segment.ordered ? "ol" : "ul";
         return (
@@ -100,7 +101,7 @@ const BlogPage = () => {
           </ListTag>
         );
       }
-      
+
       if (segment.type === "link") {
         if (segment.external) {
           return (
@@ -132,10 +133,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto py-20">
-        <FadeInSection
-          direction="fadeUp"
-          className="max-w-4xl mx-auto py-8"
-        >
+        <FadeInSection direction="fadeUp" className="max-w-4xl mx-auto py-8">
           <article className="overflow-hidden p-8">
             {post.image && (
               <img
@@ -172,6 +170,7 @@ const BlogPage = () => {
             </div>
           </article>
         </FadeInSection>
+      <Partners useCards />
       </div>
     </div>
   );

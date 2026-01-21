@@ -1,6 +1,7 @@
-import BlogPostPreview from "@/components/common/BlogPostPreview"
+import BlogPostPreview from "@/components/common/BlogPostPreview";
 import { useTranslation } from "react-i18next";
 import { BlogPostData } from "./BlogPage";
+import { Partners } from "@/components";
 
 interface BlogPosts {
   [key: string]: BlogPostData;
@@ -30,7 +31,7 @@ const BlogListPage = () => {
             </p>
           )}
         </div>
-        
+
         <div className="flex flex-col gap-8 max-w-5xl mx-auto">
           {Object.entries(posts).map(([postId, post]) => (
             <BlogPostPreview
@@ -41,6 +42,7 @@ const BlogListPage = () => {
             />
           ))}
         </div>
+        <Partners useCards />
       </div>
     </div>
   );
