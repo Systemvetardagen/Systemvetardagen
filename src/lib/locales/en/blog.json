@@ -3,6 +3,61 @@
   "subtitle": "Stay updated with the latest news, announcements, and insights from Systemvetardagen 2026",
   "readMore": "Read more",
   "posts": {
+    "keynote": {
+      "title": "Keynote Speaker: Vahid Zohali, Managing Director of IBM Sweden",
+      "date": "January 24, 2026",
+      "image": "/images/vahid-zohali.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "heading",
+            "content": "From Curiosity to Impact: A Personal Journey Through Generative AI and Cybersecurity"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "We are pleased to welcome Vahid Zohali, Managing Director of IBM Sweden, who will share his inspiring and personal journey through the world of IT. From early technical curiosity to leading roles within a global tech organization, Vahid will highlight the lessons, challenges, and key decisions that have shaped his perspective on innovation, leadership, generative AI, and cybersecurity."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "About the Lecture"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Generative AI is one of the most significant technological shifts of our time and is transforming how we work, lead, and protect digital systems. This lecture explores how generative AI and cybersecurity interact, covering innovation, risks, responsibility, and the future of digital security."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "When & Where?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Date: February 18, 2026"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Time: 14:00 - 15:00"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Location: Aula NOD"
+          }
+        ]
+      ]
+    },
     "meet": {
       "title": "Master Systemvetardagen, Sign up for meetings!",
       "date": "December 8, 2025",
