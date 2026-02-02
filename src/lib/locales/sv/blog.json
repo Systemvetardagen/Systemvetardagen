@@ -16,6 +16,22 @@
         ],
         [
           {
+            "type": "text",
+            "content": "Årets efterfest är ett samarbete med "
+          },
+          {
+            "type": "link",
+            "content": "DISK Klubbmästeri",
+            "href": "https://www.instagram.com/disk_klubbmasteri/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": "!"
+          }
+        ],
+        [
+          {
             "type": "heading",
             "content": "När & Var?"
           }

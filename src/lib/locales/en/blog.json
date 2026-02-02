@@ -16,6 +16,22 @@
         ],
         [
           {
+            "type": "text",
+            "content": "This year's afterparty is a collaboration with "
+          },
+          {
+            "type": "link",
+            "content": "DISK Klubbmästeri",
+            "href": "https://www.instagram.com/disk_klubbmasteri/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": "!"
+          }
+        ],
+        [
+          {
             "type": "heading",
             "content": "When & Where?"
           }
