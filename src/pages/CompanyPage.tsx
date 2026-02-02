@@ -72,7 +72,7 @@ const CompanyPage: React.FC = () => {
           <FadeInSection
             triggerOnce={true}
             direction="fadeLeft"
-            className="absolute top-0 left-0"
+            className="absolute top-0 left-0 z-10"
           >
             <NavLink
               to="/companies"
