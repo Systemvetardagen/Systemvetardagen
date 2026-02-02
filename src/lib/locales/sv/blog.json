@@ -3,6 +3,89 @@
   "subtitle": "Håll dig uppdaterad med de senaste nyheterna, tillkännagivandena och insikterna från Systemvetardagen 2026",
   "readMore": "Läs mer",
   "posts": {
+    "afterparty": {
+      "title": "Party & After Work!",
+      "date": "2 Februari, 2026",
+      "image": "/images/afterparty.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "text",
+            "content": "Efter en dag full av inspiration, nätverkande och spännande möten med företag är det dags att varva ner och fira! Vi bjuder in dig till Systemvetardagens Efterfest & After Work, en kväll fylld av god mat, konversation och underhållning."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Årets efterfest är ett samarbete med "
+          },
+          {
+            "type": "link",
+            "content": "DISK Klubbmästeri",
+            "href": "https://www.instagram.com/disk_klubbmasteri/",
+            "external": true
+          },
+          {
+            "type": "text",
+            "content": "!"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "När & Var?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Datum: 18 Februari 2026"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Tid: 15:45 – 01:00"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Plats: Foo Bar, andra våningen, DSV"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Vad Kan Du Förvänta Dig?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Efter mässan öppnar Foo Bar sina dörrar för en avslappnad kväll där du kan fortsätta nätverka i en mer avslappnad miljö. Oavsett om du vill diskutera dina mässintryck med andra studenter, fortsätta konversationer med företagsrepresentanter eller bara njuta av stämningen, detta är det perfekta tillfället!"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Vem Är Välkommen?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Alla studenter, företagsrepresentanter och Fair'ies är hjärtligt välkomna! Det här är din chans att koppla av efter mässan och skapa minnen som varar längre än bara en dag."
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Vi ses på Foo Bar!🎉🎉🎉"
+          }
+        ]
+      ]
+    },
     "keynote": {
       "title": "Huvudföredrag: Vahid Zohali, VD för IBM Sverige",
       "date": "24 Januari, 2026",
