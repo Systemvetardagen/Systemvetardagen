@@ -17,17 +17,17 @@
       "anniversary": {
         "title": "30 Years of Systemvetardagen",
         "body": "This year marks the 30th annual Systemvetardagen, the premier tech job fair organized by Studentkåren DISK. Join us to connect with leading companies and explore exciting career opportunities in IT.",
-        "link": "Learn More About Our Anniversary"
+        "link": "Learn more about our anniversary"
       },
       "meet": {
-        "title": "Looking for SVD meet? {{applicationDaysLeft}} days until the application window closes",
+        "title": "Only {{applicationDaysLeft}} days left to apply for meetings!",
         "body": "Schedule one-on-one interviews with companies during the fair using our new platform. Connect directly with recruiters and get ahead by booking your interview slots in advance.",
-        "link": "Book Your Interview Now"
+        "link": "Book uour interview now"
       },
       "fairie": {
         "title": "Meet Our Fair'ies",
         "body": "Fair'ies are the dedicated student volunteers who bring Systemvetardagen to life! They help with preparations, welcome companies and guests, and create the positive atmosphere that makes our event special. Fair'ies earn active DISK status, gain valuable experience in event management, and are invited to an exclusive Thank You Party as appreciation for their hard work.",
-        "link": "Learn More About Fair'ies"
+        "link": "Learn more about fair'ies"
       }
     },
     "anniversary": {

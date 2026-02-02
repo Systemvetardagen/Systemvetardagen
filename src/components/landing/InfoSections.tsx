@@ -117,7 +117,7 @@ const InfoSections = () => {
         linkTextKey="body.infoSections.anniversary.link"
       />
       <InfoSection
-        imagePosition="left"
+        imagePosition="right"
         imageSrc="/images/workers.webp"
         imageAlt="Become a Fair'ie"
         titleKey="body.infoSections.fairie.title"
