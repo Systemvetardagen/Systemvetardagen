@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FadeInSection } from "../layout";
 import { Button } from "../common";
+import { useQuery } from "@tanstack/react-query";
+import customFetch from "@/lib/api/customFetch";
 
 interface InfoSectionProps {
   imagePosition: "left" | "right";
@@ -11,6 +13,7 @@ interface InfoSectionProps {
   bodyKey: string;
   linkTo?: string;
   linkTextKey?: string;
+  applicationDaysLeft?: number
 }
 
 const InfoSection = ({
@@ -21,6 +24,7 @@ const InfoSection = ({
   bodyKey,
   linkTo,
   linkTextKey,
+  applicationDaysLeft
 }: InfoSectionProps) => {
   const [t] = useTranslation("landing");
 
@@ -39,9 +43,11 @@ const InfoSection = ({
         </div>
       )}
       <div className="w-full md:w-1/2 flex flex-col gap-1 justify-center text-center order-1 md:order-2">
-        <h2 className="text-3xl md:text-4xl font-bold">{t(titleKey)}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold">{t(titleKey, { applicationDaysLeft: applicationDaysLeft })}</h2>
         <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+
           {t(bodyKey)}
+
         </p>
         {linkTo && linkTextKey && (
           <div className="my-4">
@@ -67,9 +73,40 @@ const InfoSection = ({
 };
 
 const InfoSections = () => {
+  const { data: applicationDeadline } = useQuery({
+    queryKey: ["applicationdeadline"],
+    queryFn: () => customFetch("public/applicationdeadline"),
+    staleTime: 5 * 60 * 1000, // 5 min
+    gcTime: 30 * 60 * 1000, // 30 min cache
+    retry: 1,
+  });
+  const deadlineDate = applicationDeadline
+    ? new Date(applicationDeadline)
+    : null;
+
+  const applicationDaysLeft =
+    deadlineDate
+      ? Math.ceil(
+        (deadlineDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24),
+      )
+      : undefined;
   return (
     <div className="w-full flex flex-col gap-4">
       <div className="w-full h-0.5 bg-gray-400/30"></div>
+
+      {applicationDaysLeft && applicationDaysLeft >= 0 && (
+
+        <InfoSection
+          imagePosition="right"
+          imageSrc="/images/crowded.webp"
+          imageAlt="Systemvetardagen Meet"
+          titleKey="body.infoSections.meet.title"
+          bodyKey="body.infoSections.meet.body"
+          linkTo="https://meet.systemvetardagen.se"
+          linkTextKey="body.infoSections.meet.link"
+          applicationDaysLeft={applicationDaysLeft}
+        />
+      )}
       <InfoSection
         imagePosition="left"
         imageSrc="/images/systemvetardagen-logo-2026-black.webp"
@@ -81,15 +118,6 @@ const InfoSections = () => {
       />
       <InfoSection
         imagePosition="right"
-        imageSrc="/images/crowded.webp"
-        imageAlt="Systemvetardagen Meet"
-        titleKey="body.infoSections.meet.title"
-        bodyKey="body.infoSections.meet.body"
-        linkTo="https://mitt.systemvetardagen.se"
-        linkTextKey="body.infoSections.meet.link"
-      />
-      <InfoSection
-        imagePosition="left"
         imageSrc="/images/workers.webp"
         imageAlt="Become a Fair'ie"
         titleKey="body.infoSections.fairie.title"

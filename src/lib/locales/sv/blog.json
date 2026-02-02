@@ -5,7 +5,7 @@
   "posts": {
     "afterparty": {
       "title": "Party & After Work!",
-      "date": "14 Januari, 2026",
+      "date": "2 Februari, 2026",
       "image": "/images/afterparty.webp",
       "paragraphs": [
         [
@@ -82,6 +82,61 @@
           {
             "type": "text",
             "content": "Vi ses på Foo Bar!🎉🎉🎉"
+          }
+        ]
+      ]
+    },
+    "keynote": {
+      "title": "Huvudföredrag: Vahid Zohali, VD för IBM Sverige",
+      "date": "24 Januari, 2026",
+      "image": "/images/vahid-zohali.webp",
+      "paragraphs": [
+        [
+          {
+            "type": "heading",
+            "content": "From Curiosity to Impact: A Personal Journey Through Generative AI and Cybersecurity"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Vi välkomnar Vahid Zohali, VD för IBM Sverige, som håller ett inspirerande och personligt föredrag om sin resa genom IT-världen. Från tidig teknisk nyfikenhet till ledande positioner inom en global techorganisation delar Vahid de lärdomar, utmaningar och vägval som format hans syn på innovation, ledarskap, generativ AI och cybersäkerhet."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "Om Föredraget"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Generativ AI är en av vår tids största teknologiska förändringar och påverkar hur vi arbetar, leder och skyddar våra digitala system. Föredraget utforskar hur generativ AI och cybersäkerhet samverkar, vilket berör allt från innovation, risker, ansvar och framtidens digitala trygghet."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "content": "När & Var?"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Datum: 18 februari, 2026"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Tid: 14:00 - 15:00"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "content": "Plats: Aula NOD"
           }
         ]
       ]
