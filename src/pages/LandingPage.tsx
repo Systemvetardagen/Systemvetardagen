@@ -7,12 +7,12 @@ import {
   FAQ,
   HighlightSection,
 } from "@/components/landing";
-import { SnowOverlay } from "react-snow-overlay";
+// import { SnowOverlay } from "react-snow-overlay";
 
 export default function LandingPage() {
   return (
     <div className="grow">
-      <SnowOverlay />
+      {/* <SnowOverlay /> */}
       <Hero />
       <CompanyLoop className="pt-10" />
       <section
