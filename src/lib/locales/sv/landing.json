@@ -20,7 +20,7 @@
         "link": "Läs Mer Om Vår Jubileum"
       },
       "meet": {
-        "title": "Endast {{applicationDaysLeft}} dagar kvar att ansöka till mötessamtal!",
+        "title": "Endast {{applicationDaysLeft}} dagar kvar att ansöka till kontaktsamtal!",
         "body": "Boka individuella intervjuer med företag under mässan via vår nya plattform. Koppla direkt med rekryterare och kom före genom att boka dina intervjutider i förväg.",
         "link": "Boka din intervju nu"
       },
