@@ -150,7 +150,7 @@ const Events: React.FC = () => {
       id="events"
       className="w-full tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
     >
-      <h1 className="text-5xl lg:text-3xl font-bold">{t("header")}</h1>
+      <h2 className="text-2xl lg:text-3xl">{t("header")}</h2>
       <div className="w-5/6">
         {lectures.map((lecture: Lecture, index) => (
           <LectureItem key={index} lecture={lecture} />
