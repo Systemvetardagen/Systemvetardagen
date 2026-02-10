@@ -10,12 +10,18 @@
       "note": "Welcome to visit all of the companies and organisations on the fair!"
     },
     {
+      "company": "Panel discussion",
+      "time": "11:40",
+      "note": "A panel of professionals from various roles and organizations will discuss how to secure your first IT position, along with several other relevant topics!",
+      "location": "Aula NOD"
+    },
+    {
       "company": "IBM Sweden",
       "time": "14:00",
       "topic": "From Curiosity to Impact: A Personal Journey Through Generative AI and Cybersecurity",
       "location": "Aula NOD",
       "speaker": "Vahid Zohali, Managing Director of IBM Sweden",
-      "note": "Through an inspiring and personal journey in the world of IT, Vahid shares his path from early technical curiosity to leading roles within a global tech organization. He highlights the lessons, challenges, and key decisions that have shaped his perspective on innovation, leadership, generative AI, and cybersecurity. Generative AI is one of the most significant technological shifts of our time and is transforming how we work, lead, and protect digital systems. This lecture explores how generative AI and cybersecurity interact, covering innovation, risks, responsibility, and the future of digital security."
+      "note": "Vahid shares his inspiring journey from early technical curiosity to leading roles at IBM. This lecture explores how generative AI and cybersecurity interact, and how these technologies are shaping the future of work and digital security."
     },
     {
       "company": "After work and pub",

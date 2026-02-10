@@ -10,12 +10,18 @@
       "note": "Välkommen att besöka alla företag och organisationer på mässan!"
     },
     {
+      "company": "Paneldiskussion",
+      "time": "11:40",
+      "note": "En panel av yrkesverksamma från olika roller och organisationer diskuterar hur du säkrar din första IT-position, tillsammans med flera andra relevanta ämnen!",
+      "location": "Aula NOD"
+    },
+    {
       "company": "IBM Sverige",
       "time": "14:00",
       "topic": "From Curiosity to Impact: A Personal Journey Through Generative AI and Cybersecurity",
       "location": "Aula NOD",
       "speaker": "Vahid Zohali, VD för IBM Sverige",
-      "note": "Med en inspirerande och personlig resa genom IT-världen delar Vahid sin egen väg som omfattar tidig teknisk nyfikenhet till ledande positioner inom en global techorganisation. Han lyfter de lärdomar, utmaningar och vägval som format hans syn på innovation, ledarskap, generativ AI och cybersäkerhet. Generativ AI är en av vår tids största teknologiska förändringar och påverkar hur vi arbetar, leder och skyddar våra digitala system. Föredraget utforskar hur generativ AI och cybersäkerhet samverkar, vilket berör allt från innovation, risker, ansvar och framtidens digitala trygghet."
+      "note": "Vahid delar sin inspirerande resa från tidig teknisk nyfikenhet till ledande positioner inom IBM. Föreläsningen utforskar hur generativ AI och cybersäkerhet samverkar, och hur dessa teknologier formar framtidens arbetssätt och digitala trygghet."
     },
     {
       "company": "After work och pub",

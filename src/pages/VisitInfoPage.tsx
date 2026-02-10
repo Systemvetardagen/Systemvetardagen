@@ -6,7 +6,7 @@ import { CiLink } from "react-icons/ci";
 interface Lecture {
   company: string;
   time: string;
-  topic: string;
+  topic?: string;
   location: string;
   note?: string;
   speaker?: string;
@@ -28,15 +28,17 @@ const LectureItem: React.FC<LectureItemProps> = ({ lecture }) => {
         {/* what the ai ._. */}
         <div className="hidden md:flex items-start gap-3">
           <div className="bg-gradient-to-r from-primary/20 to-transparent px-2 py-1 rounded-lg w-[90px] text-center shrink-0">
-            <p className="text-sm text-white font-medium">{lecture.time}</p>
+            <p className="text-lg text-white font-medium">{lecture.time}</p>
           </div>
           <div className="flex-1">
-            <h1 className="font-semibold text-xl md:text-2xl">
+            <h2 className="font-semibold text-xl md:text-2xl">
               {lecture.company}
-            </h1>
-            <p className="text-sm md:text-md text-white/90 font-medium">
-              {lecture.topic}
-            </p>
+            </h2>
+            {lecture.topic && (
+              <p className="text-base md:text-lg text-white/90 font-medium">
+                {lecture.topic}
+              </p>
+            )}
 
             <div className="flex flex-wrap items-center gap-3 mt-1 text-xs md:text-sm text-white/70">
               <div className="flex items-center">
@@ -76,7 +78,7 @@ const LectureItem: React.FC<LectureItemProps> = ({ lecture }) => {
 
             {lecture.note && (
               <div className="bg-white/5 rounded-md p-2 mt-1 max-w-md">
-                <p className="text-xs text-white/80 italic">{lecture.note}</p>
+                <p className="text-sm text-white/80 italic">{lecture.note}</p>
               </div>
             )}
           </div>
@@ -88,7 +90,7 @@ const LectureItem: React.FC<LectureItemProps> = ({ lecture }) => {
             <p className="text-xs text-white font-medium">{lecture.time}</p>
           </div>
           <h1 className="font-semibold text-lg">{lecture.company}</h1>
-          <p className="text-sm text-white/90 font-medium">{lecture.topic}</p>
+          <p className="text-base text-white/90 font-medium">{lecture.topic}</p>
 
           <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-white/70">
             <div className="flex items-center">
@@ -128,7 +130,7 @@ const LectureItem: React.FC<LectureItemProps> = ({ lecture }) => {
 
           {lecture.note && (
             <div className="bg-white/5 rounded-md p-2 mt-1">
-              <p className="text-xs text-white/80 italic">{lecture.note}</p>
+              <p className="text-sm text-white/80 italic">{lecture.note}</p>
             </div>
           )}
         </div>
@@ -148,8 +150,7 @@ const Events: React.FC = () => {
       id="events"
       className="w-full tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
     >
-      <h1 className="text-2xl lg:text-3xl font-light">{t("header")}</h1>
-      <h2 className="text-lg lg:text-xl w-3/4 font-light">{t("sub-header")}</h2>
+      <h1 className="text-5xl lg:text-3xl font-bold">{t("header")}</h1>
       <div className="w-5/6">
         {lectures.map((lecture: Lecture, index) => (
           <LectureItem key={index} lecture={lecture} />
