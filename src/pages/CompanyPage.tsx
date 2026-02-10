@@ -134,7 +134,7 @@ const CompanyPage: React.FC = () => {
                           {tCompanies("global.founded")}
                         </h3>
                         <p className="text-gray-800">
-                          {new Date(company.foundedYear || "").getFullYear()}
+                          {company.foundedYear}
                         </p>
                       </div>
                     </FadeInSection>
