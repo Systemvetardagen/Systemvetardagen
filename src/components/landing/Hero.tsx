@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Fireworks, { type FireworksHandlers } from "@fireworks-js/react";
 import { SplitText } from "../common";
 import Countdown from "@/components/common/Countdown/Countdown";
@@ -7,9 +7,25 @@ import { FadeInSection } from "../layout";
 import { celebrate } from "@/lib/utilities/confetti";
 
 const Hero = () => {
-  const targetDate: Date = new Date("2026-02-18T10:00:00+01:00");
+  // const targetDate: Date = new Date("2026-02-13T15:00:00+01:00"); // Test
+  const targetDate: Date = new Date("2026-02-18T10:00:00+01:00"); // Production
+  
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
+  const [isCountdownComplete, setIsCountdownComplete] = useState(false);
+
+  useEffect(() => {
+    const checkCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate.getTime() - now;
+      setIsCountdownComplete(difference <= 0);
+    };
+
+    checkCountdown();
+    const interval = setInterval(checkCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, [targetDate]);
 
   return (
     <div
@@ -71,6 +87,16 @@ const Hero = () => {
             16:00
           </h3>
         </FadeInSection>
+        {isCountdownComplete && (
+          <FadeInSection direction="fadeUp">
+            <a
+              href="/svgs/floormap.svg"
+              className="inline-block mt-6 px-8 py-3 text-lg rounded-full border-2 border-white bg-transparent hover:bg-white/10 transition-colors"
+            >
+              {t("viewMap")}
+            </a>
+          </FadeInSection>
+        )}
       </div>
     </div>
   );

@@ -19,21 +19,20 @@ interface TimeLeft {
 const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const [t] = useTranslation("landing");
 
-  function calculateTimeLeft(currentTimeMillis?: number): TimeLeft | null {
+  function calculateTimeLeft(currentTimeMillis?: number): TimeLeft {
     const now = currentTimeMillis ?? new Date().getTime();
     const difference = targetDate.getTime() - now;
-    if (difference > 0) {
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / (1000 * 60)) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-    return null;
+    const absDifference = Math.abs(difference);
+    
+    return {
+      days: Math.floor(absDifference / (1000 * 60 * 60 * 24)) * (difference < 0 ? -1 : 1),
+      hours: Math.floor((absDifference / (1000 * 60 * 60)) % 24) * (difference < 0 ? -1 : 1),
+      minutes: Math.floor((absDifference / (1000 * 60)) % 60) * (difference < 0 ? -1 : 1),
+      seconds: Math.floor((absDifference / 1000) % 60) * (difference < 0 ? -1 : 1),
+    };
   }
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(
     calculateTimeLeft()
   );
 
@@ -46,8 +45,35 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  if (!timeLeft) {
-    return <div>See you there 😉</div>;
+  // const fairEndDate = new Date("2026-02-13T12:05:00+01:00"); // Test
+  // const dayAfterFair = new Date("2026-02-13T18:20:00+01:00"); // Test
+  const fairEndDate = new Date("2026-02-18T16:00:00+01:00"); // Production
+  const dayAfterFair = new Date("2026-02-19T00:00:00+01:00"); // Production
+  const now = new Date().getTime();
+
+  if (now >= dayAfterFair.getTime()) {
+    return (
+      <FadeInSection direction="fadeUp" duration={800}>
+        <div className="text-3xl md:text-5xl font-semibold">{t("seeYouNextYear")}</div>
+      </FadeInSection>
+    );
+  }
+
+  if (now >= fairEndDate.getTime()) {
+    return (
+      <FadeInSection direction="fadeUp" duration={800}>
+        <div className="text-3xl md:text-5xl font-semibold">{t("seeYouAtFooBar")}</div>
+      </FadeInSection>
+    );
+  }
+
+  // If countdown has started (negative time), show good luck message
+  if (timeLeft.days < 0 || timeLeft.hours < 0 || timeLeft.minutes < 0 || timeLeft.seconds < 0) {
+    return (
+      <FadeInSection direction="fadeUp" duration={800}>
+        <div className="text-3xl md:text-5xl font-semibold">{t("goodLuck")}</div>
+      </FadeInSection>
+    );
   }
 
   return (
@@ -99,6 +125,7 @@ const Timeunit: React.FC<TimeUnitProps> = ({ value, label }) => {
       triggerConfetti(positionRef.current);
     }
   };
+  
   return (
     <div className="flex flex-col">
       <span
