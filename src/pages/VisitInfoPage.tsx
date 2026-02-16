@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Partners, FadeInSection } from "@/components";
 import { LuTramFront, LuSquareParking } from "react-icons/lu";
 import { CiLink } from "react-icons/ci";
-// import Modal from "@/components/common/Modal";
-// import { IoClose } from "react-icons/io5";
 interface Lecture {
   company: string;
   time: string;
@@ -164,8 +162,6 @@ const Events: React.FC = () => {
 
 const VisitInfo: React.FC = () => {
   const [t] = useTranslation("visitInfo");
-  // const [isMapModalOpen, setIsMapModalOpen] = useState(false);
-
   return (
     <div className="w-full overflow-x-hidden flex flex-col items-center bg-background text-center mb-10">
       <div className="w-full h-[20vh] lg:h-[40vh] max-h-[400px] overflow-hidden">
@@ -183,43 +179,13 @@ const VisitInfo: React.FC = () => {
           {t("sub-header")}
         </p>
         <Events />
-        {/* <div
-          id="map"
-          onClick={() => setIsMapModalOpen(true)}
-          className="mt-10 cursor-pointer transition-transform hover:scale-[1.02]"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              setIsMapModalOpen(true);
-            }
-          }}
-        >
+        <a id="map" href="/svgs/floormap.svg" className="mt-10">
           <img
             className="w-full rounded-3xl"
             src="/svgs/floormap.svg"
-            alt="Floor map - Click to enlarge"
+            alt="Floor map"
           />
-        </div>
-
-        <Modal isOpen={isMapModalOpen} onClose={() => setIsMapModalOpen(false)}>
-          <div className="relative bg-background rounded-xl p-2 sm:p-3 max-w-[95vw] max-h-[90vh] overflow-auto z-[9999]">
-            <button
-              onClick={() => setIsMapModalOpen(false)}
-              className="absolute top-1 right-1 z-10 bg-black/70 hover:bg-black/90 text-white rounded-full p-2 transition-colors"
-              aria-label="Close modal"
-            >
-              <IoClose size={24} />
-            </button>
-            <img
-              className="w-full h-auto rounded-lg mt-12"
-              src="/svgs/floormap.svg"
-              alt="Floor map - Enlarged view"
-            />
-          </div>
-        </Modal> */}
-
+        </a>
         <section id="get-here" className="w-full text-start my-8 ">
           <h2 className="font-light text-3xl mb-2">{t("getting-to.header")}</h2>
           <div className="mb-4">
