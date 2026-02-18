@@ -13,7 +13,7 @@ const Footer = () => {
       title: string;
       description: string;
       studentUnion: { label: string; url: string };
-      navigation: { companies: string; visitor: string; about: string; blog: string };
+      navigation: { companies: string; visitor: string; about: string; blog: string, meet: string };
       contact: { label: string; email: string };
     };
     socials: {
@@ -133,6 +133,12 @@ const Footer = () => {
               >
                 {sections.information.navigation.blog}
               </Link>
+              <a
+                className="text-sm hover:text-black transition-colors"
+                href="https://meet.systemvetardagen.se"
+              >
+                {sections.information.navigation.meet}
+              </a>
               <p className="text-sm mb-1">
                 {sections.information.contact.label}{" "}
                 <a
