@@ -1,0 +1,125 @@
+\documentclass[a4paper,10pt,oneside]{article}
+
+\usepackage[swedish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}     
+\usepackage{graphicx} 
+\usepackage{url}
+\usepackage{listings}	
+
+\def \lstlistingname {Kodexempel}
+\lstset{language=bash,tabsize=2,numbers=left,frame=L,floatplacement=hbtp}
+
+\usepackage{xcolor}
+\definecolor{linkblue}{HTML}{0366d6}
+\usepackage{ifpdf}
+\ifpdf
+    \usepackage[colorlinks=true, urlcolor=linkblue, linkcolor=black]{hyperref}
+\else
+    \usepackage{url}
+\fi
+
+\setlength{\parindent}{0pt}
+
+\title{Systemvetardagen Frontend}
+\author{Wilhelm Durelius (\href{https://github.com/Durelius}{Github}) and Fredrik Etsare (\href{https://github.com/fetsare}{Github}) }
+
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+This is the frontend website for Systemvetardagen.
+The website provides information about the fair, showcases participating companies, displays news and blog posts, and is used to market everything about Systemvetardagen.
+
+\section{Tech Stack}
+
+The application is built with following web technologies:
+
+\begin{list}{--}{}
+    \item \textbf{\href{https://react.dev}{React}} with \href{https://www.typescriptlang.org}{TypeScript}
+    \item \textbf{\href{https://vitejs.dev}{Vite}} as build tool for fast development and optimized production builds
+    \item \textbf{\href{https://tailwindcss.com}{Tailwind CSS}} v4 for utility-first styling
+    \item \textbf{\href{https://reactrouter.com}{React Router}} for client-side routing
+    \item \textbf{\href{https://www.i18next.com}{i18next}} for internationalization (Swedish/English)
+    \item \textbf{\href{https://tanstack.com/query}{TanStack Query}} for data fetching and caching
+    \item \textbf{\href{https://ui.shadcn.com}{shadcn/ui}} and \href{https://www.radix-ui.com}{Radix UI} for UI components
+\end{list}
+
+\section{Key Features}
+
+\begin{list}{--}{}
+    \item \textbf{Company showcase} -- Display participating companies with filtering and search
+    \item \textbf{Blog system} -- News and updates about the fair
+    \item \textbf{Fairie signup} -- Student registration for fair attendance (usually marketed using a link to a external form)
+    \item \textbf{Multilingual} -- Support for Swedish and English
+\end{list}
+
+\section{Development Setup}
+
+\subsection{Prerequisites}
+\begin{list}{--}{}
+\item Node.js (v18 or higher)
+\item npm or yarn
+\end{list}
+
+\subsection{Installation and Running}
+
+\begin{verbatim}
+# Install dependencies
+npm i
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+\end{verbatim}
+
+The development server runs on \texttt{http://localhost:5173}
+
+\section{Blog System}
+
+The blog system provides news and updates about Systemvetardagen, including announcements, event highlights, and informational posts for students. Blog posts support both Swedish and English content.
+
+\textbf{Note:} The current blog implementation is not ideal and uses a suboptimal approach for content management. A better solution should be discussed and implemented. (e.g., use markdown files instead)
+
+\section{Deployment}
+
+The application is deployed to \textbf{Netlify} with continuous deployment linked directly to the GitHub repository. Any push to the main branch automatically triggers a new build and deployment. Sending a PR to the main branch will also trigger a preview build.
+
+\section{Internationalization}
+
+The application supports both Swedish and English through i18next. Translation files are located in \href{https://github.com/Systemvetardagen/Systemvetardagen/tree/main/src/lib/locales}{\texttt{src/lib/locales/}} with separate directories for each language. Users can switch languages using the language selector in the navigation bar.
+
+\section{Data Management}
+
+\subsection{Company Data}
+Company data is fetched from the backend API (\texttt{https://svd.disk.su.se/api/v1}) and managed through the \href{https://github.com/Systemvetardagen/Systemvetardagen/blob/main/src/lib/context/CompanyContext.tsx}{\texttt{CompanyContext}} provider. The context handles data fetching, caching, and provides hooks like \texttt{useCompanies()} and \texttt{useCompany(slug)} for accessing company information throughout the application. This way companies are fetched once and used across the application without the need to send another request from the client.
+
+
+\subsection{Legacy Content Note}
+The static images in \href{https://github.com/Systemvetardagen/Systemvetardagen/tree/main/public/companies}{\texttt{public/companies/}} were previously used to display past companies that have attended Systemvetardagen, allowing DSV to reference what companies students could work at after studying. Now that all companies are pulled from the backend, these static files can be removed. 
+
+However, DSV has the path \texttt{/companies/old} linked in some of their outgoing information. A backend endpoint could be added to serve historical company data on this path to maintain compatibility with existing DSV information.
+
+\section{Further Development}
+
+The following improvements and updates should be prioritized for future development:
+
+\begin{list}{--}{}
+    \item \textbf{Historical company view} -- Implement a dedicated endpoint that \texttt{/companies/old} can use to display all companies that have exhibited at Systemvetardagen historically. Once this is done the old static assets can be deleted. This endpoint should not openly be referred to but only used by DSV, thus its excluded using robots.txt file.
+    
+    \item \textbf{Remove anniversary elements} -- Clean up the 30-year anniversary specific features such as fireworks animations and other celebration elements that are no longer relevant for future fairs.
+    
+    \item \textbf{Improve SVD Meet navigation} -- Make it easier for both companies and students to navigate to SVD Meet from the website. This was highlighted in user feedback as a pain point. Consider adding prominent navigation links in the header, footer, and relevant company/student sections.
+    
+    \item \textbf{Update website imagery} -- Refresh the website with new images captured during Systemvetardagen 2026 to keep the content current and showcase the most recent fair experience to prospective attendees.
+\end{list}
+
+\end{document}
