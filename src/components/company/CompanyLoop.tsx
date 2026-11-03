@@ -46,6 +46,7 @@ const CompanyLoop: React.FC<CompanyLoopProps> = ({ className, ref }) => {
 
   return (
     <div ref={ref} className={className}>
+      <p className="text-center text-sm text-gray-600 mb-6 px-4">{t("previousExhibitors")}</p>
       <div
         style={{
           overflow: "hidden",

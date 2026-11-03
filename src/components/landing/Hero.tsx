@@ -4,11 +4,11 @@ import { SplitText } from "../common";
 import Countdown from "@/components/common/Countdown/Countdown";
 import { useTranslation } from "react-i18next";
 import { FadeInSection } from "../layout";
+import { FAIR_START } from "@/lib/event";
 import { celebrate } from "@/lib/utilities/confetti";
 
 const Hero = () => {
-  // const targetDate: Date = new Date("2026-02-13T15:00:00+01:00"); // Test
-  const targetDate: Date = new Date("2026-02-18T10:00:00+01:00"); // Production
+  const targetDate = FAIR_START;
   
   const ref = useRef<FireworksHandlers>(null);
   const [t] = useTranslation("landing");
@@ -69,7 +69,7 @@ const Hero = () => {
           threshold={0.1}
           textAlign="center"
         ></SplitText>
-        <Countdown targetDate={targetDate} />
+        <Countdown />
 
         <FadeInSection direction="fadeUp" duration={1000} delay={1000}>
           <h3 className="md:text-2xl mt-10">
@@ -83,7 +83,7 @@ const Hero = () => {
             </a>
           </h3>
           <h3 className="md:text-2xl">
-            {t("date.day")} {targetDate.getDate()} {t("date.month")} 10:00 -
+            {t("date.day")} 17 {t("date.month")} 2027 · 10:00 -
             16:00
           </h3>
         </FadeInSection>
