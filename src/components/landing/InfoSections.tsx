@@ -109,12 +109,12 @@ const InfoSections = () => {
       )}
       <InfoSection
         imagePosition="left"
-        imageSrc="/images/systemvetardagen-logo-2026-black.webp"
-        imageAlt="Systemvetardagen 30th Anniversary"
-        titleKey="body.infoSections.anniversary.title"
-        bodyKey="body.infoSections.anniversary.body"
+        imageSrc="/svgs/specialLogo.svg"
+        imageAlt="Systemvetardagen"
+        titleKey="body.infoSections.event.title"
+        bodyKey="body.infoSections.event.body"
         // linkTo="/anniversary"
-        linkTextKey="body.infoSections.anniversary.link"
+        linkTextKey="body.infoSections.event.link"
       />
       <InfoSection
         imagePosition="right"

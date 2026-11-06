@@ -5,73 +5,25 @@ import { triggerConfetti } from "@/lib/utilities/confetti";
 import "./countdown.css";
 import { FadeInSection } from "@/components/layout";
 
-interface CountdownProps {
-  targetDate: Date;
-}
+import { getFairState, getTimeUntilFair } from "@/lib/event";
 
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
-const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
+const Countdown: React.FC = () => {
   const [t] = useTranslation("landing");
-
-  function calculateTimeLeft(currentTimeMillis?: number): TimeLeft {
-    const now = currentTimeMillis ?? new Date().getTime();
-    const difference = targetDate.getTime() - now;
-    const absDifference = Math.abs(difference);
-    
-    return {
-      days: Math.floor(absDifference / (1000 * 60 * 60 * 24)) * (difference < 0 ? -1 : 1),
-      hours: Math.floor((absDifference / (1000 * 60 * 60)) % 24) * (difference < 0 ? -1 : 1),
-      minutes: Math.floor((absDifference / (1000 * 60)) % 60) * (difference < 0 ? -1 : 1),
-      seconds: Math.floor((absDifference / 1000) % 60) * (difference < 0 ? -1 : 1),
-    };
-  }
-
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(
-    calculateTimeLeft()
-  );
+  const [now, setNow] = useState(Date.now);
+  const timeLeft = getTimeUntilFair(now);
+  const fairState = getFairState(now);
 
   useEffect(() => {
-    const tickInterval = 25;
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      setTimeLeft(calculateTimeLeft(now));
-    }, tickInterval);
+    const timer = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
 
-  // const fairEndDate = new Date("2026-02-13T12:05:00+01:00"); // Test
-  // const dayAfterFair = new Date("2026-02-13T18:20:00+01:00"); // Test
-  const fairEndDate = new Date("2026-02-18T16:00:00+01:00"); // Production
-  const dayAfterFair = new Date("2026-02-19T00:00:00+01:00"); // Production
-  const now = new Date().getTime();
-
-  if (now >= dayAfterFair.getTime()) {
+  if (fairState !== "upcoming") {
+    const message = fairState === "ongoing" ? "goodLuck"
+      : fairState === "evening" ? "seeYouAtFooBar" : "seeYouNextYear";
     return (
       <FadeInSection direction="fadeUp" duration={800}>
-        <div className="text-3xl md:text-5xl font-semibold">{t("seeYouNextYear")}</div>
-      </FadeInSection>
-    );
-  }
-
-  if (now >= fairEndDate.getTime()) {
-    return (
-      <FadeInSection direction="fadeUp" duration={800}>
-        <div className="text-3xl md:text-5xl font-semibold">{t("seeYouAtFooBar")}</div>
-      </FadeInSection>
-    );
-  }
-
-  // If countdown has started (negative time), show good luck message
-  if (timeLeft.days < 0 || timeLeft.hours < 0 || timeLeft.minutes < 0 || timeLeft.seconds < 0) {
-    return (
-      <FadeInSection direction="fadeUp" duration={800}>
-        <div className="text-3xl md:text-5xl font-semibold">{t("goodLuck")}</div>
+        <div className="text-3xl md:text-5xl font-semibold">{t(message)}</div>
       </FadeInSection>
     );
   }

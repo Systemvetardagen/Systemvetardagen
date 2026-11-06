@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { getFairState, getTimeUntilFair } from "@/lib/event";
 import { triggerConfetti } from "@/lib/utilities/confetti";
 
 const Footer = () => {
   const [t] = useTranslation("footer");
-  const targetDate = new Date("2026-02-18T10:00:00");
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+  const [now, setNow] = useState(Date.now);
+  const timeLeft = getTimeUntilFair(now);
+  const fairState = getFairState(now);
 
   const sections = t("sections", { returnObjects: true }) as {
     information: {
@@ -32,6 +34,7 @@ const Footer = () => {
         seconds: string;
         suffix: string;
         ongoing: { prefix: string; message: string };
+        ended: string;
       };
     };
     location: {
@@ -49,25 +52,8 @@ const Footer = () => {
 
   const copyright = t("copyright") as string;
 
-  function getTimeLeft() {
-    const now = new Date();
-    const diff = targetDate.getTime() - now.getTime();
-
-    if (diff <= 0) return null;
-
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-      seconds: Math.floor((diff / 1000) % 60),
-    };
-  }
-
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
-
+    const timer = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -236,7 +222,7 @@ const Footer = () => {
               ref={positionRef}
               onClick={handleClick}
             >
-              {timeLeft ? (
+              {fairState === "upcoming" ? (
                 <div className="hover:scale-105 transition-transform duration-200">
                   <p className="text-sm">{sections.socials.countdown.prefix}</p>
                   <p className="font-bold">
@@ -252,10 +238,10 @@ const Footer = () => {
               ) : (
                 <div className="hover:scale-105 transition-transform duration-200">
                   <p className="text-sm">
-                    {sections.socials.countdown.ongoing.prefix}
+                    {fairState === "ongoing" ? sections.socials.countdown.ongoing.prefix : ""}
                   </p>
                   <p className="font-bold">
-                    {sections.socials.countdown.ongoing.message}
+                    {fairState === "ongoing" ? sections.socials.countdown.ongoing.message : sections.socials.countdown.ended}
                   </p>
                 </div>
               )}

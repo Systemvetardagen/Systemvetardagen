@@ -1,6 +1,6 @@
 {
   "header": "Systemvetardagen",
-  "subHeader": "Celebrating 30 years of",
+  "subHeader": "Meet your future at",
   "date": {
     "day": "Wednesday",
     "month": "February"
@@ -15,7 +15,7 @@
   "viewMap": "View Floor Map",
   "signup": "Sign up for updates",
   "exhibitors": "Browse All Exhibitors",
-  "companies": "See all {{count}} exhibitors",
+  "companies": "See all {{count}} previous fair exhibitors",
   "body": {
     "infoSections": {
       "anniversary": {
@@ -32,6 +32,11 @@
         "title": "Meet Our Fair'ies",
         "body": "Fair'ies are the dedicated student volunteers who bring Systemvetardagen to life! They help with preparations, welcome companies and guests, and create the positive atmosphere that makes our event special. Fair'ies earn active DISK status, gain valuable experience in event management, and are invited to an exclusive Thank You Party as appreciation for their hard work.",
         "link": "Learn more about fair'ies"
+      },
+      "event": {
+        "title": "Systemvetardagen 2027",
+        "body": "This year marks the 31st annual Systemvetardagen, the premier tech job fair organized by Studentkåren DISK. Join us to connect with leading companies and explore exciting career opportunities in IT.",
+        "link": "About the fair"
       }
     },
     "anniversary": {
@@ -90,5 +95,7 @@
       },
       "viewAllBlogPosts": "View all blog posts"
     }
-  }
+  },
+  "previousExhibitors": "Previous fair exhibitors · 2027 participants will be announced later",
+  "previousPartners": "Previous fair partners"
 }

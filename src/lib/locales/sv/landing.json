@@ -1,6 +1,6 @@
 {
   "header": "Systemvetardagen",
-  "subHeader": "Vi firar 30 år av",
+  "subHeader": "Möt din framtid på",
   "date": {
     "day": "Onsdag",
     "month": "Februari"
@@ -15,7 +15,7 @@
   "viewMap": "Visa Plankarta",
   "signup": "Registrera för uppdateringar",
   "exhibitors": "Se alla utställare",
-  "companies": "Se alla {{count}} utställare",
+  "companies": "Se alla {{count}} utställare från förra mässan",
   "body": {
     "infoSections": {
       "anniversary": {
@@ -32,6 +32,11 @@
         "title": "Möt Våra Fair'ies",
         "body": "Fair'ies är de engagerade studentvolontärer som för Systemvetardagen till liv! De hjälper till med förberedelser, välkomnar företag och gäster, och skapar den positiva atmosfär som gör vårt evenemang speciellt. Fair'ies får aktiv DISK-status, värdefull erfarenhet inom eventhantering, och blir inbjudna till en exklusiv Tackfest som uppskattning för deras hårda arbete.",
         "link": "Läs Mer Om Fair'ies"
+      },
+      "event": {
+        "title": "Systemvetardagen 2027",
+        "body": "I år firar vi den 31:a årliga Systemvetardagen, den främsta tekniska jobbmässan organiserad av Studentkåren DISK. Följ med oss för att knyta kontakter med ledande företag och utforska spännande karriärmöjligheter inom IT.",
+        "link": "Om mässan"
       }
     },
     "anniversary": {
@@ -90,5 +95,7 @@
       },
       "viewAllBlogPosts": "Visa alla blogginlägg"
     }
-  }
+  },
+  "previousExhibitors": "Utställare från förra mässan · Deltagare 2027 presenteras senare",
+  "previousPartners": "Partners från förra mässan"
 }

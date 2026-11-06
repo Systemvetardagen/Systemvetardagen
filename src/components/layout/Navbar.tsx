@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
       <NavLink to="/" className="flex-shrink-0">
         <img
           src="/svgs/specialLogo.svg"
-          alt="Left Logo"
+          alt="Systemvetardagen"
           className="h-10 p-0 m-0"
           fetchPriority="high"
         />
