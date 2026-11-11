@@ -1,8 +1,10 @@
 {
     "header": "Planera ditt besök",
     "sub-header": "Gå på föreläsningar, hitta rätt på mässan och skapa nya kontakter.",
+    "coming-soon": "Kommer snart",
+    "floor-plan": "Planritning",
     "lectures": {
-        "header": "Events",
+        "header": "Evenemang",
         "sub-header": "Tal, föreläsningar och andra event!"
     },
     "getting-to": {

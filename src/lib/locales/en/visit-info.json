@@ -1,6 +1,8 @@
 {
     "header": "Plan your visit",
     "sub-header": "Go to talks, find your way on the fair floor and create new connections.",
+    "coming-soon": "Coming Soon",
+    "floor-plan": "Floor Plan",
     "lectures": {
         "header": "Events",
         "sub-header": "Talks, keynotes and other events!"

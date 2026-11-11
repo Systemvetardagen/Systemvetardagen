@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { Partners, FadeInSection } from "@/components";
 import { LuTramFront, LuSquareParking } from "react-icons/lu";
 import { CiLink } from "react-icons/ci";
+
+// Publish each section once its 2027 content is ready.
+const SHOW_EVENTS = false;
+const SHOW_FLOOR_PLAN = false;
+
 interface Lecture {
   company: string;
   time: string;
@@ -148,7 +154,7 @@ const Events: React.FC = () => {
   return (
     <section
       id="events"
-      className="w-full tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
+      className="w-full scroll-mt-16 tracking-wider gradient-background flex flex-col gap-4 py-6 my-8 text-white rounded-3xl items-center fadeLeft"
     >
       <h2 className="text-2xl lg:text-3xl">{t("header")}</h2>
       <div className="w-5/6">
@@ -160,8 +166,33 @@ const Events: React.FC = () => {
   );
 };
 
+function ComingSoonSection({ id, title }: { id: string; title: string }) {
+  const [t] = useTranslation("visitInfo");
+
+  return (
+    <section
+      id={id}
+      className="w-full scroll-mt-16 tracking-wider gradient-background flex flex-col gap-4 py-6 mt-8 text-white rounded-3xl items-center"
+    >
+      <h2 className="text-2xl lg:text-3xl">{title}</h2>
+      <p>{t("coming-soon")}</p>
+    </section>
+  );
+}
+
 const VisitInfo: React.FC = () => {
   const [t] = useTranslation("visitInfo");
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash !== "#events" && hash !== "#map") return;
+
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(hash.slice(1))?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
+
   return (
     <div className="w-full overflow-x-hidden flex flex-col items-center bg-background text-center mb-10">
       <div className="w-full h-[20vh] lg:h-[40vh] max-h-[400px] overflow-hidden">
@@ -178,14 +209,22 @@ const VisitInfo: React.FC = () => {
         <p className="text-gray-500 font-light mx-8 fadeRight">
           {t("sub-header")}
         </p>
-        <Events />
-        <a id="map" href="/svgs/floormap.svg" className="mt-10">
-          <img
-            className="w-full rounded-3xl"
-            src="/svgs/floormap.svg"
-            alt="Floor map"
-          />
-        </a>
+        {SHOW_EVENTS ? (
+          <Events />
+        ) : (
+          <ComingSoonSection id="events" title={t("lectures.header")} />
+        )}
+        {SHOW_FLOOR_PLAN ? (
+          <a id="map" href="/svgs/floormap.svg" className="mt-10 scroll-mt-16">
+            <img
+              className="w-full rounded-3xl"
+              src="/svgs/floormap.svg"
+              alt={t("floor-plan")}
+            />
+          </a>
+        ) : (
+          <ComingSoonSection id="map" title={t("floor-plan")} />
+        )}
         <section id="get-here" className="w-full text-start my-8 ">
           <h2 className="font-light text-3xl mb-2">{t("getting-to.header")}</h2>
           <div className="mb-4">
