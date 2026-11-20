@@ -3,10 +3,15 @@ import { NavLink } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import BlogPostPreview from "@/components/common/BlogPostPreview";
+import { BlogPostData } from "@/pages/BlogPage";
 
 export const HighlightSection: React.FC = () => {
   const [t] = useTranslation("landing");
-  
+  const [tBlog] = useTranslation("blog");
+  // Newest post is the first entry in blog.json
+  const posts = tBlog("posts", { returnObjects: true }) as Record<string, BlogPostData>;
+  const latestPostId = Object.keys(posts)[0];
+
   return (
     <div className="w-full flex flex-col gap-8 my-12 md:mt-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -57,11 +62,13 @@ export const HighlightSection: React.FC = () => {
         </NavLink>
       </div>
       <div className="flex flex-col w-full px-4 md:max-w-[90%] md:mx-auto">
-        <BlogPostPreview
-          postKey="posts.announcement"
-          postId="announcement"
-          imageSrc="/images/heads.webp"
-        />
+        {latestPostId && (
+          <BlogPostPreview
+            postKey={`posts.${latestPostId}`}
+            postId={latestPostId}
+            imageSrc={posts[latestPostId].image}
+          />
+        )}
         <div className="mt-8 flex justify-center">
           <NavLink
             to="/blog"
