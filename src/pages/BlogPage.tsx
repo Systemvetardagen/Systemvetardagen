@@ -134,7 +134,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto py-20">
-        <FadeInSection direction="fadeUp" className="max-w-4xl mx-auto py-8">
+        <FadeInSection direction="fadeUp" immediate className="max-w-4xl mx-auto py-8">
           <article className="overflow-hidden p-8">
             {post.image && (
               <img
