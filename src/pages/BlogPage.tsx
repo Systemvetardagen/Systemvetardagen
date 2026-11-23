@@ -21,6 +21,7 @@ export interface BlogPostData {
   title: string;
   date: string;
   image?: string;
+  imageCaption?: string;
   paragraphs: BlogParagraph[][];
 }
 
@@ -141,6 +142,11 @@ const BlogPage = () => {
                 alt={post.title}
                 className="rounded-lg w-full h-64 md:h-96 object-cover"
               />
+            )}
+            {post.image && post.imageCaption && (
+              <p className="mt-2 text-xs text-gray-500 dark:text-gray-400 text-right">
+                {post.imageCaption}
+              </p>
             )}
             <div className="mt-4">
               <header className="mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
